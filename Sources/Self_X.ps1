@@ -1,12 +1,18 @@
-﻿[System.Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms')  				| out-null
+﻿#***************************************************************************************************************
+# Tool: SelfX
+# Author: Damien VAN ROBAEYS
+# Website: http://www.systanddeploy.com
+# Twitter: https://twitter.com/syst_and_deploy
+#***************************************************************************************************************
+
+$Global:Current_Folder = split-path $MyInvocation.MyCommand.Path
+
+[System.Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms')  				| out-null
 [System.Reflection.Assembly]::LoadWithPartialName('presentationframework') 				| out-null
 [System.Reflection.Assembly]::LoadFrom('assembly\MahApps.Metro.dll')       				| out-null
 [System.Reflection.Assembly]::LoadFrom('assembly\MahApps.Metro.IconPacks.dll')      | out-null  
 [System.Reflection.Assembly]::LoadFrom('assembly\LoadingIndicators.WPF.dll')       				| out-null
 
-$Global:Current_Folder = split-path $MyInvocation.MyCommand.Path
-	
-	
 #*************************************************************************************************************************************
 #													PROGRESS BAR PART
 #*************************************************************************************************************************************
@@ -54,7 +60,6 @@ $PsChildCmd = [PowerShell]::Create().AddScript({
 	<Grid>	
 		<StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">		
 			<StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="0,0,0,0">	
-			<!--	<Controls:ProgressRing IsActive="True" Margin="0,0,0,0"  Foreground="White" Width="50"/> -->
 				<loadin:LoadingIndicator Margin="0,5,0,0" Name="ArcsRing" SpeedRatio="1" Foreground="White" IsActive="True" Style="{DynamicResource LoadingIndicatorArcsRingStyle}"/>
 			</StackPanel>								
 			
@@ -145,7 +150,7 @@ ForEach($Category in $All_Categories)
 			</Expander.Header>
 						
 			<DataGrid HeadersVisibility="None" GridLinesVisibility="None"  BorderBrush="{DynamicResource AccentColorBrush}"	
-			Margin="-3,0,0,0" Height="auto" Width="500" BorderThickness="0" AutoGenerateColumns="True"  
+			Margin="-3,0,0,0" Height="auto" Width="500" BorderThickness="0" AutoGenerateColumns="True" SelectionMode="Extended"  
 			Name="DataGrid_$Category"  ItemsSource="{Binding}"   >										
 				<DataGrid.Columns>	
 					<DataGridTextColumn FontSize="12" Width="400" Header="Action" Binding="{Binding Action, Mode=OneWay}"/>	
@@ -177,7 +182,6 @@ ForEach($Category in $All_Categories)
 "@   	
 $XML_Content += $Expander_Content	
 	}	
-
 
 
 [xml]$XamlMainWindow = @"  
@@ -224,19 +228,17 @@ TitleCaps="False">
 </Controls:MetroWindow.LeftWindowCommands>		
 
 <Controls:MetroWindow.RightWindowCommands>
-	<Controls:WindowCommands>		
-	 <!--  <Button Name="Update_XML">
-			<iconPacks:PackIconMaterial Kind="update"/>				
-		</Button> -->
+	<Controls:WindowCommands>	
+	   <Button Name="Search_Issue">
+			<iconPacks:PackIconMaterial Kind="magnify"/>				
+		</Button>		
 	   <Button Name="About">
 			<iconPacks:PackIconMaterial Kind="help"/>				
 		</Button>		
 	</Controls:WindowCommands>	
 </Controls:MetroWindow.RightWindowCommands>		
 
-    <Grid >		
-
-	
+    <Grid>		
 		<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">	
 			<StackPanel Margin="0,0,0,0"  HorizontalAlignment="Center" VerticalAlignment="Center">
 
@@ -289,7 +291,6 @@ $About.Add_Click({
 	start-process -WindowStyle hidden powershell.exe "$current_folder\About.ps1"	
 })
 
-
 $GUI_Config = $Depannage_Actions_XML.Actions.GUI_Config
 $Main_Title.Content = $GUI_Config.Main_Title_Text
 $Subtitle.Content = $GUI_Config.Subtitle_Text
@@ -298,10 +299,12 @@ $Run_explanation_label.Content = $GUI_Config.Run_explanation_Text
 $Run_Solution_Text = $GUI_Config.Warning_Click_Run_Solution_Text
 $Run_Explanation_Text = $GUI_Config.Warning_Click_Run_Explanation_Text
 $Tool_Version = $GUI_Config.Tool_Version
+
+
 $Form.Title = "SelfX (Self fix)"
 
-Function Populate_content
-	{
+# Function Populate_content
+	# {
 		$All_Categories = $Depannage_Actions_XML.Actions.Action.Category | Sort-Object -Unique
 		ForEach($Category in $All_Categories)
 			{
@@ -352,10 +355,10 @@ Function Populate_content
 					})
 				)			
 			}	
-	}
+	# }
 
 
-Populate_content
+# Populate_content
 
 Function Run_Remediation($rowObj)
 	{       	
@@ -403,9 +406,86 @@ Function See_Details($rowObj)
 		$Button_Style = [MahApps.Metro.Controls.Dialogs.MetroDialogSettings]::new()
 		$Button_Style.DialogTitleFontSize = "22"				
 		$Button_Style.DialogMessageFontSize = "14"				
-		$Button_Style.AffirmativeButtonText = "OK"		
-							
+		$Button_Style.AffirmativeButtonText = "OK"									
 		$result = [MahApps.Metro.Controls.Dialogs.DialogManager]::ShowModalMessageExternal($Form,"$Run_Explanation_Text","$Reason",$MSG_Buttons, $Button_Style)   					
-	}              
+	}   
+
+
+function LoadXml ($global:filename)
+{
+	$XamlLoader=(New-Object System.Xml.XmlDocument)
+	$XamlLoader.Load($filename)
+	return $XamlLoader
+}
+$xamlDialog  = LoadXml(".\Dialog_Search.xaml")
+
+$read=(New-Object System.Xml.XmlNodeReader $xamlDialog)
+$DialogForm=[Windows.Markup.XamlReader]::Load($read)
+
+$Dialog_Search = [MahApps.Metro.Controls.Dialogs.CustomDialog]::new($form)
+$Dialog_Search.AddChild($DialogForm)
+
+$Category_to_choose = $DialogForm.FindName("Category_to_choose")
+$Issue_KeyWord = $DialogForm.FindName("Issue_KeyWord")
+$Category_Label = $DialogForm.FindName("Category_Label")
+$Title_Label = $DialogForm.FindName("Title_Label")
+$KeyWord_Label = $DialogForm.FindName("KeyWord_Label")
+$Search = $DialogForm.FindName("Search")
+$Close_Dialog = $DialogForm.FindName("Close_Dialog")
+
+$Title_Label.Content = $GUI_Config.Issue_filter_Title_Text
+$Category_Label.Content = $GUI_Config.Issue_filter_Category_Text
+$KeyWord_Label.Content = $GUI_Config.Issue_filter_KeyWord_Text
+$Search.Content = $GUI_Config.Issue_filter_SearchButton_Text
+$Close_Dialog.Content = $GUI_Config.Issue_filter_CloseButton_Text
+
+$Dir_Sources_Folder = get-childitem $Sources_Folder -recurse
+$List_All_Files = $Dir_Sources_Folder | where { ! $_.PSIsContainer }		
+
+$All_Categories = $Depannage_Actions_XML.Actions.Action.Category | Sort-Object -Unique
+foreach($Category in $All_Categories)
+	{
+		$Category_to_choose.Items.Add($Category)	
+		$Global:Selected_Category = $Category_to_choose.SelectedItem	
+
+		$Category_to_choose.add_SelectionChanged({
+			$Script:Selected_Category = $Category_to_choose.SelectedItem
+		})			
+	}	
+
+$Close_Dialog.add_Click({
+	$Dialog_Search.RequestCloseAsync()
+})
+
+$Search_Issue.add_Click({
+	[MahApps.Metro.Controls.Dialogs.DialogManager]::ShowMetroDialogAsync($form, $Dialog_Search)		
+})
+
+	  	  
+$Search.Add_Click({
+$All_Categories = $Depannage_Actions_XML.Actions.Action.Category | Sort-Object -Unique
+Add-Type -AssemblyName PresentationCore,PresentationFramework
+
+foreach($Category in $All_Categories)
+	{
+		$Form.FindName("DataGrid_$Category").UnSelectAll()
+		$Get_TextBox_Value = $Issue_KeyWord.Text.ToString()	
+		$Datagrid_Log_Count = $Form.FindName("DataGrid_$Category").Items.Count	
+		
+		ForEach($Log in $Form.FindName("DataGrid_$Category").Items)
+			{
+				# For ($i = 0; $i -lt $Datagrid_Log_Count; $i++)
+				# {				
+					If($Log.Action -like "*$Get_TextBox_Value*")
+						{	
+							$Form.FindName("DataGrid_$Category").SelectedItem = $Log#[$i]	
+							# break
+						}
+					
+				# }
+			}
+		$Dialog_Search.RequestCloseAsync()	
+	}	
+})		  
 
 $Form.ShowDialog() | Out-Null 
