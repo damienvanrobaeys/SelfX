@@ -7,10 +7,14 @@
 		<Subtitle_Text>You may find a way to solve it here with a list of clickable solutions</Subtitle_Text>
 		<Run_solution_Text>Allows you to run an action</Run_solution_Text>
 		<Run_explanation_Text>Allows you to get more info</Run_explanation_Text>	
-
 		<Warning_Click_Run_Solution_Text>Solving an issue</Warning_Click_Run_Solution_Text>		
 		<Warning_Click_Run_Explanation_Text>See more info</Warning_Click_Run_Explanation_Text>		
-		
+
+		<Issue_filter_Title_Text>Filter on issue</Issue_filter_Title_Text>	
+		<Issue_filter_Category_Text>Choose a category</Issue_filter_Category_Text>	
+		<Issue_filter_KeyWord_Text>Type a key word</Issue_filter_KeyWord_Text>	
+		<Issue_filter_SearchButton_Text>Search</Issue_filter_SearchButton_Text>	
+		<Issue_filter_CloseButton_Text>Close</Issue_filter_CloseButton_Text>			
 	</GUI_Config>
 
 	<!-- Part for Outlook --> 
