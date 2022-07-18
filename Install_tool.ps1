@@ -1,4 +1,5 @@
 #***************************************************************************************************************
+# Tool: SelfX
 # Author: Damien VAN ROBAEYS
 # Website: http://www.systanddeploy.com
 # Twitter: https://twitter.com/syst_and_deploy
@@ -53,12 +54,12 @@ $Shell = New-Object -ComObject ("WScript.Shell")
 $Shortcut = $Shell.CreateShortcut($Desktop_LNK)
 $shortcut.IconLocation = "$Destination_folder\logo.ico"
 # $shortcut.IconLocation = "$Destination_folder\icon_systray.ico"
+$Shortcut.Save()		
 
 # Creating Start menu shortcut
 $Start_Menu = "$env:appdata\Microsoft\Windows\Start Menu\Programs"
 copy-item $Desktop_LNK $Start_Menu -Force
 
-$Shortcut.Save()		
 
 
 
