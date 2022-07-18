@@ -286,7 +286,16 @@ After reconnecting on Teams, if the issue still occur please contact your suppor
 
 Do you want to continue ?</Alerte_MSG>					
 	</Action>		
-	
+
+	<Action>
+		<Name>Teams camera is frozen/invisible</Name>
+		<Buttons>Ok_Cancel</Buttons>
+		<Explanation>Your video feed is frozen or invisible during a meeting or call.</Explanation>
+		<Script>SelfX_Teams_ResetCache.ps1</Script>
+		<Category>Teams</Category>
+		<Alerte_MSG>Teams will close and then open again automatically.
+		Do you want to continue ?</Alerte_MSG>
+	</Action>	
 	
 	<Action>	
 		<Name>Failed to send Teams messages</Name>
