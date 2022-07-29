@@ -17,6 +17,82 @@
 		<Issue_filter_CloseButton_Text>Close</Issue_filter_CloseButton_Text>			
 	</GUI_Config>
 
+	<!-- Part for device --> 
+	<Action>	
+		<Name>You are not being able to reach some website</Name>
+		<Buttons>Ok_Cancel</Buttons>						
+		<Explanation>Your are trying to go to some website but connexion does not seem to work, or you can not reach site, or you have some errors</Explanation>
+		<Script>SelfX_Device_ClearCache.ps1</Script>
+		<Category>Device</Category>	
+		<Alerte_MSG>An action will be executed in background. Tru again after clicking on OK.		
+
+Do you want to continue ?		
+		</Alerte_MSG>
+	</Action>	
+	
+	<Action>	
+		<Name>You have connexion issues on your devices</Name>
+		<Buttons>Ok_Cancel</Buttons>						
+		<Explanation>Your are trying to go to some website but connexion does not seem to work, or you can not reach site, or you have some errors</Explanation>
+		<Script>SelfX_Device_ClearCache.ps1</Script>
+		<Category>Device</Category>	
+		<Alerte_MSG>An action will be executed in background. Tru again after clicking on OK.		
+
+Do you want to continue ?		
+		</Alerte_MSG>
+	</Action>
+		
+	<Action>	
+		<Name>Clear temporary files</Name>
+		<Buttons>Ok_Cancel</Buttons>						
+		<Explanation>Your device is running slow</Explanation>
+		<Script>SelfX_Device_ClearTMP.ps1</Script>
+		<Category>Device</Category>	
+		<Alerte_MSG>Temporary files will be deleted.	
+
+Do you want to continue ?		
+		</Alerte_MSG>
+	</Action>	
+
+	<Action>	
+		<Name>Your device is running slow</Name>
+		<Buttons>Ok_Cancel</Buttons>						
+		<Explanation>Your device is running slow</Explanation>
+		<Script>SelfX_Device_DeviceSlow.ps1</Script>
+		<Category>Device</Category>	
+		<Alerte_MSG>Temporary files and recycle bin content will be deleted	
+
+Do you want to continue ?		
+		</Alerte_MSG>
+	</Action>		
+
+
+	<!-- Part for browser --> 
+	<Action>	
+		<Name>Clear Google Chrome browsing data (cache)</Name>
+		<Buttons>Ok_Cancel</Buttons>						
+		<Explanation>Clear Google Chrome browsing data (cache)</Explanation>
+		<Script>SelfX_Browser_ClearChromeCache.ps1</Script>
+		<Category>Browser</Category>	
+		<Alerte_MSG>Google Chrome browsing data will be deleted.	
+
+Do you want to continue ?		
+		</Alerte_MSG>
+	</Action>
+	
+	<Action>	
+		<Name>Clear Firefox browsing data (cache)</Name>
+		<Buttons>Ok_Cancel</Buttons>						
+		<Explanation>Clear Firefox browsing data (cache)</Explanation>
+		<Script>SelfX_Browser_ClearFirefoxCache.ps1</Script>
+		<Category>Browser</Category>	
+		<Alerte_MSG>Firefox browsing data will be deleted.	
+
+Do you want to continue ?		
+		</Alerte_MSG>
+	</Action>	
+
+
 	<!-- Part for Outlook --> 
 	<Action>	
 		<Name>The "Teams meeting" button is missing in Outlook</Name>
