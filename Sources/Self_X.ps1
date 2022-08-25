@@ -184,6 +184,7 @@ $XML_Content += $Expander_Content
 	}	
 
 
+
 [xml]$XamlMainWindow = @"  
 <Controls:MetroWindow 
 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -299,7 +300,10 @@ $Run_explanation_label.Content = $GUI_Config.Run_explanation_Text
 $Run_Solution_Text = $GUI_Config.Warning_Click_Run_Solution_Text
 $Run_Explanation_Text = $GUI_Config.Warning_Click_Run_Explanation_Text
 $Tool_Version = $GUI_Config.Tool_Version
+$Tool_Color = $GUI_Config.Tool_Color
 
+$Theme = [MahApps.Metro.ThemeManager]::DetectAppStyle($form)	
+[MahApps.Metro.ThemeManager]::ChangeAppStyle($form, [MahApps.Metro.ThemeManager]::GetAccent("$Tool_Color"), $Theme.Item1);	
 
 $Form.Title = "SelfX (Self fix)"
 
@@ -432,12 +436,17 @@ $Title_Label = $DialogForm.FindName("Title_Label")
 $KeyWord_Label = $DialogForm.FindName("KeyWord_Label")
 $Search = $DialogForm.FindName("Search")
 $Close_Dialog = $DialogForm.FindName("Close_Dialog")
+$Border = $DialogForm.FindName("Border")
 
 $Title_Label.Content = $GUI_Config.Issue_filter_Title_Text
 $Category_Label.Content = $GUI_Config.Issue_filter_Category_Text
 $KeyWord_Label.Content = $GUI_Config.Issue_filter_KeyWord_Text
 $Search.Content = $GUI_Config.Issue_filter_SearchButton_Text
 $Close_Dialog.Content = $GUI_Config.Issue_filter_CloseButton_Text
+
+# $Close_Dialog.Background = "$Tool_Color"
+# $Search.Background = "$Tool_Color"
+# $Border.BorderBrush = "$Tool_Color"
 
 $Dir_Sources_Folder = get-childitem $Sources_Folder -recurse
 $List_All_Files = $Dir_Sources_Folder | where { ! $_.PSIsContainer }		

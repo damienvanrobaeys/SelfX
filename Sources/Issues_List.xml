@@ -2,19 +2,20 @@
 	<GUI_Config>
 		<XML_Version>1.0.0</XML_Version>	
 		<Tool_Version>1.0.0</Tool_Version>
-		<Link_Scripts></Link_Scripts> <!-- If Type = Download, type the path where to find Issues_List.xml--> 		
-		<Main_Title_Text>An issue with your device ?</Main_Title_Text>
-		<Subtitle_Text>You may find a way to solve it here with a list of clickable solutions</Subtitle_Text>
-		<Run_solution_Text>Allows you to run an action</Run_solution_Text>
-		<Run_explanation_Text>Allows you to get more info</Run_explanation_Text>	
-		<Warning_Click_Run_Solution_Text>Solving an issue</Warning_Click_Run_Solution_Text>		
-		<Warning_Click_Run_Explanation_Text>See more info</Warning_Click_Run_Explanation_Text>		
+		<Link_Scripts></Link_Scripts> <!-- If Type = Download, type the path where to find Issues_List.xml--> 
+		<Tool_Color>Cyan</Tool_Color> <!-- Available colors: “Red”, “Green”, “Blue”, “Purple”, “Orange”, “Lime”, “Emerald”, “Teal”, “Cyan”, “Cobalt”, “Indigo”, “Violet”, “Pink”, “Magenta”, “Crimson”, “Amber”, “Yellow”, “Brown”, “Olive”, “Steel”, “Mauve”, “Taupe”, “Sienna” -->				
+		<Main_Title_Text>An issue with your device ?</Main_Title_Text> <!-- Main GUI: main title -->
+		<Subtitle_Text>You may find a way to solve it here with a list of clickable solutions</Subtitle_Text> <!-- Main GUI: subtitle -->
+		<Run_solution_Text>Allows you to run an action</Run_solution_Text> <!-- Main GUI: legend part 1 -->
+		<Run_explanation_Text>Allows you to get more info</Run_explanation_Text> <!-- Main GUI: legend part 2 -->	
+		<Warning_Click_Run_Solution_Text>Solving an issue</Warning_Click_Run_Solution_Text>	<!-- Run action warning: main text -->
+		<Warning_Click_Run_Explanation_Text>See more info</Warning_Click_Run_Explanation_Text> <!-- Run explanation warning: main text -->	
 
-		<Issue_filter_Title_Text>Filter on issue</Issue_filter_Title_Text>	
-		<Issue_filter_Category_Text>Choose a category</Issue_filter_Category_Text>	
-		<Issue_filter_KeyWord_Text>Type a key word</Issue_filter_KeyWord_Text>	
-		<Issue_filter_SearchButton_Text>Search</Issue_filter_SearchButton_Text>	
-		<Issue_filter_CloseButton_Text>Close</Issue_filter_CloseButton_Text>			
+		<Issue_filter_Title_Text>Filter on issue</Issue_filter_Title_Text> <!-- Search filter issue box: main text -->
+		<Issue_filter_Category_Text>Choose a category</Issue_filter_Category_Text> <!-- Search filter issue box: category text -->
+		<Issue_filter_KeyWord_Text>Type a key word</Issue_filter_KeyWord_Text> <!-- Search filter issue box: keyword text -->	
+		<Issue_filter_SearchButton_Text>Search</Issue_filter_SearchButton_Text> <!-- Search filter issue box: search button text -->
+		<Issue_filter_CloseButton_Text>Close</Issue_filter_CloseButton_Text> <!-- Search filter issue box: close button text -->			
 	</GUI_Config>
 
 	<!-- Part for device --> 
