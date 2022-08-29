@@ -301,68 +301,64 @@ $Run_Solution_Text = $GUI_Config.Warning_Click_Run_Solution_Text
 $Run_Explanation_Text = $GUI_Config.Warning_Click_Run_Explanation_Text
 $Tool_Version = $GUI_Config.Tool_Version
 $Tool_Color = $GUI_Config.Tool_Color
+$Category_Text_Part1 = $GUI_Config.Expander_Category_Text_Part1
+$Category_Text_Part2 = $GUI_Config.Expander_Category_Text_Part2
 
 $Theme = [MahApps.Metro.ThemeManager]::DetectAppStyle($form)	
 [MahApps.Metro.ThemeManager]::ChangeAppStyle($form, [MahApps.Metro.ThemeManager]::GetAccent("$Tool_Color"), $Theme.Item1);	
 
 $Form.Title = "SelfX (Self fix)"
 
-# Function Populate_content
-	# {
-		$All_Categories = $Depannage_Actions_XML.Actions.Action.Category | Sort-Object -Unique
-		ForEach($Category in $All_Categories)
+$All_Categories = $Depannage_Actions_XML.Actions.Action.Category | Sort-Object -Unique
+ForEach($Category in $All_Categories)
+	{
+		$Actions = $Depannage_Actions_XML.Actions.Action | where {$_.category -eq "$Category"}	
+		$Actions_count = $Actions.Name.Count
+		
+		If($Actions_count -eq 0)
+			{	
+				$Form.FindName("Expander_$Category").Visibility = 'Collapsed'
+			}
+		Else
 			{
-				$Actions = $Depannage_Actions_XML.Actions.Action | where {$_.category -eq "$Category"}	
-				$Actions_count = $Actions.Name.Count
-				
-				If($Actions_count -eq 0)
-					{	
-						$Form.FindName("Expander_$Category").Visibility = 'Collapsed'
-					}
-				Else
-					{
-						$Form.FindName("Expander_$Category").Visibility = 'Visible'
-					}			
+				$Form.FindName("Expander_$Category").Visibility = 'Visible'
+			}			
 
-				$Form.FindName("Title_$Category").Text = "Solve issues with $Category ($Actions_count action(s) available)"
+		$Form.FindName("Title_$Category").Text = "$Category_Text_Part1 $Category ($Actions_count $Category_Text_Part2"
 
-				ForEach($Action_Value in $Actions)
-					{
-						$Name = $Action_Value.Name
-						$Explanation = $Action_Value.Explanation
-						$Script = $Action_Value.Script						
-						$RemediationType = $Action_Value.Remediation_Type    
-						$Alerte_warning = $Action_Value.Alerte_MSG    
-						$Alerte_Buttons = $Action_Value.Buttons    				
+		ForEach($Action_Value in $Actions)
+			{
+				$Name = $Action_Value.Name
+				$Explanation = $Action_Value.Explanation
+				$Script = $Action_Value.Script						
+				$RemediationType = $Action_Value.Remediation_Type    
+				$Alerte_warning = $Action_Value.Alerte_MSG    
+				$Alerte_Buttons = $Action_Value.Buttons    				
 
-						$Obj = New-Object PSObject
-						$Obj = $Obj | Add-Member NoteProperty Action $Name -passthru   
-						$Obj = $Obj | Add-Member NoteProperty Explanation $Explanation -passthru
-						$Obj = $Obj | Add-Member NoteProperty Script $Script -passthru	
-						$Obj = $Obj | Add-Member NoteProperty Remediation_Type $RemediationType -passthru				
-						$Obj = $Obj | Add-Member NoteProperty Alerte_warning $Alerte_warning -passthru				
-						$Obj = $Obj | Add-Member NoteProperty Alerte_Buttons $Alerte_Buttons -passthru								
-						$Form.FindName("DataGrid_$Category").Items.Add($Obj) > $null
-					}
+				$Obj = New-Object PSObject
+				$Obj = $Obj | Add-Member NoteProperty Action $Name -passthru   
+				$Obj = $Obj | Add-Member NoteProperty Explanation $Explanation -passthru
+				$Obj = $Obj | Add-Member NoteProperty Script $Script -passthru	
+				$Obj = $Obj | Add-Member NoteProperty Remediation_Type $RemediationType -passthru				
+				$Obj = $Obj | Add-Member NoteProperty Alerte_warning $Alerte_warning -passthru				
+				$Obj = $Obj | Add-Member NoteProperty Alerte_Buttons $Alerte_Buttons -passthru								
+				$Form.FindName("DataGrid_$Category").Items.Add($Obj) > $null
+			}
 
-				$Form.FindName("DataGrid_$Category").AddHandler(
-					[System.Windows.Controls.Button]::ClickEvent, 
-					[System.Windows.RoutedEventHandler]({
-						$button =  $_.OriginalSource.Name
-						$Script:resultObj = $this.CurrentItem
-						If ($button -match "Run_Remediation" ){   
-							Run_Remediation -rowObj $resultObj
-						}
-						ElseIf ($button -match "See_Issue_Info" ){
-							See_Details -rowObj $resultObj
-						}
-					})
-				)			
-			}	
-	# }
-
-
-# Populate_content
+		$Form.FindName("DataGrid_$Category").AddHandler(
+			[System.Windows.Controls.Button]::ClickEvent, 
+			[System.Windows.RoutedEventHandler]({
+				$button =  $_.OriginalSource.Name
+				$Script:resultObj = $this.CurrentItem
+				If ($button -match "Run_Remediation" ){   
+					Run_Remediation -rowObj $resultObj
+				}
+				ElseIf ($button -match "See_Issue_Info" ){
+					See_Details -rowObj $resultObj
+				}
+			})
+		)			
+	}	
 
 Function Run_Remediation($rowObj)
 	{       	
