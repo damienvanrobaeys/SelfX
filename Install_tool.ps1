@@ -16,8 +16,8 @@ $Sources = $Current_Folder + "\" + "Sources\*"
 $ProgData = $env:ProgramData
 $Destination_folder = "$env:LOCALAPPDATA\SelfX"
 
-If(test-path $Destination_folder){remove-item $Destination_folder -recurse -force | out-null}
-new-item $Destination_folder -type directory -force | out-null
+If(!(test-path $Destination_folder)){new-item $Destination_folder -type directory -force | out-null}
+# new-item $Destination_folder -type directory -force | out-null
 copy-item $Sources $Destination_folder -force -recurse
 Get-Childitem -Recurse $Destination_folder | Unblock-file	
 
