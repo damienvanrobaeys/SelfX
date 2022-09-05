@@ -2,6 +2,21 @@
 	<GUI_Config>
 		<XML_Version>1.0.0</XML_Version>	
 		<Tool_Version>1.0.0</Tool_Version>
+
+		<Shortcut_Desktop>True</Shortcut_Desktop> <!-- True or False -->
+		<Shortcut_StartMenu>True</Shortcut_StartMenu> <!-- True or False -->
+
+		<Show_Install_Toast>True</Show_Install_Toast> <!-- Display a toast to user after installing the tool. True or False -->
+		<Toast_Header_Picture>Toast_Header.gif</Toast_Header_Picture>		
+		<Toast_Company_Name>Syst and Deploy informs you</Toast_Company_Name>
+		<Toast_Title>A new tool is available on your device</Toast_Title>
+		<Toast_Text>A new tool allowing you to solve issues by sourself is available on your device.
+		
+Click on the SelfX shortcut available on your desktop or Start menu to launch the tool.		
+		</Toast_Text>
+		<Toast_Button_Text>Dismiss</Toast_Button_Text>
+		
+		
 		<Link_Scripts></Link_Scripts> <!-- If Type = Download, type the path where to find Issues_List.xml--> 
 		<Tool_Color>Cyan</Tool_Color> <!-- Available colors: “Red”, “Green”, “Blue”, “Purple”, “Orange”, “Lime”, “Emerald”, “Teal”, “Cyan”, “Cobalt”, “Indigo”, “Violet”, “Pink”, “Magenta”, “Crimson”, “Amber”, “Yellow”, “Brown”, “Olive”, “Steel”, “Mauve”, “Taupe”, “Sienna” -->				
 		<Main_Title_Text>An issue with your device ?</Main_Title_Text> <!-- Main GUI: main title -->
