@@ -1,7 +1,7 @@
 ﻿<Actions>
 	<GUI_Config>
 		<XML_Version>1.0.0</XML_Version>	
-		<Tool_Version>1.0.0</Tool_Version>
+		<Tool_Version>1.0.1</Tool_Version>
 
 		<Shortcut_Desktop>True</Shortcut_Desktop> <!-- True or False -->
 		<Shortcut_StartMenu>True</Shortcut_StartMenu> <!-- True or False -->
