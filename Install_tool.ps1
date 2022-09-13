@@ -51,31 +51,32 @@ ElseIf($XML_Link -eq "")
 	}
 $XML_Content | out-file "$Destination_folder\List_config.xml"	
 
-# Creating desktop shortcut
+# Creatre the LNK file
+$SelfX_Folder = "$env:LOCALAPPDATA\SelfX"
+$SelfX_LNK = "$SelfX_Folder\SelfX.lnk"
+$WshShell = New-Object -comObject WScript.Shell
+$Shortcut = $WshShell.CreateShortcut("$SelfX_LNK")
+$Target_Path = "C:\Windows\System32\cmd.exe"
+$Target_Arguments = "/c start /min powershell -WindowStyle Hidden -ExecutionPolicy Bypass -File %LOCALAPPDATA%\SelfX\Self_X.ps1"
+$Shortcut.TargetPath = $Target_Path
+$Shortcut.Arguments = $Target_Arguments
+$shortcut.IconLocation = "$SelfX_Folder\logo.ico"
+$shortcut.WorkingDirectory = "%LOCALAPPDATA%\SelfX"
+$Shortcut.Save()
+
+# Copy LNK to desktop
 If($Shortcut_Desktop -eq $True)
 	{
-		$Get_Tool_Shortcut = "$Destination_folder\SelfX.lnk"		
 		$Get_Desktop_Profile = [environment]::GetFolderPath('Desktop')
-		$Desktop_LNK = "$Get_Desktop_Profile\SelfX.lnk"
-		copy-item $Get_Tool_Shortcut $Get_Desktop_Profile -Force
-		$Shell = New-Object -ComObject ("WScript.Shell")
-		$Shortcut = $Shell.CreateShortcut($Desktop_LNK)
-		$shortcut.IconLocation = "$Destination_folder\logo.ico"
-		$Shortcut.Save()		
+		copy-item $SelfX_LNK $Get_Desktop_Profile	
 	}
-	
-# Creating Start menu shortcut	
+
+# Copy LNK to Start menu 
 If($Shortcut_StartMenu -eq $True)
 	{
 		$Start_Menu = "$env:appdata\Microsoft\Windows\Start Menu\Programs"
-		$Get_Tool_Shortcut = "$Destination_folder\SelfX.lnk"		
-		copy-item $Get_Tool_Shortcut $Start_Menu -Force		
-		$Shell = New-Object -ComObject ("WScript.Shell")
-		$Shortcut = $Shell.CreateShortcut("$Start_Menu\SelfX.lnk")
-		$shortcut.IconLocation = "$Destination_folder\logo.ico"
-		$Shortcut.Save()			
+		copy-item $SelfX_LNK $Start_Menu		
 	}
-
 
 If($Show_Install_Toast -eq $True)
 {
