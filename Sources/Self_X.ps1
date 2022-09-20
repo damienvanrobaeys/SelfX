@@ -230,6 +230,9 @@ TitleCaps="False">
 
 <Controls:MetroWindow.RightWindowCommands>
 	<Controls:WindowCommands>	
+	   <Button Name="Support_Info">
+			<iconPacks:PackIconFontAwesome Kind="phone"/>				
+		</Button>		
 	   <Button Name="Search_Issue">
 			<iconPacks:PackIconMaterial Kind="magnify"/>				
 		</Button>		
@@ -293,7 +296,6 @@ $About.Add_Click({
 })
 
 $GUI_Config = $Depannage_Actions_XML.Actions.GUI_Config
-$Main_Title.Content = $GUI_Config.Main_Title_Text
 $Subtitle.Content = $GUI_Config.Subtitle_Text
 $Run_solution_label.Content = $GUI_Config.Run_solution_Text
 $Run_explanation_label.Content = $GUI_Config.Run_explanation_Text
@@ -303,6 +305,24 @@ $Tool_Version = $GUI_Config.Tool_Version
 $Tool_Color = $GUI_Config.Tool_Color
 $Category_Text_Part1 = $GUI_Config.Expander_Category_Text_Part1
 $Category_Text_Part2 = $GUI_Config.Expander_Category_Text_Part2
+$Show_Computer_Name = $GUI_Config.Show_Computer_Name
+$Show_Support_Button = $GUI_Config.Show_Support_Button
+$Support_Phone_number = $GUI_Config.Support_Phone_number
+$Support_Mail = $GUI_Config.Support_Mail
+
+$Support_Phone_Label = $GUI_Config.Support_Phone_Label
+$Support_Mail_Label = $GUI_Config.Support_Mail_Label
+$Close_Button_Text = $GUI_Config.Close_Button_Text
+
+
+If($Show_Computer_Name -eq $True)
+	{
+		$Main_Title.Content = $GUI_Config.Main_Title_Text + " " + "($env:computername)"	+ " ?"
+	}
+Else
+	{
+		$Main_Title.Content = $GUI_Config.Main_Title_Text	
+	}
 
 $Theme = [MahApps.Metro.ThemeManager]::DetectAppStyle($form)	
 [MahApps.Metro.ThemeManager]::ChangeAppStyle($form, [MahApps.Metro.ThemeManager]::GetAccent("$Tool_Color"), $Theme.Item1);	
@@ -411,6 +431,92 @@ Function See_Details($rowObj)
 	}   
 
 
+
+
+
+# $Support_Phone_Label = $GUI_Config.Support_Phone_Label
+# $Support_Mail_Label = $GUI_Config.Support_Mail_Label
+# $Close_Button_Text = $GUI_Config.Close_Button_Text
+
+
+#******************************************************************************
+# Support contact dialog part
+#******************************************************************************
+If($Show_Support_Button -eq $True)
+	{
+		$Support_Info.Visibility = "Visible"
+		$Support_Info.add_Click({
+			[MahApps.Metro.Controls.Dialogs.DialogManager]::ShowMetroDialogAsync($form, $Dialog_Support)		
+		})		
+	}
+Else
+	{
+		$Support_Info.Visibility = "Collapsed"
+	}
+
+function LoadXml ($global:filename)
+{
+	$XamlLoader=(New-Object System.Xml.XmlDocument)
+	$XamlLoader.Load($filename)
+	return $XamlLoader
+}
+$xamlDialog  = LoadXml(".\Dialog_Support.xaml")
+
+$read=(New-Object System.Xml.XmlNodeReader $xamlDialog)
+$DialogForm=[Windows.Markup.XamlReader]::Load($read)
+
+$Dialog_Support = [MahApps.Metro.Controls.Dialogs.CustomDialog]::new($form)
+$Dialog_Support.AddChild($DialogForm)
+
+$Title_Label = $DialogForm.FindName("Title_Label")
+$Phone_Number_Label = $DialogForm.FindName("Phone_Number_Label")
+$Phone_Number = $DialogForm.FindName("Phone_Number")
+$Mail_Label = $DialogForm.FindName("Mail_Label")
+$Mail = $DialogForm.FindName("Mail")
+$Close_Dialog = $DialogForm.FindName("Close_Dialog")
+$Border = $DialogForm.FindName("Border")
+
+$Phone_Number_Label.Content = $Support_Phone_Label
+$Phone_Number.Content = $Support_Phone_number
+$Mail_Label.Content = $Support_Mail_Label
+$Mail.Content = $Support_Mail
+$Close_Dialog.Content = $Close_Button_Text
+
+$Close_Dialog.Width = $Border.Width 
+
+$Close_Dialog.add_Click({
+	$Dialog_Support.RequestCloseAsync()
+})
+
+
+#******************************************************************************
+# Filter on issues part end
+#******************************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#******************************************************************************
+# Filter on issues part
+#******************************************************************************
+
 function LoadXml ($global:filename)
 {
 	$XamlLoader=(New-Object System.Xml.XmlDocument)
@@ -440,10 +546,6 @@ $KeyWord_Label.Content = $GUI_Config.Issue_filter_KeyWord_Text
 $Search.Content = $GUI_Config.Issue_filter_SearchButton_Text
 $Close_Dialog.Content = $GUI_Config.Issue_filter_CloseButton_Text
 
-# $Close_Dialog.Background = "$Tool_Color"
-# $Search.Background = "$Tool_Color"
-# $Border.BorderBrush = "$Tool_Color"
-
 $Dir_Sources_Folder = get-childitem $Sources_Folder -recurse
 $List_All_Files = $Dir_Sources_Folder | where { ! $_.PSIsContainer }		
 
@@ -465,8 +567,7 @@ $Close_Dialog.add_Click({
 $Search_Issue.add_Click({
 	[MahApps.Metro.Controls.Dialogs.DialogManager]::ShowMetroDialogAsync($form, $Dialog_Search)		
 })
-
-	  	  
+   
 $Search.Add_Click({
 $All_Categories = $Depannage_Actions_XML.Actions.Action.Category | Sort-Object -Unique
 Add-Type -AssemblyName PresentationCore,PresentationFramework
@@ -478,19 +579,21 @@ foreach($Category in $All_Categories)
 		$Datagrid_Log_Count = $Form.FindName("DataGrid_$Category").Items.Count	
 		
 		ForEach($Log in $Form.FindName("DataGrid_$Category").Items)
-			{
-				# For ($i = 0; $i -lt $Datagrid_Log_Count; $i++)
-				# {				
-					If($Log.Action -like "*$Get_TextBox_Value*")
-						{	
-							$Form.FindName("DataGrid_$Category").SelectedItem = $Log#[$i]	
-							# break
-						}
-					
-				# }
+			{		
+				If($Log.Action -like "*$Get_TextBox_Value*")
+					{	
+						$Form.FindName("DataGrid_$Category").SelectedItem = $Log#[$i]	
+					}					
 			}
 		$Dialog_Search.RequestCloseAsync()	
 	}	
 })		  
+
+#******************************************************************************
+# Filter on issues part end
+#******************************************************************************
+
+
+
 
 $Form.ShowDialog() | Out-Null 

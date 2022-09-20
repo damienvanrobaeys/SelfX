@@ -2,10 +2,12 @@
 	<GUI_Config>
 		<XML_Version>1.0.0</XML_Version>	
 		<Tool_Version>1.0.1</Tool_Version>
-
+		
+		<!-- Install location part --> 
 		<Shortcut_Desktop>True</Shortcut_Desktop> <!-- True or False -->
 		<Shortcut_StartMenu>True</Shortcut_StartMenu> <!-- True or False -->
 
+		<!-- User Toast notification part --> 
 		<Show_Install_Toast>True</Show_Install_Toast> <!-- Display a toast to user after installing the tool. True or False -->
 		<Toast_Header_Picture>Toast_Header.gif</Toast_Header_Picture>		
 		<Toast_Company_Name>Syst and Deploy informs you</Toast_Company_Name>
@@ -15,11 +17,12 @@
 Click on the SelfX shortcut available on your desktop or Start menu to launch the tool.		
 		</Toast_Text>
 		<Toast_Button_Text>Dismiss</Toast_Button_Text>
-		
-		
+				
+		<!-- Main part -->
 		<Link_Scripts></Link_Scripts> <!-- If Type = Download, type the path where to find Issues_List.xml--> 
 		<Tool_Color>Cyan</Tool_Color> <!-- Available colors: “Red”, “Green”, “Blue”, “Purple”, “Orange”, “Lime”, “Emerald”, “Teal”, “Cyan”, “Cobalt”, “Indigo”, “Violet”, “Pink”, “Magenta”, “Crimson”, “Amber”, “Yellow”, “Brown”, “Olive”, “Steel”, “Mauve”, “Taupe”, “Sienna” -->				
-		<Main_Title_Text>An issue with your device ?</Main_Title_Text> <!-- Main GUI: main title -->
+		<Main_Title_Text>An issue with your device</Main_Title_Text> <!-- Main GUI: main title -->
+		<Show_Computer_Name>True</Show_Computer_Name> <!-- Display the computer name beside the main title. True or False -->		
 		<Subtitle_Text>You may find a way to solve it here with a list of clickable solutions</Subtitle_Text> <!-- Main GUI: subtitle -->
 		<Expander_Category_Text_Part1>Solve issues with</Expander_Category_Text_Part1> <!-- Main GUI: subtitle -->
 		<Expander_Category_Text_Part2>action(s) available)</Expander_Category_Text_Part2> <!-- Main GUI: subtitle -->
@@ -32,7 +35,16 @@ Click on the SelfX shortcut available on your desktop or Start menu to launch th
 		<Issue_filter_Category_Text>Choose a category</Issue_filter_Category_Text> <!-- Search filter issue box: category text -->
 		<Issue_filter_KeyWord_Text>Type a key word</Issue_filter_KeyWord_Text> <!-- Search filter issue box: keyword text -->	
 		<Issue_filter_SearchButton_Text>Search</Issue_filter_SearchButton_Text> <!-- Search filter issue box: search button text -->
-		<Issue_filter_CloseButton_Text>Close</Issue_filter_CloseButton_Text> <!-- Search filter issue box: close button text -->			
+		<Issue_filter_CloseButton_Text>Close</Issue_filter_CloseButton_Text> <!-- Search filter issue box: close button text -->		
+		
+		<!-- Support part -->
+		<Show_Support_Button>False</Show_Support_Button> <!-- Display button in the title bar to view support information. True or False  -->
+		<Support_Phone_Label>Phone number:</Support_Phone_Label>
+		<Support_Phone_number>0000000000</Support_Phone_number>
+		<Support_Mail_Label>Mail:</Support_Mail_Label>		
+		<Support_Mail>damien.vanrobaeys@gmail.com</Support_Mail>	
+		<Close_Button_Text>Close</Close_Button_Text>		
+		
 	</GUI_Config>
 
 	<!-- Part for device --> 
