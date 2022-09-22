@@ -39,12 +39,12 @@ Click on the SelfX shortcut available on your desktop or Start menu to launch th
 		
 		<!-- Support part -->
 		<Show_Support_Button>False</Show_Support_Button> <!-- Display button in the title bar to view support information. True or False  -->
+		<Window_Title>Support team information</Window_Title>
 		<Support_Phone_Label>Phone number:</Support_Phone_Label>
-		<Support_Phone_number>0000000000</Support_Phone_number>
+		<Support_Phone_number></Support_Phone_number>
 		<Support_Mail_Label>Mail:</Support_Mail_Label>		
-		<Support_Mail>damien.vanrobaeys@gmail.com</Support_Mail>	
-		<Close_Button_Text>Close</Close_Button_Text>		
-		
+		<Support_Mail></Support_Mail>	
+		<Close_Button_Text>Close</Close_Button_Text>				
 	</GUI_Config>
 
 	<!-- Part for device --> 

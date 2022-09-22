@@ -307,13 +307,12 @@ $Category_Text_Part1 = $GUI_Config.Expander_Category_Text_Part1
 $Category_Text_Part2 = $GUI_Config.Expander_Category_Text_Part2
 $Show_Computer_Name = $GUI_Config.Show_Computer_Name
 $Show_Support_Button = $GUI_Config.Show_Support_Button
+$Window_Title = $GUI_Config.Window_Title
 $Support_Phone_number = $GUI_Config.Support_Phone_number
 $Support_Mail = $GUI_Config.Support_Mail
-
 $Support_Phone_Label = $GUI_Config.Support_Phone_Label
 $Support_Mail_Label = $GUI_Config.Support_Mail_Label
 $Close_Button_Text = $GUI_Config.Close_Button_Text
-
 
 If($Show_Computer_Name -eq $True)
 	{
@@ -431,14 +430,6 @@ Function See_Details($rowObj)
 	}   
 
 
-
-
-
-# $Support_Phone_Label = $GUI_Config.Support_Phone_Label
-# $Support_Mail_Label = $GUI_Config.Support_Mail_Label
-# $Close_Button_Text = $GUI_Config.Close_Button_Text
-
-
 #******************************************************************************
 # Support contact dialog part
 #******************************************************************************
@@ -476,6 +467,7 @@ $Mail = $DialogForm.FindName("Mail")
 $Close_Dialog = $DialogForm.FindName("Close_Dialog")
 $Border = $DialogForm.FindName("Border")
 
+$Title_Label.Content = $Window_Title
 $Phone_Number_Label.Content = $Support_Phone_Label
 $Phone_Number.Content = $Support_Phone_number
 $Mail_Label.Content = $Support_Mail_Label
