@@ -38,7 +38,7 @@ Click on the SelfX shortcut available on your desktop or Start menu to launch th
 		<Issue_filter_CloseButton_Text>Close</Issue_filter_CloseButton_Text> <!-- Search filter issue box: close button text -->		
 		
 		<!-- Support part -->
-		<Show_Support_Button>True</Show_Support_Button> <!-- Display button in the title bar to view support information. True or False  -->
+		<Show_Support_Button>False</Show_Support_Button> <!-- Display button in the title bar to view support information. True or False  -->
 		<Window_Title>Support team information</Window_Title>
 		<Support_Phone_Label>Phone number:</Support_Phone_Label>
 		<Support_Phone_number>0000000000</Support_Phone_number>
