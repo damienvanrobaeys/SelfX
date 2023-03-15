@@ -304,8 +304,7 @@ $Combo_filter_Title_Text.Content = $Issue_filter_Title_Text
 
 If($Show_Computer_Name -eq $True)
 	{
-		# $Main_Title.Content = $GUI_Config.Main_Title_Text + " " + "($env:computername)"	+ " ?"
-		$Main_Title.Content = $GUI_Config.Main_Title_Text + " " + "DEVICE1"	+ " ?"		
+		$Main_Title.Content = $GUI_Config.Main_Title_Text + " " + "($env:computername)"	+ " ?"
 	}
 Else
 	{
