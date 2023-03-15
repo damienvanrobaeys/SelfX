@@ -96,7 +96,7 @@ Function Close_modal_progress{
 }	
 
 $GUI_Config = [xml](get-content ".\Issues_List.xml")
-$Current_XML_Version = $GUI_Config.Actions.GUI_Config.XML_Version
+$Current_XML_Version = $GUI_Config.Actions.XML_Version
 
 $List_config_XML = [xml](get-content ".\List_config.xml")
 $Config_Type = $List_config_XML.Issues_XML_Config.Type
@@ -107,7 +107,7 @@ If($Config_Type -eq "Download")
 		$Issues_List_File = "$env:temp\Issues_List.xml"		
 		Invoke-WebRequest -Uri $Config_Link -OutFile $Issues_List_File -UseBasicParsing | out-null			
 		$New_XML = [xml](get-content $Issues_List_File)		
-		$New_XML_Version = $New_XML.Actions.GUI_Config.XML_Version
+		$New_XML_Version = $New_XML.Actions.XML_Version
 		If($Current_XML_Version -ne $New_XML_Version)
 			{
 				Add-Type -AssemblyName PresentationCore,PresentationFramework
@@ -126,126 +126,63 @@ If($Config_Type -eq "Download")
 			}
 		Close_modal_progress
 	}	
-				
-$XML_Content = @()
-$Depannage_Actions_XML = [xml](get-content ".\Issues_List.xml")
-$All_Categories = $Depannage_Actions_XML.Actions.Action.Category | Sort-Object -Unique
-ForEach($Category in $All_Categories)
-	{	
-		$Expander_Content = @"
-		<Expander Name="Expander_$Category" Background="Transparent" IsExpanded="True" Width="550" BorderThickness="0" Margin="0,10,0,0" HorizontalAlignment="Center">
-			<Expander.Resources>
-				<Style TargetType="{x:Type Expander}">
-				<Setter Property="BorderThickness" Value="1"/>
-				<Setter Property="BorderBrush" Value="DarkGray"/>
-				<Setter Property="Foreground" Value="#202020"/>
-				<Setter Property="Background" Value="#D0D0D0"/>
-				</Style>
-			</Expander.Resources>
-
-			<Expander.Header>
-			 <BulletDecorator>
-				<TextBlock Name="Title_$Category" FontSize="15" FontWeight="Bold" Foreground="#C9C6D3" Text="Dépanner $Category" HorizontalAlignment="Stretch" />							   
-			 </BulletDecorator>																	
-			</Expander.Header>
-						
-			<DataGrid HeadersVisibility="None" GridLinesVisibility="None"  BorderBrush="{DynamicResource AccentColorBrush}"	
-			Margin="-3,0,0,0" Height="auto" Width="500" BorderThickness="0" AutoGenerateColumns="True" SelectionMode="Extended"  
-			Name="DataGrid_$Category"  ItemsSource="{Binding}"   >										
-				<DataGrid.Columns>	
-					<DataGridTextColumn FontSize="12" Width="400" Header="Action" Binding="{Binding Action, Mode=OneWay}"/>	
-					
-					<DataGridTemplateColumn Width="auto" Header="+">
-						<DataGridTemplateColumn.CellTemplate>
-							<DataTemplate>
-								<StackPanel Orientation="Horizontal">
-									<Button Name="Run_Remediation" Background="#2d89ef" Style="{DynamicResource MetroCircleButtonStyle}" 
-										Height="23" Width="23" Cursor="Hand" HorizontalContentAlignment="Stretch" 
-										VerticalContentAlignment="Stretch" HorizontalAlignment="Center" VerticalAlignment="Center" 
-										BorderThickness="0" Margin="0,0,0,0">
-										<iconPacks:PackIconMaterial Margin="3,0,0,0" Kind="play" Foreground="White" Height="10" Width="10" HorizontalAlignment="Center" VerticalAlignment="Center"/>                                                                                         
-									</Button>    
-
-									<Button Name="See_Issue_Info" Background="green" Style="{DynamicResource MetroCircleButtonStyle}" 
-										Height="23" Width="23" Cursor="Hand" HorizontalContentAlignment="Stretch" 
-										VerticalContentAlignment="Stretch" HorizontalAlignment="Center" VerticalAlignment="Center" 
-										BorderThickness="0" Margin="0,0,0,0">
-										<iconPacks:PackIconMaterial Kind="help" Foreground="White" Height="10" Width="10" HorizontalAlignment="Center" VerticalAlignment="Center"/>                                                                                         
-									</Button>  																		
-								</StackPanel>
-							</DataTemplate>
-						</DataGridTemplateColumn.CellTemplate>
-					</DataGridTemplateColumn>  											
-				</DataGrid.Columns>										
-			</DataGrid> 	
-		</Expander>			
-"@   	
-$XML_Content += $Expander_Content	
-	}	
-
-
-
-[xml]$XamlMainWindow = @"  
+			
+[xml]$XamlMainWindow = @'
 <Controls:MetroWindow 
-xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"		
-xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
-xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks" 						
-Title="Self-X (Self-fix)" 
-Topmost="True"
-Width="700" 
-Height="400"  
-ResizeMode="CanMinimize"	
-BorderBrush="Teal"
-BorderThickness="1"
-WindowStartupLocation ="CenterScreen"	
-GlowBrush="{DynamicResource AccentColorBrush}"	
-TitleCaps="False">
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+		xmlns:loadin="clr-namespace:LoadingIndicators.WPF;assembly=LoadingIndicators.WPF"
+		xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        Title="Self-X (Self-fix)" Height="460" Width="660" 
+		TitleCaps="False" Topmost="True" ResizeMode="CanMinimize" BorderBrush="Teal"
+		BorderThickness="1"	WindowStartupLocation ="CenterScreen" GlowBrush="{DynamicResource AccentColorBrush}">
 
-<Window.TaskbarItemInfo>
-	<TaskbarItemInfo/>
-</Window.TaskbarItemInfo>
+		<Window.TaskbarItemInfo>
+			<TaskbarItemInfo/>
+		</Window.TaskbarItemInfo>
 
-<Window.Resources>
-	<ResourceDictionary>
-		<ResourceDictionary.MergedDictionaries>
-			<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
-			<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
-			<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
-			<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Cyan.xaml" />				
-			<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseDark.xaml" />
-		</ResourceDictionary.MergedDictionaries>
-	</ResourceDictionary>
-</Window.Resources>
+		<Window.Resources>
+			<ResourceDictionary>
+				<ResourceDictionary.MergedDictionaries>
+					<!-- LoadingIndicators resources -->
+					<ResourceDictionary Source="pack://application:,,,/LoadingIndicators.WPF;component/Styles.xaml"/>
+					<!-- Mahapps resources -->
+					<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+					<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+					<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+					<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Teal.xaml" />
+					<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseDark.xaml" />
+				</ResourceDictionary.MergedDictionaries>
+			</ResourceDictionary>
+		</Window.Resources>
+		
+	<Controls:MetroWindow.LeftWindowCommands>
+		<Controls:WindowCommands>
+		   <Button Name="SubMenu_Home">
+				<iconPacks:PackIconMaterial Kind="medicalbag"/>				
+			</Button>
+		</Controls:WindowCommands>	
+	</Controls:MetroWindow.LeftWindowCommands>	
 
-<Controls:MetroWindow.LeftWindowCommands>
-	<Controls:WindowCommands>
-	   <Button Name="SubMenu_Home">
-			<iconPacks:PackIconMaterial Kind="medicalbag"/>				
-		</Button>
-	</Controls:WindowCommands>	
-</Controls:MetroWindow.LeftWindowCommands>		
+	<Controls:MetroWindow.RightWindowCommands>
+		<Controls:WindowCommands>	
+		   <Button Name="Support_Info">
+				<iconPacks:PackIconFontAwesome Kind="phone"/>				
+			</Button>		
 
-<Controls:MetroWindow.RightWindowCommands>
-	<Controls:WindowCommands>	
-	   <Button Name="Support_Info">
-			<iconPacks:PackIconFontAwesome Kind="phone"/>				
-		</Button>		
-	   <Button Name="Search_Issue">
-			<iconPacks:PackIconMaterial Kind="magnify"/>				
-		</Button>		
-	   <Button Name="About">
-			<iconPacks:PackIconMaterial Kind="help"/>				
-		</Button>		
-	</Controls:WindowCommands>	
-</Controls:MetroWindow.RightWindowCommands>		
+		   <Button Name="About">
+				<iconPacks:PackIconMaterial Kind="help"/>				
+			</Button>		
+		</Controls:WindowCommands>	
+	</Controls:MetroWindow.RightWindowCommands>			
+		
+    <Grid>
+		<StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="0,10,0,0">
 
-    <Grid>		
-		<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">	
-			<StackPanel Margin="0,0,0,0"  HorizontalAlignment="Center" VerticalAlignment="Center">
-
+			<StackPanel Orientation="Vertical" HorizontalAlignment="Center">
 				<Label Name="Main_Title" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold" Content="Un problème avec votre poste ?"/>	
 				<Label Name="Subtitle" HorizontalAlignment="Center" FontWeight="Bold" Content="Vous trouverez peut-être un moyen de le résoudre ici au travers d'une liste de problèmes résoluble en un clic"/>	
 					
@@ -266,21 +203,53 @@ TitleCaps="False">
 					</Button> 
 					<Label Name="Run_explanation_label" Content="Permet d'obtenir plus d'informations"/>										
 				</StackPanel>
-				
-				<ScrollViewer CanContentScroll="True" Height="230" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">  						
-					<StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  Margin="0,10,0,0">		
-						<StackPanel Orientation="Vertical"  Margin="70,0,0,0" HorizontalAlignment="Center">
-							<StackPanel Margin="0,-10,0,0" HorizontalAlignment="Center">						
-								$XML_Content
-							</StackPanel>							
-						</StackPanel>  					
-					</StackPanel>							
-				</ScrollViewer>							
-			</StackPanel>	
-		</StackPanel>				
-    </Grid>
-</Controls:MetroWindow>   
-"@   
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal" Margin="5,10,0,0" HorizontalAlignment="Center">
+				<ComboBox Name="Category_to_choose" SelectedIndex="0" Text="Choose a category" Height="25" Width="180" Margin="0,0,0,0">
+					<ComboBoxItem Name="Combo_filter_Title_Text">Trier par fonctionnalité</ComboBoxItem>
+				</ComboBox>		
+				<TextBox Name="FilterTextBox" HorizontalAlignment="Left" Height="26" Margin="5,0,0,0" TextWrapping="Wrap" 
+				Text="" VerticalAlignment="Top" Width="172" Controls:TextBoxHelper.Watermark="Saisissez des mots clés ici"/>
+				<Label Name="Actions_Count" Margin="5,0,0,0" FontWeight="Bold"/>
+			</StackPanel>
+	
+			<StackPanel Margin="0,10,0,0">
+				<DataGrid Name="DataGrid1" Height="250" VerticalAlignment="Top" Width="500" Margin="5,10,0,0"
+				BorderBrush="{DynamicResource AccentColorBrush}" GridLinesVisibility="None"
+				HeadersVisibility="None" BorderThickness="0" AutoGenerateColumns="True" SelectionMode="Single" IsReadOnly="True">	
+
+					<DataGrid.Columns>							
+						<DataGridTemplateColumn Width="auto" Header="+" >
+							<DataGridTemplateColumn.CellTemplate>
+								<DataTemplate>
+									<StackPanel Orientation="Horizontal">
+										<Button Name="Run_Remediation" Background="#2d89ef" Style="{DynamicResource MetroCircleButtonStyle}" 
+											Height="23" Width="23" Cursor="Hand" HorizontalContentAlignment="Stretch" 
+											VerticalContentAlignment="Stretch" HorizontalAlignment="Center" VerticalAlignment="Center" 
+											BorderThickness="0" Margin="0,0,0,0">
+											<iconPacks:PackIconMaterial Margin="3,0,0,0" Kind="play" Foreground="White" Height="10" Width="10" HorizontalAlignment="Center" VerticalAlignment="Center"/>                                                                                         
+										</Button>    
+
+										<Button Name="See_Issue_Info" Background="green" Style="{DynamicResource MetroCircleButtonStyle}" 
+											Height="23" Width="23" Cursor="Hand" HorizontalContentAlignment="Stretch" 
+											VerticalContentAlignment="Stretch" HorizontalAlignment="Center" VerticalAlignment="Center" 
+											BorderThickness="0" Margin="0,0,0,0">
+											<iconPacks:PackIconMaterial Kind="help" Foreground="White" Height="10" Width="10" HorizontalAlignment="Center" VerticalAlignment="Center"/>                                                                                         
+										</Button>
+									</StackPanel>
+								</DataTemplate>
+							</DataGridTemplateColumn.CellTemplate>
+						</DataGridTemplateColumn>				
+					</DataGrid.Columns>	
+
+				</DataGrid>
+			</StackPanel>
+		</StackPanel>
+	</Grid>
+</Controls:MetroWindow>
+'@
+
 $reader=(New-Object System.Xml.XmlNodeReader $XamlMainWindow)  
 $Form=[Windows.Markup.XamlReader]::Load($reader) 
 
@@ -289,13 +258,23 @@ $XamlMainWindow.SelectNodes("//*[@Name]") | %{
     catch{throw}
 }
 
-$Form.TaskbarItemInfo.Overlay = ".\icon_systray.ico"
+$Fields = @(
+    'Name'
+    'Category'
+	'Explanation'
+	'Buttons'
+	'Script'
+	'Alerte_MSG'	
+)
 
-$About.Add_Click({
-	start-process -WindowStyle hidden powershell.exe "$current_folder\About.ps1"	
-})
+$List_Issues_XML = [xml](get-content ".\Issues_List.xml")
+[array]$All_Actions = $List_Issues_XML.Actions.Action
+$Actions = $All_Actions | Select-object $Fields
 
-$GUI_Config = $Depannage_Actions_XML.Actions.GUI_Config
+$Config_XML = [xml](get-content ".\Tool_Config.xml")
+$GUI_Config = $Config_XML.GUI_Config
+
+# $GUI_Config = $List_Issues_XML.Actions.GUI_Config
 $Subtitle.Content = $GUI_Config.Subtitle_Text
 $Run_solution_label.Content = $GUI_Config.Run_solution_Text
 $Run_explanation_label.Content = $GUI_Config.Run_explanation_Text
@@ -303,8 +282,8 @@ $Run_Solution_Text = $GUI_Config.Warning_Click_Run_Solution_Text
 $Run_Explanation_Text = $GUI_Config.Warning_Click_Run_Explanation_Text
 $Tool_Version = $GUI_Config.Tool_Version
 $Tool_Color = $GUI_Config.Tool_Color
-$Category_Text_Part1 = $GUI_Config.Expander_Category_Text_Part1
-$Category_Text_Part2 = $GUI_Config.Expander_Category_Text_Part2
+# $Category_Text_Part1 = $GUI_Config.Expander_Category_Text_Part1
+$Available_Actions_Count = $GUI_Config.Available_Actions_Count
 $Show_Computer_Name = $GUI_Config.Show_Computer_Name
 $Show_Support_Button = $GUI_Config.Show_Support_Button
 $Window_Title = $GUI_Config.Window_Title
@@ -313,10 +292,20 @@ $Support_Mail = $GUI_Config.Support_Mail
 $Support_Phone_Label = $GUI_Config.Support_Phone_Label
 $Support_Mail_Label = $GUI_Config.Support_Mail_Label
 $Close_Button_Text = $GUI_Config.Close_Button_Text
+$Issue_filter_KeyWord_Text = $GUI_Config.Issue_filter_KeyWord_Text
+$Issue_filter_Title_Text = $GUI_Config.Issue_filter_Title_Text
+$Combo_filter_Title_Text.Content = $Issue_filter_Title_Text
+
+[MahApps.Metro.Controls.TextBoxHelper]::SetWatermark($FilterTextBox,$Issue_filter_KeyWord_Text)
+
+# $About.Add_Click({
+	# start-process -WindowStyle hidden powershell.exe "$current_folder\About.ps1"	
+# })
 
 If($Show_Computer_Name -eq $True)
 	{
-		$Main_Title.Content = $GUI_Config.Main_Title_Text + " " + "($env:computername)"	+ " ?"
+		# $Main_Title.Content = $GUI_Config.Main_Title_Text + " " + "($env:computername)"	+ " ?"
+		$Main_Title.Content = $GUI_Config.Main_Title_Text + " " + "DEVICE1"	+ " ?"		
 	}
 Else
 	{
@@ -326,67 +315,88 @@ Else
 $Theme = [MahApps.Metro.ThemeManager]::DetectAppStyle($form)	
 [MahApps.Metro.ThemeManager]::ChangeAppStyle($form, [MahApps.Metro.ThemeManager]::GetAccent("$Tool_Color"), $Theme.Item1);	
 
-$Form.Title = "SelfX (Self fix)"
-
-$All_Categories = $Depannage_Actions_XML.Actions.Action.Category | Sort-Object -Unique
-ForEach($Category in $All_Categories)
+Function Populate_Datagrid
 	{
-		$Actions = $Depannage_Actions_XML.Actions.Action | where {$_.category -eq "$Category"}	
-		$Actions_count = $Actions.Name.Count
+		param(
+		[string]$Issue_Cat
+		)		
+		$Global:Datatable = New-Object System.Data.DataTable
+		[void]$Datatable.Columns.AddRange($Fields)
 		
-		If($Actions_count -eq 0)
-			{	
-				$Form.FindName("Expander_$Category").Visibility = 'Collapsed'
-			}
-		Else
+		If($Issue_Cat -ne "All")
 			{
-				$Form.FindName("Expander_$Category").Visibility = 'Visible'
-			}			
-
-		$Form.FindName("Title_$Category").Text = "$Category_Text_Part1 $Category ($Actions_count $Category_Text_Part2"
-
-		ForEach($Action_Value in $Actions)
-			{
-				$Name = $Action_Value.Name
-				$Explanation = $Action_Value.Explanation
-				$Script = $Action_Value.Script						
-				$RemediationType = $Action_Value.Remediation_Type    
-				$Alerte_warning = $Action_Value.Alerte_MSG    
-				$Alerte_Buttons = $Action_Value.Buttons    				
-
-				$Obj = New-Object PSObject
-				$Obj = $Obj | Add-Member NoteProperty Action $Name -passthru   
-				$Obj = $Obj | Add-Member NoteProperty Explanation $Explanation -passthru
-				$Obj = $Obj | Add-Member NoteProperty Script $Script -passthru	
-				$Obj = $Obj | Add-Member NoteProperty Remediation_Type $RemediationType -passthru				
-				$Obj = $Obj | Add-Member NoteProperty Alerte_warning $Alerte_warning -passthru				
-				$Obj = $Obj | Add-Member NoteProperty Alerte_Buttons $Alerte_Buttons -passthru								
-				$Form.FindName("DataGrid_$Category").Items.Add($Obj) > $null
+				$Actions = $Actions | where {$_.category -eq "$Issue_Cat"}				
 			}
+		
+		$Count = $Actions.Name.Count	
+		$Actions_Count.Content = "$Count $Available_Actions_Count"				
 
-		$Form.FindName("DataGrid_$Category").AddHandler(
-			[System.Windows.Controls.Button]::ClickEvent, 
-			[System.Windows.RoutedEventHandler]({
-				$button =  $_.OriginalSource.Name
-				$Script:resultObj = $this.CurrentItem
-				If ($button -match "Run_Remediation" ){   
-					Run_Remediation -rowObj $resultObj
-				}
-				ElseIf ($button -match "See_Issue_Info" ){
-					See_Details -rowObj $resultObj
-				}
-			})
-		)			
-	}	
+		foreach($Action in $Actions)
+		{
+			$Array = @()
+			Foreach($Field in $Fields)
+			{
+				$array += $Action.$Field
+			}
+			[void]$Datatable.Rows.Add($array)
+		}		
+		$DataGrid1.ItemsSource = $Datatable.DefaultView	
+				
+		$DataGrid1.columns[2].Visibility = "Collapsed"
+		$DataGrid1.columns[3].Visibility = "Collapsed"
+		$DataGrid1.columns[4].Visibility = "Collapsed"
+		$DataGrid1.columns[5].Visibility = "Collapsed"
+		$DataGrid1.columns[6].Visibility = "Collapsed"
+		$DataGrid1.columns[0].DisplayIndex="2"
+		$DataGrid1.columns[1].Width = "400"
+		
+		$FilterTextBox.Add_TextChanged({		
+			$InputText = $FilterTextBox.Text
+			$filter = "Name LIKE '%$InputText%'"
+			$Datatable.DefaultView.RowFilter = $filter
+		})
+	}
+	
+	
+$All_Categories = $List_Issues_XML.Actions.Action.Category | Sort-Object -Unique
+foreach($Category in $All_Categories)
+	{
+		$Category_to_choose.Items.Add($Category)
+		$Global:Selected_Category = $Category_to_choose.SelectedItem
+	}
+
+$Category_to_choose.add_SelectionChanged({
+	$Script:Selected_Category = $Category_to_choose.SelectedItem
+	Populate_Datagrid -Issue_Cat $Selected_Category	
+	
+	If($Category_to_choose.SelectedIndex -eq 0)
+		{
+			Populate_Datagrid -Issue_Cat "All"
+		}
+})
+
+$DataGrid1.CanUserAddRows = $False
+Populate_Datagrid -Issue_Cat "All"
+
+$DataGrid1.Add_Loaded({
+	$DataGrid1.columns[2].Visibility = "Collapsed"
+	$DataGrid1.columns[3].Visibility = "Collapsed"
+	$DataGrid1.columns[4].Visibility = "Collapsed"
+	$DataGrid1.columns[5].Visibility = "Collapsed"
+	$DataGrid1.columns[6].Visibility = "Collapsed"
+	$DataGrid1.columns[0].DisplayIndex="2"
+	$DataGrid1.columns[1].Width = "400"		
+})
+
 
 Function Run_Remediation($rowObj)
 	{       	
 		$Global:Reason = $rowObj.Explanation    
 		$Global:Script_Name = $rowObj.Script    
-		$Global:AlerteWarning = $rowObj.Alerte_Warning    
-		$Global:AlerteButtons = $rowObj.Alerte_Buttons    		
-		
-		If($AlerteButtons -eq "Ok")
+		$Global:AlerteWarning = $rowObj.Alerte_MSG    
+		$Global:AlerteButtons = $rowObj.Buttons    		
+
+		If($AlerteButtons -eq "OK")
 			{
 				$MSG_Buttons = [MahApps.Metro.Controls.Dialogs.MessageDialogStyle]::Affirmative 
 				$Button_Style = [MahApps.Metro.Controls.Dialogs.MetroDialogSettings]::new()
@@ -406,7 +416,27 @@ Function Run_Remediation($rowObj)
 				$Button_Style.DialogMessageFontSize = "14"								
 				$Button_Style.AffirmativeButtonText = "$First_Button"
 				$Button_Style.NegativeButtonText = "$Second_Button"				
-			}				
+			}	
+
+
+		
+		# If($AlerteButtons -eq "Ok")
+			# {
+				# $MSG_Buttons = [MahApps.Metro.Controls.Dialogs.MessageDialogStyle]::Affirmative 
+				# $Button_Style = [MahApps.Metro.Controls.Dialogs.MetroDialogSettings]::new()
+				# $Button_Style.DialogTitleFontSize = "22"
+				# $Button_Style.DialogMessageFontSize = "14"								
+				# $Button_Style.AffirmativeButtonText = "Ok"
+			# }
+		# Else
+			# {				
+				# $MSG_Buttons = [MahApps.Metro.Controls.Dialogs.MessageDialogStyle]::AffirmativeAndNegative  
+				# $Button_Style = [MahApps.Metro.Controls.Dialogs.MetroDialogSettings]::new()
+				# $Button_Style.DialogTitleFontSize = "22"
+				# $Button_Style.DialogMessageFontSize = "14"								
+				# $Button_Style.AffirmativeButtonText = "OK"
+				# $Button_Style.NegativeButtonText = "Annuler"				
+			# }				
 
 		If($Script_Name -ne $null)
 			{
@@ -427,8 +457,21 @@ Function See_Details($rowObj)
 		$Button_Style.DialogMessageFontSize = "14"				
 		$Button_Style.AffirmativeButtonText = "OK"									
 		$result = [MahApps.Metro.Controls.Dialogs.DialogManager]::ShowModalMessageExternal($Form,"$Run_Explanation_Text","$Reason",$MSG_Buttons, $Button_Style)   					
-	}   
+	}   	
 
+$DataGrid1.AddHandler(
+	[System.Windows.Controls.Button]::ClickEvent, 
+	[System.Windows.RoutedEventHandler]({
+		$button =  $_.OriginalSource.Name
+		$Script:resultObj = $this.CurrentItem
+		If ($button -match "Run_Remediation" ){   
+			Run_Remediation -rowObj $resultObj
+		}
+		ElseIf ($button -match "See_Issue_Info" ){
+			See_Details -rowObj $resultObj
+		}
+	})
+)	
 
 #******************************************************************************
 # Support contact dialog part
@@ -480,19 +523,8 @@ $Close_Dialog.add_Click({
 	$Dialog_Support.RequestCloseAsync()
 })
 
-
 #******************************************************************************
 # Filter on issues part end
-#******************************************************************************
-
-
-
-
-
-
-
-
-
 
 
 
@@ -506,8 +538,23 @@ $Close_Dialog.add_Click({
 
 
 #******************************************************************************
-# Filter on issues part
+# Support contact dialog part
 #******************************************************************************
+# If($Show_Support_Button -eq $True)
+	# {
+		# $Support_Info.Visibility = "Visible"
+		# $Support_Info.add_Click({
+			# [MahApps.Metro.Controls.Dialogs.DialogManager]::ShowMetroDialogAsync($form, $Dialog_Support)		
+		# })		
+	# }
+# Else
+	# {
+		# $Support_Info.Visibility = "Collapsed"
+	# }
+	
+$About.add_Click({
+	[MahApps.Metro.Controls.Dialogs.DialogManager]::ShowMetroDialogAsync($form, $Dialog_About)		
+})			
 
 function LoadXml ($global:filename)
 {
@@ -515,77 +562,35 @@ function LoadXml ($global:filename)
 	$XamlLoader.Load($filename)
 	return $XamlLoader
 }
-$xamlDialog  = LoadXml(".\Dialog_Search.xaml")
+$About_xamlDialog  = LoadXml(".\Dialog_About.xaml")
 
-$read=(New-Object System.Xml.XmlNodeReader $xamlDialog)
-$DialogForm=[Windows.Markup.XamlReader]::Load($read)
+$About_read=(New-Object System.Xml.XmlNodeReader $About_xamlDialog)
+$About_DialogForm=[Windows.Markup.XamlReader]::Load($About_read)
 
-$Dialog_Search = [MahApps.Metro.Controls.Dialogs.CustomDialog]::new($form)
-$Dialog_Search.AddChild($DialogForm)
+$Dialog_About = [MahApps.Metro.Controls.Dialogs.CustomDialog]::new($form)
+$Dialog_About.AddChild($About_DialogForm)
 
-$Category_to_choose = $DialogForm.FindName("Category_to_choose")
-$Issue_KeyWord = $DialogForm.FindName("Issue_KeyWord")
-$Category_Label = $DialogForm.FindName("Category_Label")
-$Title_Label = $DialogForm.FindName("Title_Label")
-$KeyWord_Label = $DialogForm.FindName("KeyWord_Label")
-$Search = $DialogForm.FindName("Search")
-$Close_Dialog = $DialogForm.FindName("Close_Dialog")
-$Border = $DialogForm.FindName("Border")
+$Close_Dialog = $About_DialogForm.FindName("Close_Dialog")
+$Tool_Logo = $About_DialogForm.FindName("Tool_Logo")
+$SelfX_Version = $About_DialogForm.FindName("SelfX_Version")
 
-$Title_Label.Content = $GUI_Config.Issue_filter_Title_Text
-$Category_Label.Content = $GUI_Config.Issue_filter_Category_Text
-$KeyWord_Label.Content = $GUI_Config.Issue_filter_KeyWord_Text
-$Search.Content = $GUI_Config.Issue_filter_SearchButton_Text
-$Close_Dialog.Content = $GUI_Config.Issue_filter_CloseButton_Text
+$Tool_Logo.Source = "logo.png"
 
-$Dir_Sources_Folder = get-childitem $Sources_Folder -recurse
-$List_All_Files = $Dir_Sources_Folder | where { ! $_.PSIsContainer }		
+$Issues_List_XML = [xml](get-content ".\Issues_List.xml")
+$Current_XML_Version = $Issues_List_XML.Actions.XML_Version
 
-$All_Categories = $Depannage_Actions_XML.Actions.Action.Category | Sort-Object -Unique
-foreach($Category in $All_Categories)
-	{
-		$Category_to_choose.Items.Add($Category)	
-		$Global:Selected_Category = $Category_to_choose.SelectedItem	
+$Tool_Config_XML = [xml](get-content ".\Tool_Config.xml")
+$Tool_Version = $Tool_Config_XML.GUI_Config.Tool_Version
 
-		$Category_to_choose.add_SelectionChanged({
-			$Script:Selected_Category = $Category_to_choose.SelectedItem
-		})			
-	}	
+$Form.Title = "About SelfX"
+$SelfX_Version.Content = "SelfX: v$Tool_Version - XML: $Current_XML_Version"
 
 $Close_Dialog.add_Click({
-	$Dialog_Search.RequestCloseAsync()
+	$Dialog_About.RequestCloseAsync()
 })
-
-$Search_Issue.add_Click({
-	[MahApps.Metro.Controls.Dialogs.DialogManager]::ShowMetroDialogAsync($form, $Dialog_Search)		
-})
-   
-$Search.Add_Click({
-$All_Categories = $Depannage_Actions_XML.Actions.Action.Category | Sort-Object -Unique
-Add-Type -AssemblyName PresentationCore,PresentationFramework
-
-foreach($Category in $All_Categories)
-	{
-		$Form.FindName("DataGrid_$Category").UnSelectAll()
-		$Get_TextBox_Value = $Issue_KeyWord.Text.ToString()	
-		$Datagrid_Log_Count = $Form.FindName("DataGrid_$Category").Items.Count	
-		
-		ForEach($Log in $Form.FindName("DataGrid_$Category").Items)
-			{		
-				If($Log.Action -like "*$Get_TextBox_Value*")
-					{	
-						$Form.FindName("DataGrid_$Category").SelectedItem = $Log#[$i]	
-					}					
-			}
-		$Dialog_Search.RequestCloseAsync()	
-	}	
-})		  
 
 #******************************************************************************
 # Filter on issues part end
-#******************************************************************************
-
-
 
 
 $Form.ShowDialog() | Out-Null 

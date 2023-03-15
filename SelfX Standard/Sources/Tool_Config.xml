@@ -1,0 +1,50 @@
+﻿<GUI_Config>
+	<!-- Tool and XML versions -->
+	<!-- <XML_Version>1.0.0</XML_Version>	-->
+	<Tool_Version>1.0.2</Tool_Version>
+	
+	<!-- Install location part --> 
+	<Shortcut_Desktop>True</Shortcut_Desktop> <!-- True or False -->
+	<Shortcut_StartMenu>True</Shortcut_StartMenu> <!-- True or False -->
+
+	<!-- User Toast notification part --> 
+	<Show_Install_Toast>True</Show_Install_Toast> <!-- Display a toast to user after installing the tool. True or False -->
+	<Toast_Header_Picture>Toast_Header.gif</Toast_Header_Picture>		
+	<Toast_Company_Name>Syst and Deploy informs you</Toast_Company_Name>
+	<Toast_Title>A new tool is available on your device</Toast_Title>
+	<Toast_Text>A new tool allowing you to solve issues yourself is available on your device.
+	
+Click on the SelfX shortcut available on your desktop or Start menu to launch the tool.		
+	</Toast_Text>
+	<Toast_Button_Text>Dismiss</Toast_Button_Text>
+			
+	<!-- List issues location (from the web or locally) -->	
+	<Link_Scripts></Link_Scripts> <!-- If Type = Download, type the path where to find Issues_List.xml--> 
+	
+	<!-- Customize the tool here -->
+	<!-- Main color of the tool -->
+	<Tool_Color>Cyan</Tool_Color> <!-- Available colors: “Red”, “Green”, “Blue”, “Purple”, “Orange”, “Lime”, “Emerald”, “Teal”, “Cyan”, “Cobalt”, “Indigo”, “Violet”, “Pink”, “Magenta”, “Crimson”, “Amber”, “Yellow”, “Brown”, “Olive”, “Steel”, “Mauve”, “Taupe”, “Sienna” -->				
+	
+	<!-- Text displayed in the tool -->
+	<Main_Title_Text>An issue with your device</Main_Title_Text> <!-- Main GUI: main title -->
+	<Show_Computer_Name>True</Show_Computer_Name> <!-- Display the computer name beside the main title. True or False -->		
+	<Subtitle_Text>You may find a way to solve it here with a list of clickable solutions</Subtitle_Text> <!-- Main GUI: subtitle -->
+	<Issue_filter_Title_Text>Sort issues by components</Issue_filter_Title_Text> <!-- Text in the combo box -->
+	<Issue_filter_KeyWord_Text>Type a key word</Issue_filter_KeyWord_Text> <!-- Text in the key word textbox -->		
+	<Available_Actions_Count>action(s) available)</Available_Actions_Count> <!-- Text displayed to count number of action for each category -->
+	
+	<!-- Text displayed in warning -->
+	<Run_solution_Text>Allows you to run an action</Run_solution_Text> <!-- Text for the legend blue button -->
+	<Run_explanation_Text>Allows you to get more info</Run_explanation_Text> <!-- Text for the legend green button -->	
+	<Warning_Click_Run_Solution_Text>Solving an issue</Warning_Click_Run_Solution_Text>	<!-- Text displayed in the title bar after clicking on the blue button -->
+	<Warning_Click_Run_Explanation_Text>See more info</Warning_Click_Run_Explanation_Text> <!-- Text displayed in the title bar after clicking on the green button -->	
+	
+	<!-- Support part -->
+	<Show_Support_Button>True</Show_Support_Button> <!-- Display button in the title bar to view support information. True or False  -->
+	<Window_Title>Support team information</Window_Title>
+	<Support_Phone_Label>Phone number:</Support_Phone_Label>
+	<Support_Phone_number></Support_Phone_number>
+	<Support_Mail_Label>Mail:</Support_Mail_Label>		
+	<Support_Mail></Support_Mail>	
+	<Close_Button_Text>Close</Close_Button_Text>				
+</GUI_Config>
