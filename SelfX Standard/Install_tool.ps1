@@ -5,7 +5,8 @@
 # Twitter: https://twitter.com/syst_and_deploy
 #***************************************************************************************************************
 param(
-[string]$XML_Link
+[string]$XML_Link,
+[string]$ZIP_Link
 )
 
 [System.Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms") | out-null
@@ -14,15 +15,15 @@ $Current_Folder = split-path $MyInvocation.MyCommand.Path
 $Sources = $Current_Folder + "\" + "Sources\*"
 $Destination_folder = "$env:LOCALAPPDATA\SelfX"
 
-$GUI_Config = [xml](get-content ".\Sources\Issues_List.xml")
-$Shortcut_Desktop = $GUI_Config.Actions.GUI_Config.Shortcut_Desktop
-$Shortcut_StartMenu = $GUI_Config.Actions.GUI_Config.Shortcut_StartMenu
-$Show_Install_Toast = $GUI_Config.Actions.GUI_Config.Show_Install_Toast
-$Toast_Header_Picture = $GUI_Config.Actions.GUI_Config.Toast_Header_Picture
-$Toast_Company_Name = $GUI_Config.Actions.GUI_Config.Toast_Company_Name
-$Toast_Title = $GUI_Config.Actions.GUI_Config.Toast_Title
-$Toast_Text = $GUI_Config.Actions.GUI_Config.Toast_Text
-$Toast_Button_Text = $GUI_Config.Actions.GUI_Config.Toast_Button_Text
+$GUI_Config = [xml](get-content ".\Sources\Tool_Config.xml")
+$Shortcut_Desktop = $GUI_Config.GUI_Config.Shortcut_Desktop
+$Shortcut_StartMenu = $GUI_Config.GUI_Config.Shortcut_StartMenu
+$Show_Install_Toast = $GUI_Config.GUI_Config.Show_Install_Toast
+$Toast_Header_Picture = $GUI_Config.GUI_Config.Toast_Header_Picture
+$Toast_Company_Name = $GUI_Config.GUI_Config.Toast_Company_Name
+$Toast_Title = $GUI_Config.GUI_Config.Toast_Title
+$Toast_Text = $GUI_Config.GUI_Config.Toast_Text
+$Toast_Button_Text = $GUI_Config.GUI_Config.Toast_Button_Text
 
 If(!(test-path $Destination_folder)){new-item $Destination_folder -type directory -force | out-null}
 copy-item $Sources $Destination_folder -force -recurse
@@ -30,22 +31,34 @@ Get-Childitem -Recurse $Destination_folder | Unblock-file
 
 If($XML_Link -ne "")
 	{
-		$XML_Content = @"
+$XML_Content = @"
 <Issues_XML_Config>
 	<Type>Download</Type> <!-- Manual or Download --> 
 	<Link_XML>$XML_Link</Link_XML> <!-- If Type = Download, type the path where to find Issues_List.xml--> 
+	<Link_Scripts>$ZIP_Link</Link_Scripts> Path of Script_to_run.zip file
 </Issues_XML_Config>		
 "@	
 
 		$Issues_List_File = "$Destination_folder\Issues_List.xml"		
 		Invoke-WebRequest -Uri $XML_Link -OutFile $Issues_List_File -UseBasicParsing | out-null	
+		
+		Invoke-WebRequest -Uri $ZIP_Link -OutFile $ZIP_File -UseBasicParsing | out-null		
+
+		$Scripts_to_run_Folder = "$Destination_folder\Scripts_to_run"
+		If(!(test-path $Scripts_to_run_Folder)){new-item $Scripts_to_run_Folder -Type Directory -Force}
+
+		$ZIP_File = "$env:temp\Scripts_to_run.zip"		
+		$Extracted_Scripts = "$env:temp\Scripts_to_run"
+		Invoke-WebRequest -Uri $ZIP_Link -OutFile $ZIP_File -UseBasicParsing | out-null			
+		Expand-Archive -Path $ZIP_File -DestinationPath $Scripts_to_run_Folder -Force	
+		Remove-Item $ZIP_File -Force
 	}
 ElseIf($XML_Link -eq "")
 	{
 		$XML_Content = @"
 		<Issues_XML_Config>
 			<Type>Manual</Type> <!-- Manual or Download --> 
-			<Link_XML>$XML_Link</Link_XML> <!-- If Type = Download, type the path where to find Issues_List.xml--> 
+			<Link_XML></Link_XML> <!-- If Type = Download, type the path where to find Issues_List.xml--> 
 		</Issues_XML_Config>		
 "@	
 	}
@@ -81,7 +94,8 @@ If($Shortcut_StartMenu -eq $True)
 If($Show_Install_Toast -eq $True)
 {
 	$Current_Folder = split-path $MyInvocation.MyCommand.Path
-	$HeroImage = "$Current_Folder\$Toast_Header_Picture"
+	# $HeroImage = "$Current_Folder\$Toast_Header_Picture"
+	$HeroImage = "$Destination_folder\$Toast_Header_Picture"
 	$Title = $Toast_Title
 	$Message = $Toast_Text
 	$Text_AppName = $Toast_Company_Name
