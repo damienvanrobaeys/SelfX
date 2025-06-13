@@ -1,0 +1,901 @@
+﻿<Actions>	
+	<Quick_Solution>	
+	<Action>	
+		<Name>Résoudre un problème d'impression avec SafeQ</Name>
+		<Buttons>OkAnnuler</Buttons>						
+		<Explanation>Vous rencontrez un problème d'impression (client non connecté, synchronisation impossible, imprimante non présente...)</Explanation>
+		<Script>SafeQ_Repare.ps1</Script>
+		<Category>Impression</Category>	
+		<Alerte_MSG>Les files d'impression et le client vont être réinitialisés.
+		
+Si le problème persiste, veuillez redémarrer votre poste.	
+
+Voulez-vous continuer ?		
+		</Alerte_MSG>
+	</Action>	
+	
+	<Action>	
+		<Name>Résoudre un problème sur Word</Name>
+		<Buttons>OkAnnuler</Buttons>						
+		<Explanation>Vous êtes en train de travailler dans Word mais celui-ci ne répond plus et vous ne pouvez plus rien faire.</Explanation>
+		<Script>Depannage_Office_Kill_Word.ps1</Script>
+		<Category>Office</Category>	
+		<Alerte_MSG>Word va se fermer et se réouvrir tout seul.
+
+Voulez-vous continuer ?		
+		</Alerte_MSG>
+	</Action>	
+
+	<Action>	
+		<Name>Résoudre un problème sur Excel</Name>
+		<Buttons>OkAnnuler</Buttons>						
+		<Explanation>Vous êtes en train de travailler dans Excel mais celui-ci ne répond plus et vous ne pouvez plus rien faire.</Explanation>
+		<Script>Depannage_Office_Kill_Excel.ps1</Script>
+		<Category>Office</Category>	
+		<Alerte_MSG>Excel va se fermer et se réouvrir tout seul.
+
+Voulez-vous continuer ?		
+		</Alerte_MSG>
+	</Action>	
+
+	<Action>	
+		<Name>Résoudre un problème lié à la connexion ADS</Name>
+		<Buttons>OkAnnuler</Buttons>						
+		<Explanation>Vous ne parvenez pas à vous connecter à l'ADS depuis votre poste</Explanation>
+		<Script>Depannage_Poste_VPNConnexion.ps1</Script>
+		<Category>Poste</Category>	
+		<Alerte_MSG>Le portail d'entreprise va s'ouvrir automatiquement et une action s'exécutera en tâche de fond.
+Une fois l'action terminée, un message s'affichera.
+
+Merci de ne pas utiliser votre poste pendant l'opération.
+
+Si le problème persiste, veuillez redémarrer votre poste.	
+		</Alerte_MSG>
+	</Action>	
+
+	<Action>	
+		<Name>Résoudre un problème liè à OneDrive (méthode 1)</Name>
+		<Buttons>OkAnnuler</Buttons>						
+		<Explanation>Vous avez des problèmes avec le client OneDrive (synchronisation de fichier/dossier, ouverture de fichier...)</Explanation>
+		<Script>Depannage_OneDrive_Reboot.ps1</Script>
+		<Category>OneDrive</Category>	
+		<Alerte_MSG>Le client OneDrive va se fermer puis se réouvrir.
+		
+Si le problème persiste, veuillez exécuter la méthode 2.	
+
+Voulez-vous continuer ?		
+		</Alerte_MSG>
+	</Action>	
+	
+	<Action>	
+		<Name>Résoudre un problème liè à OneDrive (méthode 2)</Name>
+		<Buttons>OkAnnuler</Buttons>						
+		<Explanation>Vous avez des problèmes avec le client OneDrive (synchronisation de fichier/dossier, ouverture de fichier...) et vous avez déjà effectué l'étape 1</Explanation>
+		<Script>Depannage_OneDrive_Reset.ps1</Script>
+		<Category>OneDrive</Category>	
+		<Alerte_MSG>Votre client OneDrive va être réinitialiser.
+		
+La réinitialisation n'entraîne aucune perte de données		
+
+Souhaitez-vous continuer ?</Alerte_MSG>	
+	</Action>	
+
+	<Action>	
+		<Name>Résoudre un problème liè à Teams</Name>
+		<Buttons>OkAnnuler</Buttons>						
+		<Explanation>Vous rencontrez un problème avec le client Teams (lenteur, mauvais statut, erreur de transfert...)</Explanation>
+		<Script>Depannage_Teams_ResetCache.ps1</Script>
+		<Category>Teams</Category>	
+		<Alerte_MSG>Le cache de votre client Teams va être réinitialisé.
+		
+La réinitialisation n'entraîne aucune perte de données		
+
+Souhaitez-vous continuer ?</Alerte_MSG>		
+	</Action>	
+
+	<Action>	
+		<Name>Plus de bouton "Nouvelle réunion Teams" dans Outlook</Name>
+		<Buttons>OkAnnuler</Buttons>						
+		<Explanation>Le bouton "Nouvelle réunion Teams" a dispoaru de votre client Outlook.</Explanation>
+		<Script>Depannage_Outlook_TeamsAddIn.ps1</Script>
+		<Category>Outlook</Category>	
+		<Alerte_MSG>Le complément Réunion Teams va être ajouté. Outlook va se fermer puis se réouvrir.
+		
+Si le problème persiste, veuillez contacter le support.	
+
+Voulez-vous continuer ?		
+		</Alerte_MSG>
+	</Action>		
+
+	<Action>	
+		<Name>Résoudre un problème liè au Microsoft Store</Name>
+		<Buttons>OkAnnuler</Buttons>						
+		<Explanation>Vous avez des problèmes avec le store Microsoft (ouverture/installation d'applications...)</Explanation>
+		<Script>Depannage_Poste_WSReset.ps1</Script>
+		<Category>Poste</Category>	
+		<Alerte_MSG>Un problème d'impression avec le store Microsoft ?
+
+Cliquez sur OK pour tenter une résolution du problème.	
+		</Alerte_MSG>	
+	</Action>	
+
+	<Action>	
+		<Name>Mon ordinateur n'est pas à l'heure</Name>
+		<Buttons>OkAnnuler</Buttons>						
+		<Explanation>Votre ordinateur n'a pas la bonne heure</Explanation>
+		<Script></Script>
+		<Category>Poste</Category>	
+		<Alerte_MSG>Veuillez vous connecter au réseau GRTgaz en VPN ou sur site puis redémarrer votre poste.</Alerte_MSG>
+	</Action>			
+	
+	
+	
+	</Quick_Solution>	
+	
+	
+	
+
+	<Detailed_Solution>	
+
+	<!-- Part for Cloud printing --> 
+	<Action>	
+		<Name>Réparer le client Safeq et les files d’impression</Name>
+		<Buttons>OkAnnuler</Buttons>						
+		<Explanation>Un problème d'impression avec votre client SafeQ ?
+
+Cliquez sur OK pour lancer la réinitialisation.		
+		</Explanation>
+		<Script>SafeQ_Repare.ps1</Script>
+		<Category>Impression</Category>	
+		<Alerte_MSG>Les files d'impression et le client vont être réinitialisés.
+		
+Si le problème persiste, veuillez redémarrer votre poste.	
+
+Voulez-vous continuer ?		
+		</Alerte_MSG>
+	</Action>		
+	
+	<Action>	
+		<Name>File Next impression marquée comme Supprimer</Name>
+		<Buttons>OkAnnuler</Buttons>						
+		<Explanation>Le file Next impression est marquée avec le statut Supprimer</Explanation>
+		<Script>SafeQ_Repare.ps1</Script>
+		<Category>Impression</Category>	
+		<Alerte_MSG>La file d'impression et le client vont être réinitialisés.
+		
+Si le problème persiste, veuillez redémarrer votre poste.	
+
+Voulez-vous continuer ?		
+		</Alerte_MSG>
+	</Action>		
+
+	<Action>	
+		<Name>La file Next impression n'apparaît pas</Name>
+		<Buttons>OkAnnuler</Buttons>						
+		<Explanation>Le file Next impression n'apparaît plus dans la liste des imprimantes</Explanation>
+		<Script>SafeQ_Repare.ps1</Script>
+		<Category>Impression</Category>	
+		<Alerte_MSG>La file d'impression et le client vont être réinitialisés.
+		
+Si le problème persiste, veuillez redémarrer votre poste.	
+
+Voulez-vous continuer ?		
+		</Alerte_MSG>
+	</Action>		
+
+	<Action>	
+		<Name>Point d'exclamation rouge sur le client SafeQ</Name>
+		<Buttons>OkAnnuler</Buttons>						
+		<Explanation>Un point d'exclamation apparaît sur l'icône SafeQ avec le message Pas de connexion au service du client.
+
+Cliquez sur OK pour lancer la réinitialisation.		
+		</Explanation>
+		<Script>SafeQ_Start_Service.ps1</Script>
+		<Category>Impression</Category>	
+		<Alerte_MSG>Les files d'impression et le client vont être réinitialisés.
+		
+Si le problème persiste, veuillez redémarrer votre poste.	
+
+Voulez-vous continuer ?		
+		</Alerte_MSG>
+	</Action>	
+
+	<!-- Part for Outlook --> 
+	<Action>	
+		<Name>Plus de bouton "Nouvelle réunion Teams" dans Outlook</Name>
+		<Buttons>OkAnnuler</Buttons>						
+		<Explanation>Le bouton "Nouvelle réunion Teams" a dispoaru de votre client Outlook.</Explanation>
+		<Script>Depannage_Outlook_TeamsAddIn.ps1</Script>
+		<Category>Outlook</Category>	
+		<Alerte_MSG>Le complément Réunion Teams va être ajouté.
+		
+Si le problème persiste, veuillez contacter le support.	
+
+Voulez-vous continuer ?		
+		</Alerte_MSG>
+	</Action>		
+	
+	<!-- Part for Office --> 
+	<Action>	
+		<Name>Word ne fonctionne plus</Name>
+		<Buttons>OkAnnuler</Buttons>						
+		<Explanation>Vous êtes en train de travailler dans Word mais celui-ci ne répond plus et vous ne pouvez plus rien faire.</Explanation>
+		<Script>Depannage_Office_Kill_Word.ps1</Script>
+		<Category>Office</Category>	
+		<Alerte_MSG>Word va se fermer et se réouvrir tout seul.
+
+Voulez-vous continuer ?		
+		</Alerte_MSG>
+	</Action>	
+	
+	<Action>	
+		<Name>Excel ne fonctionne plus</Name>
+		<Explanation>Vous êtes en train de travailler dans Excel mais celui-ci ne répond plus et vous ne pouvez plus rien faire.</Explanation>
+		<Script>Depannage_Office_Kill_Excel.ps1</Script>
+		<Category>Office</Category>	
+		<Alerte_MSG>Excel va se fermer et se réouvrir tout seul.
+
+Voulez-vous continuer ?		
+		</Alerte_MSG>
+	</Action>		
+		
+	<Action>	
+		<Name>Fichier Excel qui ne s'ouvre plus</Name>
+		<Explanation></Explanation>
+		<Script>Depannage_Office_Kill_Excel.ps1</Script>
+		<Category>Office</Category>	
+		<Alerte_MSG>Excel va se fermer et se réouvrir tout seul.
+
+Voulez-vous continuer ?		
+		</Alerte_MSG>
+	</Action>		
+
+	<!-- Part for Poste --> 
+	<Action>	
+		<Name>Problème de connexion réseau après passage télétravail > sur site</Name>
+		<Explanation>Vous rencontrez des problèmes de réseaux sur votre poste.
+Par exemple après être passé du mode télétravail > sur site ou l'inverse</Explanation>
+		<Script>Depannage_Poste_ResetCache.ps1</Script>
+		<Category>Poste</Category>	
+		<Alerte_MSG>Cette action permettra de résoudre de potentiels problèmes réseaux après passage télétravail > sur site</Alerte_MSG>
+	</Action>
+
+	<Action>	
+		<Name>Problème de connexion au VPN</Name>
+		<Explanation>Vous ne parvenez pas à vous connecter à l'ADS depuis votre poste</Explanation>
+		<Script>Depannage_Poste_VPNConnexion.ps1</Script>
+		<Category>Poste</Category>	
+		<Alerte_MSG>Le portail d'entreprise va s'ouvrir automatiquement et une action s'exécutera en tâche de fond.
+Une fois l'action terminée, un message s'affichera.
+
+Merci de ne pas utiliser votre poste pendant l'opération.
+
+Si le problème persiste, veuillez redémarrer votre poste.	
+		</Alerte_MSG>
+	</Action>		
+	
+	<Action>	
+		<Name>Le client ADS ne répond pas</Name>
+		<Buttons>OkAnnuler</Buttons>						
+		<Explanation>Le client Cisco Anyconnect est bloqué et vous ne pouvez pas vous connecter ou déconnecter</Explanation>
+		<Script>Depannage_Poste_ADS_Reboot.ps1</Script>
+		<Category>Poste</Category>	
+		<Alerte_MSG>Le client AnyConnect va se relancer.
+
+Voulez-vous continuer ?		
+		</Alerte_MSG>
+	</Action>		
+	
+
+	<Action>	
+		<Name>Connexion au VPN: authentification failed</Name>
+		<Explanation>Vous avez l'erreur "authentification failed" lorsque vous tentez de vous connecter à l'ADS depuis votre poste</Explanation>
+		<Script>Depannage_Poste_VPNConnexion.ps1</Script>
+		<Category>Poste</Category>	
+		<Alerte_MSG>Le portail d'entreprise va s'ouvrir automatiquement et une action s'exécutera en tâche de fond.
+Une fois l'action terminée, un message s'affichera.
+
+Merci de ne pas utiliser votre poste pendant l'opération.
+
+Si le problème persiste, veuillez redémarrer votre poste.	
+		</Alerte_MSG>
+	</Action>	
+	
+	
+	<Action>	
+		<Name>Connexion au VPN: Connexion attempt has failed</Name>
+		<Explanation>Vous avez l'erreur "Connexion attempt has failed" lorsque vous tentez de vous connecter à l'ADS depuis votre poste</Explanation>
+		<Script>Depannage_Poste_VPNConnexion.ps1</Script>
+		<Category>Poste</Category>	
+		<Alerte_MSG>Le portail d'entreprise va s'ouvrir automatiquement et une action s'exécutera en tâche de fond.
+Une fois l'action terminée, un message s'affichera.
+
+Merci de ne pas utiliser votre poste pendant l'opération.
+
+Si le problème persiste, veuillez redémarrer votre poste.	
+		</Alerte_MSG>
+	</Action>		
+	
+	
+	<Action>	
+		<Name>Connexion au VPN: Hostscan CSD prelogin verification failed</Name>
+		<Explanation>Vous avez l'erreur "Hostscan CSD prelogin verification failed" lorsque vous tentez de vous connecter à l'ADS depuis votre poste</Explanation>
+		<Script>Depannage_Poste_VPNConnexion.ps1</Script>
+		<Category>Poste</Category>	
+		<Alerte_MSG>Le portail d'entreprise va s'ouvrir automatiquement et une action s'exécutera en tâche de fond.
+Une fois l'action terminée, un message s'affichera.
+
+Merci de ne pas utiliser votre poste pendant l'opération.
+
+Si le problème persiste, veuillez redémarrer votre poste.	
+		</Alerte_MSG>
+	</Action>	
+		
+	
+
+	<!-- Part for ONEDRIVE --> 
+	<Action>	
+		<Name>Démarrer mon client OneDrive</Name>
+		<Explanation>Votre client OneDrive n'est pas ouvert</Explanation>
+		<Script>Depannage_OneDrive_Run.ps1</Script>
+		<Category>OneDrive</Category>	
+		<Alerte_MSG>Cette action permettra de redémarrer votre client OneDrive</Alerte_MSG>
+	</Action>
+
+	<Action>	
+		<Name>Redémarrer mon client OneDrive</Name>
+		<Explanation>Redémarrer votre client OneDrive peut parfois résoudre des problèmes tel que des problèmes de synchronisation</Explanation>
+		<Script>Depannage_OneDrive_Reboot.ps1</Script>
+		<Category>OneDrive</Category>	
+		<Alerte_MSG>Votre client OneDrive va se fermer puis se relancer tout seul.
+		
+Souhaitez-vous continuer ?		
+		</Alerte_MSG>
+	</Action>
+	
+
+	<Action>	
+		<Name>Restaurer un fichier supprimé sur mon OneDrive personnel (GRTgaz)</Name>
+		<Explanation>Vous avez supprimé un fichier depuis OneDrive et souhaitez accéder à corbeille afin de le restaurer.</Explanation>
+		<Script>Depannage_OneDrive_RecycleBin.ps1</Script>
+		<Category>OneDrive</Category>	
+		<Alerte_MSG>Veuillez cliquer sur "OK" pour accéder à la corbeille OneDrive en ligne</Alerte_MSG>
+	</Action>	
+	
+	
+	<Action>	
+		<Name>Résoudre les problèmes de synchronisation OneDrive (étape 1)</Name>
+		<Explanation>Vous rencontrez divers problèmes de synchronisation avec vos fichiers, dossiers depuis OneDrive.
+		
+Cette première étape permettra de redémarrer le client OneDrive.
+Votre client OneDrive va se fermer puis se relancer tout seul.
+
+Si le problème persiste, exécutez alors l'étape 2.
+</Explanation>
+		<Script>Depannage_OneDrive_Reboot.ps1</Script>
+		<Category>OneDrive</Category>	
+		<Alerte_MSG>Cette première étape permettra de redémarrer le client OneDrive.
+		
+Si le problème persiste, veuillez exécuter l'action "Réinitialisation du client OneDrive".
+	
+Souhaitez-vous continuer ?</Alerte_MSG>		
+	</Action>
+	
+	
+	<Action>	
+		<Name>Résoudre les problèmes de synchronisation OneDrive (étape 2)</Name>
+		<Explanation>Vous rencontrez divers problèmes de synchronisation avec vos fichiers, dossiers depuis OneDrive.
+Vous avez déjà effectué l'étape 1.</Explanation>
+		<Script>Depannage_OneDrive_Reboot.ps1</Script>
+		<Category>OneDrive</Category>	
+		<Alerte_MSG>Cette seconde étape effectuera une réinitialisation de votre client OneDrive.
+		
+La réinitialisation n'entraîne aucune perte de données	
+
+Si le problème persiste, veuillez contacter le support.
+	
+Souhaitez-vous continuer ?</Alerte_MSG>		
+	</Action>	
+	
+	
+
+	<Action>	
+		<Name>Lenteur du poste: OneDrive utilise beaucoup de mémoire sur votre poste</Name>
+		<Explanation>Vous rencontrez des lenteurs sur votre poste de travail.		
+OneDrive occupe beaucoup de mémoire.		
+</Explanation>
+		<Script>Depannage_OneDrive_Reset.ps1</Script>
+		<Category>OneDrive</Category>	
+		<Alerte_MSG>Votre client OneDrive se fermera puis se réouvrira tout seul.
+		
+Merci de patienter.		
+	
+Souhaitez-vous continuer ?</Alerte_MSG>		
+	</Action>
+	
+	
+	
+	<Action>	
+		<Name>Croix rouge sur le client OneDrive</Name>
+		<Explanation>Une croix rouge s'affiche sur votre client OneDrive.</Explanation>
+		<Script>Depannage_OneDrive_Reboot.ps1</Script>
+		<Category>OneDrive</Category>	
+		<Alerte_MSG>Votre client OneDrive va se fermer puis se relancer tout seul.
+
+Si le problème persiste, veuillez déclarer un incident.
+		
+Souhaitez-vous continuer ?</Alerte_MSG>			
+	</Action>		
+	
+	<Action>	
+		<Name>Mon client OneDrive se ferme tout seul</Name>
+		<Explanation>Vous rencontrez un problème avec votre client OneDrive qui s'ouvre et se ferme automatiquement tout seul.
+		
+Cette étape permettra de redémarrer votre client OneDrive.</Explanation>
+		<Script>Depannage_OneDrive_Reboot.ps1</Script>
+		<Category>OneDrive</Category>	
+		<Alerte_MSG>Cette première étape permettra de redémarrer le client OneDrive.
+		
+Si le problème persiste, veuillez exécuter l'action "Réinitialisation du client OneDrive".
+	
+Souhaitez-vous continuer ?</Alerte_MSG>		
+	</Action>	
+
+	<Action>	
+		<Name>Croix blanche sur des fichiers</Name>
+		<Explanation>De croix blanches sont affichées sur des fichiers ou dossiers dans OneDrive.
+
+Cette étape permettra de redémarrer votre client OneDrive.</Explanation>
+		<Script>Depannage_OneDrive_Reboot.ps1</Script>
+		<Category>OneDrive</Category>	
+		<Alerte_MSG>Cette première étape permettra de redémarrer le client OneDrive.
+		
+Si le problème persiste, veuillez exécuter l'action "Réinitialisation du client OneDrive".
+	
+Souhaitez-vous continuer ?</Alerte_MSG>		
+	</Action>	
+
+	<Action>	
+		<Name>Problème suite à un changement de mot de passe</Name>
+		<Remediation_Type>Warning</Remediation_Type>		
+		<Buttons>OkAnnuler</Buttons>								
+		<Explanation>Vous avez changé votre mot de passe récemment et vous rencontrez des problèmes avec OneDrive, par exemple de synchronisation.
+		
+Cette étape permettra de redémarrer votre client OneDrive.</Explanation>
+		<Script>Depannage_OneDrive_Reboot.ps1</Script>
+		<Category>OneDrive</Category>	
+		<Alerte_MSG>Cette première étape permettra de redémarrer le client OneDrive.
+		
+Si le problème persiste, veuillez exécuter l'action "Réinitialisation du client OneDrive".
+	
+Souhaitez-vous continuer ?</Alerte_MSG>			
+	</Action>		
+	
+	
+	<Action>	
+		<Name>Impossible d'ouvrir des fichiers depuis OneDrive</Name>
+		<Explanation>Vous ne parvenez pas à ouvrir des fichiers depuis OneDrive</Explanation>
+		<Script>Depannage_OneDrive_Reboot.ps1</Script>
+		<Category>OneDrive</Category>	
+		<Alerte_MSG>Cette première étape permettra de redémarrer le client OneDrive.
+		
+Si le problème persiste, veuillez exécuter l'action "Réinitialisation du client OneDrive".
+	
+Souhaitez-vous continuer ?</Alerte_MSG>			
+	</Action>			
+	
+
+
+	<Action>	
+		<Name>Espace disque saturé par OneDrive</Name>
+		<Explanation>L'espace libre de votre disque dur est saturé par OneDrive</Explanation>
+		<Script>Contenu_volumineux.ps1</Script>
+		<Category>OneDrive</Category>	
+		<Alerte_MSG>Une page web va s'ouvrir affichant ce qui occupe le plus de place sur votre disque.
+
+Le processus peut prendre du temps, le fichier sera automatiquement ouvert.
+Vous pouvez continuer à utiliser votre poste.
+
+Souhaitez-vous continuer ?</Alerte_MSG>		
+	</Action>	
+
+
+
+	<Action>	
+		<Name>Les dossiers se synchronisent bien depuis OneDrive mais plus dans Teams</Name>
+		<Explanation>Les dossiers se synchronisent bien depuis OneDrive mais plus dans Teams</Explanation>
+		<Script>Depannage_OneDrive_Reset.ps1</Script>
+		<Category>OneDrive</Category>	
+		<Alerte_MSG>Votre client OneDrive va être réinitialiser.
+		
+La réinitialisation n'entraîne aucune perte de données		
+
+Souhaitez-vous continuer ?</Alerte_MSG>		
+	</Action>	
+
+	<Action>	
+		<Name>Impossible de lancer OneDrive: erreur 0x8004def4</Name>
+		<Buttons>OkAnnuler</Buttons>								
+		<Explanation>L'erreur 0x8004def4 s'affiche au démarrage de OneDrive</Explanation>
+		<Script>Depannage_OneDrive_Reset.ps1</Script>
+		<Category>OneDrive</Category>	
+		<Alerte_MSG>Votre client OneDrive va être réinitialiser.
+		
+La réinitialisation n'entraîne aucune perte de données		
+
+Souhaitez-vous continuer ?</Alerte_MSG>		
+	</Action>	
+	
+	
+	<Action>	
+		<Name>Erreur: Nous ne pouvons pas synchroniser votre dossier "OneDrive - GRTgaz"</Name>
+		<Buttons>OkAnnuler</Buttons>								
+		<Explanation>Le message suivant s'affiche: 
+Nous ne pouvons pas synchroniser votre dossier "OneDrive - GRTgaz"</Explanation>
+		<Script>Depannage_OneDrive_Reset.ps1</Script>
+		<Category>OneDrive</Category>	
+		<Alerte_MSG>Votre client OneDrive va être réinitialiser.
+		
+La réinitialisation n'entraîne aucune perte de données		
+
+Souhaitez-vous continuer ?</Alerte_MSG>		
+	</Action>		
+	
+
+	<!-- <Action>	 -->
+		<!-- <Name>Réinitialisation de votre client OneDrive</Name> -->
+		<!-- <Buttons>OkAnnuler</Buttons>								 -->
+		<!-- <Explanation>Vous rencontrez divers problèmes avec OneDrive, tel que des problèmes de synchronisation. -->
+		
+<!-- Cette étape permettra de réinitialiser votre client OneDrive.		 -->
+
+<!-- La réinitialisation n'entraîne aucune perte de données</Explanation> -->
+		<!-- <Script>Depannage_OneDrive_Reset.ps1</Script> -->
+		<!-- <Category>OneDrive</Category>	 -->
+		<!-- <Alerte_MSG>Votre client OneDrive va être réinitialiser. -->
+		
+<!-- La réinitialisation n'entraîne aucune perte de données				 -->
+<!-- Si le problème persiste, veuillez contacter le support. -->
+
+<!-- Souhaitez-vous continuer ?</Alerte_MSG>		 -->
+	<!-- </Action>			 -->
+	
+	<!-- Part for TEAMS --> 
+	<Action>	
+		<Name>Résoudre les problèmes de connexion à Teams</Name>
+		<Explanation>Vous ne parvenez pas à vous connecter sur Teams</Explanation>
+		<Script>Depannage_Teams_ResetCache.ps1</Script>
+		<Category>Teams</Category>		
+		<Alerte_MSG>Votre client Teams va se fermer et le cache va être supprimé.
+Il faudra exécuter manuellement Teams depuis le menu démarrer.
+		
+Si le problème persiste, cliquez sur "Se déconnecter" dans Teams
+Après reconnexion si le problème persiste, contacter le support
+		
+Souhaitez-vous continuer ?</Alerte_MSG>		
+	</Action>	
+	
+	<Action>	
+		<Name>Résoudre les problèmes de synchronisation de photo de profil Teams</Name>
+		<Explanation>Votre photo ne s'affiche pas dans Teams ou ne se met pas à jour</Explanation>
+		<Script>Depannage_Teams_ResetCache.ps1</Script>
+		<Category>Teams</Category>		
+		<Alerte_MSG>Votre client Teams va se fermer et le cache va être supprimé.
+Il faudra exécuter manuellement Teams depuis le menu démarrer.
+		
+Si le problème persiste, cliquez sur "Se déconnecter" dans Teams
+Après reconnexion si le problème persiste, contacter le support
+		
+Souhaitez-vous continuer ?</Alerte_MSG>		
+	</Action>	
+	
+	
+	<Action>	
+		<Name>Les dossiers se synchronisent bien depuis OneDrive mais plus dans Teams</Name>
+		<Explanation>Les dossiers se synchronisent bien depuis OneDrive mais plus dans Teams</Explanation>
+		<Script>Depannage_OneDrive_Reset.ps1</Script>
+		<Category>Teams</Category>	
+		<Alerte_MSG>Votre client OneDrive va être réinitialiser.
+		
+Si le problème persiste, veuillez exécuter l'action "Réinitialisation du client OneDrive".
+La réinitialisation n'entraîne aucune perte de données		
+
+Souhaitez-vous continuer ?</Alerte_MSG>		
+	</Action>		
+	
+	
+	<Action>	
+		<Name>Ecran bloqué sur "Chargement de Microsoft Teams"</Name>
+		<Explanation>Au moment de l'ouverture de Teams, cela reste bloqué sur l'écran "Chargement de Teams"</Explanation>
+		<Script>Depannage_Teams_ResetCache.ps1</Script>
+		<Category>Teams</Category>	
+		<Alerte_MSG>Votre client Teams va se fermer et le cache va être supprimé.
+Il faudra exécuter manuellement Teams depuis le menu démarrer.
+		
+Si le problème persiste, cliquez sur "Se déconnecter" dans Teams
+Après reconnexion si le problème persiste, contacter le support
+		
+Souhaitez-vous continuer ?</Alerte_MSG>			
+	</Action>			
+		
+	<Action>	
+		<Name>Résoudre les problèmes de synchronisation Teams</Name>
+		<Explanation>Vous rencontrez divers problèmes de synchronisations avec Teams</Explanation>
+		<Script>Depannage_Teams_ResetCache.ps1</Script>
+		<Category>Teams</Category>		
+		<Alerte_MSG>Votre client Teams va se fermer et le cache va être supprimé.
+Il faudra exécuter manuellement Teams depuis le menu démarrer.
+		
+Si le problème persiste, cliquez sur "Se déconnecter" dans Teams
+Après reconnexion si le problème persiste, contacter le support
+		
+Souhaitez-vous continuer ?</Alerte_MSG>			
+	</Action>			
+	
+	
+	<Action>	
+		<Name>Mon client Teams ne se lance pas</Name>
+		<Explanation>Vous tentez d'ouvrir Teams, mais le client ne s'ouvre pas.
+		</Explanation>		
+		<Script>Depannage_Teams_ResetCache.ps1</Script>
+		<Category>Teams</Category>		
+		<Alerte_MSG>Votre client Teams va se fermer et le cache va être supprimé.
+Il faudra exécuter manuellement Teams depuis le menu démarrer.
+		
+Si le problème persiste, cliquez sur "Se déconnecter" dans Teams
+Après reconnexion si le problème persiste, contacter le support
+		
+Souhaitez-vous continuer ?</Alerte_MSG>				
+	</Action>	
+	
+	
+	<Action>	
+		<Name>Mon client Teams est figé sur une conversation audio</Name>
+		<Explanation>Teams a figé lors d'une conservation audio</Explanation>
+		<Script>Depannage_Teams_ResetCache.ps1</Script>
+		<Category>Teams</Category>	
+		<Alerte_MSG>Votre client Teams va se fermer et le cache va être supprimé.
+Il faudra exécuter manuellement Teams depuis le menu démarrer.
+		
+Si le problème persiste, cliquez sur "Se déconnecter" dans Teams
+Après reconnexion si le problème persiste, contacter le support
+		
+Souhaitez-vous continuer ?</Alerte_MSG>				
+	</Action>		
+	
+	
+	<Action>	
+		<Name>Echec de l'envoi des messages sur Teams</Name>
+		<Explanation>L'envoi des messages sur Teams ne fonctionne pas. Cela indique "Echec de l'envoi"</Explanation>
+		<Script>Depannage_Teams_ResetCache.ps1</Script>	
+		<Category>Teams</Category>		
+		<Alerte_MSG>Votre client Teams va se fermer et le cache va être supprimé.
+Il faudra exécuter manuellement Teams depuis le menu démarrer.
+		
+Si le problème persiste, cliquez sur "Se déconnecter" dans Teams
+Après reconnexion si le problème persiste, contacter le support
+		
+Souhaitez-vous continuer ?</Alerte_MSG>						
+	</Action>		
+	
+	<Action>	
+		<Name>Le contenu des conversations ne s'affiche pas</Name>
+		<Explanation>Lorsque vous allez sur une conversation Teams, le contenu charge mais ne s'affiche pas</Explanation>
+		<Script>Depannage_Teams_ResetCache.ps1</Script>
+		<Category>Teams</Category>		
+		<Alerte_MSG>Votre client Teams va se fermer et le cache va être supprimé.
+Il faudra exécuter manuellement Teams depuis le menu démarrer.
+		
+Si le problème persiste, cliquez sur "Se déconnecter" dans Teams
+Après reconnexion si le problème persiste, contacter le support
+		
+Souhaitez-vous continuer ?</Alerte_MSG>				
+	</Action>		
+		
+	<Action>	
+		<Name>Problème d'affichage sur Teams en joignant une réunion</Name>
+		<Explanation>Soucis d'affichage depuis Teams lorsque vous joignez une réunion</Explanation>
+		<Script>Depannage_Teams_ResetCache.ps1</Script>
+		<Category>Teams</Category>	
+		<Alerte_MSG>Votre client Teams va se fermer et le cache va être supprimé.
+Il faudra exécuter manuellement Teams depuis le menu démarrer.
+		
+Si le problème persiste, cliquez sur "Se déconnecter" dans Teams
+Après reconnexion si le problème persiste, contacter le support
+		
+Souhaitez-vous continuer ?</Alerte_MSG>			
+	</Action>		
+
+
+	<Action>	
+		<Name>Mon client Teams s'ouvre mais ne se connecte pas</Name>
+		<Explanation>Problème de connexion à Teams, l'application s'ouvre mais ne se connecte pas</Explanation>
+		<Script>Depannage_Teams_ResetCache.ps1</Script>
+		<Category>Teams</Category>		
+		<Alerte_MSG>Votre client Teams va se fermer et le cache va être supprimé.
+Il faudra exécuter manuellement Teams depuis le menu démarrer.
+		
+Si le problème persiste, cliquez sur "Se déconnecter" dans Teams
+Après reconnexion si le problème persiste, contacter le support
+		
+Souhaitez-vous continuer ?</Alerte_MSG>				
+	</Action>		
+
+
+	<Action>	
+		<Name>Mon client Teams reste hors connexion</Name>
+		<Explanation>Parce que</Explanation>
+		<Script>Depannage_Teams_ResetCache.ps1</Script>
+		<Category>Teams</Category>		
+		<Alerte_MSG>Votre client Teams va se fermer et le cache va être supprimé.
+Il faudra exécuter manuellement Teams depuis le menu démarrer.
+		
+Si le problème persiste, cliquez sur "Se déconnecter" dans Teams
+Après reconnexion si le problème persiste, contacter le support
+		
+Souhaitez-vous continuer ?</Alerte_MSG>					
+	</Action>		
+	
+	
+	<Action>	
+		<Name>Ma ligne téléphonique ne fonctionne plus</Name>
+		<Explanation>La ligne téléphonique ne fonctionne plus</Explanation>
+		<Script>Depannage_Teams_ResetCache.ps1</Script>
+		<Category>Teams</Category>
+		<Alerte_MSG>Votre client Teams va se fermer et le cache va être supprimé.
+Il faudra exécuter manuellement Teams depuis le menu démarrer.
+		
+Si le problème persiste, cliquez sur "Se déconnecter" dans Teams
+Après reconnexion si le problème persiste, contacter le support
+		
+Souhaitez-vous continuer ?</Alerte_MSG>					
+	</Action>	
+
+
+	<Action>	
+		<Name>Pas de fenêtre pour décrocher</Name>
+		<Explanation>Les notifications d'appel Teams ne s'affichent plus</Explanation>
+		<Script>Depannage_Teams_ResetCache.ps1</Script>
+		<Category>Teams</Category>		
+		<Alerte_MSG>Votre client Teams va se fermer et le cache va être supprimé.
+Il faudra exécuter manuellement Teams depuis le menu démarrer.
+		
+Si le problème persiste, cliquez sur "Se déconnecter" dans Teams
+Après reconnexion si le problème persiste, contacter le support
+		
+Souhaitez-vous continuer ?</Alerte_MSG>				
+	</Action>	
+	
+
+	<Action>	
+		<Name>Problème de connexion suite à un changement de mot passe</Name>
+		<Explanation>Impossible de se connecter à Teams suite à un changement de mot passe</Explanation>
+		<Script>Depannage_Teams_ResetCache.ps1</Script>
+		<Category>Teams</Category>		
+		<Alerte_MSG>Votre client Teams va se fermer et le cache va être supprimé.
+Il faudra exécuter manuellement Teams depuis le menu démarrer.
+		
+Si le problème persiste, cliquez sur "Se déconnecter" dans Teams
+Après reconnexion si le problème persiste, contacter le support
+		
+Souhaitez-vous continuer ?</Alerte_MSG>		
+	</Action>		
+	
+	<Action>	
+		<Name>Problème de chargement des onglets dans Teams</Name>
+		<Explanation>Lors de l'ouverture d'onglets dans Teams, le chargement ne se fait pas correctement</Explanation>
+		<Script>Depannage_Teams_ResetCache.ps1</Script>
+		<Category>Teams</Category>	
+		<Alerte_MSG>Votre client Teams va se fermer et le cache va être supprimé.
+Il faudra exécuter manuellement Teams depuis le menu démarrer.
+		
+Si le problème persiste, cliquez sur "Se déconnecter" dans Teams
+Après reconnexion si le problème persiste, contacter le support
+		
+Souhaitez-vous continuer ?</Alerte_MSG>				
+	</Action>		
+	
+	<Action>	
+		<Name>Impossible de passer un appel depuis Teams</Name>
+		<Explanation>Votre photo ne s'affiche pas dans Teams ou ne se met pas à jour</Explanation>
+		<Script>Depannage_Teams_ResetCache.ps1</Script>
+		<Category>Teams</Category>		
+		<Alerte_MSG>Votre client Teams va se fermer et le cache va être supprimé.
+Il faudra exécuter manuellement Teams depuis le menu démarrer.
+		
+Si le problème persiste, cliquez sur "Se déconnecter" dans Teams
+Après reconnexion si le problème persiste, contacter le support
+		
+Souhaitez-vous continuer ?</Alerte_MSG>		
+	</Action>	
+
+	<Action>	
+		<Name>Mon statut Teams n'est pas correct</Name>
+		<Explanation>Votre photo ne s'affiche pas dans Teams ou ne se met pas à jour</Explanation>
+		<Script>Depannage_Teams_ResetCache.ps1</Script>
+		<Category>Teams</Category>		
+		<Alerte_MSG>Votre client Teams va se fermer et le cache va être supprimé.
+Il faudra exécuter manuellement Teams depuis le menu démarrer.
+		
+Si le problème persiste, cliquez sur "Se déconnecter" dans Teams
+Après reconnexion si le problème persiste, contacter le support
+		
+Souhaitez-vous continuer ?</Alerte_MSG>		
+	</Action>		
+	
+
+	<Action>	
+		<Name>L'ouverture de réunion dans teams ne fonctionne plus</Name>
+		<Explanation>Votre photo ne s'affiche pas dans Teams ou ne se met pas à jour</Explanation>
+		<Script>Depannage_Teams_ResetCache.ps1</Script>
+		<Category>Teams</Category>		
+		<Alerte_MSG>Votre client Teams va se fermer et le cache va être supprimé.
+Il faudra exécuter manuellement Teams depuis le menu démarrer.
+		
+Si le problème persiste, cliquez sur "Se déconnecter" dans Teams
+Après reconnexion si le problème persiste, contacter le support
+		
+Souhaitez-vous continuer ?</Alerte_MSG>			
+	</Action>	
+
+
+	<Action>	
+		<Name>Je suis connecté sur une réunion mais je n'entends pas les participants</Name>
+		<Explanation>Je suis connecté sur une réunion mais je n'entends pas les participants</Explanation>
+		<Script>Depannage_Teams_Reboot.ps1</Script>
+		<Category>Teams</Category>		
+		<Alerte_MSG>Votre client Teams va se fermer puis se relancer tout seul.
+		
+Si le problème persiste, cliquez sur "Se déconnecter" dans Teams
+Après reconnexion si le problème persiste, contacter le support
+		
+Souhaitez-vous continuer ?</Alerte_MSG>		
+	</Action>		
+	
+	
+	<Action>	
+		<Name>La caméra dans teams est bloquée ou invisible</Name>
+		<Explanation>Vous souhaitez afficher votre caméra pendant une réunion mais l'image bloque ou la caméra est introuvable</Explanation>
+		<Script>Depannage_Teams_ResetCache.ps1</Script>
+		<Category>Teams</Category>		
+		<Alerte_MSG>Votre client Teams va se fermer et le cache va être supprimé.
+Il faudra exécuter manuellement Teams depuis le menu démarrer.
+		
+Si le problème persiste, cliquez sur "Se déconnecter" dans Teams
+Après reconnexion si le problème persiste, contacter le support
+		
+Souhaitez-vous continuer ?</Alerte_MSG>		
+	</Action>		
+	
+
+	<Action>	
+		<Name>Coupure de son lors d'une réunion Teams</Name>
+		<Explanation>Il y a des coupures de son lors de réunion Teams</Explanation>
+		<Script>Depannage_Teams_ResetCache.ps1</Script>
+		<Category>Teams</Category>		
+		<Alerte_MSG>Votre client Teams va se fermer et le cache va être supprimé.
+Il faudra exécuter manuellement Teams depuis le menu démarrer.
+		
+Si le problème persiste, cliquez sur "Se déconnecter" dans Teams
+Après reconnexion si le problème persiste, contacter le support
+		
+Souhaitez-vous continuer ?</Alerte_MSG>	
+	</Action>	
+
+	
+	<Action>	
+		<Name>La création de réunions teams dans la calendrier outlook ne fonctionne plus</Name>
+		<Explanation>Votre photo ne s'affiche pas dans Teams ou ne se met pas à jour</Explanation>
+		<Script>Depannage_Teams_ResetCache.ps1</Script>
+		<Category>Teams</Category>		
+		<Alerte_MSG>Votre client Teams va se fermer et le cache va être supprimé.
+Il faudra exécuter manuellement Teams depuis le menu démarrer.
+		
+Si le problème persiste, cliquez sur "Se déconnecter" dans Teams
+Après reconnexion si le problème persiste, contacter le support
+		
+Souhaitez-vous continuer ?</Alerte_MSG>			
+	</Action>	
+	</Detailed_Solution>	
+	
+</Actions>

@@ -1,0 +1,189 @@
+﻿<Alertes>
+	<Alerte>
+		<Alert_Category>DefenderUpdate</Alert_Category>
+		<Show_Alert>True</Show_Alert>
+		<Buttons>OKCancel</Buttons>					
+		<Affichage>Utilisateur</Affichage>
+		<Sujet>Mettre à jour</Sujet>
+		<Action>Script</Action>
+		<Script_Name>Defender_Update.ps1</Script_Name>						
+		<Warning_Utilisateur>Nous allons mettre à jour vos signatures antivirales.
+Merci de cliquer sur OK, puis patienter.		
+		</Warning_Utilisateur>
+	</Alerte>
+		
+	<Alerte>
+		<Alert_Category>RecycleBin</Alert_Category>	
+		<Show_Alert>True</Show_Alert>	
+		<Buttons>OKCancel</Buttons>							
+		<Affichage>Utilisateur</Affichage>	
+		<Sujet>corbeille</Sujet>
+		<Action>Script</Action>
+		<Script_Name>Clean_RecycleBin.ps1</Script_Name>								
+		<Warning_Utilisateur>Souhaitez-vous vider le contenu de votre corbeille ?
+		
+Cliquez sur Oui pour continuer.	
+Cliquez sur Annuler pour Annuler.			
+		</Warning_Utilisateur>	
+	</Alerte>	
+
+	<Alerte>
+		<Alert_Category>Multiple_connexion</Alert_Category>	
+		<Show_Alert>True</Show_Alert>			
+		<Buttons>OK</Buttons>			
+		<Affichage>Utilisateur</Affichage>	
+		<Sujet>connexions actives</Sujet>
+		<Action>Warning</Action>		
+		<Warning_Utilisateur>Merci de redémarrer votre poste dès que possible.</Warning_Utilisateur>
+	</Alerte>	
+
+	
+	<Alerte>
+		<Alert_Category>Reboot</Alert_Category>	
+		<Show_Alert>True</Show_Alert>			
+		<Buttons>OK</Buttons>			
+		<Affichage>Utilisateur</Affichage>	
+		<Sujet>redémarrage</Sujet>
+		<Action>Warning</Action>		
+		<Warning_Utilisateur>Merci de redémarrer votre poste dès que possible.</Warning_Utilisateur>
+	</Alerte>	
+	
+	<Alerte>
+		<Alert_Category>OneDriveConnexion</Alert_Category>	
+		<Show_Alert>True</Show_Alert>			
+		<Buttons>OKCancel</Buttons>			
+		<Affichage>Utilisateur</Affichage>	
+		<Sujet>aucun utilisateur</Sujet>
+		<Action>Script</Action>	
+		<Script_Name>Run_OneDrive.ps1</Script_Name>										
+		<Warning_Utilisateur>Souhaitez-vous ouvrir l'interface de connexion OneDrive ?
+		
+Cliquez sur Oui pour continuer.	
+Cliquez sur Annuler pour Annuler.			
+		</Warning_Utilisateur>		
+	</Alerte>		
+	
+	<Alerte>
+		<Alert_Category>OneDriveExecution</Alert_Category>	
+		<Show_Alert>True</Show_Alert>			
+		<Buttons>OKCancel</Buttons>			
+		<Affichage>Utilisateur</Affichage>	
+		<Sujet>exécution</Sujet>
+		<Action>Script</Action>	
+		<Script_Name>Run_OneDrive.ps1</Script_Name>										
+		<Warning_Utilisateur>Souhaitez-vous lancer le client OneDrive ?
+		
+Cliquez sur Oui pour continuer.	
+Cliquez sur Annuler pour Annuler.			
+		</Warning_Utilisateur>		
+	</Alerte>			
+	
+	
+	<Alerte>
+		<Alert_Category>OneDriveRedirection</Alert_Category>	
+		<Show_Alert>False</Show_Alert>			
+		<Buttons>OKCancel</Buttons>			
+		<Affichage>Utilisateur</Affichage>	
+		<Sujet>OneDrive</Sujet>
+		<Action>Warning</Action>	
+		<Warning_Utilisateur>Le dossier Mes documents et/ou Bureau ne semble(nt) pas redirigé(s) sur OneDrive</Warning_Utilisateur>		
+	</Alerte>			
+
+	<!-- <Alerte> -->
+		<!-- <Alert_Category>RebootAfterUpdate</Alert_Category>	 -->
+		<!-- <Show_Alert>True</Show_Alert>	 -->
+		<!-- <Affichage>Utilisateur</Affichage>	 -->
+		<!-- <Sujet>attente</Sujet> -->
+		<!-- <Action>Warning</Action>		 -->
+		<!-- <Warning_Utilisateur>Merci de redémarrer votre poste dès que possible.</Warning_Utilisateur> -->
+	<!-- </Alerte> -->
+
+	<Alerte>
+		<Alert_Category>OneDriveSize</Alert_Category>	
+		<Show_Alert>True</Show_Alert>	
+		<Buttons>OKCancel</Buttons>									
+		<Affichage>Utilisateur</Affichage>	
+		<Sujet>OneDrive occupe</Sujet>
+		<Action>Script</Action>		
+		<Script_Name>Contenu_volumineux.ps1</Script_Name>						
+		<Warning_Utilisateur>Merci de cliquez sur le bouton "Résoudre" pour afficher ce qui prend de la place sur votre disque.
+Une page web s'ouvrira après quelques minutes.
+Si vous ne parvenez pas à libérer de la place, veuillez contacter le support.		
+		</Warning_Utilisateur>
+	</Alerte>
+
+	<Alerte>
+		<Alert_Category>DiskSize</Alert_Category>	
+		<Show_Alert>True</Show_Alert>	
+		<Buttons>OKCancel</Buttons>									
+		<Affichage>Utilisateur</Affichage>	
+		<Sujet>espace libre</Sujet>
+		<Action>Script</Action>		
+		<Script_Name>Contenu_volumineux.ps1</Script_Name>				
+		<Warning_Utilisateur>Merci de cliquez sur le bouton "Résoudre" pour afficher ce qui prend de la place sur votre disque.
+Une page web s'ouvrira après quelques minutes.
+Si vous ne parvenez pas à libérer de la place, veuillez contacter le support.		
+		</Warning_Utilisateur>	</Alerte>
+
+	<Alerte>
+		<Alert_Category>Umbrella</Alert_Category>	
+		<Show_Alert>True</Show_Alert>	
+		<Buttons>OK</Buttons>					
+		<Affichage>Admin</Affichage>	
+		<Sujet>Umbrella</Sujet>
+		<Action>Warning</Action>				
+		<Warning_Utilisateur>Merci de contacter votre support</Warning_Utilisateur>
+	</Alerte>		
+	
+	<Alerte>
+		<Alert_Category>AntivirusAnalyze</Alert_Category>	
+		<Show_Alert>True</Show_Alert>	
+		<Buttons>OKCancel</Buttons>					
+		<Affichage>Utilisateur</Affichage>	
+		<Sujet>Dernière analyse</Sujet>
+		<Action>Script</Action>			
+		<Script_Name>Analyse_Defender.ps1</Script_Name>						
+		<Warning_Utilisateur>Souhaitez-vous lancer une analyse rapide ?
+		
+Cliquez sur Oui pour continuer.	
+Cliquez sur Annuler pour Annuler.			
+		</Warning_Utilisateur>			
+	</Alerte>	
+
+	<Alerte>
+		<Alert_Category>DriversMissing</Alert_Category>	
+		<Show_Alert>True</Show_Alert>	
+		<Buttons>OK</Buttons>					
+		<Affichage>Admin</Affichage>	
+		<Sujet>drivers manquants</Sujet>
+		<Action>Warning</Action>						
+		<Warning_Utilisateur>Merci de procéder comme ci-dessous:
+- Fermez cette interface
+- Faîtes à un clic droit sur licône
+- Sélectionnez Envoyer les logs du poste
+- Contactez le support</Warning_Utilisateur>
+	</Alerte>	
+
+	<!-- <Alerte> -->
+		<!-- <Alert_Category>FolderRedirection</Alert_Category>	 -->
+		<!-- <Show_Alert>True</Show_Alert>	 -->
+		<!-- <Buttons>OK</Buttons>					 -->
+		<!-- <Affichage>Utilisateur</Affichage>	 -->
+		<!-- <Sujet>pas redirigés sur OneDrive</Sujet> -->
+		<!-- <Action>Lien</Action>						 -->
+		<!-- <Warning_Utilisateur>Merci de contacter votre support</Warning_Utilisateur> -->
+	<!-- </Alerte>		 -->
+	
+	
+	<Alerte>
+		<Alert_Category>Security_Check</Alert_Category>	
+		<Show_Alert>True</Show_Alert>	
+		<Buttons>OK</Buttons>					
+		<Affichage>Admin</Affichage>	
+		<Sujet></Sujet>
+		<Action>Lien</Action>						
+		<Warning_Utilisateur>Merci de contacter votre support</Warning_Utilisateur>
+	</Alerte>			
+</Alertes>
+
+

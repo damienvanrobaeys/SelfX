@@ -1,0 +1,18 @@
+<Grid
+    xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"	
+	xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks" 	
+	Height="250">
+
+	<StackPanel HorizontalAlignment="Center"  Margin="0,80,0,0" Orientation="Vertical" >							
+		<!-- <Image Name = "Tool_Logo"  Margin="0,0,0,0" Height="80" Source="logo.png" HorizontalAlignment="Center"></Image> -->
+		<StackPanel Margin="0,10,0,0">							
+			<Label Name="SelfX_Version" HorizontalAlignment="Center" FontSize="17" Content="Win32App - Build and Extract - v1.1"/>
+		</StackPanel>	
+
+		<StackPanel Orientation="Horizontal" Margin="0,10,0,0" HorizontalAlignment="Center">
+			<Button Name="Close_Dialog" Margin="0,0,0,0" Content="Close" Width="100" Background="#1d88bc" Foreground="White" BorderThickness="0"/>																		
+		</StackPanel>			
+	</StackPanel>		
+</Grid>

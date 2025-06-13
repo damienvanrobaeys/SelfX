@@ -1,0 +1,67 @@
+<About_Infos>
+	<Current_Version>1.0.15</Current_Version>
+	<Version>
+		<Version_Number>1.0.0</Version_Number>
+		<Version_Content>Version initiale de l'outil</Version_Content>	
+	</Version>
+	<Version>
+		<Version_Number>1.0.1</Version_Number>
+		<Version_Content>Ajout notification auto-dépannage</Version_Content>	
+	</Version>
+	<Version>
+		<Version_Number>1.0.2</Version_Number>
+		<Version_Content>Modification affichage adresse IP</Version_Content>	
+	</Version>	
+	<Version>
+		<Version_Number>1.0.3</Version_Number>
+		<Version_Content>Passage en mode utilisateur</Version_Content>	
+	</Version>	
+	<Version>
+		<Version_Number>1.0.4</Version_Number>
+		<Version_Content>Ajout de nouvelles actions de résolution</Version_Content>	
+	</Version>	
+	<Version>
+		<Version_Number>1.0.5</Version_Number>
+		<Version_Content>Corrections de bugs</Version_Content>	
+	</Version>	
+	<Version>
+		<Version_Number>1.0.6</Version_Number>
+		<Version_Content>Corrections de bugs</Version_Content>	
+	</Version>		
+	<Version>
+		<Version_Number>1.0.7</Version_Number>
+		<Version_Content>Corrections de bugs</Version_Content>	
+	</Version>	
+	<Version>
+		<Version_Number>1.0.8</Version_Number>
+		<Version_Content>Corrections de bugs</Version_Content>	
+	</Version>	
+	<Version>
+		<Version_Number>1.0.9</Version_Number>
+		<Version_Content>Corrections de bugs</Version_Content>	
+	</Version>	
+	<Version>
+		<Version_Number>1.0.10</Version_Number>
+		<Version_Content>Suppression raccourci bureau</Version_Content>	
+	</Version>		
+	<Version>
+		<Version_Number>1.0.11</Version_Number>
+		<Version_Content>Suppression auto-dépannage nouvel outlook</Version_Content>	
+	</Version>		
+	<Version>
+		<Version_Number>1.0.12</Version_Number>
+		<Version_Content>Maj auto-dépannage pour SafeQ</Version_Content>	
+	</Version>		
+	<Version>
+		<Version_Number>1.0.13</Version_Number>
+		<Version_Content>Changement intitulé type de poste;ajout drivers installés; correction script réparation safeq</Version_Content>	
+	</Version>	
+	<Version>
+		<Version_Number>1.0.14</Version_Number>
+		<Version_Content>Correction raccourci menu démarrer</Version_Content>	
+	</Version>		
+	<Version>
+		<Version_Number>1.0.15</Version_Number>
+		<Version_Content>Ajout vue simplifiée dans Je me dépanne tout seul; ajout alerte dans le bas de l'interface A propos</Version_Content>	
+	</Version>			
+</About_Infos>

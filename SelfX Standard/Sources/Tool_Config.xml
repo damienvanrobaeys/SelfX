@@ -1,0 +1,75 @@
+﻿<GUI_Config>	
+	<Tool_Version>1.0.3</Tool_Version> <!-- Tool version -->
+	<Tool_Name>SelfX (Self fix)</Tool_Name> <!-- Text displayed in the title bar --> 
+	
+	<!-- Path where to get the issues list XML file from the web -->	
+	<Link_Scripts></Link_Scripts> <!-- Type the path where to find Issues_List.xml--> 	
+	
+	<!-- Shortcut location --> 
+	<Shortcut_Desktop>True</Shortcut_Desktop> <!-- Display or not a shortcut on the user desktop: True or False -->
+	<Shortcut_StartMenu>True</Shortcut_StartMenu> <!-- Display or not a shortcut on the user start menu: True or False -->
+	<Shortcut_Name>SelfX (Self fix)</Shortcut_Name> <!-- Text displayed in the title bar: True or False -->
+
+	<!-- Toast notification displayed to the user after install --> 
+	<Show_Install_Toast>False</Show_Install_Toast> <!-- Display a toast to user after installing the tool: True or False -->
+	<Toast_Header_Picture>Toast_Header.gif</Toast_Header_Picture> <!-- Picture displayed in the tost -->		
+	<Toast_Company_Name>Syst and Deploy informs you</Toast_Company_Name> <!-- Text displayed in the toast at the top -->
+	<Toast_Title>A new tool is available on your device</Toast_Title> <!-- Toast title -->
+	<Toast_Text>A new tool allowing you to solve issues yourself is available on your device.
+	
+Click on the SelfX shortcut available on your desktop or Start menu to launch the tool.		
+	</Toast_Text> <!-- Toast main text -->
+	<Toast_Button_Text>Dismiss</Toast_Button_Text> <!-- Text displayed in the button -->
+				
+	<!-- Main color of the tool -->
+	<Tool_Color>Cyan</Tool_Color> <!-- Available colors: “Red”, “Green”, “Blue”, “Purple”, “Orange”, “Lime”, “Emerald”, “Teal”, “Cyan”, “Cobalt”, “Indigo”, “Violet”, “Pink”, “Magenta”, “Crimson”, “Amber”, “Yellow”, “Brown”, “Olive”, “Steel”, “Mauve”, “Taupe”, “Sienna” -->				
+	<Tool_Theme>Dark</Tool_Theme> <!-- Dark or Light -->
+	
+	<!-- Text displayed in the tool -->
+	<Main_Title_Text>An issue with your device</Main_Title_Text> <!-- Main GUI: main title -->
+	<Show_Computer_Name_MainGUI>False</Show_Computer_Name_MainGUI> <!-- Show the computer name beside the main title: True or False -->		
+	<Show_Computer_Name_title_bar>False</Show_Computer_Name_title_bar> <!-- Show the computer name beside the main title: True or False -->		
+		
+	<Subtitle_Text>You may find a way to solve it here with a list of clickable solutions</Subtitle_Text> <!-- Main GUI: subtitle -->	
+	<Run_solution_Text>Allows you to run an action</Run_solution_Text> <!-- Text for the legend blue button -->
+	<Run_explanation_Text>Allows you to get more info</Run_explanation_Text> <!-- Text for the legend green button -->				
+	<Issue_filter_Title_Text>Sort by components</Issue_filter_Title_Text> <!-- Text in the combo box -->
+	<Issue_filter_KeyWord_Text>Type a key word</Issue_filter_KeyWord_Text> <!-- Text in the key word textbox -->		
+	<Available_Actions_Count>action(s) available</Available_Actions_Count> <!-- Text displayed to count number of action for each category -->
+	
+	<!-- Solution view dropdown menu -->
+	<Default_Solution_Mode>Simplified</Default_Solution_Mode> <!-- Can be Simplified or Detailed -->
+	<Solution_Mode_Simple>Simplified view</Solution_Mode_Simple> <!-- Text displayed for Simplified view -->
+	<Solution_Mode_Detailed>Detailed view</Solution_Mode_Detailed> <!-- Text displayed for Detailed view -->
+	<Solution_Mode_Info_Title>Simplified view or detailed ?</Solution_Mode_Info_Title> <!-- Text displayed in the title pop-op about view info -->
+	<Solution_Mode_Info_Text>The simplified view lists issues by product.
+The detailed view lists multiple issues for the same product that can be resolved.	
+
+We recommend using the detailed view if the simplified view does not resolve or include your issue.
+</Solution_Mode_Info_Text> <!-- Text displayed in the text pop-op about view info -->
+	
+	<!-- Text displayed in the alert bar at the bottom -->
+	<Show_Reboot_Warning>True</Show_Reboot_Warning> <!-- Show the reboot warning: True or False -->	
+	<Reboot_Alert>To ensure the stability and proper functioning of your system, consider rebooting your device at least once a week.</Reboot_Alert>
+
+	<!-- Text displayed in warning after clicking in the blue button -->
+	<Warning_Click_Run_Solution_Text>Solving an issue</Warning_Click_Run_Solution_Text>	<!-- Text displayed in the title bar -->
+	<!-- Text displayed in warning after clicking in the green button -->
+	<Warning_Click_Run_Explanation_Text>See more info</Warning_Click_Run_Explanation_Text> <!-- Text displayed in the title bar -->	
+	
+	<!-- Theme button -->
+	<Show_Theme_Button>True</Show_Theme_Button> <!-- Show button in title bar to change theme of the interface: True or False  -->
+	
+	<!-- Support part -->
+	<Show_Support_Button>False</Show_Support_Button> <!-- Display button in the title bar to view support information. True or False  -->
+	<Window_Title>Support team information</Window_Title>
+	<Support_Phone_Label>Phone number:</Support_Phone_Label>
+	<Support_Phone_number></Support_Phone_number>
+	<Support_Mail_Label>Mail:</Support_Mail_Label>		
+	<Support_Mail></Support_Mail>	
+	<Close_Button_Text>Close</Close_Button_Text>
+
+	<!-- About part -->
+	<Show_About_Button>True</Show_About_Button> <!-- Display button in the title bar to view about information. True or False  -->	
+	<About_Logo>logo.png</About_Logo> <!-- Logo displayed in the About part. By default logo.png -->	
+</GUI_Config>
