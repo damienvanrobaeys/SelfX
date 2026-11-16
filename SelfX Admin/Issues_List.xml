@@ -1,7 +1,7 @@
 ﻿<Actions>
 	<GUI_Config>
-		<XML_Version>1.0.0</XML_Version>	
-		<Tool_Version>1.0.0</Tool_Version>
+		<XML_Version>1.0.1</XML_Version>
+		<Tool_Version>1.0.1</Tool_Version>
 		
 		<!-- Install location part --> 
 		<Shortcut_Desktop>True</Shortcut_Desktop> <!-- True or False -->
@@ -77,13 +77,13 @@ Do you want to continue ?
 
 	<!-- Part for device --> 
 	<Action>	
-		<Name>Enable and disable Airplane mode</Name>
+		<Name>Restart network adapters</Name>
 		<Buttons>Ok_Cancel</Buttons>						
-		<Explanation>You have some network issues and want to reinitiate configuration</Explanation>
+		<Explanation>You have network issues and want to restart the network adapters</Explanation>
 		<Script>SelfX_Device_AirePlaneMode.ps1</Script>
 		<Category>Device</Category>	
 		<Alerte_MSG>An action will be executed in background.
-You will list network access some seconds or minutes.		
+Network access will be interrupted for a short time.
 
 Do you want to continue ?		
 		</Alerte_MSG>

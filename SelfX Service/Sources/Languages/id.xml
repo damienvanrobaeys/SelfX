@@ -1,0 +1,563 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+	SelfX Service - language file
+
+	Description:
+	  Texts of the SelfX user interface in one language. SelfX selects the file that matches the Windows
+	  display language of the user (for example de-CH -> de.xml, zh-TW -> zh-Hant.xml). If no file matches,
+	  en.xml is used. A text that is missing or empty in a language file is taken from en.xml.
+
+	Add a language:
+	  1. Copy en.xml to <culture>.xml. Use the neutral culture name (de, fr, pt) or a script/region name
+	     (zh-Hans, zh-Hant, pt-BR). Windows tries the exact culture first and then its parents.
+	  2. Set Culture, Name, NativeName and FlowDirection (RightToLeft for Arabic, Persian, Urdu, Hebrew ...).
+	  3. Translate the element texts. Do not change element names or Id attributes.
+	     Keep placeholders such as {0}, {1}, {1:D2} and the "|" separators of SystemInfo_Export_Filter.
+	  4. Catalogue texts: add an <Action Id="..."> entry per action and a <Message Id="..."> entry per shared
+	     message. The English base texts are in Issues_List.xml. Untranslated actions are shown in English.
+
+	History:
+	  Version  Date        Author               Change
+	  2.2.0    2026-10-28  Wolfgang Baeck       Initial version: multilingual user interface
+-->
+<SelfX_Language Culture="id" Name="Indonesian" NativeName="Bahasa Indonesia" FlowDirection="LeftToRight" Version="2.2.0">
+	<UI>
+		<Health_Fix>Perbaiki</Health_Fix>
+		<Health_Fix_Confirm>Jalankan perbaikan yang dikonfigurasi untuk {0}? Simpan pekerjaan Anda: aplikasi, layanan, atau koneksi dapat terganggu. Status akan diperiksa kembali setelahnya.</Health_Fix_Confirm>
+		<Health_Restart_Button>Mulai ulang</Health_Restart_Button>
+		<Health_Restart_Title>Mulai ulang perangkat</Health_Restart_Title>
+		<Health_Restart_Confirm>Windows akan dimulai ulang untuk menyelesaikan pembaruan dan perubahan yang tertunda.&#10;&#10;Simpan pekerjaan Anda terlebih dahulu dan tutup semua program. Mulai ulang dimulai sekitar 30 detik setelah Anda mengonfirmasi.&#10;&#10;Mulai ulang sekarang?</Health_Restart_Confirm>
+		<Button_Restart_Now>Mulai ulang sekarang</Button_Restart_Now>
+		<Health_Restart_Started>Windows dimulai ulang dalam sekitar 30 detik. Simpan pekerjaan Anda sekarang.</Health_Restart_Started>
+		<Health_Updates_Started>Pembaruan Windows sedang dicari, diunduh, dan dipasang. Ini dapat memakan waktu beberapa menit; Anda dapat terus bekerja.</Health_Updates_Started>
+		<Health_Updates_Done>Windows Update telah selesai. Status perangkat diperiksa lagi dan menunjukkan apakah perlu dimulai ulang.</Health_Updates_Done>
+		<Health_Apps_Button>Coba lagi</Health_Apps_Button>
+		<Health_Apps_Started>Pemasangan aplikasi yang gagal dimulai lagi. Ini dapat memakan waktu beberapa menit; Anda dapat mengikutinya di Portal Perusahaan.</Health_Apps_Started>
+		<Health_Check_Button>OK</Health_Check_Button>
+		<Health_Error_Button>Kesalahan</Health_Error_Button>
+		<Health_Pending_Button>Tertunda</Health_Pending_Button>
+		<Health_Check_Tooltip>Periksa status ini lagi</Health_Check_Tooltip>
+		<!-- Main window -->
+		<Main_Title_Text>Ada masalah dengan perangkat?</Main_Title_Text>
+		<Subtitle_Text>Pilih solusi dari daftar untuk mengatasi masalah</Subtitle_Text>
+		<Run_solution_Text>Menjalankan tindakan</Run_solution_Text>
+		<Run_explanation_Text>Menampilkan informasi lainnya</Run_explanation_Text>
+		<Issue_filter_Title_Text>Filter menurut komponen</Issue_filter_Title_Text>
+		<Issue_filter_KeyWord_Text>Ketik kata kunci</Issue_filter_KeyWord_Text>
+		<Available_Actions_Count>Tindakan tersedia: {0}</Available_Actions_Count>
+		<Troubleshooting_Tab_Text>Pemecahan masalah</Troubleshooting_Tab_Text>
+		<Theme_Button_ToolTip>Beralih antara tema gelap dan terang</Theme_Button_ToolTip>
+		<Support_Button_ToolTip>Hubungi tim dukungan</Support_Button_ToolTip>
+		<About_Button_ToolTip>Tentang SelfX</About_Button_ToolTip>
+		<Shield_ToolTip>Dijalankan dengan hak administrator melalui layanan SelfX lokal</Shield_ToolTip>
+
+		<!-- Simplified or detailed view -->
+		<Solution_Mode_Simple>Tampilan sederhana</Solution_Mode_Simple>
+		<Solution_Mode_Detailed>Tampilan terperinci</Solution_Mode_Detailed>
+		<Solution_Mode_Info_Title>Tampilan sederhana atau terperinci?</Solution_Mode_Info_Title>
+		<Solution_Mode_Info_Text>Tampilan sederhana mengelompokkan masalah menurut produk.
+Tampilan terperinci mencantumkan masalah tertentu yang dapat diatasi untuk setiap produk.
+
+Gunakan tampilan terperinci jika tampilan sederhana tidak menyelesaikan atau mencakup masalah Anda.</Solution_Mode_Info_Text>
+
+		<!-- Dialogs -->
+		<Warning_Click_Run_Solution_Text>Mengatasi masalah</Warning_Click_Run_Solution_Text>
+		<Warning_Click_Run_Explanation_Text>Informasi selengkapnya</Warning_Click_Run_Explanation_Text>
+		<Button_Ok>OK</Button_Ok>
+		<Button_Cancel>Batal</Button_Cancel>
+		<Button_Yes>Ya</Button_Yes>
+		<Button_No>Tidak</Button_No>
+		<Close_Button_Text>Tutup</Close_Button_Text>
+		<Reboot_Alert>Agar perangkat tetap stabil dan berfungsi dengan baik, mulai ulang setidaknya seminggu sekali.</Reboot_Alert>
+
+		<!-- Support and About dialogs -->
+		<Support_Window_Title>Informasi tim dukungan</Support_Window_Title>
+		<Support_Phone_Label>Nomor telepon:</Support_Phone_Label>
+		<Support_Mail_Label>Email:</Support_Mail_Label>
+		<About_Version_Text>{0}: versi {1} - katalog: {2}</About_Version_Text>
+
+		<!-- Local SelfX service (actions with Context System) -->
+		<Service_Running_Text>Layanan SelfX sedang berjalan: tindakan bertanda perisai dijalankan dengan hak administrator.</Service_Running_Text>
+		<Service_Unavailable_Text>Layanan SelfX tidak berjalan: tindakan bertanda perisai tidak tersedia.</Service_Unavailable_Text>
+		<Service_Busy_Text>Tindakan lain masih berjalan. Tunggu hingga selesai.</Service_Busy_Text>
+		<Action_Running_Text>Tindakan berjalan: {0}</Action_Running_Text>
+		<Action_Running_Label>Sedang berjalan…</Action_Running_Label>
+		<Action_Success_Text>Tindakan selesai: {0}</Action_Success_Text>
+		<Action_Failed_Text>Tindakan gagal: {0}</Action_Failed_Text>
+		<Action_Failed_ExitCode_Text>Tindakan gagal: {0} (kode keluar {1})</Action_Failed_ExitCode_Text>
+		<Action_Timeout_Text>Tindakan dihentikan karena terlalu lama: {0}</Action_Timeout_Text>
+		<Script_Not_Found_Text>Skrip untuk tindakan ini tidak ditemukan: {0}</Script_Not_Found_Text>
+
+		<!-- System information tab -->
+		<SystemInfo_Tab_Text>Informasi sistem</SystemInfo_Tab_Text>
+		<SystemInfo_Title_Text>Informasi perangkat untuk tim dukungan</SystemInfo_Title_Text>
+		<SystemInfo_Hint_Text>Klik dua kali baris untuk menyalin nilainya.</SystemInfo_Hint_Text>
+		<SystemInfo_Loading_Text>Mengumpulkan informasi sistem...</SystemInfo_Loading_Text>
+		<SystemInfo_Copied_Text>Disalin ke clipboard: {0}</SystemInfo_Copied_Text>
+		<SystemInfo_Refresh_Text>Segarkan</SystemInfo_Refresh_Text>
+		<SystemInfo_Copy_Text>Salin semua</SystemInfo_Copy_Text>
+		<SystemInfo_Export_Text>Ekspor</SystemInfo_Export_Text>
+		<SystemInfo_Export_Filter>File teks (*.txt)|*.txt|File HTML (*.html)|*.html|File CSV (*.csv)|*.csv|File JSON (*.json)|*.json</SystemInfo_Export_Filter>
+		<SystemInfo_SyncApps_Text>Sinkronkan aplikasi Intune</SystemInfo_SyncApps_Text>
+		<SystemInfo_SyncCompliance_Text>Periksa kepatuhan</SystemInfo_SyncCompliance_Text>
+		<SystemInfo_CompanyPortal_Text>Portal Perusahaan</SystemInfo_CompanyPortal_Text>
+		<SystemInfo_QuickAssist_Text>Bantuan Cepat</SystemInfo_QuickAssist_Text>
+		<SystemInfo_MdmDiagnostics_Text>Kumpulkan log MDM</SystemInfo_MdmDiagnostics_Text>
+		<SystemInfo_SendLogs_Text>Kirim log ke dukungan</SystemInfo_SendLogs_Text>
+		<Report_Mail_Subject>Log perangkat {0}</Report_Mail_Subject>
+		<Report_Mail_Body>Halo,
+
+Terlampir log perangkat {0} yang dikumpulkan oleh SelfX pada {1}.
+
+Deskripsi masalah:</Report_Mail_Body>
+		<Report_Mail_Opened_Text>Email dengan log perangkat terlampir telah dibuka. Jelaskan masalah Anda dan kirim email tersebut.</Report_Mail_Opened_Text>
+		<Report_Mail_Recipient_Text>Email dengan log perangkat terlampir telah dibuka. Masukkan penerima ({0}), jelaskan masalah Anda, dan kirim email tersebut.</Report_Mail_Recipient_Text>
+		<Report_Mail_Manual_Text>Log perangkat telah disimpan di {0}. Lampirkan file ini ke email (penerima: {1}) dan jelaskan masalah Anda.</Report_Mail_Manual_Text>
+		<Report_Not_Found_Text>Log perangkat telah dikumpulkan, tetapi email tidak dapat disiapkan: {0}</Report_Not_Found_Text>
+		<Report_Support_Fallback>tim dukungan Anda</Report_Support_Fallback>
+		<Nav_Status_Text>Status perangkat</Nav_Status_Text>
+		<Status_LastChecked_Text>Terakhir diperiksa: {0}</Status_LastChecked_Text>
+		<Status_NotChecked_Text>Status perangkat belum diperiksa.</Status_NotChecked_Text>
+		<Status_Background_Text>Diperiksa otomatis setiap {0} menit</Status_Background_Text>
+		<Status_Background_Battery_Text>Pemeriksaan otomatis dijeda saat menggunakan baterai</Status_Background_Battery_Text>
+		<Status_Checking_Text>Memeriksa status perangkat. Ini dapat memakan waktu hingga satu menit ...</Status_Checking_Text>
+		<Status_AllOk_Title>Semuanya baik</Status_AllOk_Title>
+		<Status_AllOk_Text>Tidak ada masalah yang ditemukan di perangkat Anda.</Status_AllOk_Text>
+		<Status_Issues_Title>{0} item memerlukan perhatian Anda</Status_Issues_Title>
+		<Status_Issues_Text>Masalah ditampilkan lebih dulu. Klik “Perbaiki” untuk memperbaiki masalah, atau tanda panah untuk memeriksanya lagi.</Status_Issues_Text>
+		<Status_CheckAll_Tooltip>Periksa semuanya lagi sekarang. Ini dapat memakan waktu hingga satu menit.</Status_CheckAll_Tooltip>
+		<Status_FixAll>Perbaiki semua masalah</Status_FixAll>
+		<Status_FixAll_Tooltip>Menjalankan perbaikan yang dikonfigurasi untuk setiap masalah satu per satu. Setelah itu semuanya diperiksa ulang.</Status_FixAll_Tooltip>
+		<Health_FixAll_Confirm>Jalankan perbaikan yang dikonfigurasi untuk {0} masalah ini satu per satu?&#10;&#10;{1}&#10;&#10;Aplikasi dapat ditutup dan layanan atau koneksi jaringan dapat terputus. Simpan pekerjaan Anda terlebih dahulu. Setelah itu semuanya diperiksa ulang.</Health_FixAll_Confirm>
+		<Status_FixAll_Done>{0} dari {1} perbaikan berhasil diselesaikan. Status sedang diperiksa ulang.</Status_FixAll_Done>
+		<Status_FixAll_Failed>Tidak berhasil: {0}</Status_FixAll_Failed>
+		<Tooltip_Fix>Memperbaiki masalah ini secara otomatis. Anda diminta mengonfirmasi terlebih dahulu.</Tooltip_Fix>
+		<Tooltip_Run>Memulai solusi ini. Anda diminta mengonfirmasi sebelum apa pun terjadi.</Tooltip_Run>
+		<Filter_All_Text>Semua</Filter_All_Text>
+		<View_Help_Tooltip>Apa perbedaan antara tampilan sederhana dan tampilan terperinci?</View_Help_Tooltip>
+		<SystemInfo_Cached_Text>Informasi dari {0} – sedang diperbarui ...</SystemInfo_Cached_Text>
+		<Tooltip_Refresh>mengumpulkan informasi lagi</Tooltip_Refresh>
+		<Tooltip_Copy>menyalin semua informasi, misalnya untuk ditempel ke permintaan dukungan</Tooltip_Copy>
+		<Tooltip_Export>menyimpan semua informasi sebagai file</Tooltip_Export>
+		<Tools_Title_Text>Alat</Tools_Title_Text>
+		<Tooltip_SyncApps>Meminta Intune untuk menginstal atau memperbarui aplikasi yang ditetapkan untuk Anda sekarang.</Tooltip_SyncApps>
+		<Tooltip_SyncCompliance>Meminta Intune untuk memeriksa sekarang apakah perangkat Anda memenuhi aturan perusahaan.</Tooltip_SyncCompliance>
+		<Tooltip_CompanyPortal>Membuka Portal Perusahaan, tempat Anda dapat menginstal aplikasi perusahaan.</Tooltip_CompanyPortal>
+		<Tooltip_QuickAssist>Membuka Bantuan Cepat agar petugas dukungan dapat melihat layar Anda dan membantu – hanya dengan persetujuan Anda.</Tooltip_QuickAssist>
+		<Tooltip_MdmDiagnostics>Mengumpulkan log manajemen perangkat ke dalam folder untuk tim dukungan.</Tooltip_MdmDiagnostics>
+		<Tooltip_SendLogs>Mengumpulkan semua log perangkat Anda dan membuka email ke tim dukungan dengan laporan terlampir.</Tooltip_SendLogs>
+		<Settings_Button_ToolTip>Pengaturan (bahasa, tampilan dan ikon status)</Settings_Button_ToolTip>
+		<Settings_Title>Pengaturan</Settings_Title>
+		<Settings_Language_Text>Bahasa</Settings_Language_Text>
+		<Settings_Language_Auto>Otomatis ({0})</Settings_Language_Auto>
+		<Settings_Language_Hint>SelfX dimulai ulang dalam bahasa yang dipilih.</Settings_Language_Hint>
+		<Settings_Language_Later>Bahasa baru digunakan saat SelfX dibuka berikutnya, karena perbaikan masih berjalan.</Settings_Language_Later>
+		<Settings_Theme_Text>Tampilan</Settings_Theme_Text>
+		<Settings_Theme_Auto>Otomatis</Settings_Theme_Auto>
+		<Settings_Theme_Auto_ToolTip>Seperti Windows: menggunakan mode aplikasi yang dipilih di Pengaturan &gt; Personalisasi &gt; Warna</Settings_Theme_Auto_ToolTip>
+		<Settings_Theme_Dark>Gelap</Settings_Theme_Dark>
+		<Settings_Theme_Light>Terang</Settings_Theme_Light>
+		<Settings_Tray_Text>Tampilkan ikon SelfX di area pemberitahuan</Settings_Tray_Text>
+		<Settings_Tray_Hint>Ikon di samping jam menunjukkan status perangkat dan memberi tahu Anda saat masalah ditemukan.</Settings_Tray_Hint>
+		<Settings_Notify_Text>Tampilkan pemberitahuan tentang masalah</Settings_Notify_Text>
+		<Settings_Notify_Hint>Selain ikon SelfX berwarna, Windows menampilkan pesan saat masalah baru ditemukan, misalnya ruang disk hampir penuh.</Settings_Notify_Hint>
+		<Support_Intro_Text>Kami siap membantu Anda. Anda dapat menghubungi kami melalui:</Support_Intro_Text>
+		<Support_Hours_Label>Jam dukungan</Support_Hours_Label>
+		<Support_Teams_Label>Obrolan Teams</Support_Teams_Label>
+		<Support_Website_Label>Situs web / sistem tiket</Support_Website_Label>
+		<Support_Teams_Button>Mulai obrolan</Support_Teams_Button>
+		<Support_Website_Button>Buka</Support_Website_Button>
+		<Support_Mail_Button>Tulis email</Support_Mail_Button>
+		<Support_None_Text>Tidak ada detail kontak yang dikonfigurasi. Silakan hubungi departemen TI Anda.</Support_None_Text>
+		<Service_Short_Running>Layanan SelfX berjalan</Service_Short_Running>
+		<Service_Short_Unavailable>Layanan SelfX tidak tersedia</Service_Short_Unavailable>
+		<Version_Text>Versi {0}</Version_Text>
+		<Tray_Tooltip_OK>SelfX: semuanya baik</Tray_Tooltip_OK>
+		<Tray_Tooltip_Issues>SelfX: {0} masalah, {1} peringatan</Tray_Tooltip_Issues>
+		<Tray_Tooltip_Unknown>SelfX: status belum tersedia</Tray_Tooltip_Unknown>
+		<Tray_Menu_Open>Buka SelfX</Tray_Menu_Open>
+		<Tray_Menu_Status>Tampilkan status perangkat</Tray_Menu_Status>
+		<Tray_Menu_Check>Periksa status sekarang</Tray_Menu_Check>
+		<Tray_Menu_Notify>Tampilkan pemberitahuan</Tray_Menu_Notify>
+		<Tray_Menu_Hide>Sembunyikan ikon ini</Tray_Menu_Hide>
+		<Tray_Notify_Click>Klik di sini untuk melihat detail.</Tray_Notify_Click>
+		<Tray_Hidden_Text>Ikon disembunyikan. Anda dapat menampilkannya lagi di SelfX pada Pengaturan.</Tray_Hidden_Text>
+		<Tray_Checking_Text>Memeriksa status perangkat ...</Tray_Checking_Text>
+	</UI>
+
+	<!-- Labels and values of the System information tab -->
+	<SystemInfo>
+		<Category_Device>Perangkat</Category_Device>
+		<Category_Windows>Windows</Category_Windows>
+		<Category_User>Pengguna dan manajemen</Category_User>
+		<Category_Network>Jaringan</Category_Network>
+		<Category_Report>Laporan</Category_Report>
+		<Computer_Name>Nama komputer</Computer_Name>
+		<Manufacturer>Produsen</Manufacturer>
+		<Model>Model</Model>
+		<Serial_Number>Nomor seri</Serial_Number>
+		<BIOS_Version>Versi BIOS</BIOS_Version>
+		<Processor>Prosesor</Processor>
+		<Memory>Memori (RAM)</Memory>
+		<Free_Space>Ruang kosong {0}</Free_Space>
+		<Free_Space_Value>{0} dari {1} ({2}%)</Free_Space_Value>
+		<Battery>Baterai</Battery>
+		<Windows_Version>Versi Windows</Windows_Version>
+		<OS_Build>Build OS</OS_Build>
+		<Last_Boot>Boot terakhir</Last_Boot>
+		<Uptime>Waktu aktif</Uptime>
+		<Uptime_Value>{0} hari {1:D2}:{2:D2} jam</Uptime_Value>
+		<Last_Update>Pembaruan terakhir yang diinstal</Last_Update>
+		<Time_Zone>Zona waktu</Time_Zone>
+		<Current_User>Pengguna saat ini</Current_User>
+		<User_Principal_Name>Nama prinsipal pengguna</User_Principal_Name>
+		<Domain>Domain / grup kerja</Domain>
+		<Entra_Joined>Bergabung dengan Entra ID</Entra_Joined>
+		<Domain_Joined>Bergabung dengan domain</Domain_Joined>
+		<Tenant>Tenant</Tenant>
+		<Entra_Device_Id>ID perangkat Entra</Entra_Device_Id>
+		<Intune_User>Pengguna terdaftar Intune</Intune_User>
+		<Intune_Last_Sync>Sinkronisasi Intune terakhir</Intune_Last_Sync>
+		<LAN_Connected>Terhubung ke LAN</LAN_Connected>
+		<WiFi_Connected>Terhubung ke Wi-Fi</WiFi_Connected>
+		<WWAN_Connected>Terhubung ke broadband seluler</WWAN_Connected>
+		<WiFi_SSID>Jaringan Wi-Fi (SSID)</WiFi_SSID>
+		<VPN_Connected>Terhubung ke VPN</VPN_Connected>
+		<Internet_Reachable>Internet dapat dijangkau</Internet_Reachable>
+		<IPv4>Alamat IPv4</IPv4>
+		<IPv6>Alamat IPv6</IPv6>
+		<Gateway>Gateway default</Gateway>
+		<DNS>Server DNS</DNS>
+		<MAC>Alamat MAC</MAC>
+		<Collected_At>Dikumpulkan pada</Collected_At>
+		<Error>Kesalahan</Error>
+		<Yes>Ya</Yes>
+		<No>Tidak</No>
+		<Not_Available>t/a</Not_Available>
+		<Not_Enrolled>Tidak terdaftar / tidak diketahui</Not_Enrolled>
+		<No_WiFi>Tidak ada koneksi Wi-Fi</No_WiFi>
+		<Category_Health>Status sistem</Category_Health>
+		<Health_IME>Layanan IME</Health_IME>
+		<Health_Defender>Microsoft Defender</Health_Defender>
+		<Health_Compliance>Kepatuhan</Health_Compliance>
+		<Health_Applications>Aplikasi perusahaan (Intune)</Health_Applications>
+		<Health_Disk>Ruang disk</Health_Disk>
+		<Health_BitLocker>BitLocker</Health_BitLocker>
+		<Health_PendingReboot>Mulai ulang tertunda</Health_PendingReboot>
+		<Health_Updates>Pembaruan untuk dipasang</Health_Updates>
+		<Health_Service>Layanan</Health_Service>
+		<Health_Custom>Pemeriksaan khusus</Health_Custom>
+		<Health_Collection>Pengumpulan status</Health_Collection>
+		<Health_OK>OK</Health_OK>
+		<Health_Error>Kesalahan</Health_Error>
+		<Health_Unknown>Tidak diketahui</Health_Unknown>
+		<Health_Pending>Tertunda</Health_Pending>
+		<Health_Unavailable>Laporan status lokal tidak tersedia: {0}</Health_Unavailable>
+	</SystemInfo>
+
+	<!-- Action catalogue (Issues_List.xml). The English base texts are in Issues_List.xml, so en.xml only lists the categories. -->
+	<Catalog>
+		<Categories>
+			<Category Id="Browser">Browser</Category>
+			<Category Id="Device">Perangkat</Category>
+			<Category Id="Intune">Intune</Category>
+			<Category Id="Office">Office</Category>
+			<Category Id="OneDrive">OneDrive</Category>
+			<Category Id="Outlook">Outlook</Category>
+			<Category Id="Teams">Teams</Category>
+		</Categories>
+		<Messages>
+			<Message Id="Msg_Teams_Restart">Teams akan ditutup lalu dibuka kembali secara otomatis.
+
+Jika masalah berlanjut, keluar dari Teams lalu masuk kembali. Jika masih terjadi, hubungi dukungan Anda.
+
+Lanjutkan?</Message>
+			<Message Id="Msg_Teams_Restart_Short">Teams akan ditutup lalu dibuka kembali secara otomatis.
+
+Lanjutkan?</Message>
+			<Message Id="Msg_OneDrive_Restart">OneDrive akan ditutup lalu dibuka kembali secara otomatis.
+
+Lanjutkan?</Message>
+			<Message Id="Msg_OneDrive_Restart_Step1">Langkah pertama ini memulai ulang OneDrive. OneDrive akan ditutup lalu dibuka kembali secara otomatis.
+
+Jika masalah berlanjut, jalankan tindakan “Reset klien OneDrive”.
+
+Lanjutkan?</Message>
+			<Message Id="Msg_OneDrive_Reset">Klien OneDrive Anda akan direset. Mereset klien OneDrive tidak menyebabkan kehilangan data.
+
+Jika masalah berlanjut, hubungi dukungan Anda.
+
+Lanjutkan?</Message>
+			<Message Id="Msg_OneDrive_Teams_Sync">Folder disinkronkan di OneDrive, tetapi file yang dibagikan di Teams tidak disinkronkan.</Message>
+			<Message Id="Msg_Intune_Sync_Explanation">Anda ingin memaksa sinkronisasi antara perangkat dan Intune, misalnya untuk mempercepat penerapan kebijakan atau aplikasi. Tindakan ini dijalankan dengan hak administrator melalui layanan SelfX lokal.</Message>
+			<Message Id="Msg_Intune_Restart">Layanan Intune Management Extension akan dimulai ulang di latar belakang. Coba lagi dalam beberapa menit.
+
+Lanjutkan?</Message>
+			<Message Id="Msg_Chkdsk_Explanation">Anda mengalami masalah dengan OneDrive dan mendapatkan kesalahan “0x80071129: Tag dalam buffer titik reparsing tidak valid”. Tindakan ini dijalankan dengan hak administrator melalui layanan SelfX lokal.</Message>
+			<Message Id="Msg_Chkdsk">Pemeriksaan disk akan dijadwalkan saat perangkat dimulai ulang berikutnya. Setelah itu, mulai ulang perangkat. Pemeriksaan dapat berlangsung beberapa menit.
+
+Lanjutkan?</Message>
+			<Message Id="Msg_SendLogs_Explanation">Tim dukungan memerlukan log perangkat Anda untuk menganalisis masalah, misalnya instalasi aplikasi yang gagal, penyiapan yang gagal, atau pesan kesalahan. Tindakan ini mengumpulkan semua log dan informasi sistem yang relevan dengan hak administrator melalui layanan SelfX lokal dan membuka email baru ke tim dukungan dengan laporan terlampir. Tidak ada yang dikirim secara otomatis.</Message>
+			<Message Id="Msg_SendLogs">SelfX sekarang mengumpulkan log perangkat Anda. Ini dapat memakan waktu beberapa menit. Tidak ada yang diubah di perangkat Anda.
+
+Laporan berisi nama perangkat dan nama pengguna Anda. Setelah siap, email baru dengan laporan terlampir akan terbuka. Jelaskan masalah Anda dan kirim email tersebut ke tim dukungan.
+
+Lanjutkan?</Message>
+		</Messages>
+		<Actions>
+			<Action Id="Q_Teams">
+				<Name>Atasi masalah pada Teams</Name>
+				<Explanation>Anda mengalami masalah pada klien Teams (lambat, status tidak benar, kesalahan transfer, dll.).</Explanation>
+				<Alerte_MSG>Teams akan ditutup dan folder cache lokalnya akan dibersihkan. Simpan pekerjaan yang terbuka sebelum melanjutkan. Teams akan dibuka kembali jika sebelumnya sedang berjalan.
+
+Apakah Anda ingin melanjutkan?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Word">
+				<Name>Atasi masalah pada Word</Name>
+				<Explanation>Anda sedang bekerja di Word, tetapi Word berhenti merespons dan Anda tidak dapat melakukan apa pun lagi.</Explanation>
+				<Alerte_MSG>Word akan ditutup dan dibuka kembali secara otomatis. Pekerjaan yang belum disimpan dapat hilang.
+
+Apakah Anda ingin melanjutkan?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Excel">
+				<Name>Atasi masalah pada Excel</Name>
+				<Explanation>Anda sedang bekerja di Excel, tetapi Excel berhenti merespons dan Anda tidak dapat melakukan apa pun lagi.</Explanation>
+				<Alerte_MSG>Excel akan ditutup dan dibuka kembali secara otomatis. Pekerjaan yang belum disimpan dapat hilang.
+
+Apakah Anda ingin melanjutkan?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Store">
+				<Name>Atasi masalah pada Microsoft Store</Name>
+				<Explanation>Anda mengalami masalah dengan Microsoft Store (membuka Store, menginstal aplikasi, dll.).</Explanation>
+				<Alerte_MSG>Cache Microsoft Store akan direset dan Store akan dibuka.
+
+Apakah Anda ingin melanjutkan?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_OneDrive_Restart">
+				<Name>Atasi masalah pada OneDrive (metode 1)</Name>
+				<Explanation>Anda mengalami masalah dengan klien OneDrive (sinkronisasi file atau folder, membuka file, dll.).</Explanation>
+				<Alerte_MSG>OneDrive akan ditutup dan dibuka kembali secara otomatis.
+
+Jika masalah berlanjut, gunakan metode 2.
+
+Apakah Anda ingin melanjutkan?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_OneDrive_Reset">
+				<Name>Atasi masalah pada OneDrive (metode 2)</Name>
+				<Explanation>Anda mengalami masalah dengan klien OneDrive (sinkronisasi file atau folder, membuka file, dll.) dan sudah mencoba metode 1.</Explanation>
+			</Action>
+			<Action Id="Q_Outlook_TeamsAddIn">
+				<Name>Tombol "Rapat Teams" tidak ada di Outlook</Name>
+				<Explanation>Tombol "Rapat Teams baru" tidak ada di Outlook.</Explanation>
+				<Alerte_MSG>Add-in rapat Teams akan diaktifkan kembali. Outlook akan ditutup dan dibuka kembali secara otomatis. Pekerjaan yang belum disimpan dapat hilang.
+
+Jika masalah berlanjut, hubungi tim dukungan Anda.
+
+Apakah Anda ingin melanjutkan?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Device_Connection">
+				<Name>Perangkat Anda mengalami masalah koneksi</Name>
+				<Explanation>Anda mencoba membuka situs web, tetapi koneksi tidak berfungsi, situs tidak dapat dijangkau, atau muncul kesalahan.</Explanation>
+				<Alerte_MSG>Cache DNS perangkat Anda akan dibersihkan di latar belakang. Coba lagi setelah mengklik OK.
+
+Apakah Anda ingin melanjutkan?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Device_Slow">
+				<Name>Perangkat Anda berjalan lambat</Name>
+				<Explanation>Perangkat Anda berjalan lambat.</Explanation>
+				<Alerte_MSG>File sementara dan isi Recycle Bin akan dihapus.
+
+Apakah Anda ingin melanjutkan?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Intune_Restart">
+				<Name>Mulai ulang layanan Intune</Name>
+			</Action>
+			<Action Id="Q_Network_Restart">
+				<Name>Mulai ulang adaptor jaringan</Name>
+				<Explanation>Anda mengalami masalah jaringan dan ingin memulai ulang adaptor jaringan. Tindakan ini berjalan dengan hak administrator melalui layanan SelfX lokal.</Explanation>
+				<Alerte_MSG>Semua adaptor jaringan akan dimulai ulang. Akses jaringan akan terputus sebentar.
+
+Apakah Anda ingin melanjutkan?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_OneDrive_Chkdsk">
+				<Name>Perbaiki file OneDrive yang terkunci</Name>
+			</Action>
+			<Action Id="D_Chrome_Cache">
+				<Name>Hapus data penjelajahan Google Chrome (cache)</Name>
+				<Explanation>Situs web tidak dimuat atau tidak ditampilkan dengan benar di Google Chrome. Cache browser dari semua profil Chrome akan dibersihkan.</Explanation>
+				<Alerte_MSG>Google Chrome akan ditutup dan data penjelajahan yang di-cache akan dihapus.
+
+Apakah Anda ingin melanjutkan?</Alerte_MSG>
+			</Action>
+			<Action Id="D_Firefox_Cache">
+				<Name>Hapus data penjelajahan Firefox (cache)</Name>
+				<Explanation>Situs web tidak dimuat atau tidak ditampilkan dengan benar di Firefox. Cache browser dari semua profil Firefox akan dibersihkan.</Explanation>
+				<Alerte_MSG>Firefox akan ditutup dan data penjelajahan yang di-cache akan dihapus.
+
+Apakah Anda ingin melanjutkan?</Alerte_MSG>
+			</Action>
+			<Action Id="D_Outlook_TeamsAddIn">
+				<Name>Tombol "Rapat Teams" tidak ada di Outlook</Name>
+				<Explanation>Tombol "Rapat Teams baru" tidak ada di Outlook.</Explanation>
+				<Alerte_MSG>Outlook akan ditutup dan dibuka kembali secara otomatis. Pekerjaan yang belum disimpan dapat hilang.
+
+Apakah Anda ingin melanjutkan?</Alerte_MSG>
+			</Action>
+			<Action Id="D_OneDrive_Start">
+				<Name>Jalankan klien OneDrive</Name>
+				<Explanation>OneDrive tidak berjalan.</Explanation>
+				<Alerte_MSG>Klien OneDrive Anda akan dijalankan.
+
+Apakah Anda ingin melanjutkan?</Alerte_MSG>
+			</Action>
+			<Action Id="D_OneDrive_Restart">
+				<Name>Mulai ulang klien OneDrive</Name>
+				<Explanation>Memulai ulang OneDrive dapat mengatasi beberapa masalah, misalnya masalah sinkronisasi.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_Sync_Step1">
+				<Name>Atasi masalah sinkronisasi OneDrive (langkah 1)</Name>
+				<Explanation>Anda mengalami masalah sinkronisasi file atau folder di OneDrive.
+
+Langkah pertama ini memulai ulang OneDrive. OneDrive akan ditutup dan dibuka kembali secara otomatis.
+
+Jika masalah berlanjut, jalankan tindakan "Reset klien OneDrive".</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_Error_8004def4">
+				<Name>OneDrive tidak dapat dimulai: kesalahan 0x8004def4</Name>
+				<Explanation>Kesalahan 0x8004def4 ditampilkan saat OneDrive dimulai.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_Memory">
+				<Name>Perangkat Anda lambat: OneDrive menggunakan banyak memori</Name>
+				<Explanation>Perangkat Anda berjalan lambat dan OneDrive tampaknya menggunakan banyak memori.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_RedCross">
+				<Name>Tanda silang merah pada ikon OneDrive</Name>
+				<Explanation>Tanda silang merah ditampilkan pada ikon OneDrive.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_ClosesItself">
+				<Name>OneDrive menutup sendiri</Name>
+				<Explanation>OneDrive terbuka, lalu menutup sendiri.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_WhiteCross">
+				<Name>Tanda silang putih pada file OneDrive</Name>
+				<Explanation>Tanda silang putih ditampilkan pada file atau folder OneDrive.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_PasswordChange">
+				<Name>Masalah OneDrive setelah mengubah kata sandi Windows</Name>
+				<Explanation>Anda baru saja mengubah kata sandi dan sekarang mengalami masalah dengan OneDrive, misalnya masalah sinkronisasi.
+
+Langkah ini memulai ulang klien OneDrive.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_CannotOpen">
+				<Name>Anda tidak dapat membuka file di OneDrive</Name>
+				<Explanation>File yang disimpan di OneDrive tidak dapat dibuka.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_TeamsSync">
+				<Name>Folder tersinkron di OneDrive tetapi tidak di Teams</Name>
+			</Action>
+			<Action Id="D_OneDrive_Reset">
+				<Name>Reset klien OneDrive</Name>
+				<Explanation>Anda mengalami masalah dengan OneDrive, misalnya masalah sinkronisasi.
+
+Langkah ini mereset klien OneDrive Anda. Mereset klien OneDrive tidak menyebabkan kehilangan data.</Explanation>
+			</Action>
+			<Action Id="D_Teams_Connection">
+				<Name>Atasi masalah koneksi Teams</Name>
+				<Explanation>Anda tidak dapat terhubung ke Teams.</Explanation>
+			</Action>
+			<Action Id="D_Teams_ProfilePicture">
+				<Name>Atasi masalah sinkronisasi foto profil Teams</Name>
+				<Explanation>Foto profil Anda tidak ditampilkan di Teams atau tidak diperbarui.</Explanation>
+			</Action>
+			<Action Id="D_Teams_OneDriveSync">
+				<Name>Folder tersinkron di OneDrive tetapi tidak di Teams</Name>
+			</Action>
+			<Action Id="D_Teams_Loading">
+				<Name>Teams macet di "Memuat Microsoft Teams"</Name>
+				<Explanation>Saat Anda membuka Teams, jendela macet di "Memuat Microsoft Teams".</Explanation>
+			</Action>
+			<Action Id="D_Teams_Sync">
+				<Name>Atasi masalah sinkronisasi Teams</Name>
+				<Explanation>Anda mengalami masalah sinkronisasi di Teams.</Explanation>
+			</Action>
+			<Action Id="D_Teams_DoesNotOpen">
+				<Name>Klien Teams saya tidak terbuka</Name>
+				<Explanation>Anda mencoba membuka Teams, tetapi klien tidak terbuka.</Explanation>
+			</Action>
+			<Action Id="D_Teams_AudioFreeze">
+				<Name>Klien Teams saya macet saat panggilan audio</Name>
+				<Explanation>Teams macet saat panggilan audio.</Explanation>
+			</Action>
+			<Action Id="D_Teams_Camera">
+				<Name>Kamera Teams macet atau tidak terlihat</Name>
+				<Explanation>Video Anda macet atau tidak terlihat selama rapat atau panggilan.</Explanation>
+			</Action>
+			<Action Id="D_Teams_SendFailed">
+				<Name>Pesan Teams tidak dapat dikirim</Name>
+				<Explanation>Pesan di Teams tidak terkirim dan Teams menampilkan "Gagal mengirim".</Explanation>
+			</Action>
+			<Action Id="D_Teams_MeetingDisplay">
+				<Name>Masalah tampilan saat bergabung ke rapat Teams</Name>
+				<Explanation>Teams tidak ditampilkan dengan benar saat Anda bergabung ke rapat.</Explanation>
+			</Action>
+			<Action Id="D_Teams_NoConnect">
+				<Name>Klien Teams saya terbuka tetapi tidak terhubung</Name>
+				<Explanation>Teams terbuka, tetapi tidak terhubung.</Explanation>
+			</Action>
+			<Action Id="D_Teams_StatusOffline">
+				<Name>Status Teams saya tetap offline</Name>
+				<Explanation>Status Anda di Teams tetap "Offline" meskipun Anda sudah masuk.</Explanation>
+			</Action>
+			<Action Id="D_Teams_CallWindow">
+				<Name>Jendela panggilan Teams tidak ditampilkan</Name>
+				<Explanation>Notifikasi panggilan masuk Teams tidak lagi ditampilkan.</Explanation>
+			</Action>
+			<Action Id="D_Teams_MessageContent">
+				<Name>Saya tidak dapat melihat isi pesan di Teams</Name>
+				<Explanation>Anda melihat notifikasi dan pratinjau pesan, tetapi tidak dapat melihat isi pesan.</Explanation>
+			</Action>
+			<Action Id="D_Teams_PasswordChange">
+				<Name>Masalah koneksi setelah mengubah kata sandi</Name>
+				<Explanation>Anda tidak dapat terhubung ke Teams setelah mengubah kata sandi.</Explanation>
+			</Action>
+			<Action Id="D_Teams_Tabs">
+				<Name>Tab di Teams tidak dimuat</Name>
+				<Explanation>Saat Anda membuka tab di Teams, tab tidak dimuat dengan benar.</Explanation>
+			</Action>
+			<Action Id="D_Teams_StatusWrong">
+				<Name>Status Teams saya tidak benar</Name>
+				<Explanation>Status Anda di Teams tidak benar atau tidak diperbarui.</Explanation>
+			</Action>
+			<Action Id="D_Teams_MeetingOpen">
+				<Name>Saya tidak dapat membuka rapat Teams</Name>
+				<Explanation>Rapat Teams tidak terbuka saat Anda mengklik tautan untuk bergabung.</Explanation>
+			</Action>
+			<Action Id="D_Teams_SoundCuts">
+				<Name>Suara terputus-putus selama rapat Teams</Name>
+				<Explanation>Suara terputus-putus selama rapat Teams.</Explanation>
+			</Action>
+			<Action Id="D_Teams_OutlookMeeting">
+				<Name>Saya tidak dapat membuat rapat Teams di kalender Outlook</Name>
+				<Explanation>Anda tidak dapat membuat rapat Teams dari kalender Outlook.</Explanation>
+			</Action>
+			<Action Id="D_Intune_Sync">
+				<Name>Paksa sinkronisasi Intune</Name>
+			</Action>
+			<Action Id="D_OneDrive_Chkdsk">
+				<Name>Periksa disk untuk kesalahan OneDrive (chkdsk)</Name>
+			</Action>
+			<Action Id="D_OneDrive_ReparsePoint">
+				<Name>Tag yang ada di buffer reparse point tidak valid</Name>
+			</Action>
+			<Action Id="D_OneDrive_Error_80071129">
+				<Name>Kesalahan 0x80071129</Name>
+			</Action>
+			<Action Id="Q_Device_SendLogs">
+				<Name>Kirim log perangkat ke tim dukungan</Name>
+			</Action>
+			<Action Id="D_Device_SendLogs">
+				<Name>Kumpulkan log perangkat dan kirim ke tim dukungan melalui email</Name>
+			</Action>
+		</Actions>
+	</Catalog>
+</SelfX_Language>

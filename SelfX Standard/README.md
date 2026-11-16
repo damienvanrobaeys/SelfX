@@ -1,6 +1,18 @@
-# SelfX (Self fix): A tool allowing users to solve their issues themselves and reduce tickets/calls to your support team
+# SelfX Standard
 
-![alt text](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjS7Mpt34adQjIzQOdttUBHcNXODu8NEZ0rbYU31r6rhCKmCZk8ZATIyMd6Ib0ceFqDvSNj5N1NFspvzP-EFYIjZfd3XsfEXOGO8VxnYWCxHFMzM63psuBUE1HVZVdCtimOLfqfJ1VnD-g8WcMsxA7sWwGvjLeypBEwDzfYH9_fxSBL2lvo6A4hjHypxg/w492-h283/selfx_preview.gif)
+SelfX Standard is the per-user SelfX package. It installs the WPF interface and
+its troubleshooting scripts under `%LOCALAPPDATA%\SelfX`, then optionally
+creates Desktop and Start menu shortcuts. The interface has a
+**Troubleshooting** tab with the action list and a **System information** tab
+(`Sources\SystemInfo.ps1`) with read-only device details that users can copy or
+export for the support team.
 
-> *View the full blog post here*
-https://www.systanddeploy.com/2022/08/selfx-tool-allowing-users-to-solve.html
+## Documentation
+
+- [Installation](../docs/Installation.md#selfx-standard)
+- [Configuration](../docs/Configuration.md#selfx-standard)
+- [User manual](../docs/User-Manual.md#selfx-standard)
+
+Run the installer in the `SelfX Standard` directory and in the intended user's
+context. It is not a Windows service and should not be installed as SYSTEM when
+it is expected to appear in an end user's profile.

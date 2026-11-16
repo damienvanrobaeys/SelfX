@@ -16,8 +16,4 @@ If($Teams_Process_Status -ne $null)
 If($Teams_Kill_Status -eq $True)
 	{
 		Start-Process -FilePath $Teams_Path	
-	}	
-
-$Global:Current_Folder = split-path $MyInvocation.MyCommand.Path
-$Args = "$Current_Folder\AutoDepannage_Notification.ps1", "-Category 'Teams'"
-Start-Process -WindowStyle hidden "powershell.exe" -ArgumentList $Args	
+	}

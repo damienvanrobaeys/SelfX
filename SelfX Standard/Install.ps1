@@ -42,8 +42,6 @@ $XML_Content = @"
 
 		$Issues_List_File = "$Destination_folder\Issues_List.xml"		
 		Invoke-WebRequest -Uri $XML_Link -OutFile $Issues_List_File -UseBasicParsing | out-null	
-		
-		Invoke-WebRequest -Uri $ZIP_Link -OutFile $ZIP_File -UseBasicParsing | out-null		
 
 		$Scripts_to_run_Folder = "$Destination_folder\Scripts_to_run"
 		If(!(test-path $Scripts_to_run_Folder)){new-item $Scripts_to_run_Folder -Type Directory -Force}

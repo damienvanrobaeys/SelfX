@@ -1,0 +1,111 @@
+﻿<!--
+	SelfX Service - GUI configuration (Tool_Config.xml)
+
+	Settings of the SelfX window: language, branding, shown buttons and tabs, support contact.
+	The texts of the user interface are not stored here but in Languages\<culture>.xml.
+
+	History:
+	Version  Date        Author               Change
+	1.0.0    2022-10-04  Damien Van Robaeys   Initial version (SelfX)
+	2.0.0    2026-10-28  Wolfgang Baeck       SelfX Service: local service texts, shortcuts, System information tab
+	2.1.0    2026-10-28  Wolfgang Baeck       Branding settings
+	2.2.0    2026-10-28  Wolfgang Baeck       Multilingual UI: texts moved to Languages, new Tool_Language
+	2.3.0    2026-10-28  Wolfgang Baeck       Health status in System information (Health_Config.xml)
+	2.3.2    2026-10-28  Wolfgang Baeck       Single-status recheck with Ok/Error buttons
+	2.3.3    2026-10-29  Wolfgang Baeck       Pending reboot and updates-to-install status
+	2.3.4    2026-10-29  Wolfgang Baeck       Pending (warning) status; Defender signature update button
+	2.4.0    2026-11-02  Wolfgang Baeck       Device logs for the support by e-mail (DeviceLogs_Days, DeviceLogs_Compress)
+	2.5.0    2026-11-04  Wolfgang Baeck       Modern UI: Device status page, tray icon, help dialog (support hours, Teams, website)
+	2.5.1    2026-11-04  Wolfgang Baeck       Company branding (logo in Branding, brand color)
+	2.5.2    2026-11-04  Wolfgang Baeck       Fix: update no longer fails (exit code 1) while SelfX or the status icon is open
+	2.5.3    2026-11-04  Wolfgang Baeck       Times in the time zone of the user; "Fix all problems" button on the Device status page; start without command window (SelfX.exe)
+	2.5.4    2026-11-05  Wolfgang Baeck       Defender row shows the Fix button only while it is not OK (When="NotOK")
+	2.5.5    2026-11-05  Wolfgang Baeck       Compliance row: local check of the Intune compliance criteria (HealthChecks\Check-Compliance.ps1) instead of Unknown
+	2.5.6    2026-11-05  Wolfgang Baeck       Updates row: Fix button installs pending Windows updates and starts Store app updates as SYSTEM (no restart)
+	2.5.7    2026-11-05  Wolfgang Baeck       Fix: uninstallation closes open SelfX windows and status icons (failed while they were open)
+	2.5.8    2026-11-05  Wolfgang Baeck       Status icon starts right after the installation (signed-in users), not only at the next sign-in
+	2.5.9    2026-11-05  Wolfgang Baeck       Language selection for the user in the settings (Show_Language_Setting)
+	2.5.10   2026-11-06  Wolfgang Baeck       Fix: System information shows "LAN connected" also in virtual machines (Hyper-V, VMware); last Intune sync in local time (was 1 hour too late)
+	2.6.0    2026-11-06  Wolfgang Baeck       Logging of all scripts to ProgramData\SelfX\Logs with housekeeping (Log_Retention_Days); restart and app retry repairs; updates via Windows Update
+	2.6.1    2026-11-06  Wolfgang Baeck       Start and Fix buttons show a rotating icon and "Running..." while the action runs; result of user actions shown
+	2.6.2    2026-11-06  Wolfgang Baeck       Taskbar shows the SelfX icon (Brand_Icon) instead of the PowerShell icon
+	2.6.3    2026-11-06  Wolfgang Baeck       Fix: the Updates Fix button installs the updates again (UsoClient install commands fail on Windows 11 24H2)
+	2.6.4    2026-11-06  Wolfgang Baeck       The device logs report also contains the SelfX logs (service, scripts, own logs of the user)
+	2.6.5    2026-11-06  Wolfgang Baeck       Each user can switch the notifications of the status icon on or off (Tray_Notifications allows it)
+	2.6.6    2026-11-06  Wolfgang Baeck       Appearance Automatic: SelfX follows the app mode of Windows (dark or light)
+	2.6.7    2026-11-16  Wolfgang Baeck       Default appearance Automatic (Tool_Theme Auto): SelfX uses the dark or light mode of Windows
+	2.6.8    2026-11-16  Wolfgang Baeck       Neutral branding and support placeholders (Branding\company_logo.png, example.com)
+-->
+<GUI_Config>	
+	<Tool_Version>2.6.8</Tool_Version> <!-- Tool version -->
+	<!-- Language of the user interface. All texts are in Languages\<culture>.xml (see docs\Configuration.md) -->
+	<Tool_Language>Auto</Tool_Language> <!-- Default language: Auto = Windows display language of the user (English if not available), or a culture such as de, fr, es, zh-Hans. Users can choose another language in SelfX > Settings (see Show_Language_Setting) -->
+	<Tool_Name>SelfX (Self fix)</Tool_Name> <!-- Text displayed in the title bar --> 
+	
+	<!-- Shortcut location (all users, created by Install.ps1) --> 
+	<Shortcut_Desktop>True</Shortcut_Desktop> <!-- Create a shortcut on the public desktop: True or False -->
+	<Shortcut_StartMenu>True</Shortcut_StartMenu> <!-- Create a shortcut in the Start menu for all users: True or False -->
+	<Shortcut_Name>SelfX (Self fix)</Shortcut_Name> <!-- Name of the shortcuts -->
+
+				
+	<!-- Branding: company logo, icon and colors. Files are relative to the install folder (copy them into Sources before packaging), e.g. Branding\logo.png -->
+	<Brand_Logo>Branding\company_logo.png</Brand_Logo> <!-- Company logo (placeholder: replace Branding\company_logo.png with your logo or change the path) shown at the top of the navigation bar and in the About dialog (png, jpg, bmp, gif or ico). Empty = no logo -->
+	<Brand_Logo_Height>40</Brand_Logo_Height> <!-- Height of the logo in the navigation bar in pixels (16-120, at most 196 pixels wide) -->
+	<Brand_Icon>Repair.ico</Brand_Icon> <!-- Icon of the window, the taskbar, the shortcuts and the tray icon (.ico recommended) -->
+	<Brand_Accent_Color>#0072BC</Brand_Accent_Color> <!-- Company color as #RRGGBB, e.g. #E20074. Used for buttons, selections, links and icons (adjusted automatically when too dark or too light to read). Empty = use Tool_Color -->
+	<Brand_TitleBar_Color>#0072BC</Brand_TitleBar_Color> <!-- Title bar background as #RRGGBB (text color is chosen automatically). Empty = window background -->
+	<Brand_Run_Button_Color>#0072BC</Brand_Run_Button_Color> <!-- Color of the "run" and "fix" buttons as #RRGGBB. Empty = accent color -->
+	<Brand_Info_Button_Color>#0072BC</Brand_Info_Button_Color> <!-- Color of the "more information" icons as #RRGGBB. Empty = accent color -->
+	<!-- Main color of the tool -->
+	<Tool_Color>Cyan</Tool_Color> <!-- Used when Brand_Accent_Color is empty. Available colors: “Red”, “Green”, “Blue”, “Purple”, “Orange”, “Lime”, “Emerald”, “Teal”, “Cyan”, “Cobalt”, “Indigo”, “Violet”, “Pink”, “Magenta”, “Crimson”, “Amber”, “Yellow”, “Brown”, “Olive”, “Steel”, “Mauve”, “Taupe”, “Sienna” -->				
+	<Tool_Theme>Auto</Tool_Theme> <!-- Default theme: Auto (as the app mode of Windows), Dark or Light. Each user can change it in SelfX > Settings -->
+	
+	<!-- Main window -->
+	<Show_Computer_Name_MainGUI>False</Show_Computer_Name_MainGUI> <!-- Show the computer name beside the main title: True or False -->		
+	<Show_Computer_Name_title_bar>False</Show_Computer_Name_title_bar> <!-- Show the computer name beside the main title: True or False -->		
+		
+	
+	<!-- View of the troubleshooting page -->
+	<Default_Solution_Mode>Simplified</Default_Solution_Mode> <!-- Can be Simplified or Detailed -->
+	
+	<!-- Message bar at the bottom -->
+	<Show_Reboot_Warning>True</Show_Reboot_Warning> <!-- Show the reboot warning: True or False -->	
+
+	
+	<!-- Settings dialog (gear in the title bar) -->
+	<Show_Theme_Button>True</Show_Theme_Button> <!-- Users can choose the appearance (Automatic, Dark or Light) in the settings: True or False -->
+	<Show_Language_Setting>True</Show_Language_Setting> <!-- Users can choose the language of SelfX in the settings (saved per user, HKCU\Software\SelfX\Language): True or False. False = always Tool_Language -->
+	
+	<!-- Help and support dialog (question mark in the title bar). Empty values are not shown -->
+	<Show_Support_Button>True</Show_Support_Button> <!-- Display the help button in the title bar: True or False -->
+	<Support_Hours>Mon-Fri 08:00-17:00</Support_Hours> <!-- Support hours (placeholder), e.g. Mon-Fri 08:00-17:00 -->
+	<Support_Phone_number>+1 555 0100</Support_Phone_number> <!-- Support phone number (placeholder) -->
+	<Support_Teams></Support_Teams> <!-- Teams chat: address of a user or shared support account (opens a chat), or a full https Teams link -->
+	<Support_Website>https://support.example.com</Support_Website> <!-- Placeholder. Website or ticket system, must start with https:// or http:// -->
+	<Support_Mail>support@example.com</Support_Mail> <!-- Placeholder. Support e-mail address. Also the recipient of the device logs e-mail (Post_Action MailReport). Empty = the user enters the recipient -->
+
+	<!-- Device logs for the support (action "Send the device logs to the support", Collect-DeviceLogs.ps1 run as SYSTEM) -->
+	<DeviceLogs_Days>7</DeviceLogs_Days> <!-- Days of event log history in the report (1-60) -->
+	<DeviceLogs_Compress>True</DeviceLogs_Compress> <!-- Attach the report as .zip (True) or as .txt (False) -->
+
+	<!-- Logging: all SelfX scripts log to %ProgramData%\SelfX\Logs (users: Logs\Users\<SID>), see docs\Configuration.md -->
+	<Log_Retention_Days>90</Log_Retention_Days> <!-- Log files older than this number of days are deleted (1-3650, default 90) -->
+
+	<!-- About part -->
+	<Show_About_Button>True</Show_About_Button> <!-- Display button in the title bar to view about information. True or False  -->	
+	<About_Logo>logo.png</About_Logo> <!-- Logo displayed in the About part. By default logo.png -->	
+
+	<!-- Pages of the navigation bar -->
+	<Show_Status_Page>True</Show_Status_Page> <!-- Display the Device status page (health checks, Health_Config.xml): True or False -->
+
+	<!-- System information page (read-only device details for the user and the support team) -->
+	<Show_SystemInfo_Tab>True</Show_SystemInfo_Tab> <!-- Display the System information page: True or False -->
+	<SystemInfo_Internet_Test_Host>www.msftconnecttest.com</SystemInfo_Internet_Test_Host> <!-- Host used for the "Internet reachable" check -->
+	<SystemInfo_Internet_Test_Port>80</SystemInfo_Internet_Test_Port> <!-- TCP port used for the "Internet reachable" check -->
+	<Show_SystemInfo_Intune_Actions>True</Show_SystemInfo_Intune_Actions> <!-- Display the tools (Intune, Company Portal, Quick Assist, logs) on the page: True or False -->
+
+	<!-- Tray icon (notification area). Install.ps1 starts it at sign-in for all users; each user can hide it -->
+	<Show_Tray_Icon>True</Show_Tray_Icon> <!-- Start the status icon at sign-in for all users: True or False -->
+	<Tray_Notifications>True</Tray_Notifications> <!-- Show a Windows notification once when a check changes to Error: True or False. True = each user can switch them off in SelfX > Settings or in the menu of the icon; False = off for all users -->
+	<Tray_Poll_Seconds>60</Tray_Poll_Seconds> <!-- How often the icon reads the cached status of the service (15-3600 seconds; no check is run) -->
+</GUI_Config>

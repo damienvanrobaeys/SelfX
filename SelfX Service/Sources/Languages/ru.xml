@@ -1,0 +1,563 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+	SelfX Service - language file
+
+	Description:
+	  Texts of the SelfX user interface in one language. SelfX selects the file that matches the Windows
+	  display language of the user (for example de-CH -> de.xml, zh-TW -> zh-Hant.xml). If no file matches,
+	  en.xml is used. A text that is missing or empty in a language file is taken from en.xml.
+
+	Add a language:
+	  1. Copy en.xml to <culture>.xml. Use the neutral culture name (de, fr, pt) or a script/region name
+	     (zh-Hans, zh-Hant, pt-BR). Windows tries the exact culture first and then its parents.
+	  2. Set Culture, Name, NativeName and FlowDirection (RightToLeft for Arabic, Persian, Urdu, Hebrew ...).
+	  3. Translate the element texts. Do not change element names or Id attributes.
+	     Keep placeholders such as {0}, {1}, {1:D2} and the "|" separators of SystemInfo_Export_Filter.
+	  4. Catalogue texts: add an <Action Id="..."> entry per action and a <Message Id="..."> entry per shared
+	     message. The English base texts are in Issues_List.xml. Untranslated actions are shown in English.
+
+	History:
+	  Version  Date        Author               Change
+	  2.2.0    2026-10-28  Wolfgang Baeck       Initial version: multilingual user interface
+-->
+<SelfX_Language Culture="ru" Name="Russian" NativeName="Русский" FlowDirection="LeftToRight" Version="2.2.0">
+	<UI>
+		<Health_Fix>Исправить</Health_Fix>
+		<Health_Fix_Confirm>Выполнить настроенное исправление для {0}? Сохраните работу: приложения, службы или подключения могут быть прерваны. Затем состояние будет проверено снова.</Health_Fix_Confirm>
+		<Health_Restart_Button>Перезагрузить</Health_Restart_Button>
+		<Health_Restart_Title>Перезагрузка устройства</Health_Restart_Title>
+		<Health_Restart_Confirm>Windows будет перезагружена, чтобы завершить ожидающие обновления и изменения.&#10;&#10;Сначала сохраните свою работу и закройте все программы. Перезагрузка начнётся примерно через 30 секунд после подтверждения.&#10;&#10;Перезагрузить сейчас?</Health_Restart_Confirm>
+		<Button_Restart_Now>Перезагрузить сейчас</Button_Restart_Now>
+		<Health_Restart_Started>Windows перезагрузится примерно через 30 секунд. Сохраните свою работу сейчас.</Health_Restart_Started>
+		<Health_Updates_Started>Выполняется поиск, загрузка и установка обновлений Windows. Это может занять несколько минут; вы можете продолжать работу.</Health_Updates_Started>
+		<Health_Updates_Done>Центр обновления Windows завершил работу. Состояние устройства проверяется снова и показывает, нужна ли перезагрузка.</Health_Updates_Done>
+		<Health_Apps_Button>Повторить</Health_Apps_Button>
+		<Health_Apps_Started>Установка приложений, которые не удалось установить, запускается снова. Это может занять несколько минут; ход установки виден на корпоративном портале.</Health_Apps_Started>
+		<Health_Check_Button>OK</Health_Check_Button>
+		<Health_Error_Button>Ошибка</Health_Error_Button>
+		<Health_Pending_Button>Ожидает</Health_Pending_Button>
+		<Health_Check_Tooltip>Проверить это состояние снова</Health_Check_Tooltip>
+		<!-- Main window -->
+		<Main_Title_Text>Проблема с устройством?</Main_Title_Text>
+		<Subtitle_Text>Выберите решение проблемы из списка</Subtitle_Text>
+		<Run_solution_Text>Запустить действие</Run_solution_Text>
+		<Run_explanation_Text>Показать сведения</Run_explanation_Text>
+		<Issue_filter_Title_Text>Фильтр по компоненту</Issue_filter_Title_Text>
+		<Issue_filter_KeyWord_Text>Введите ключевое слово</Issue_filter_KeyWord_Text>
+		<Available_Actions_Count>Доступно действий: {0}</Available_Actions_Count>
+		<Troubleshooting_Tab_Text>Устранение неполадок</Troubleshooting_Tab_Text>
+		<Theme_Button_ToolTip>Переключить светлую или темную тему</Theme_Button_ToolTip>
+		<Support_Button_ToolTip>Связаться со службой поддержки</Support_Button_ToolTip>
+		<About_Button_ToolTip>О программе SelfX</About_Button_ToolTip>
+		<Shield_ToolTip>Запускается с правами администратора через локальную службу SelfX</Shield_ToolTip>
+
+		<!-- Simplified or detailed view -->
+		<Solution_Mode_Simple>Упрощенный вид</Solution_Mode_Simple>
+		<Solution_Mode_Detailed>Подробный вид</Solution_Mode_Detailed>
+		<Solution_Mode_Info_Title>Упрощенный или подробный вид?</Solution_Mode_Info_Title>
+		<Solution_Mode_Info_Text>В упрощенном виде проблемы сгруппированы по продуктам.
+В подробном виде перечислены конкретные проблемы, которые можно устранить.
+
+Если в упрощенном виде нет решения вашей проблемы, выберите подробный вид.</Solution_Mode_Info_Text>
+
+		<!-- Dialogs -->
+		<Warning_Click_Run_Solution_Text>Устранение проблемы</Warning_Click_Run_Solution_Text>
+		<Warning_Click_Run_Explanation_Text>Дополнительные сведения</Warning_Click_Run_Explanation_Text>
+		<Button_Ok>ОК</Button_Ok>
+		<Button_Cancel>Отмена</Button_Cancel>
+		<Button_Yes>Да</Button_Yes>
+		<Button_No>Нет</Button_No>
+		<Close_Button_Text>Закрыть</Close_Button_Text>
+		<Reboot_Alert>Для стабильной и правильной работы перезагружайте устройство не реже одного раза в неделю.</Reboot_Alert>
+
+		<!-- Support and About dialogs -->
+		<Support_Window_Title>Сведения о службе поддержки</Support_Window_Title>
+		<Support_Phone_Label>Номер телефона:</Support_Phone_Label>
+		<Support_Mail_Label>Электронная почта:</Support_Mail_Label>
+		<About_Version_Text>{0}: версия {1} — каталог: {2}</About_Version_Text>
+
+		<!-- Local SelfX service (actions with Context System) -->
+		<Service_Running_Text>Служба SelfX работает: действия со значком щита запускаются с правами администратора.</Service_Running_Text>
+		<Service_Unavailable_Text>Служба SelfX не работает: действия со значком щита недоступны.</Service_Unavailable_Text>
+		<Service_Busy_Text>Выполняется другое действие. Дождитесь его завершения.</Service_Busy_Text>
+		<Action_Running_Text>Выполняется действие: {0}</Action_Running_Text>
+		<Action_Running_Label>Выполняется…</Action_Running_Label>
+		<Action_Success_Text>Действие выполнено: {0}</Action_Success_Text>
+		<Action_Failed_Text>Не удалось выполнить действие: {0}</Action_Failed_Text>
+		<Action_Failed_ExitCode_Text>Не удалось выполнить действие: {0} (код завершения {1})</Action_Failed_ExitCode_Text>
+		<Action_Timeout_Text>Действие остановлено из-за превышения времени ожидания: {0}</Action_Timeout_Text>
+		<Script_Not_Found_Text>Не найден скрипт для этого действия: {0}</Script_Not_Found_Text>
+
+		<!-- System information tab -->
+		<SystemInfo_Tab_Text>Сведения о системе</SystemInfo_Tab_Text>
+		<SystemInfo_Title_Text>Сведения об устройстве для службы поддержки</SystemInfo_Title_Text>
+		<SystemInfo_Hint_Text>Дважды щелкните строку, чтобы скопировать значение.</SystemInfo_Hint_Text>
+		<SystemInfo_Loading_Text>Сбор сведений о системе...</SystemInfo_Loading_Text>
+		<SystemInfo_Copied_Text>Скопировано в буфер обмена: {0}</SystemInfo_Copied_Text>
+		<SystemInfo_Refresh_Text>Обновить</SystemInfo_Refresh_Text>
+		<SystemInfo_Copy_Text>Копировать все</SystemInfo_Copy_Text>
+		<SystemInfo_Export_Text>Экспорт</SystemInfo_Export_Text>
+		<SystemInfo_Export_Filter>Текстовый файл (*.txt)|*.txt|Файл HTML (*.html)|*.html|Файл CSV (*.csv)|*.csv|Файл JSON (*.json)|*.json</SystemInfo_Export_Filter>
+		<SystemInfo_SyncApps_Text>Синхронизировать приложения Intune</SystemInfo_SyncApps_Text>
+		<SystemInfo_SyncCompliance_Text>Проверить соответствие</SystemInfo_SyncCompliance_Text>
+		<SystemInfo_CompanyPortal_Text>Портал компании</SystemInfo_CompanyPortal_Text>
+		<SystemInfo_QuickAssist_Text>Быстрая помощь</SystemInfo_QuickAssist_Text>
+		<SystemInfo_MdmDiagnostics_Text>Собрать журналы MDM</SystemInfo_MdmDiagnostics_Text>
+		<SystemInfo_SendLogs_Text>Отправить журналы в поддержку</SystemInfo_SendLogs_Text>
+		<Report_Mail_Subject>Журналы устройства {0}</Report_Mail_Subject>
+		<Report_Mail_Body>Здравствуйте!
+
+Во вложении журналы устройства {0}, собранные SelfX {1}.
+
+Описание проблемы:</Report_Mail_Body>
+		<Report_Mail_Opened_Text>Открыто письмо с журналами устройства во вложении. Опишите проблему и отправьте письмо.</Report_Mail_Opened_Text>
+		<Report_Mail_Recipient_Text>Открыто письмо с журналами устройства во вложении. Укажите получателя ({0}), опишите проблему и отправьте письмо.</Report_Mail_Recipient_Text>
+		<Report_Mail_Manual_Text>Журналы устройства сохранены в {0}. Вложите этот файл в письмо (получатель: {1}) и опишите проблему.</Report_Mail_Manual_Text>
+		<Report_Not_Found_Text>Журналы устройства собраны, но подготовить письмо не удалось: {0}</Report_Not_Found_Text>
+		<Report_Support_Fallback>служба поддержки</Report_Support_Fallback>
+		<Nav_Status_Text>Состояние устройства</Nav_Status_Text>
+		<Status_LastChecked_Text>Последняя проверка: {0}</Status_LastChecked_Text>
+		<Status_NotChecked_Text>Состояние устройства ещё не проверялось.</Status_NotChecked_Text>
+		<Status_Background_Text>Автоматическая проверка каждые {0} мин</Status_Background_Text>
+		<Status_Background_Battery_Text>Автоматические проверки приостановлены при работе от батареи</Status_Background_Battery_Text>
+		<Status_Checking_Text>Проверка состояния устройства. Это может занять до минуты ...</Status_Checking_Text>
+		<Status_AllOk_Title>Всё в порядке</Status_AllOk_Title>
+		<Status_AllOk_Text>На устройстве не найдено проблем.</Status_AllOk_Text>
+		<Status_Issues_Title>Требуют внимания: {0}</Status_Issues_Title>
+		<Status_Issues_Text>Проблемы показаны первыми. Нажмите «Исправить», чтобы устранить проблему, или стрелки, чтобы проверить её снова.</Status_Issues_Text>
+		<Status_CheckAll_Tooltip>Проверить всё снова сейчас. Это может занять до минуты.</Status_CheckAll_Tooltip>
+		<Status_FixAll>Устранить все проблемы</Status_FixAll>
+		<Status_FixAll_Tooltip>Поочерёдно запускает настроенное исправление для каждой проблемы. Затем всё проверяется заново.</Status_FixAll_Tooltip>
+		<Health_FixAll_Confirm>Поочерёдно запустить настроенные исправления для этих проблем ({0})?&#10;&#10;{1}&#10;&#10;Приложения могут быть закрыты, а службы или сетевые подключения прерваны. Сначала сохраните свою работу. Затем всё проверяется заново.</Health_FixAll_Confirm>
+		<Status_FixAll_Done>Успешно выполнено исправлений: {0} из {1}. Состояние проверяется заново.</Status_FixAll_Done>
+		<Status_FixAll_Failed>Не удалось: {0}</Status_FixAll_Failed>
+		<Tooltip_Fix>Автоматически устраняет эту проблему. Сначала потребуется подтверждение.</Tooltip_Fix>
+		<Tooltip_Run>Запускает это решение. Перед любыми действиями потребуется подтверждение.</Tooltip_Run>
+		<Filter_All_Text>Все</Filter_All_Text>
+		<View_Help_Tooltip>Чем отличается упрощённое представление от подробного?</View_Help_Tooltip>
+		<SystemInfo_Cached_Text>Сведения от {0} – обновляются ...</SystemInfo_Cached_Text>
+		<Tooltip_Refresh>собирает сведения заново</Tooltip_Refresh>
+		<Tooltip_Copy>копирует все сведения, например для вставки в обращение в поддержку</Tooltip_Copy>
+		<Tooltip_Export>сохраняет все сведения в файл</Tooltip_Export>
+		<Tools_Title_Text>Инструменты</Tools_Title_Text>
+		<Tooltip_SyncApps>Просит Intune установить или обновить назначенные вам приложения прямо сейчас.</Tooltip_SyncApps>
+		<Tooltip_SyncCompliance>Просит Intune проверить сейчас, соответствует ли устройство правилам компании.</Tooltip_SyncCompliance>
+		<Tooltip_CompanyPortal>Открывает Корпоративный портал, где можно установить корпоративные приложения.</Tooltip_CompanyPortal>
+		<Tooltip_QuickAssist>Открывает Быструю помощь, чтобы сотрудник поддержки мог видеть ваш экран и помочь – только с вашего согласия.</Tooltip_QuickAssist>
+		<Tooltip_MdmDiagnostics>Собирает журналы управления устройством в папку для поддержки.</Tooltip_MdmDiagnostics>
+		<Tooltip_SendLogs>Собирает все журналы устройства и открывает письмо в поддержку с отчётом во вложении.</Tooltip_SendLogs>
+		<Settings_Button_ToolTip>Параметры (язык, оформление и значок состояния)</Settings_Button_ToolTip>
+		<Settings_Title>Параметры</Settings_Title>
+		<Settings_Language_Text>Язык</Settings_Language_Text>
+		<Settings_Language_Auto>Автоматически ({0})</Settings_Language_Auto>
+		<Settings_Language_Hint>SelfX перезапустится на выбранном языке.</Settings_Language_Hint>
+		<Settings_Language_Later>Новый язык будет использован при следующем открытии SelfX, так как сейчас выполняется исправление.</Settings_Language_Later>
+		<Settings_Theme_Text>Оформление</Settings_Theme_Text>
+		<Settings_Theme_Auto>Автоматически</Settings_Theme_Auto>
+		<Settings_Theme_Auto_ToolTip>Как в Windows: используется режим приложений из «Параметры» &gt; «Персонализация» &gt; «Цвета»</Settings_Theme_Auto_ToolTip>
+		<Settings_Theme_Dark>Тёмная</Settings_Theme_Dark>
+		<Settings_Theme_Light>Светлая</Settings_Theme_Light>
+		<Settings_Tray_Text>Показывать значок SelfX в области уведомлений</Settings_Tray_Text>
+		<Settings_Tray_Hint>Значок рядом с часами показывает состояние устройства и сообщает, когда обнаружена проблема.</Settings_Tray_Hint>
+		<Settings_Notify_Text>Показывать уведомления о проблемах</Settings_Notify_Text>
+		<Settings_Notify_Hint>Помимо цветного значка SelfX, Windows показывает сообщение при обнаружении новой проблемы, например нехватки места на диске.</Settings_Notify_Hint>
+		<Support_Intro_Text>Мы рады помочь. Связаться с нами можно так:</Support_Intro_Text>
+		<Support_Hours_Label>Часы работы поддержки</Support_Hours_Label>
+		<Support_Teams_Label>Чат в Teams</Support_Teams_Label>
+		<Support_Website_Label>Сайт / система заявок</Support_Website_Label>
+		<Support_Teams_Button>Начать чат</Support_Teams_Button>
+		<Support_Website_Button>Открыть</Support_Website_Button>
+		<Support_Mail_Button>Написать письмо</Support_Mail_Button>
+		<Support_None_Text>Контактные данные не настроены. Обратитесь в ИТ-отдел.</Support_None_Text>
+		<Service_Short_Running>Служба SelfX работает</Service_Short_Running>
+		<Service_Short_Unavailable>Служба SelfX недоступна</Service_Short_Unavailable>
+		<Version_Text>Версия {0}</Version_Text>
+		<Tray_Tooltip_OK>SelfX: всё в порядке</Tray_Tooltip_OK>
+		<Tray_Tooltip_Issues>SelfX: проблем: {0}, предупреждений: {1}</Tray_Tooltip_Issues>
+		<Tray_Tooltip_Unknown>SelfX: состояние пока недоступно</Tray_Tooltip_Unknown>
+		<Tray_Menu_Open>Открыть SelfX</Tray_Menu_Open>
+		<Tray_Menu_Status>Показать состояние устройства</Tray_Menu_Status>
+		<Tray_Menu_Check>Проверить состояние сейчас</Tray_Menu_Check>
+		<Tray_Menu_Notify>Показывать уведомления</Tray_Menu_Notify>
+		<Tray_Menu_Hide>Скрыть этот значок</Tray_Menu_Hide>
+		<Tray_Notify_Click>Нажмите здесь, чтобы увидеть подробности.</Tray_Notify_Click>
+		<Tray_Hidden_Text>Значок скрыт. Его можно снова показать в SelfX в разделе «Параметры».</Tray_Hidden_Text>
+		<Tray_Checking_Text>Проверка состояния устройства ...</Tray_Checking_Text>
+	</UI>
+
+	<!-- Labels and values of the System information tab -->
+	<SystemInfo>
+		<Category_Device>Устройство</Category_Device>
+		<Category_Windows>Windows</Category_Windows>
+		<Category_User>Пользователь и управление</Category_User>
+		<Category_Network>Сеть</Category_Network>
+		<Category_Report>Отчет</Category_Report>
+		<Computer_Name>Имя компьютера</Computer_Name>
+		<Manufacturer>Производитель</Manufacturer>
+		<Model>Модель</Model>
+		<Serial_Number>Серийный номер</Serial_Number>
+		<BIOS_Version>Версия BIOS</BIOS_Version>
+		<Processor>Процессор</Processor>
+		<Memory>Память (ОЗУ)</Memory>
+		<Free_Space>Свободное место {0}</Free_Space>
+		<Free_Space_Value>{0} из {1} ({2}%)</Free_Space_Value>
+		<Battery>Батарея</Battery>
+		<Windows_Version>Версия Windows</Windows_Version>
+		<OS_Build>Сборка ОС</OS_Build>
+		<Last_Boot>Последний запуск</Last_Boot>
+		<Uptime>Время работы</Uptime>
+		<Uptime_Value>{0} дн. {1:D2}:{2:D2} ч</Uptime_Value>
+		<Last_Update>Последнее установленное обновление</Last_Update>
+		<Time_Zone>Часовой пояс</Time_Zone>
+		<Current_User>Текущий пользователь</Current_User>
+		<User_Principal_Name>Имя участника-пользователя</User_Principal_Name>
+		<Domain>Домен / рабочая группа</Domain>
+		<Entra_Joined>Подключено к Entra ID</Entra_Joined>
+		<Domain_Joined>В домене</Domain_Joined>
+		<Tenant>Клиент</Tenant>
+		<Entra_Device_Id>Идентификатор устройства Entra</Entra_Device_Id>
+		<Intune_User>Пользователь, зарегистрированный в Intune</Intune_User>
+		<Intune_Last_Sync>Последняя синхронизация Intune</Intune_Last_Sync>
+		<LAN_Connected>Подключение LAN</LAN_Connected>
+		<WiFi_Connected>Подключение Wi-Fi</WiFi_Connected>
+		<WWAN_Connected>Мобильное широкополосное подключение</WWAN_Connected>
+		<WiFi_SSID>Сеть Wi-Fi (SSID)</WiFi_SSID>
+		<VPN_Connected>Подключение VPN</VPN_Connected>
+		<Internet_Reachable>Доступ к Интернету</Internet_Reachable>
+		<IPv4>Адреса IPv4</IPv4>
+		<IPv6>Адреса IPv6</IPv6>
+		<Gateway>Шлюз по умолчанию</Gateway>
+		<DNS>Серверы DNS</DNS>
+		<MAC>Адреса MAC</MAC>
+		<Collected_At>Собрано</Collected_At>
+		<Error>Ошибка</Error>
+		<Yes>Да</Yes>
+		<No>Нет</No>
+		<Not_Available>н/д</Not_Available>
+		<Not_Enrolled>Не зарегистрировано / неизвестно</Not_Enrolled>
+		<No_WiFi>Нет подключения Wi-Fi</No_WiFi>
+		<Category_Health>Состояние системы</Category_Health>
+		<Health_IME>Служба IME</Health_IME>
+		<Health_Defender>Microsoft Defender</Health_Defender>
+		<Health_Compliance>Соответствие требованиям</Health_Compliance>
+		<Health_Applications>Корпоративные приложения (Intune)</Health_Applications>
+		<Health_Disk>Место на диске</Health_Disk>
+		<Health_BitLocker>BitLocker</Health_BitLocker>
+		<Health_PendingReboot>Ожидается перезагрузка</Health_PendingReboot>
+		<Health_Updates>Обновления для установки</Health_Updates>
+		<Health_Service>Служба</Health_Service>
+		<Health_Custom>Пользовательская проверка</Health_Custom>
+		<Health_Collection>Сбор состояния</Health_Collection>
+		<Health_OK>OK</Health_OK>
+		<Health_Error>Ошибка</Health_Error>
+		<Health_Unknown>Неизвестно</Health_Unknown>
+		<Health_Pending>Ожидает</Health_Pending>
+		<Health_Unavailable>Локальный отчет о состоянии недоступен: {0}</Health_Unavailable>
+	</SystemInfo>
+
+	<!-- Action catalogue (Issues_List.xml). The English base texts are in Issues_List.xml, so en.xml only lists the categories. -->
+	<Catalog>
+		<Categories>
+			<Category Id="Browser">Браузер</Category>
+			<Category Id="Device">Устройство</Category>
+			<Category Id="Intune">Intune</Category>
+			<Category Id="Office">Office</Category>
+			<Category Id="OneDrive">OneDrive</Category>
+			<Category Id="Outlook">Outlook</Category>
+			<Category Id="Teams">Teams</Category>
+		</Categories>
+		<Messages>
+			<Message Id="Msg_Teams_Restart">Teams автоматически закроется и откроется снова.
+
+Если проблема не исчезнет, выйдите из Teams и войдите снова. Если это не поможет, обратитесь в службу поддержки.
+
+Продолжить?</Message>
+			<Message Id="Msg_Teams_Restart_Short">Teams автоматически закроется и откроется снова.
+
+Продолжить?</Message>
+			<Message Id="Msg_OneDrive_Restart">OneDrive автоматически закроется и откроется снова.
+
+Продолжить?</Message>
+			<Message Id="Msg_OneDrive_Restart_Step1">На первом этапе OneDrive перезапустится: приложение автоматически закроется и откроется снова.
+
+Если проблема не исчезнет, выполните действие «Сброс клиента OneDrive».
+
+Продолжить?</Message>
+			<Message Id="Msg_OneDrive_Reset">Клиент OneDrive будет сброшен. Сброс клиента OneDrive не приводит к потере данных.
+
+Если проблема не исчезнет, обратитесь в службу поддержки.
+
+Продолжить?</Message>
+			<Message Id="Msg_OneDrive_Teams_Sync">Папки синхронизируются в OneDrive, но файлы, к которым предоставлен общий доступ в Teams, не синхронизируются.</Message>
+			<Message Id="Msg_Intune_Sync_Explanation">Вы хотите принудительно синхронизировать устройство с Intune, например, чтобы ускорить развертывание политик или приложений. Это действие запускается с правами администратора через локальную службу SelfX.</Message>
+			<Message Id="Msg_Intune_Restart">Служба Intune Management Extension будет перезапущена в фоновом режиме. Повторите попытку через несколько минут.
+
+Продолжить?</Message>
+			<Message Id="Msg_Chkdsk_Explanation">Возникла проблема с OneDrive и отображается ошибка «0x80071129: недопустимый тег в буфере точки повторной обработки». Это действие запускается с правами администратора через локальную службу SelfX.</Message>
+			<Message Id="Msg_Chkdsk">Проверка диска будет запланирована на следующий перезапуск устройства. После этого перезапустите устройство. Проверка может занять несколько минут.
+
+Продолжить?</Message>
+			<Message Id="Msg_SendLogs_Explanation">Службе поддержки нужны журналы вашего устройства для анализа проблемы, например неудачной установки приложения, неудачной настройки или сообщения об ошибке. Это действие собирает все необходимые журналы и сведения о системе с правами администратора через локальную службу SelfX и открывает новое письмо в службу поддержки с отчетом во вложении. Ничего не отправляется автоматически.</Message>
+			<Message Id="Msg_SendLogs">SelfX собирает журналы вашего устройства. Это может занять несколько минут. На устройстве ничего не изменяется.
+
+Отчет содержит имя вашего устройства и ваше имя пользователя. Когда он будет готов, откроется новое письмо с отчетом во вложении. Опишите проблему и отправьте письмо в службу поддержки.
+
+Продолжить?</Message>
+		</Messages>
+		<Actions>
+			<Action Id="Q_Teams">
+				<Name>Устранить проблему с Teams</Name>
+				<Explanation>Возникла проблема с клиентом Teams (медленная работа, неправильный статус, ошибка передачи и т. д.).</Explanation>
+				<Alerte_MSG>Teams будет закрыт, а его локальные папки кэша будут очищены. Перед продолжением сохраните открытые документы. Если Teams был запущен, он откроется снова.
+
+Продолжить?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Word">
+				<Name>Устранить проблему с Word</Name>
+				<Explanation>Вы работаете в Word, но он перестал отвечать, и вы больше ничего не можете сделать.</Explanation>
+				<Alerte_MSG>Word будет закрыт и автоматически открыт снова. Несохраненные данные могут быть потеряны.
+
+Продолжить?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Excel">
+				<Name>Устранить проблему с Excel</Name>
+				<Explanation>Вы работаете в Excel, но он перестал отвечать, и вы больше ничего не можете сделать.</Explanation>
+				<Alerte_MSG>Excel будет закрыт и автоматически открыт снова. Несохраненные данные могут быть потеряны.
+
+Продолжить?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Store">
+				<Name>Устранить проблему с Microsoft Store</Name>
+				<Explanation>Возникли проблемы с Microsoft Store (открытие магазина, установка приложений и т. д.).</Explanation>
+				<Alerte_MSG>Кэш Microsoft Store будет сброшен, после чего магазин откроется.
+
+Продолжить?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_OneDrive_Restart">
+				<Name>Устранить проблему с OneDrive (способ 1)</Name>
+				<Explanation>Возникли проблемы с клиентом OneDrive (синхронизация файлов или папок, открытие файлов и т. д.).</Explanation>
+				<Alerte_MSG>OneDrive будет закрыт и автоматически открыт снова.
+
+Если проблема не исчезнет, используйте способ 2.
+
+Продолжить?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_OneDrive_Reset">
+				<Name>Устранить проблему с OneDrive (способ 2)</Name>
+				<Explanation>Возникли проблемы с клиентом OneDrive (синхронизация файлов или папок, открытие файлов и т. д.), и вы уже попробовали способ 1.</Explanation>
+			</Action>
+			<Action Id="Q_Outlook_TeamsAddIn">
+				<Name>В Outlook отсутствует кнопка «Собрание Teams»</Name>
+				<Explanation>В Outlook отсутствует кнопка «Новое собрание Teams».</Explanation>
+				<Alerte_MSG>Надстройка собраний Teams будет снова включена. Outlook будет закрыт и автоматически открыт снова. Несохраненные данные могут быть потеряны.
+
+Если проблема не исчезнет, обратитесь в службу поддержки.
+
+Продолжить?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Device_Connection">
+				<Name>На устройстве возникли проблемы с подключением</Name>
+				<Explanation>Вы пытаетесь открыть веб-сайт, но подключение не работает, сайт недоступен или появляются ошибки.</Explanation>
+				<Alerte_MSG>Кэш DNS устройства будет очищен в фоновом режиме. Повторите попытку после нажатия кнопки «ОК».
+
+Продолжить?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Device_Slow">
+				<Name>Устройство работает медленно</Name>
+				<Explanation>Ваше устройство работает медленно.</Explanation>
+				<Alerte_MSG>Временные файлы и содержимое корзины будут удалены.
+
+Продолжить?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Intune_Restart">
+				<Name>Перезапустить службу Intune</Name>
+			</Action>
+			<Action Id="Q_Network_Restart">
+				<Name>Перезапустить сетевые адаптеры</Name>
+				<Explanation>Возникли проблемы с сетью, и вы хотите перезапустить сетевые адаптеры. Это действие выполняется с правами администратора через локальную службу SelfX.</Explanation>
+				<Alerte_MSG>Все сетевые адаптеры будут перезапущены. Доступ к сети будет ненадолго прерван.
+
+Продолжить?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_OneDrive_Chkdsk">
+				<Name>Восстановить заблокированный файл OneDrive</Name>
+			</Action>
+			<Action Id="D_Chrome_Cache">
+				<Name>Очистить данные браузера Google Chrome (кэш)</Name>
+				<Explanation>Веб-сайты не загружаются или неправильно отображаются в Google Chrome. Кэш браузера во всех профилях Chrome будет очищен.</Explanation>
+				<Alerte_MSG>Google Chrome будет закрыт, а кэшированные данные браузера будут удалены.
+
+Продолжить?</Alerte_MSG>
+			</Action>
+			<Action Id="D_Firefox_Cache">
+				<Name>Очистить данные браузера Firefox (кэш)</Name>
+				<Explanation>Веб-сайты не загружаются или неправильно отображаются в Firefox. Кэш браузера во всех профилях Firefox будет очищен.</Explanation>
+				<Alerte_MSG>Firefox будет закрыт, а кэшированные данные браузера будут удалены.
+
+Продолжить?</Alerte_MSG>
+			</Action>
+			<Action Id="D_Outlook_TeamsAddIn">
+				<Name>В Outlook отсутствует кнопка «Собрание Teams»</Name>
+				<Explanation>В Outlook отсутствует кнопка «Новое собрание Teams».</Explanation>
+				<Alerte_MSG>Outlook будет закрыт и автоматически открыт снова. Несохраненные данные могут быть потеряны.
+
+Продолжить?</Alerte_MSG>
+			</Action>
+			<Action Id="D_OneDrive_Start">
+				<Name>Запустить клиент OneDrive</Name>
+				<Explanation>OneDrive не запущен.</Explanation>
+				<Alerte_MSG>Клиент OneDrive будет запущен.
+
+Продолжить?</Alerte_MSG>
+			</Action>
+			<Action Id="D_OneDrive_Restart">
+				<Name>Перезапустить клиент OneDrive</Name>
+				<Explanation>Перезапуск OneDrive может устранить некоторые проблемы, например проблемы с синхронизацией.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_Sync_Step1">
+				<Name>Устранить проблемы с синхронизацией OneDrive (шаг 1)</Name>
+				<Explanation>Возникли проблемы с синхронизацией файлов или папок в OneDrive.
+
+На этом первом шаге OneDrive перезапускается. OneDrive будет закрыт и автоматически открыт снова.
+
+Если проблема не исчезнет, выполните действие «Сбросить клиент OneDrive».</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_Error_8004def4">
+				<Name>OneDrive не запускается: ошибка 0x8004def4</Name>
+				<Explanation>При запуске OneDrive отображается ошибка 0x8004def4.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_Memory">
+				<Name>Устройство работает медленно: OneDrive использует много памяти</Name>
+				<Explanation>Устройство работает медленно, и OneDrive, похоже, использует много памяти.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_RedCross">
+				<Name>Красный крестик на значке OneDrive</Name>
+				<Explanation>На значке OneDrive отображается красный крестик.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_ClosesItself">
+				<Name>OneDrive закрывается сам по себе</Name>
+				<Explanation>OneDrive открывается, а затем сам закрывается.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_WhiteCross">
+				<Name>Белый крестик на файлах OneDrive</Name>
+				<Explanation>На файлах или папках OneDrive отображается белый крестик.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_PasswordChange">
+				<Name>Проблемы с OneDrive после смены пароля Windows</Name>
+				<Explanation>Вы недавно сменили пароль, и теперь возникают проблемы с OneDrive, например проблемы с синхронизацией.
+
+На этом шаге клиент OneDrive перезапускается.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_CannotOpen">
+				<Name>Не удается открыть файлы в OneDrive</Name>
+				<Explanation>Файлы, хранящиеся в OneDrive, не открываются.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_TeamsSync">
+				<Name>Папки синхронизируются в OneDrive, но не в Teams</Name>
+			</Action>
+			<Action Id="D_OneDrive_Reset">
+				<Name>Сбросить клиент OneDrive</Name>
+				<Explanation>Возникли проблемы с OneDrive, например проблемы с синхронизацией.
+
+На этом шаге клиент OneDrive сбрасывается. Сброс клиента OneDrive не приводит к потере данных.</Explanation>
+			</Action>
+			<Action Id="D_Teams_Connection">
+				<Name>Устранить проблемы с подключением к Teams</Name>
+				<Explanation>Не удается подключиться к Teams.</Explanation>
+			</Action>
+			<Action Id="D_Teams_ProfilePicture">
+				<Name>Устранить проблему синхронизации фото профиля в Teams</Name>
+				<Explanation>Фото профиля не отображается в Teams или не обновляется.</Explanation>
+			</Action>
+			<Action Id="D_Teams_OneDriveSync">
+				<Name>Папки синхронизируются в OneDrive, но не в Teams</Name>
+			</Action>
+			<Action Id="D_Teams_Loading">
+				<Name>Teams зависает на экране «Загрузка Microsoft Teams»</Name>
+				<Explanation>При открытии Teams окно зависает на экране «Загрузка Microsoft Teams».</Explanation>
+			</Action>
+			<Action Id="D_Teams_Sync">
+				<Name>Устранить проблемы с синхронизацией в Teams</Name>
+				<Explanation>В Teams возникают проблемы с синхронизацией.</Explanation>
+			</Action>
+			<Action Id="D_Teams_DoesNotOpen">
+				<Name>Клиент Teams не открывается</Name>
+				<Explanation>Вы пытаетесь открыть Teams, но клиент не открывается.</Explanation>
+			</Action>
+			<Action Id="D_Teams_AudioFreeze">
+				<Name>Клиент Teams зависает во время аудиозвонков</Name>
+				<Explanation>Teams зависает во время аудиозвонка.</Explanation>
+			</Action>
+			<Action Id="D_Teams_Camera">
+				<Name>Изображение с камеры в Teams зависает или не отображается</Name>
+				<Explanation>Во время собрания или звонка ваше видео зависает или не отображается.</Explanation>
+			</Action>
+			<Action Id="D_Teams_SendFailed">
+				<Name>Не удается отправить сообщения в Teams</Name>
+				<Explanation>Сообщения в Teams не отправляются, и Teams показывает «Не удалось отправить».</Explanation>
+			</Action>
+			<Action Id="D_Teams_MeetingDisplay">
+				<Name>Проблемы с отображением при подключении к собранию Teams</Name>
+				<Explanation>При подключении к собранию Teams отображается неправильно.</Explanation>
+			</Action>
+			<Action Id="D_Teams_NoConnect">
+				<Name>Клиент Teams открывается, но не подключается</Name>
+				<Explanation>Teams открывается, но не подключается.</Explanation>
+			</Action>
+			<Action Id="D_Teams_StatusOffline">
+				<Name>Мой статус в Teams остается «Не в сети»</Name>
+				<Explanation>Ваш статус в Teams остается «Не в сети», хотя вы вошли в систему.</Explanation>
+			</Action>
+			<Action Id="D_Teams_CallWindow">
+				<Name>Окно вызова Teams не отображается</Name>
+				<Explanation>Уведомления о входящих вызовах Teams больше не отображаются.</Explanation>
+			</Action>
+			<Action Id="D_Teams_MessageContent">
+				<Name>Не отображается содержимое сообщения в Teams</Name>
+				<Explanation>Вы видите уведомление и предварительный просмотр сообщения, но не его содержимое.</Explanation>
+			</Action>
+			<Action Id="D_Teams_PasswordChange">
+				<Name>Проблемы с подключением после смены пароля</Name>
+				<Explanation>После смены пароля не удается подключиться к Teams.</Explanation>
+			</Action>
+			<Action Id="D_Teams_Tabs">
+				<Name>Вкладки в Teams не загружаются</Name>
+				<Explanation>При открытии вкладок в Teams они загружаются неправильно.</Explanation>
+			</Action>
+			<Action Id="D_Teams_StatusWrong">
+				<Name>Мой статус в Teams неверный</Name>
+				<Explanation>Ваш статус в Teams неверный или не обновляется.</Explanation>
+			</Action>
+			<Action Id="D_Teams_MeetingOpen">
+				<Name>Не удается открыть собрание Teams</Name>
+				<Explanation>Собрания Teams не открываются при нажатии ссылки для подключения.</Explanation>
+			</Action>
+			<Action Id="D_Teams_SoundCuts">
+				<Name>Звук прерывается во время собраний Teams</Name>
+				<Explanation>Во время собраний Teams звук прерывается.</Explanation>
+			</Action>
+			<Action Id="D_Teams_OutlookMeeting">
+				<Name>Не удается создать собрание Teams в календаре Outlook</Name>
+				<Explanation>Не удается создать собрание Teams из календаря Outlook.</Explanation>
+			</Action>
+			<Action Id="D_Intune_Sync">
+				<Name>Принудительно синхронизировать с Intune</Name>
+			</Action>
+			<Action Id="D_OneDrive_Chkdsk">
+				<Name>Проверить диск на ошибки OneDrive (chkdsk)</Name>
+			</Action>
+			<Action Id="D_OneDrive_ReparsePoint">
+				<Name>Недопустимый тег в буфере точки повторной обработки</Name>
+			</Action>
+			<Action Id="D_OneDrive_Error_80071129">
+				<Name>Ошибка 0x80071129</Name>
+			</Action>
+			<Action Id="Q_Device_SendLogs">
+				<Name>Отправить журналы устройства в службу поддержки</Name>
+			</Action>
+			<Action Id="D_Device_SendLogs">
+				<Name>Собрать журналы устройства и отправить их в службу поддержки по электронной почте</Name>
+			</Action>
+		</Actions>
+	</Catalog>
+</SelfX_Language>

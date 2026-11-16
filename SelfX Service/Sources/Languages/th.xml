@@ -1,0 +1,563 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+	SelfX Service - language file
+
+	Description:
+	  Texts of the SelfX user interface in one language. SelfX selects the file that matches the Windows
+	  display language of the user (for example de-CH -> de.xml, zh-TW -> zh-Hant.xml). If no file matches,
+	  en.xml is used. A text that is missing or empty in a language file is taken from en.xml.
+
+	Add a language:
+	  1. Copy en.xml to <culture>.xml. Use the neutral culture name (de, fr, pt) or a script/region name
+	     (zh-Hans, zh-Hant, pt-BR). Windows tries the exact culture first and then its parents.
+	  2. Set Culture, Name, NativeName and FlowDirection (RightToLeft for Arabic, Persian, Urdu, Hebrew ...).
+	  3. Translate the element texts. Do not change element names or Id attributes.
+	     Keep placeholders such as {0}, {1}, {1:D2} and the "|" separators of SystemInfo_Export_Filter.
+	  4. Catalogue texts: add an <Action Id="..."> entry per action and a <Message Id="..."> entry per shared
+	     message. The English base texts are in Issues_List.xml. Untranslated actions are shown in English.
+
+	History:
+	  Version  Date        Author               Change
+	  2.2.0    2026-10-28  Wolfgang Baeck       Initial version: multilingual user interface
+-->
+<SelfX_Language Culture="th" Name="Thai" NativeName="ไทย" FlowDirection="LeftToRight" Version="2.2.0">
+	<UI>
+		<Health_Fix>แก้ไข</Health_Fix>
+		<Health_Fix_Confirm>เรียกใช้การซ่อมแซมที่กำหนดไว้สำหรับ {0} หรือไม่? บันทึกงานก่อน: แอปพลิเคชัน บริการ หรือการเชื่อมต่ออาจหยุดชะงัก จากนั้นจะตรวจสอบสถานะอีกครั้ง</Health_Fix_Confirm>
+		<Health_Restart_Button>รีสตาร์ต</Health_Restart_Button>
+		<Health_Restart_Title>รีสตาร์ตอุปกรณ์</Health_Restart_Title>
+		<Health_Restart_Confirm>Windows จะรีสตาร์ตเพื่อทำการอัปเดตและการเปลี่ยนแปลงที่ค้างอยู่ให้เสร็จสมบูรณ์&#10;&#10;โปรดบันทึกงานและปิดโปรแกรมทั้งหมดก่อน การรีสตาร์ตจะเริ่มประมาณ 30 วินาทีหลังจากยืนยัน&#10;&#10;รีสตาร์ตตอนนี้หรือไม่</Health_Restart_Confirm>
+		<Button_Restart_Now>รีสตาร์ตตอนนี้</Button_Restart_Now>
+		<Health_Restart_Started>Windows จะรีสตาร์ตในอีกประมาณ 30 วินาที โปรดบันทึกงานของคุณตอนนี้</Health_Restart_Started>
+		<Health_Updates_Started>กำลังค้นหา ดาวน์โหลด และติดตั้งการอัปเดต Windows อาจใช้เวลาหลายนาที คุณสามารถทำงานต่อได้</Health_Updates_Started>
+		<Health_Updates_Done>Windows Update เสร็จแล้ว สถานะอุปกรณ์จะถูกตรวจสอบอีกครั้งและแสดงว่าจำเป็นต้องรีสตาร์ตหรือไม่</Health_Updates_Done>
+		<Health_Apps_Button>ลองอีกครั้ง</Health_Apps_Button>
+		<Health_Apps_Started>เริ่มการติดตั้งแอปที่ล้มเหลวอีกครั้ง อาจใช้เวลาสักครู่ คุณสามารถติดตามได้ในพอร์ทัลบริษัท</Health_Apps_Started>
+		<Health_Check_Button>ตกลง</Health_Check_Button>
+		<Health_Error_Button>ข้อผิดพลาด</Health_Error_Button>
+		<Health_Pending_Button>รอดำเนินการ</Health_Pending_Button>
+		<Health_Check_Tooltip>ตรวจสอบสถานะนี้อีกครั้ง</Health_Check_Tooltip>
+		<!-- Main window -->
+		<Main_Title_Text>มีปัญหากับอุปกรณ์ของคุณใช่ไหม?</Main_Title_Text>
+		<Subtitle_Text>คุณอาจพบวิธีแก้ปัญหาได้ที่นี่พร้อมรายการวิธีแก้ไขที่สามารถคลิกได้</Subtitle_Text>
+		<Run_solution_Text>ดำเนินการ</Run_solution_Text>
+		<Run_explanation_Text>แสดงข้อมูลเพิ่มเติม</Run_explanation_Text>
+		<Issue_filter_Title_Text>กรองตามส่วนประกอบ</Issue_filter_Title_Text>
+		<Issue_filter_KeyWord_Text>พิมพ์คำสำคัญ</Issue_filter_KeyWord_Text>
+		<Available_Actions_Count>มี {0} รายการให้ดำเนินการ</Available_Actions_Count>
+		<Troubleshooting_Tab_Text>การแก้ไขปัญหา</Troubleshooting_Tab_Text>
+		<Theme_Button_ToolTip>สลับระหว่างธีมมืดและสว่าง</Theme_Button_ToolTip>
+		<Support_Button_ToolTip>ติดต่อทีมสนับสนุนของคุณ</Support_Button_ToolTip>
+		<About_Button_ToolTip>เกี่ยวกับ SelfX</About_Button_ToolTip>
+		<Shield_ToolTip>ทำงานด้วยสิทธิ์ของผู้ดูแลระบบผ่านบริการ SelfX ในเครื่อง</Shield_ToolTip>
+
+		<!-- Simplified or detailed view -->
+		<Solution_Mode_Simple>มุมมองแบบง่าย</Solution_Mode_Simple>
+		<Solution_Mode_Detailed>มุมมองรายละเอียด</Solution_Mode_Detailed>
+		<Solution_Mode_Info_Title>มุมมองแบบง่ายหรือแบบละเอียด?</Solution_Mode_Info_Title>
+		<Solution_Mode_Info_Text>มุมมองแบบง่ายแสดงรายการปัญหาตามผลิตภัณฑ์
+มุมมองแบบละเอียดแสดงรายการปัญหาเฉพาะหลายประการต่อผลิตภัณฑ์ที่สามารถแก้ไขได้
+
+เราขอแนะนำมุมมองแบบละเอียด หากมุมมองแบบง่ายไม่สามารถแก้ไขหรือรวมปัญหาของคุณได้</Solution_Mode_Info_Text>
+
+		<!-- Dialogs -->
+		<Warning_Click_Run_Solution_Text>การแก้ปัญหา</Warning_Click_Run_Solution_Text>
+		<Warning_Click_Run_Explanation_Text>ข้อมูลเพิ่มเติม</Warning_Click_Run_Explanation_Text>
+		<Button_Ok>ตกลง</Button_Ok>
+		<Button_Cancel>ยกเลิก</Button_Cancel>
+		<Button_Yes>ใช่</Button_Yes>
+		<Button_No>เลขที่</Button_No>
+		<Close_Button_Text>ปิด</Close_Button_Text>
+		<Reboot_Alert>เพื่อให้อุปกรณ์ของคุณมีเสถียรภาพและทำงานได้อย่างถูกต้อง ให้รีสตาร์ทอย่างน้อยสัปดาห์ละครั้ง</Reboot_Alert>
+
+		<!-- Support and About dialogs -->
+		<Support_Window_Title>ข้อมูลทีมสนับสนุน</Support_Window_Title>
+		<Support_Phone_Label>หมายเลขโทรศัพท์:</Support_Phone_Label>
+		<Support_Mail_Label>อีเมล:</Support_Mail_Label>
+		<About_Version_Text>{0}: เวอร์ชัน {1} - แค็ตตาล็อก: {2}</About_Version_Text>
+
+		<!-- Local SelfX service (actions with Context System) -->
+		<Service_Running_Text>บริการ SelfX กำลังทำงาน: การดำเนินการที่ทำเครื่องหมายด้วยโล่ทำงานด้วยสิทธิ์ของผู้ดูแลระบบ</Service_Running_Text>
+		<Service_Unavailable_Text>บริการ SelfX ไม่ทำงาน: ไม่มีการดำเนินการที่ทำเครื่องหมายด้วยโล่</Service_Unavailable_Text>
+		<Service_Busy_Text>การดำเนินการอื่นยังคงดำเนินอยู่ โปรดรอจนกว่าจะเสร็จสิ้น</Service_Busy_Text>
+		<Action_Running_Text>กำลังดำเนินการ: {0}</Action_Running_Text>
+		<Action_Running_Label>กำลังดำเนินการ…</Action_Running_Label>
+		<Action_Success_Text>ดำเนินการเสร็จแล้ว: {0}</Action_Success_Text>
+		<Action_Failed_Text>การดำเนินการล้มเหลว: {0}</Action_Failed_Text>
+		<Action_Failed_ExitCode_Text>การดำเนินการล้มเหลว: {0} (รหัสออก {1})</Action_Failed_ExitCode_Text>
+		<Action_Timeout_Text>หยุดการดำเนินการเนื่องจากใช้เวลานานเกินไป: {0}</Action_Timeout_Text>
+		<Script_Not_Found_Text>ไม่พบสคริปต์ของการดำเนินการนี้: {0}</Script_Not_Found_Text>
+
+		<!-- System information tab -->
+		<SystemInfo_Tab_Text>ข้อมูลระบบ</SystemInfo_Tab_Text>
+		<SystemInfo_Title_Text>ข้อมูลเกี่ยวกับอุปกรณ์ของคุณสำหรับทีมสนับสนุน</SystemInfo_Title_Text>
+		<SystemInfo_Hint_Text>คลิกสองครั้งที่เส้นเพื่อคัดลอกค่า</SystemInfo_Hint_Text>
+		<SystemInfo_Loading_Text>กำลังรวบรวมข้อมูลระบบ...</SystemInfo_Loading_Text>
+		<SystemInfo_Copied_Text>คัดลอกไปยังคลิปบอร์ดแล้ว: {0}</SystemInfo_Copied_Text>
+		<SystemInfo_Refresh_Text>รีเฟรช</SystemInfo_Refresh_Text>
+		<SystemInfo_Copy_Text>คัดลอกทั้งหมด</SystemInfo_Copy_Text>
+		<SystemInfo_Export_Text>ส่งออก</SystemInfo_Export_Text>
+		<SystemInfo_Export_Filter>ไฟล์ข้อความ (*.txt)|*.txt|ไฟล์ HTML (*.html)|*.html|ไฟล์ CSV (*.csv)|*.csv|ไฟล์ JSON (*.json)|*.json</SystemInfo_Export_Filter>
+		<SystemInfo_SyncApps_Text>ซิงค์แอพ Intune</SystemInfo_SyncApps_Text>
+		<SystemInfo_SyncCompliance_Text>ตรวจสอบการปฏิบัติตามข้อกำหนด</SystemInfo_SyncCompliance_Text>
+		<SystemInfo_CompanyPortal_Text>Company Portal</SystemInfo_CompanyPortal_Text>
+		<SystemInfo_QuickAssist_Text>Quick Assist</SystemInfo_QuickAssist_Text>
+		<SystemInfo_MdmDiagnostics_Text>รวบรวมบันทึก MDM</SystemInfo_MdmDiagnostics_Text>
+		<SystemInfo_SendLogs_Text>ส่งบันทึกไปยังฝ่ายสนับสนุน</SystemInfo_SendLogs_Text>
+		<Report_Mail_Subject>บันทึกอุปกรณ์ของ {0}</Report_Mail_Subject>
+		<Report_Mail_Body>สวัสดี
+
+แนบบันทึกอุปกรณ์ของ {0} ที่ SelfX รวบรวมเมื่อ {1}
+
+คำอธิบายปัญหา:</Report_Mail_Body>
+		<Report_Mail_Opened_Text>เปิดอีเมลที่แนบบันทึกอุปกรณ์แล้ว โปรดอธิบายปัญหาของคุณแล้วส่งอีเมล</Report_Mail_Opened_Text>
+		<Report_Mail_Recipient_Text>เปิดอีเมลที่แนบบันทึกอุปกรณ์แล้ว โปรดป้อนผู้รับ ({0}) อธิบายปัญหาของคุณ แล้วส่งอีเมล</Report_Mail_Recipient_Text>
+		<Report_Mail_Manual_Text>บันทึกอุปกรณ์ถูกบันทึกไว้ที่ {0} โปรดแนบไฟล์นี้ในอีเมล (ผู้รับ: {1}) และอธิบายปัญหาของคุณ</Report_Mail_Manual_Text>
+		<Report_Not_Found_Text>รวบรวมบันทึกอุปกรณ์แล้ว แต่ไม่สามารถเตรียมอีเมลได้: {0}</Report_Not_Found_Text>
+		<Report_Support_Fallback>ฝ่ายสนับสนุนของคุณ</Report_Support_Fallback>
+		<Nav_Status_Text>สถานะอุปกรณ์</Nav_Status_Text>
+		<Status_LastChecked_Text>ตรวจสอบล่าสุด: {0}</Status_LastChecked_Text>
+		<Status_NotChecked_Text>ยังไม่ได้ตรวจสอบสถานะอุปกรณ์</Status_NotChecked_Text>
+		<Status_Background_Text>ตรวจสอบอัตโนมัติทุก {0} นาที</Status_Background_Text>
+		<Status_Background_Battery_Text>หยุดการตรวจสอบอัตโนมัติชั่วคราวขณะใช้แบตเตอรี่</Status_Background_Battery_Text>
+		<Status_Checking_Text>กำลังตรวจสอบสถานะอุปกรณ์ อาจใช้เวลาถึงหนึ่งนาที ...</Status_Checking_Text>
+		<Status_AllOk_Title>ทุกอย่างเรียบร้อย</Status_AllOk_Title>
+		<Status_AllOk_Text>ไม่พบปัญหาในอุปกรณ์ของคุณ</Status_AllOk_Text>
+		<Status_Issues_Title>มี {0} รายการที่ต้องให้ความสนใจ</Status_Issues_Title>
+		<Status_Issues_Text>ปัญหาจะแสดงก่อน คลิก “แก้ไข” เพื่อซ่อมแซมปัญหา หรือคลิกลูกศรเพื่อตรวจสอบอีกครั้ง</Status_Issues_Text>
+		<Status_CheckAll_Tooltip>ตรวจสอบทุกอย่างอีกครั้งตอนนี้ อาจใช้เวลาถึงหนึ่งนาที</Status_CheckAll_Tooltip>
+		<Status_FixAll>แก้ไขปัญหาทั้งหมด</Status_FixAll>
+		<Status_FixAll_Tooltip>เรียกใช้การซ่อมแซมที่กำหนดค่าไว้สำหรับแต่ละปัญหาทีละรายการ จากนั้นจะตรวจสอบทุกอย่างอีกครั้ง</Status_FixAll_Tooltip>
+		<Health_FixAll_Confirm>เรียกใช้การซ่อมแซมที่กำหนดค่าไว้สำหรับปัญหา {0} รายการนี้ทีละรายการหรือไม่&#10;&#10;{1}&#10;&#10;แอปพลิเคชันอาจถูกปิดและบริการหรือการเชื่อมต่อเครือข่ายอาจถูกขัดจังหวะ โปรดบันทึกงานของคุณก่อน จากนั้นจะตรวจสอบทุกอย่างอีกครั้ง</Health_FixAll_Confirm>
+		<Status_FixAll_Done>ซ่อมแซมสำเร็จ {0} จาก {1} รายการ กำลังตรวจสอบสถานะอีกครั้ง</Status_FixAll_Done>
+		<Status_FixAll_Failed>ไม่สำเร็จ: {0}</Status_FixAll_Failed>
+		<Tooltip_Fix>แก้ไขปัญหานี้โดยอัตโนมัติ ระบบจะขอให้คุณยืนยันก่อน</Tooltip_Fix>
+		<Tooltip_Run>เริ่มวิธีแก้ปัญหานี้ ระบบจะขอให้คุณยืนยันก่อนดำเนินการใดๆ</Tooltip_Run>
+		<Filter_All_Text>ทั้งหมด</Filter_All_Text>
+		<View_Help_Tooltip>มุมมองแบบย่อและแบบละเอียดแตกต่างกันอย่างไร</View_Help_Tooltip>
+		<SystemInfo_Cached_Text>ข้อมูลจาก {0} – กำลังอัปเดต ...</SystemInfo_Cached_Text>
+		<Tooltip_Refresh>รวบรวมข้อมูลอีกครั้ง</Tooltip_Refresh>
+		<Tooltip_Copy>คัดลอกข้อมูลทั้งหมด เช่น เพื่อวางในคำขอรับการสนับสนุน</Tooltip_Copy>
+		<Tooltip_Export>บันทึกข้อมูลทั้งหมดเป็นไฟล์</Tooltip_Export>
+		<Tools_Title_Text>เครื่องมือ</Tools_Title_Text>
+		<Tooltip_SyncApps>ขอให้ Intune ติดตั้งหรืออัปเดตแอปที่กำหนดให้คุณทันที</Tooltip_SyncApps>
+		<Tooltip_SyncCompliance>ขอให้ Intune ตรวจสอบทันทีว่าอุปกรณ์ของคุณเป็นไปตามกฎของบริษัทหรือไม่</Tooltip_SyncCompliance>
+		<Tooltip_CompanyPortal>เปิดพอร์ทัลบริษัท ซึ่งคุณสามารถติดตั้งแอปของบริษัทได้</Tooltip_CompanyPortal>
+		<Tooltip_QuickAssist>เปิดความช่วยเหลือด่วนเพื่อให้เจ้าหน้าที่สนับสนุนเห็นหน้าจอและช่วยเหลือคุณ – เฉพาะเมื่อคุณยินยอม</Tooltip_QuickAssist>
+		<Tooltip_MdmDiagnostics>รวบรวมบันทึกการจัดการอุปกรณ์ไว้ในโฟลเดอร์สำหรับฝ่ายสนับสนุน</Tooltip_MdmDiagnostics>
+		<Tooltip_SendLogs>รวบรวมบันทึกทั้งหมดของอุปกรณ์และเปิดอีเมลถึงฝ่ายสนับสนุนพร้อมแนบรายงาน</Tooltip_SendLogs>
+		<Settings_Button_ToolTip>การตั้งค่า (ภาษา ลักษณะและไอคอนสถานะ)</Settings_Button_ToolTip>
+		<Settings_Title>การตั้งค่า</Settings_Title>
+		<Settings_Language_Text>ภาษา</Settings_Language_Text>
+		<Settings_Language_Auto>อัตโนมัติ ({0})</Settings_Language_Auto>
+		<Settings_Language_Hint>SelfX จะเริ่มใหม่ในภาษาที่เลือก</Settings_Language_Hint>
+		<Settings_Language_Later>จะใช้ภาษาใหม่เมื่อเปิด SelfX ครั้งถัดไป เนื่องจากการซ่อมแซมยังทำงานอยู่</Settings_Language_Later>
+		<Settings_Theme_Text>ลักษณะ</Settings_Theme_Text>
+		<Settings_Theme_Auto>อัตโนมัติ</Settings_Theme_Auto>
+		<Settings_Theme_Auto_ToolTip>เหมือน Windows: ใช้โหมดแอปที่เลือกใน การตั้งค่า &gt; การปรับแต่งในแบบของคุณ &gt; สี</Settings_Theme_Auto_ToolTip>
+		<Settings_Theme_Dark>มืด</Settings_Theme_Dark>
+		<Settings_Theme_Light>สว่าง</Settings_Theme_Light>
+		<Settings_Tray_Text>แสดงไอคอน SelfX ในพื้นที่แจ้งเตือน</Settings_Tray_Text>
+		<Settings_Tray_Hint>ไอคอนข้างนาฬิกาแสดงสถานะอุปกรณ์และแจ้งให้คุณทราบเมื่อพบปัญหา</Settings_Tray_Hint>
+		<Settings_Notify_Text>แสดงการแจ้งเตือนเมื่อพบปัญหา</Settings_Notify_Text>
+		<Settings_Notify_Hint>นอกจากไอคอน SelfX ที่มีสีแล้ว Windows จะแสดงข้อความเมื่อพบปัญหาใหม่ เช่น พื้นที่ดิสก์เหลือน้อย</Settings_Notify_Hint>
+		<Support_Intro_Text>เรายินดีช่วยเหลือคุณ คุณสามารถติดต่อเราได้ดังนี้:</Support_Intro_Text>
+		<Support_Hours_Label>เวลาให้บริการ</Support_Hours_Label>
+		<Support_Teams_Label>แชท Teams</Support_Teams_Label>
+		<Support_Website_Label>เว็บไซต์ / ระบบตั๋ว</Support_Website_Label>
+		<Support_Teams_Button>เริ่มแชท</Support_Teams_Button>
+		<Support_Website_Button>เปิด</Support_Website_Button>
+		<Support_Mail_Button>เขียนอีเมล</Support_Mail_Button>
+		<Support_None_Text>ยังไม่ได้กำหนดข้อมูลติดต่อ โปรดติดต่อฝ่ายไอทีของคุณ</Support_None_Text>
+		<Service_Short_Running>บริการ SelfX กำลังทำงาน</Service_Short_Running>
+		<Service_Short_Unavailable>บริการ SelfX ไม่พร้อมใช้งาน</Service_Short_Unavailable>
+		<Version_Text>เวอร์ชัน {0}</Version_Text>
+		<Tray_Tooltip_OK>SelfX: ทุกอย่างเรียบร้อย</Tray_Tooltip_OK>
+		<Tray_Tooltip_Issues>SelfX: ปัญหา {0} รายการ คำเตือน {1} รายการ</Tray_Tooltip_Issues>
+		<Tray_Tooltip_Unknown>SelfX: ยังไม่มีสถานะอุปกรณ์</Tray_Tooltip_Unknown>
+		<Tray_Menu_Open>เปิด SelfX</Tray_Menu_Open>
+		<Tray_Menu_Status>แสดงสถานะอุปกรณ์</Tray_Menu_Status>
+		<Tray_Menu_Check>ตรวจสอบสถานะตอนนี้</Tray_Menu_Check>
+		<Tray_Menu_Notify>แสดงการแจ้งเตือน</Tray_Menu_Notify>
+		<Tray_Menu_Hide>ซ่อนไอคอนนี้</Tray_Menu_Hide>
+		<Tray_Notify_Click>คลิกที่นี่เพื่อดูรายละเอียด</Tray_Notify_Click>
+		<Tray_Hidden_Text>ไอคอนถูกซ่อนแล้ว คุณสามารถแสดงอีกครั้งได้ใน SelfX ที่การตั้งค่า</Tray_Hidden_Text>
+		<Tray_Checking_Text>กำลังตรวจสอบสถานะอุปกรณ์ ...</Tray_Checking_Text>
+	</UI>
+
+	<!-- Labels and values of the System information tab -->
+	<SystemInfo>
+		<Category_Device>อุปกรณ์</Category_Device>
+		<Category_Windows>Windows</Category_Windows>
+		<Category_User>ผู้ใช้และการจัดการ</Category_User>
+		<Category_Network>เครือข่าย</Category_Network>
+		<Category_Report>รายงาน</Category_Report>
+		<Computer_Name>ชื่อคอมพิวเตอร์</Computer_Name>
+		<Manufacturer>ผู้ผลิต</Manufacturer>
+		<Model>แบบอย่าง</Model>
+		<Serial_Number>หมายเลขซีเรียล</Serial_Number>
+		<BIOS_Version>เวอร์ชัน BIOS</BIOS_Version>
+		<Processor>โปรเซสเซอร์</Processor>
+		<Memory>หน่วยความจำ (RAM)</Memory>
+		<Free_Space>พื้นที่ว่าง {0}</Free_Space>
+		<Free_Space_Value>{0} ของ {1} ({2}%)</Free_Space_Value>
+		<Battery>แบตเตอรี่</Battery>
+		<Windows_Version>เวอร์ชัน Windows</Windows_Version>
+		<OS_Build>บิลด์ระบบปฏิบัติการ</OS_Build>
+		<Last_Boot>บูตครั้งสุดท้าย</Last_Boot>
+		<Uptime>เวลาทำงาน</Uptime>
+		<Uptime_Value>{0} วัน {1:D2}:{2:D2} ชม.</Uptime_Value>
+		<Last_Update>ติดตั้งการอัปเดตครั้งล่าสุด</Last_Update>
+		<Time_Zone>เขตเวลา</Time_Zone>
+		<Current_User>ผู้ใช้ปัจจุบัน</Current_User>
+		<User_Principal_Name>ชื่อหลักของผู้ใช้</User_Principal_Name>
+		<Domain>โดเมน / เวิร์กกรุ๊ป</Domain>
+		<Entra_Joined>Entra ID เข้าร่วมแล้ว</Entra_Joined>
+		<Domain_Joined>เข้าร่วมโดเมนแล้ว</Domain_Joined>
+		<Tenant>ผู้เช่า</Tenant>
+		<Entra_Device_Id>รหัสอุปกรณ์เข้า</Entra_Device_Id>
+		<Intune_User>ผู้ใช้ที่ลงทะเบียน Intune</Intune_User>
+		<Intune_Last_Sync>การซิงค์ Intune ครั้งล่าสุด</Intune_Last_Sync>
+		<LAN_Connected>เชื่อมต่อ LAN แล้ว</LAN_Connected>
+		<WiFi_Connected>เชื่อมต่อ Wi-Fi แล้ว</WiFi_Connected>
+		<WWAN_Connected>เชื่อมต่อบรอดแบนด์มือถือแล้ว</WWAN_Connected>
+		<WiFi_SSID>เครือข่าย Wi-Fi (SSID)</WiFi_SSID>
+		<VPN_Connected>เชื่อมต่อ VPN แล้ว</VPN_Connected>
+		<Internet_Reachable>สามารถเชื่อมต่ออินเทอร์เน็ตได้</Internet_Reachable>
+		<IPv4>ที่อยู่ IPv4</IPv4>
+		<IPv6>ที่อยู่ IPv6</IPv6>
+		<Gateway>เกตเวย์เริ่มต้น</Gateway>
+		<DNS>เซิร์ฟเวอร์ DNS</DNS>
+		<MAC>ที่อยู่ MAC</MAC>
+		<Collected_At>รวบรวมได้ที่</Collected_At>
+		<Error>ข้อผิดพลาด</Error>
+		<Yes>ใช่</Yes>
+		<No>เลขที่</No>
+		<Not_Available>ไม่มี</Not_Available>
+		<Not_Enrolled>ไม่ได้ลงทะเบียน / ไม่ทราบ</Not_Enrolled>
+		<No_WiFi>ไม่มีการเชื่อมต่อ Wi-Fi</No_WiFi>
+		<Category_Health>สถานะระบบ</Category_Health>
+		<Health_IME>บริการ IME</Health_IME>
+		<Health_Defender>Microsoft Defender</Health_Defender>
+		<Health_Compliance>การปฏิบัติตามข้อกำหนด</Health_Compliance>
+		<Health_Applications>แอปของบริษัท (Intune)</Health_Applications>
+		<Health_Disk>พื้นที่ดิสก์</Health_Disk>
+		<Health_BitLocker>BitLocker</Health_BitLocker>
+		<Health_PendingReboot>รอการรีสตาร์ท</Health_PendingReboot>
+		<Health_Updates>อัปเดตที่ต้องติดตั้ง</Health_Updates>
+		<Health_Service>บริการ</Health_Service>
+		<Health_Custom>การตรวจสอบแบบกำหนดเอง</Health_Custom>
+		<Health_Collection>การรวบรวมสถานะ</Health_Collection>
+		<Health_OK>ปกติ</Health_OK>
+		<Health_Error>ข้อผิดพลาด</Health_Error>
+		<Health_Unknown>ไม่ทราบ</Health_Unknown>
+		<Health_Pending>รอดำเนินการ</Health_Pending>
+		<Health_Unavailable>รายงานสถานะในเครื่องไม่พร้อมใช้งาน: {0}</Health_Unavailable>
+	</SystemInfo>
+
+	<!-- Action catalogue (Issues_List.xml). The English base texts are in Issues_List.xml, so en.xml only lists the categories. -->
+	<Catalog>
+		<Categories>
+			<Category Id="Browser">เบราว์เซอร์</Category>
+			<Category Id="Device">อุปกรณ์</Category>
+			<Category Id="Intune">Intune</Category>
+			<Category Id="Office">Office</Category>
+			<Category Id="OneDrive">OneDrive</Category>
+			<Category Id="Outlook">Outlook</Category>
+			<Category Id="Teams">Teams</Category>
+		</Categories>
+		<Messages>
+			<Message Id="Msg_Teams_Restart">Teams จะปิดแล้วเปิดอีกครั้งโดยอัตโนมัติ
+
+หากปัญหายังคงอยู่ ให้ออกจากระบบ Teams แล้วลงชื่อเข้าใช้อีกครั้ง หากยังคงอยู่หลังจากนั้น โปรดติดต่อฝ่ายสนับสนุนของคุณ
+
+คุณต้องการดำเนินการต่อหรือไม่?</Message>
+			<Message Id="Msg_Teams_Restart_Short">Teams จะปิดแล้วเปิดอีกครั้งโดยอัตโนมัติ
+
+คุณต้องการดำเนินการต่อหรือไม่?</Message>
+			<Message Id="Msg_OneDrive_Restart">OneDrive จะปิดแล้วเปิดอีกครั้งโดยอัตโนมัติ
+
+คุณต้องการดำเนินการต่อหรือไม่?</Message>
+			<Message Id="Msg_OneDrive_Restart_Step1">ขั้นตอนแรกนี้จะรีสตาร์ท OneDrive OneDrive จะปิดแล้วเปิดอีกครั้งโดยอัตโนมัติ
+
+หากปัญหายังคงอยู่ ให้ดำเนินการ "รีเซ็ตไคลเอ็นต์ OneDrive"
+
+คุณต้องการดำเนินการต่อหรือไม่</Message>
+			<Message Id="Msg_OneDrive_Reset">ไคลเอนต์ OneDrive ของคุณจะถูกรีเซ็ต การรีเซ็ตไคลเอนต์ OneDrive จะไม่ทำให้ข้อมูลสูญหาย
+
+หากปัญหายังคงอยู่หลังจากนั้น โปรดติดต่อฝ่ายสนับสนุนของคุณ
+
+คุณต้องการดำเนินการต่อหรือไม่?</Message>
+			<Message Id="Msg_OneDrive_Teams_Sync">โฟลเดอร์จะถูกซิงโครไนซ์ใน OneDrive แต่ไฟล์ที่แชร์ใน Teams จะไม่ถูกซิงโครไนซ์</Message>
+			<Message Id="Msg_Intune_Sync_Explanation">คุณต้องการบังคับการซิงโครไนซ์ระหว่างอุปกรณ์ของคุณกับ Intune เช่น เพื่อเพิ่มความเร็วในการปรับใช้นโยบายหรือแอปพลิเคชัน การดำเนินการนี้ทำงานโดยใช้สิทธิ์ผู้ดูแลระบบผ่านบริการ SelfX ในเครื่อง</Message>
+			<Message Id="Msg_Intune_Restart">บริการ Intune Management Extension จะถูกรีสตาร์ทในเบื้องหลัง ลองอีกครั้งในอีกสักครู่
+
+คุณต้องการดำเนินการต่อหรือไม่?</Message>
+			<Message Id="Msg_Chkdsk_Explanation">คุณมีปัญหากับ OneDrive และได้รับข้อผิดพลาด "0x80071129: แท็กที่มีอยู่ในบัฟเฟอร์จุดแยกวิเคราะห์ไม่ถูกต้อง" การดำเนินการนี้ทำงานโดยใช้สิทธิ์ผู้ดูแลระบบผ่านบริการ SelfX ในเครื่อง</Message>
+			<Message Id="Msg_Chkdsk">การตรวจสอบดิสก์จะถูกกำหนดไว้สำหรับการรีสตาร์ทอุปกรณ์ของคุณครั้งถัดไป รีสตาร์ทอุปกรณ์ของคุณในภายหลัง การตรวจสอบอาจใช้เวลาหลายนาที
+
+คุณต้องการดำเนินการต่อหรือไม่</Message>
+			<Message Id="Msg_SendLogs_Explanation">ฝ่ายสนับสนุนต้องใช้บันทึกของอุปกรณ์เพื่อวิเคราะห์ปัญหา เช่น การติดตั้งแอปล้มเหลว การตั้งค่าล้มเหลว หรือข้อความแสดงข้อผิดพลาด การดำเนินการนี้จะรวบรวมบันทึกและข้อมูลระบบที่เกี่ยวข้องทั้งหมดโดยใช้สิทธิ์ผู้ดูแลระบบผ่านบริการ SelfX ในเครื่อง และเปิดอีเมลใหม่ถึงฝ่ายสนับสนุนพร้อมแนบรายงาน ไม่มีสิ่งใดถูกส่งโดยอัตโนมัติ</Message>
+			<Message Id="Msg_SendLogs">SelfX กำลังรวบรวมบันทึกของอุปกรณ์ ซึ่งอาจใช้เวลาหลายนาที จะไม่มีการเปลี่ยนแปลงใดๆ บนอุปกรณ์ของคุณ
+
+รายงานมีชื่ออุปกรณ์และชื่อผู้ใช้ของคุณ เมื่อพร้อมแล้ว อีเมลใหม่ที่แนบรายงานจะเปิดขึ้น โปรดอธิบายปัญหาของคุณแล้วส่งอีเมลไปยังฝ่ายสนับสนุน
+
+คุณต้องการดำเนินการต่อหรือไม่</Message>
+		</Messages>
+		<Actions>
+			<Action Id="Q_Teams">
+				<Name>แก้ไขปัญหากับ Teams</Name>
+				<Explanation>คุณกำลังประสบปัญหากับไคลเอนต์ Teams (ช้า สถานะไม่ถูกต้อง ข้อผิดพลาดในการถ่ายโอน ฯลฯ)</Explanation>
+				<Alerte_MSG>Teams จะปิดและโฟลเดอร์แคชในเครื่องจะถูกล้าง บันทึกงานที่เปิดอยู่ก่อนดำเนินการต่อ Teams จะเปิดขึ้นอีกครั้งหากยังทำงานอยู่
+
+คุณต้องการดำเนินการต่อหรือไม่?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Word">
+				<Name>แก้ไขปัญหากับ Word</Name>
+				<Explanation>คุณกำลังทำงานใน Word แต่หยุดตอบสนองแล้ว และคุณไม่สามารถดำเนินการใดๆ ได้อีกต่อไป</Explanation>
+				<Alerte_MSG>Word จะปิดและเปิดใหม่โดยอัตโนมัติ งานที่ยังไม่ได้บันทึกอาจสูญหาย
+
+คุณต้องการดำเนินการต่อหรือไม่</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Excel">
+				<Name>แก้ไขปัญหากับ Excel</Name>
+				<Explanation>คุณกำลังทำงานใน Excel แต่หยุดตอบสนองแล้ว และคุณไม่สามารถดำเนินการใดๆ ได้อีกต่อไป</Explanation>
+				<Alerte_MSG>Excel จะปิดและเปิดใหม่โดยอัตโนมัติ งานที่ยังไม่ได้บันทึกอาจสูญหาย
+
+คุณต้องการดำเนินการต่อหรือไม่</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Store">
+				<Name>แก้ไขปัญหาเกี่ยวกับ Microsoft Store</Name>
+				<Explanation>คุณมีปัญหากับ Microsoft Store (การเปิด Store, การติดตั้งแอพ ฯลฯ)</Explanation>
+				<Alerte_MSG>แคช Microsoft Store จะถูกรีเซ็ตและร้านค้าจะเปิดขึ้น
+
+คุณต้องการดำเนินการต่อหรือไม่?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_OneDrive_Restart">
+				<Name>แก้ไขปัญหาด้วย OneDrive (วิธีที่ 1)</Name>
+				<Explanation>คุณกำลังประสบปัญหากับไคลเอ็นต์ OneDrive (การซิงโครไนซ์ไฟล์หรือโฟลเดอร์ การเปิดไฟล์ ฯลฯ)</Explanation>
+				<Alerte_MSG>OneDrive จะปิดและเปิดใหม่โดยอัตโนมัติ
+
+หากปัญหายังคงอยู่ ให้ใช้วิธีที่ 2.
+
+คุณต้องการดำเนินการต่อหรือไม่</Alerte_MSG>
+			</Action>
+			<Action Id="Q_OneDrive_Reset">
+				<Name>แก้ไขปัญหาด้วย OneDrive (วิธีที่ 2)</Name>
+				<Explanation>คุณกำลังประสบปัญหากับไคลเอนต์ OneDrive (การซิงโครไนซ์ไฟล์หรือโฟลเดอร์ การเปิดไฟล์ ฯลฯ) และได้ลองใช้วิธีที่ 1 แล้ว</Explanation>
+			</Action>
+			<Action Id="Q_Outlook_TeamsAddIn">
+				<Name>ปุ่ม "การประชุม Teams" หายไปใน Outlook</Name>
+				<Explanation>ปุ่ม "การประชุม Teams ใหม่" หายไปใน Outlook</Explanation>
+				<Alerte_MSG>Add-in การประชุม Teams จะถูกเปิดใช้งานอีกครั้ง Outlook จะปิดและเปิดใหม่โดยอัตโนมัติ งานที่ยังไม่ได้บันทึกอาจสูญหาย
+
+หากปัญหายังคงอยู่ โปรดติดต่อฝ่ายสนับสนุนของคุณ
+
+คุณต้องการดำเนินการต่อหรือไม่?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Device_Connection">
+				<Name>คุณมีปัญหาการเชื่อมต่อบนอุปกรณ์ของคุณ</Name>
+				<Explanation>คุณกำลังพยายามเปิดเว็บไซต์ แต่การเชื่อมต่อใช้งานไม่ได้ ไม่สามารถเข้าถึงไซต์ได้ หรือคุณได้รับข้อผิดพลาด</Explanation>
+				<Alerte_MSG>แคช DNS ของอุปกรณ์ของคุณจะถูกล้างในพื้นหลัง ลองอีกครั้งหลังจากคลิกตกลง
+
+คุณต้องการดำเนินการต่อหรือไม่?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Device_Slow">
+				<Name>อุปกรณ์ของคุณทำงานช้า</Name>
+				<Explanation>อุปกรณ์ของคุณทำงานช้า</Explanation>
+				<Alerte_MSG>ไฟล์ชั่วคราวและเนื้อหาของถังรีไซเคิลจะถูกลบ
+
+คุณต้องการดำเนินการต่อหรือไม่?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Intune_Restart">
+				<Name>เริ่มบริการ Intune ใหม่</Name>
+			</Action>
+			<Action Id="Q_Network_Restart">
+				<Name>รีสตาร์ทอะแดปเตอร์เครือข่าย</Name>
+				<Explanation>คุณมีปัญหาเครือข่าย และต้องการรีสตาร์ทอะแดปเตอร์เครือข่าย การดำเนินการนี้ทำงานโดยใช้สิทธิ์ผู้ดูแลระบบผ่านบริการ SelfX ในเครื่อง</Explanation>
+				<Alerte_MSG>อะแดปเตอร์เครือข่ายทั้งหมดจะถูกรีสตาร์ท การเข้าถึงเครือข่ายจะถูกขัดจังหวะในช่วงเวลาสั้นๆ
+
+คุณต้องการดำเนินการต่อหรือไม่</Alerte_MSG>
+			</Action>
+			<Action Id="Q_OneDrive_Chkdsk">
+				<Name>ซ่อมแซมไฟล์ OneDrive ที่ถูกล็อค</Name>
+			</Action>
+			<Action Id="D_Chrome_Cache">
+				<Name>ล้างข้อมูลการท่องเว็บ Google Chrome (แคช)</Name>
+				<Explanation>เว็บไซต์ไม่โหลดหรือแสดงผลอย่างถูกต้องใน Google Chrome แคชของเบราว์เซอร์ของโปรไฟล์ Chrome ทั้งหมดจะถูกล้าง</Explanation>
+				<Alerte_MSG>Google Chrome จะปิดลงและข้อมูลการท่องเว็บที่แคชไว้จะถูกลบ
+
+คุณต้องการดำเนินการต่อหรือไม่?</Alerte_MSG>
+			</Action>
+			<Action Id="D_Firefox_Cache">
+				<Name>ล้างข้อมูลการท่องเว็บ Firefox (แคช)</Name>
+				<Explanation>เว็บไซต์ไม่โหลดหรือแสดงผลอย่างถูกต้องใน Firefox แคชเบราว์เซอร์ของโปรไฟล์ Firefox ทั้งหมดจะถูกล้าง</Explanation>
+				<Alerte_MSG>Firefox จะปิดและข้อมูลการท่องเว็บที่แคชไว้จะถูกลบ
+
+คุณต้องการดำเนินการต่อหรือไม่?</Alerte_MSG>
+			</Action>
+			<Action Id="D_Outlook_TeamsAddIn">
+				<Name>ปุ่ม "การประชุม Teams" หายไปใน Outlook</Name>
+				<Explanation>ปุ่ม "การประชุม Teams ใหม่" หายไปใน Outlook</Explanation>
+				<Alerte_MSG>Outlook จะปิดแล้วเปิดอีกครั้งโดยอัตโนมัติ งานที่ยังไม่ได้บันทึกอาจสูญหาย
+
+คุณต้องการดำเนินการต่อหรือไม่</Alerte_MSG>
+			</Action>
+			<Action Id="D_OneDrive_Start">
+				<Name>เริ่มต้นไคลเอ็นต์ OneDrive</Name>
+				<Explanation>OneDrive ไม่ทำงาน</Explanation>
+				<Alerte_MSG>ไคลเอนต์ OneDrive ของคุณจะเริ่มทำงาน
+
+คุณต้องการดำเนินการต่อหรือไม่?</Alerte_MSG>
+			</Action>
+			<Action Id="D_OneDrive_Restart">
+				<Name>รีสตาร์ทไคลเอ็นต์ OneDrive</Name>
+				<Explanation>การรีสตาร์ท OneDrive สามารถแก้ปัญหาบางอย่างได้ เช่น ปัญหาการซิงโครไนซ์</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_Sync_Step1">
+				<Name>แก้ไขปัญหาการซิงโครไนซ์ OneDrive (ขั้นตอนที่ 1)</Name>
+				<Explanation>คุณมีปัญหาในการซิงโครไนซ์กับไฟล์หรือโฟลเดอร์ของคุณใน OneDrive.
+
+ขั้นตอนแรกนี้จะรีสตาร์ท OneDrive OneDrive จะปิดแล้วเปิดอีกครั้งโดยอัตโนมัติ
+
+หากปัญหายังคงอยู่ ให้ดำเนินการ "รีเซ็ตไคลเอ็นต์ OneDrive"</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_Error_8004def4">
+				<Name>OneDrive ไม่สตาร์ท: ข้อผิดพลาด 0x8004def4</Name>
+				<Explanation>ข้อผิดพลาด 0x8004def4 ปรากฏขึ้นเมื่อ OneDrive เริ่มทำงาน</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_Memory">
+				<Name>อุปกรณ์ของคุณช้า: OneDrive ใช้หน่วยความจำจำนวนมาก</Name>
+				<Explanation>อุปกรณ์ของคุณทำงานช้า และดูเหมือนว่า OneDrive จะใช้หน่วยความจำมาก</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_RedCross">
+				<Name>กากบาทสีแดงบนไอคอน OneDrive</Name>
+				<Explanation>กากบาทสีแดงแสดงบนไอคอน OneDrive</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_ClosesItself">
+				<Name>OneDrive ปิดเอง</Name>
+				<Explanation>OneDrive เปิดแล้วปิดอีกครั้งด้วยตัวเอง</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_WhiteCross">
+				<Name>กากบาทสีขาวบนไฟล์ OneDrive</Name>
+				<Explanation>กากบาทสีขาวจะแสดงบนไฟล์หรือโฟลเดอร์ OneDrive</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_PasswordChange">
+				<Name>ปัญหากับ OneDrive หลังจากเปลี่ยนรหัสผ่าน Windows</Name>
+				<Explanation>คุณเปลี่ยนรหัสผ่านเมื่อเร็วๆ นี้ และตอนนี้คุณมีปัญหากับ OneDrive เช่น ปัญหาการซิงโครไนซ์
+
+ขั้นตอนนี้จะรีสตาร์ทไคลเอ็นต์ OneDrive</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_CannotOpen">
+				<Name>คุณไม่สามารถเปิดไฟล์ใน OneDrive</Name>
+				<Explanation>ไฟล์ที่จัดเก็บไว้ใน OneDrive ไม่เปิดขึ้นมา</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_TeamsSync">
+				<Name>โฟลเดอร์ซิงโครไนซ์ใน OneDrive แต่ไม่ใช่ใน Teams</Name>
+			</Action>
+			<Action Id="D_OneDrive_Reset">
+				<Name>รีเซ็ตไคลเอ็นต์ OneDrive</Name>
+				<Explanation>คุณมีปัญหากับ OneDrive เช่น ปัญหาการซิงโครไนซ์
+
+ขั้นตอนนี้จะรีเซ็ตไคลเอ็นต์ OneDrive ของคุณ การรีเซ็ตไคลเอ็นต์ OneDrive จะไม่ทำให้ข้อมูลสูญหาย</Explanation>
+			</Action>
+			<Action Id="D_Teams_Connection">
+				<Name>แก้ไขปัญหาการเชื่อมต่อ Teams</Name>
+				<Explanation>คุณไม่สามารถเชื่อมต่อกับ Teams ได้</Explanation>
+			</Action>
+			<Action Id="D_Teams_ProfilePicture">
+				<Name>แก้ปัญหาการซิงโครไนซ์รูปภาพโปรไฟล์ Teams</Name>
+				<Explanation>รูปโปรไฟล์ของคุณไม่แสดงใน Teams หรือไม่ได้รับการอัพเดต</Explanation>
+			</Action>
+			<Action Id="D_Teams_OneDriveSync">
+				<Name>โฟลเดอร์ซิงโครไนซ์ใน OneDrive แต่ไม่ใช่ใน Teams</Name>
+			</Action>
+			<Action Id="D_Teams_Loading">
+				<Name>Teams ค้างอยู่ที่ "กำลังโหลด Microsoft Teams"</Name>
+				<Explanation>เมื่อคุณเปิด Teams หน้าต่างจะค้างอยู่ที่ "กำลังโหลด Microsoft Teams"</Explanation>
+			</Action>
+			<Action Id="D_Teams_Sync">
+				<Name>แก้ไขปัญหาการซิงโครไนซ์ Teams</Name>
+				<Explanation>คุณมีปัญหาในการซิงโครไนซ์ใน Teams</Explanation>
+			</Action>
+			<Action Id="D_Teams_DoesNotOpen">
+				<Name>ไคลเอนต์ Teams ของฉันไม่เปิดขึ้น</Name>
+				<Explanation>คุณพยายามเปิด Teams แต่ไคลเอนต์ไม่เปิดขึ้น</Explanation>
+			</Action>
+			<Action Id="D_Teams_AudioFreeze">
+				<Name>ไคลเอนต์ Teams ของฉันค้างระหว่างการโทรด้วยเสียง</Name>
+				<Explanation>Teams ค้างระหว่างการโทรด้วยเสียง</Explanation>
+			</Action>
+			<Action Id="D_Teams_Camera">
+				<Name>กล้อง Teams ค้างหรือมองไม่เห็น</Name>
+				<Explanation>วิดีโอของคุณค้างหรือไม่ปรากฏในระหว่างการประชุมหรือการโทร</Explanation>
+			</Action>
+			<Action Id="D_Teams_SendFailed">
+				<Name>ไม่สามารถส่งข้อความ Teams ได้</Name>
+				<Explanation>ข้อความใน Teams จะไม่ถูกส่ง และ Teams แสดงข้อความ "ไม่สามารถส่งได้"</Explanation>
+			</Action>
+			<Action Id="D_Teams_MeetingDisplay">
+				<Name>แสดงปัญหาเมื่อเข้าร่วมการประชุม Teams</Name>
+				<Explanation>Teams แสดงไม่ถูกต้องเมื่อคุณเข้าร่วมการประชุม</Explanation>
+			</Action>
+			<Action Id="D_Teams_NoConnect">
+				<Name>ไคลเอนต์ Teams ของฉันเปิดขึ้นแต่ไม่ได้เชื่อมต่อ</Name>
+				<Explanation>Teams เปิดขึ้น แต่ไม่สามารถเชื่อมต่อได้</Explanation>
+			</Action>
+			<Action Id="D_Teams_StatusOffline">
+				<Name>สถานะ Teams ของฉันยังออฟไลน์อยู่</Name>
+				<Explanation>สถานะของคุณใน Teams ยังคงเป็น "ออฟไลน์" แม้ว่าคุณจะลงชื่อเข้าใช้แล้วก็ตาม</Explanation>
+			</Action>
+			<Action Id="D_Teams_CallWindow">
+				<Name>หน้าต่างการโทร Teams จะไม่แสดง</Name>
+				<Explanation>การแจ้งเตือนการโทรเข้า Teams จะไม่แสดงอีกต่อไป</Explanation>
+			</Action>
+			<Action Id="D_Teams_MessageContent">
+				<Name>ฉันไม่เห็นเนื้อหาของข้อความใน Teams</Name>
+				<Explanation>คุณเห็นการแจ้งเตือนข้อความและการแสดงตัวอย่าง แต่ไม่เห็นเนื้อหาของข้อความ</Explanation>
+			</Action>
+			<Action Id="D_Teams_PasswordChange">
+				<Name>ปัญหาการเชื่อมต่อหลังจากเปลี่ยนรหัสผ่าน</Name>
+				<Explanation>คุณไม่สามารถเชื่อมต่อกับ Teams ได้หลังจากเปลี่ยนรหัสผ่านแล้ว</Explanation>
+			</Action>
+			<Action Id="D_Teams_Tabs">
+				<Name>แท็บใน Teams ไม่โหลด</Name>
+				<Explanation>เมื่อคุณเปิดแท็บใน Teams แท็บเหล่านั้นจะไม่โหลดอย่างถูกต้อง</Explanation>
+			</Action>
+			<Action Id="D_Teams_StatusWrong">
+				<Name>สถานะ Teams ของฉันไม่ถูกต้อง</Name>
+				<Explanation>สถานะของคุณใน Teams ไม่ถูกต้องหรือไม่ได้รับการอัพเดต</Explanation>
+			</Action>
+			<Action Id="D_Teams_MeetingOpen">
+				<Name>ฉันไม่สามารถเปิดการประชุม Teams ได้</Name>
+				<Explanation>การประชุม Teams ไม่เปิดขึ้นเมื่อคุณคลิกลิงก์เพื่อเข้าร่วม</Explanation>
+			</Action>
+			<Action Id="D_Teams_SoundCuts">
+				<Name>เสียงขาดหายไประหว่างการประชุม Teams</Name>
+				<Explanation>เสียงขาดหายไประหว่างการประชุม Teams</Explanation>
+			</Action>
+			<Action Id="D_Teams_OutlookMeeting">
+				<Name>ฉันไม่สามารถสร้างการประชุม Teams ในปฏิทิน Outlook ได้</Name>
+				<Explanation>คุณไม่สามารถสร้างการประชุม Teams จากปฏิทิน Outlook</Explanation>
+			</Action>
+			<Action Id="D_Intune_Sync">
+				<Name>บังคับให้ซิงโครไนซ์ Intune</Name>
+			</Action>
+			<Action Id="D_OneDrive_Chkdsk">
+				<Name>ตรวจสอบดิสก์เพื่อหาข้อผิดพลาด OneDrive (chkdsk)</Name>
+			</Action>
+			<Action Id="D_OneDrive_ReparsePoint">
+				<Name>แท็กที่อยู่ในบัฟเฟอร์จุดแยกวิเคราะห์ไม่ถูกต้อง</Name>
+			</Action>
+			<Action Id="D_OneDrive_Error_80071129">
+				<Name>ข้อผิดพลาด 0x80071129</Name>
+			</Action>
+			<Action Id="Q_Device_SendLogs">
+				<Name>ส่งบันทึกอุปกรณ์ไปยังฝ่ายสนับสนุน</Name>
+			</Action>
+			<Action Id="D_Device_SendLogs">
+				<Name>รวบรวมบันทึกอุปกรณ์และส่งไปยังฝ่ายสนับสนุนทางอีเมล</Name>
+			</Action>
+		</Actions>
+	</Catalog>
+</SelfX_Language>

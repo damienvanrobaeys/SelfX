@@ -150,7 +150,7 @@ If($Config_Type -eq "Download")
 		xmlns:loadin="clr-namespace:LoadingIndicators.WPF;assembly=LoadingIndicators.WPF"
 		xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
 		xmlns:mbar="clr-namespace:AlertBarWpf;assembly=AlertBarWpf"		
-        Title="Je me dépanne tout seul" Height="460" Width="700" 
+        Title="Je me dépanne tout seul" Height="540" Width="700"
 		TitleCaps="False" Topmost="True" ResizeMode="CanMinimize" BorderBrush="Teal"
 		BorderThickness="1"	WindowStartupLocation ="CenterScreen" GlowBrush="{DynamicResource AccentColorBrush}">
 
@@ -199,7 +199,12 @@ If($Config_Type -eq "Download")
 	</Controls:MetroWindow.RightWindowCommands>	
 
     <Grid>
-		<StackPanel>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+		<TabControl Name="Main_Tabs" Grid.Row="0" Margin="5,0,5,0">
+		<TabItem Name="Tab_Troubleshooting" Header="Troubleshooting" Controls:ControlsHelper.HeaderFontSize="15">
 		<StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="0,0,0,0">
 
 			<StackPanel Orientation="Vertical" HorizontalAlignment="Center">
@@ -278,11 +283,84 @@ If($Config_Type -eq "Download")
 				</DataGrid>
 			</StackPanel>
 		</StackPanel>
-		
-		<StackPanel Margin="0,10,0,0">	
-			<mbar:AlertBarWpf Name="msgbar"/>	
-		</StackPanel>	
-		</StackPanel>			
+		</TabItem>
+
+		<TabItem Name="Tab_SystemInfo" Header="System information" Controls:ControlsHelper.HeaderFontSize="15">
+			<Grid Margin="10,5,10,0">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+				</Grid.RowDefinitions>
+
+				<DockPanel Grid.Row="0" LastChildFill="True">
+					<StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+						<Button Name="SysInfo_Refresh" Margin="3,0,0,0" Padding="8,2" Cursor="Hand">
+							<StackPanel Orientation="Horizontal">
+								<iconPacks:PackIconMaterial Kind="refresh" Height="12" Width="12" VerticalAlignment="Center"/>
+								<TextBlock Name="SysInfo_Refresh_Label" Text="Refresh" Margin="5,0,0,0" VerticalAlignment="Center"/>
+							</StackPanel>
+						</Button>
+						<Button Name="SysInfo_Copy" Margin="3,0,0,0" Padding="8,2" Cursor="Hand">
+							<StackPanel Orientation="Horizontal">
+								<iconPacks:PackIconMaterial Kind="contentcopy" Height="12" Width="12" VerticalAlignment="Center"/>
+								<TextBlock Name="SysInfo_Copy_Label" Text="Copy all" Margin="5,0,0,0" VerticalAlignment="Center"/>
+							</StackPanel>
+						</Button>
+						<Button Name="SysInfo_Export" Margin="3,0,0,0" Padding="8,2" Cursor="Hand">
+							<StackPanel Orientation="Horizontal">
+								<iconPacks:PackIconMaterial Kind="export" Height="12" Width="12" VerticalAlignment="Center"/>
+								<TextBlock Name="SysInfo_Export_Label" Text="Export" Margin="5,0,0,0" VerticalAlignment="Center"/>
+							</StackPanel>
+						</Button>
+					</StackPanel>
+					<Label Name="SysInfo_Title" FontWeight="Bold" VerticalAlignment="Center" Content="Information about your device"/>
+				</DockPanel>
+
+				<Grid Grid.Row="1" Margin="0,5,0,0">
+					<DataGrid Name="SysInfo_Grid" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single"
+						HeadersVisibility="None" GridLinesVisibility="None" BorderThickness="0" CanUserSortColumns="False"
+						BorderBrush="{DynamicResource AccentColorBrush}">
+						<DataGrid.GroupStyle>
+							<GroupStyle>
+								<GroupStyle.HeaderTemplate>
+									<DataTemplate>
+										<TextBlock Text="{Binding Name}" FontWeight="Bold" Margin="3,8,0,2" Foreground="{DynamicResource AccentColorBrush}"/>
+									</DataTemplate>
+								</GroupStyle.HeaderTemplate>
+							</GroupStyle>
+						</DataGrid.GroupStyle>
+						<DataGrid.Columns>
+							<DataGridTextColumn Binding="{Binding Property}" Width="190"/>
+							<DataGridTextColumn Binding="{Binding Value}" Width="*">
+								<DataGridTextColumn.ElementStyle>
+									<Style TargetType="TextBlock">
+										<Setter Property="TextWrapping" Value="Wrap"/>
+									</Style>
+								</DataGridTextColumn.ElementStyle>
+							</DataGridTextColumn>
+						</DataGrid.Columns>
+					</DataGrid>
+					<loadin:LoadingIndicator Name="SysInfo_Loading" SpeedRatio="1" IsActive="False" Foreground="{DynamicResource AccentColorBrush}" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{DynamicResource LoadingIndicatorArcsRingStyle}"/>
+				</Grid>
+
+				<Label Name="SysInfo_Status" Grid.Row="2" FontStyle="Italic" Content="Double-click a line to copy its value."/>
+
+				<WrapPanel Name="SysInfo_Actions" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,5">
+					<Button Name="SysInfo_SyncApps" Content="Sync Intune apps" Margin="3" Padding="8,2" Cursor="Hand"/>
+					<Button Name="SysInfo_SyncCompliance" Content="Check compliance" Margin="3" Padding="8,2" Cursor="Hand"/>
+					<Button Name="SysInfo_CompanyPortal" Content="Company Portal" Margin="3" Padding="8,2" Cursor="Hand"/>
+					<Button Name="SysInfo_QuickAssist" Content="Quick Assist" Margin="3" Padding="8,2" Cursor="Hand"/>
+					<Button Name="SysInfo_MdmDiagnostics" Content="Collect MDM logs" Margin="3" Padding="8,2" Cursor="Hand"/>
+				</WrapPanel>
+			</Grid>
+		</TabItem>
+		</TabControl>
+
+		<StackPanel Grid.Row="1" Margin="0,5,0,0">
+			<mbar:AlertBarWpf Name="msgbar"/>
+		</StackPanel>
 	</Grid>
 </Controls:MetroWindow>
 '@
@@ -746,5 +824,185 @@ Else
 	{
 		$Form.Title = $Tool_Name
 	}
+
+#******************************************************************************
+# System information tab
+# Idea and data points based on https://github.com/JayRHa/windows-system-information (MIT)
+#******************************************************************************
+Function Get-SelfXConfigValue
+{
+	param(
+	[string]$Name,
+	[string]$Default
+	)
+	$Value = $GUI_Config.$Name
+	If([string]::IsNullOrWhiteSpace($Value)) { return $Default }
+	return $Value.Trim()
+}
+
+$Show_SystemInfo_Tab = Get-SelfXConfigValue "Show_SystemInfo_Tab" "True"
+$Tab_Troubleshooting.Header = Get-SelfXConfigValue "Troubleshooting_Tab_Text" "Troubleshooting"
+
+If($Show_SystemInfo_Tab -ne $True)
+{
+	$Tab_SystemInfo.Visibility = "Collapsed"
+}
+Else
+{
+	. "$Current_Folder\SystemInfo.ps1"
+
+	$Global:SysInfo_Items = @()
+	$Global:SysInfo_Loaded = $False
+	$SysInfo_Hint_Text = Get-SelfXConfigValue "SystemInfo_Hint_Text" "Double-click a line to copy its value."
+	$SysInfo_Copied_Text = Get-SelfXConfigValue "SystemInfo_Copied_Text" "Copied to clipboard:"
+	$SysInfo_Loading_Text = Get-SelfXConfigValue "SystemInfo_Loading_Text" "Collecting system information..."
+	$SysInfo_Test_Host = Get-SelfXConfigValue "SystemInfo_Internet_Test_Host" "www.msftconnecttest.com"
+	$SysInfo_Test_Port = [int](Get-SelfXConfigValue "SystemInfo_Internet_Test_Port" "80")
+
+	$Tab_SystemInfo.Header = Get-SelfXConfigValue "SystemInfo_Tab_Text" "System information"
+	$SysInfo_Title.Content = Get-SelfXConfigValue "SystemInfo_Title_Text" "Information about your device"
+	$SysInfo_Refresh_Label.Text = Get-SelfXConfigValue "SystemInfo_Refresh_Text" "Refresh"
+	$SysInfo_Copy_Label.Text = Get-SelfXConfigValue "SystemInfo_Copy_Text" "Copy all"
+	$SysInfo_Export_Label.Text = Get-SelfXConfigValue "SystemInfo_Export_Text" "Export"
+	$SysInfo_SyncApps.Content = Get-SelfXConfigValue "SystemInfo_SyncApps_Text" "Sync Intune apps"
+	$SysInfo_SyncCompliance.Content = Get-SelfXConfigValue "SystemInfo_SyncCompliance_Text" "Check compliance"
+	$SysInfo_CompanyPortal.Content = Get-SelfXConfigValue "SystemInfo_CompanyPortal_Text" "Company Portal"
+	$SysInfo_QuickAssist.Content = Get-SelfXConfigValue "SystemInfo_QuickAssist_Text" "Quick Assist"
+	$SysInfo_MdmDiagnostics.Content = Get-SelfXConfigValue "SystemInfo_MdmDiagnostics_Text" "Collect MDM logs"
+	$SysInfo_Status.Content = $SysInfo_Hint_Text
+
+	If((Get-SelfXConfigValue "Show_SystemInfo_Intune_Actions" "True") -ne $True)
+		{
+			$SysInfo_Actions.Visibility = "Collapsed"
+		}
+
+	Function Set-SysInfoBusy
+		{
+			param([bool]$Busy)
+			$SysInfo_Loading.IsActive = $Busy
+			$SysInfo_Loading.Visibility = $(If($Busy){"Visible"}Else{"Collapsed"})
+			$SysInfo_Refresh.IsEnabled = -not $Busy
+			$SysInfo_Copy.IsEnabled = -not $Busy
+			$SysInfo_Export.IsEnabled = -not $Busy
+			If($Busy){ $SysInfo_Status.Content = $SysInfo_Loading_Text } Else { $SysInfo_Status.Content = $SysInfo_Hint_Text }
+		}
+
+	Function Show-SysInfoItems
+		{
+			$SysInfo_Table = New-Object System.Data.DataTable
+			[void]$SysInfo_Table.Columns.AddRange(@("Category","Property","Value"))
+			foreach($Item in $Global:SysInfo_Items)
+				{
+					[void]$SysInfo_Table.Rows.Add($Item.Category, $Item.Property, $Item.Value)
+				}
+			$SysInfo_View = New-Object System.Windows.Data.BindingListCollectionView -ArgumentList (,$SysInfo_Table.DefaultView)
+			$SysInfo_View.GroupDescriptions.Add((New-Object System.Windows.Data.PropertyGroupDescription("Category")))
+			$SysInfo_Grid.ItemsSource = $SysInfo_View
+		}
+
+	# Collect in a background runspace so the window stays responsive.
+	# The collector is passed as text, so it is not subject to the script execution policy of the new runspace.
+	$Global:SysInfo_Script = Get-Content -Path "$Current_Folder\SystemInfo.ps1" -Raw
+	$Global:SysInfo_Timer = New-Object System.Windows.Threading.DispatcherTimer
+	$SysInfo_Timer.Interval = [TimeSpan]::FromMilliseconds(300)
+	$SysInfo_Timer.Add_Tick({
+		If($Global:SysInfo_Handle.IsCompleted)
+			{
+				$SysInfo_Timer.Stop()
+				Try
+					{
+						$Global:SysInfo_Items = @($Global:SysInfo_PS.EndInvoke($Global:SysInfo_Handle))
+					}
+				Catch
+					{
+						$Global:SysInfo_Items = @([pscustomobject]@{Category="Report";Property="Error";Value=$_.Exception.Message})
+					}
+				$Global:SysInfo_PS.Dispose()
+				Show-SysInfoItems
+				Set-SysInfoBusy $False
+			}
+	})
+
+	Function Start-SysInfoCollection
+		{
+			Set-SysInfoBusy $True
+			$Global:SysInfo_PS = [PowerShell]::Create()
+			[void]$Global:SysInfo_PS.AddScript($Global:SysInfo_Script + "`r`nGet-SelfXSystemInfo -InternetTestHost '$($SysInfo_Test_Host -replace "'", "''")' -InternetTestPort $SysInfo_Test_Port")
+			$Global:SysInfo_Handle = $Global:SysInfo_PS.BeginInvoke()
+			$SysInfo_Timer.Start()
+			$Global:SysInfo_Loaded = $True
+		}
+
+	Set-SysInfoBusy $False
+
+	$Main_Tabs.Add_SelectionChanged({
+		If(($Main_Tabs.SelectedItem -eq $Tab_SystemInfo) -and (-not $Global:SysInfo_Loaded))
+			{
+				Start-SysInfoCollection
+			}
+	})
+
+	$SysInfo_Refresh.Add_Click({ Start-SysInfoCollection })
+
+	$SysInfo_Copy.Add_Click({
+		If($Global:SysInfo_Items.Count -gt 0)
+			{
+				[System.Windows.Clipboard]::SetText((ConvertTo-SelfXSystemInfoText -Items $Global:SysInfo_Items))
+				$SysInfo_Status.Content = $SysInfo_Copied_Text + " " + $Tab_SystemInfo.Header
+			}
+	})
+
+	$SysInfo_Grid.Add_MouseDoubleClick({
+		$Selected = $SysInfo_Grid.SelectedItem
+		If($Selected -ne $null)
+			{
+				[System.Windows.Clipboard]::SetText([string]$Selected["Value"])
+				$SysInfo_Status.Content = $SysInfo_Copied_Text + " " + $Selected["Property"]
+			}
+	})
+
+	$SysInfo_Export.Add_Click({
+		If($Global:SysInfo_Items.Count -eq 0) { return }
+		$SaveDialog = New-Object Microsoft.Win32.SaveFileDialog
+		$SaveDialog.FileName = "SystemInfo_$($env:COMPUTERNAME)_$(Get-Date -Format 'yyyyMMdd_HHmm')"
+		$SaveDialog.InitialDirectory = [Environment]::GetFolderPath("Desktop")
+		$SaveDialog.Filter = "Text file (*.txt)|*.txt|HTML file (*.html)|*.html|CSV file (*.csv)|*.csv|JSON file (*.json)|*.json"
+		If($SaveDialog.ShowDialog($Form))
+			{
+				Try
+					{
+						Export-SelfXSystemInfo -Items $Global:SysInfo_Items -Path $SaveDialog.FileName
+						$SysInfo_Status.Content = $SaveDialog.FileName
+					}
+				Catch
+					{
+						$SysInfo_Status.Content = $_.Exception.Message
+					}
+			}
+	})
+
+	Function Invoke-SysInfoAction
+		{
+			param([scriptblock]$Action)
+			Try { & $Action } Catch { $SysInfo_Status.Content = $_.Exception.Message }
+		}
+
+	$SysInfo_SyncApps.Add_Click({ Invoke-SysInfoAction { Start-Process "intunemanagementextension://syncapp" } })
+	$SysInfo_SyncCompliance.Add_Click({ Invoke-SysInfoAction { Start-Process "intunemanagementextension://synccompliance" } })
+	$SysInfo_CompanyPortal.Add_Click({ Invoke-SysInfoAction { Start-Process "explorer.exe" -ArgumentList "shell:AppsFolder\Microsoft.CompanyPortal_8wekyb3d8bbwe!App" } })
+	$SysInfo_QuickAssist.Add_Click({
+		Invoke-SysInfoAction {
+			$QuickAssist_Exe = "$env:SystemRoot\System32\quickassist.exe"
+			If(Test-Path $QuickAssist_Exe) { Start-Process $QuickAssist_Exe } Else { Start-Process "ms-quick-assist:" }
+		}
+	})
+	$SysInfo_MdmDiagnostics.Add_Click({
+		Invoke-SysInfoAction {
+			$Mdm_Folder = Join-Path $env:TEMP "SelfX_MDMDiagnostics"
+			Start-Process "cmd.exe" -ArgumentList "/c MdmDiagnosticsTool.exe -out `"$Mdm_Folder`" & explorer.exe `"$Mdm_Folder`"" -WindowStyle Hidden
+			$SysInfo_Status.Content = $Mdm_Folder
+		}
+	})
+}
 	
 $Form.ShowDialog() | Out-Null 

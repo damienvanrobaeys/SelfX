@@ -1,5 +1,5 @@
 ﻿<Actions>
-	<XML_Version>1.0.0</XML_Version>
+	<XML_Version>1.0.1</XML_Version>
 
 	<Quick_Solution>	
 		<!-- <Action>	 -->
@@ -18,11 +18,9 @@
 			<Name>Solve an issue with Teams</Name>
 			<Buttons>Ok_Cancel</Buttons>						
 			<Explanation>You are experiencing an issue with the Teams client (slowness, incorrect status, transfer error, etc.)</Explanation>
-			<Script>Depannage_Teams_ResetCache.ps1</Script>
+			<Script>SelfX_Teams_ResetCache.ps1</Script>
 			<Category>Teams</Category>	
-			<Alerte_MSG>The cache of your Teams client will be reset.
-			
-The reset does not result in any data loss.	
+			<Alerte_MSG>Teams will close and its local cache folders will be cleared. Save any open work before continuing. Teams will reopen if it was running.
 
 Do you want to continue?</Alerte_MSG>	
 		</Action>	
@@ -31,9 +29,9 @@ Do you want to continue?</Alerte_MSG>
 			<Name>Solve an issue with Word</Name>
 			<Buttons>Ok_Cancel</Buttons>						
 			<Explanation>You are working in Word, but it has stopped responding, and you can no longer do anything.</Explanation>
-			<Script>Depannage_Office_Kill_Word.ps1</Script>
+			<Script>SelfX_Word_Reboot.ps1</Script>
 			<Category>Office</Category>	
-			<Alerte_MSG>Word will close and reopen automatically.
+			<Alerte_MSG>Word will close and reopen automatically. Unsaved work may be lost.
 
 Do you want to continue?	
 			</Alerte_MSG>
@@ -43,9 +41,9 @@ Do you want to continue?
 			<Name>Solve an issue with Excel</Name>
 			<Buttons>Ok_Cancel</Buttons>						
 			<Explanation>You are working in Excel, but it has stopped responding, and you can no longer do anything.</Explanation>
-			<Script>Depannage_Office_Kill_Excel.ps1</Script>
+			<Script>SelfX_Excel_Reboot.ps1</Script>
 			<Category>Office</Category>	
-			<Alerte_MSG>Excel will close and reopen automatically.
+			<Alerte_MSG>Excel will close and reopen automatically. Unsaved work may be lost.
 
 Do you want to continue?	
 			</Alerte_MSG>
@@ -55,7 +53,7 @@ Do you want to continue?
 			<Name>Solve an issue with the Microsoft Store</Name>
 			<Buttons>Ok_Cancel</Buttons>						
 			<Explanation>Vous avez des problèmes avec le store Microsoft (ouverture/installation d'applications...)</Explanation>
-			<Script>Depannage_Poste_WSReset.ps1</Script>
+			<Script>SelfX_Poste_WSReset.ps1</Script>
 			<Category>Poste</Category>	
 			<Alerte_MSG>An issue with the Microsoft Store ?
 
@@ -94,9 +92,9 @@ Do you want to continue?</Alerte_MSG>
 			<Name>The "Teams meeting" button is missing in Outlook</Name>
 			<Buttons>Ok_Cancel</Buttons>						
 			<Explanation>The "Teams meeting" button is missing in Outlook</Explanation>
-			<Script>Depannage_Outlook_TeamsAddIn.ps1</Script>
+			<Script>SelfX_Outlook_TeamsAddIn.ps1</Script>
 			<Category>Outlook</Category>	
-			<Alerte_MSG>The Teams meeting add-in will be added. Le complément Réunion Teams va être ajouté. Outlook will close and reopen automatically.
+			<Alerte_MSG>The Teams meeting add-in will be added. Le complément Réunion Teams va être ajouté. Outlook will close and reopen automatically. Unsaved work may be lost.
 			
 If the issue persists, please contact your support.
 	
@@ -165,7 +163,7 @@ Do you want to continue?</Alerte_MSG>
 			<Explanation>The "Teams meeting" button is missing in Outlook</Explanation>
 			<Script>SelfX_Outlook_TeamsAddIn.ps1</Script>
 			<Category>Outlook</Category>	
-			<Alerte_MSG>Outlook will close and then open again automatically.
+			<Alerte_MSG>Outlook will close and then open again automatically. Unsaved work may be lost.
 
 	Do you want to continue ?		
 			</Alerte_MSG>

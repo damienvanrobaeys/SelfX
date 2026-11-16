@@ -1,0 +1,563 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+	SelfX Service - language file
+
+	Description:
+	  Texts of the SelfX user interface in one language. SelfX selects the file that matches the Windows
+	  display language of the user (for example de-CH -> de.xml, zh-TW -> zh-Hant.xml). If no file matches,
+	  en.xml is used. A text that is missing or empty in a language file is taken from en.xml.
+
+	Add a language:
+	  1. Copy en.xml to <culture>.xml. Use the neutral culture name (de, fr, pt) or a script/region name
+	     (zh-Hans, zh-Hant, pt-BR). Windows tries the exact culture first and then its parents.
+	  2. Set Culture, Name, NativeName and FlowDirection (RightToLeft for Arabic, Persian, Urdu, Hebrew ...).
+	  3. Translate the element texts. Do not change element names or Id attributes.
+	     Keep placeholders such as {0}, {1}, {1:D2} and the "|" separators of SystemInfo_Export_Filter.
+	  4. Catalogue texts: add an <Action Id="..."> entry per action and a <Message Id="..."> entry per shared
+	     message. The English base texts are in Issues_List.xml. Untranslated actions are shown in English.
+
+	History:
+	  Version  Date        Author               Change
+	  2.2.0    2026-10-28  Wolfgang Baeck       Initial version: multilingual user interface
+-->
+<SelfX_Language Culture="ko" Name="Korean" NativeName="한국어" FlowDirection="LeftToRight" Version="2.2.0">
+	<UI>
+		<Health_Fix>복구</Health_Fix>
+		<Health_Fix_Confirm>{0}에 구성된 복구를 실행하시겠습니까? 작업을 저장하세요. 애플리케이션, 서비스 또는 연결이 중단될 수 있습니다. 이후 상태를 다시 확인합니다.</Health_Fix_Confirm>
+		<Health_Restart_Button>다시 시작</Health_Restart_Button>
+		<Health_Restart_Title>디바이스 다시 시작</Health_Restart_Title>
+		<Health_Restart_Confirm>보류 중인 업데이트와 변경 내용을 완료하기 위해 Windows가 다시 시작됩니다.&#10;&#10;먼저 작업을 저장하고 모든 프로그램을 닫으세요. 확인 후 약 30초 뒤에 다시 시작됩니다.&#10;&#10;지금 다시 시작하시겠습니까?</Health_Restart_Confirm>
+		<Button_Restart_Now>지금 다시 시작</Button_Restart_Now>
+		<Health_Restart_Started>약 30초 후에 Windows가 다시 시작됩니다. 지금 작업을 저장하세요.</Health_Restart_Started>
+		<Health_Updates_Started>Windows 업데이트를 검색, 다운로드 및 설치하고 있습니다. 몇 분 정도 걸릴 수 있으며 계속 작업할 수 있습니다.</Health_Updates_Started>
+		<Health_Updates_Done>Windows 업데이트가 완료되었습니다. 디바이스 상태를 다시 확인하여 다시 시작이 필요한지 표시합니다.</Health_Updates_Done>
+		<Health_Apps_Button>다시 시도</Health_Apps_Button>
+		<Health_Apps_Started>실패한 앱의 설치를 다시 시작합니다. 몇 분 정도 걸릴 수 있으며 회사 포털에서 확인할 수 있습니다.</Health_Apps_Started>
+		<Health_Check_Button>확인</Health_Check_Button>
+		<Health_Error_Button>오류</Health_Error_Button>
+		<Health_Pending_Button>보류 중</Health_Pending_Button>
+		<Health_Check_Tooltip>이 상태를 다시 확인</Health_Check_Tooltip>
+		<!-- Main window -->
+		<Main_Title_Text>장치에 문제가 있으신가요?</Main_Title_Text>
+		<Subtitle_Text>아래 작업에서 문제를 해결할 방법을 찾아보세요.</Subtitle_Text>
+		<Run_solution_Text>작업 실행</Run_solution_Text>
+		<Run_explanation_Text>자세한 정보 표시</Run_explanation_Text>
+		<Issue_filter_Title_Text>구성 요소별 필터</Issue_filter_Title_Text>
+		<Issue_filter_KeyWord_Text>키워드 입력</Issue_filter_KeyWord_Text>
+		<Available_Actions_Count>사용 가능한 작업: {0}개</Available_Actions_Count>
+		<Troubleshooting_Tab_Text>문제 해결</Troubleshooting_Tab_Text>
+		<Theme_Button_ToolTip>어두운 테마와 밝은 테마 간 전환</Theme_Button_ToolTip>
+		<Support_Button_ToolTip>지원 팀에 문의</Support_Button_ToolTip>
+		<About_Button_ToolTip>SelfX 정보</About_Button_ToolTip>
+		<Shield_ToolTip>로컬 SelfX 서비스를 통해 관리자 권한으로 실행됩니다.</Shield_ToolTip>
+
+		<!-- Simplified or detailed view -->
+		<Solution_Mode_Simple>간단 보기</Solution_Mode_Simple>
+		<Solution_Mode_Detailed>자세히 보기</Solution_Mode_Detailed>
+		<Solution_Mode_Info_Title>간단 보기와 자세히 보기 중 선택</Solution_Mode_Info_Title>
+		<Solution_Mode_Info_Text>간단 보기에는 제품별 문제가 표시됩니다.
+자세히 보기에는 해결할 수 있는 제품별 구체적인 문제가 여러 개 표시됩니다.
+
+간단 보기에서 문제가 해결되지 않거나 해당 문제가 표시되지 않으면 자세히 보기를 사용하는 것이 좋습니다.</Solution_Mode_Info_Text>
+
+		<!-- Dialogs -->
+		<Warning_Click_Run_Solution_Text>문제 해결</Warning_Click_Run_Solution_Text>
+		<Warning_Click_Run_Explanation_Text>자세한 정보</Warning_Click_Run_Explanation_Text>
+		<Button_Ok>확인</Button_Ok>
+		<Button_Cancel>취소</Button_Cancel>
+		<Button_Yes>예</Button_Yes>
+		<Button_No>아니요</Button_No>
+		<Close_Button_Text>닫기</Close_Button_Text>
+		<Reboot_Alert>장치를 안정적으로 정상 작동시키려면 최소 일주일에 한 번 다시 시작하세요.</Reboot_Alert>
+
+		<!-- Support and About dialogs -->
+		<Support_Window_Title>지원 팀 정보</Support_Window_Title>
+		<Support_Phone_Label>전화번호:</Support_Phone_Label>
+		<Support_Mail_Label>전자 메일:</Support_Mail_Label>
+		<About_Version_Text>{0}: 버전 {1} - 카탈로그: {2}</About_Version_Text>
+
+		<!-- Local SelfX service (actions with Context System) -->
+		<Service_Running_Text>SelfX 서비스가 실행 중입니다. 방패 아이콘이 표시된 작업은 관리자 권한으로 실행됩니다.</Service_Running_Text>
+		<Service_Unavailable_Text>SelfX 서비스가 실행되고 있지 않습니다. 방패 아이콘이 표시된 작업은 사용할 수 없습니다.</Service_Unavailable_Text>
+		<Service_Busy_Text>다른 작업이 아직 실행 중입니다. 완료될 때까지 기다려 주세요.</Service_Busy_Text>
+		<Action_Running_Text>작업 실행 중: {0}</Action_Running_Text>
+		<Action_Running_Label>실행 중…</Action_Running_Label>
+		<Action_Success_Text>작업 완료: {0}</Action_Success_Text>
+		<Action_Failed_Text>작업 실패: {0}</Action_Failed_Text>
+		<Action_Failed_ExitCode_Text>작업 실패: {0} (종료 코드 {1})</Action_Failed_ExitCode_Text>
+		<Action_Timeout_Text>실행 시간이 너무 길어 작업이 중지되었습니다: {0}</Action_Timeout_Text>
+		<Script_Not_Found_Text>이 작업의 스크립트를 찾을 수 없습니다: {0}</Script_Not_Found_Text>
+
+		<!-- System information tab -->
+		<SystemInfo_Tab_Text>시스템 정보</SystemInfo_Tab_Text>
+		<SystemInfo_Title_Text>지원 팀에 제공할 장치 정보</SystemInfo_Title_Text>
+		<SystemInfo_Hint_Text>값을 복사하려면 행을 두 번 클릭하세요.</SystemInfo_Hint_Text>
+		<SystemInfo_Loading_Text>시스템 정보를 수집하는 중...</SystemInfo_Loading_Text>
+		<SystemInfo_Copied_Text>클립보드에 복사됨: {0}</SystemInfo_Copied_Text>
+		<SystemInfo_Refresh_Text>새로 고침</SystemInfo_Refresh_Text>
+		<SystemInfo_Copy_Text>모두 복사</SystemInfo_Copy_Text>
+		<SystemInfo_Export_Text>내보내기</SystemInfo_Export_Text>
+		<SystemInfo_Export_Filter>텍스트 파일 (*.txt)|*.txt|HTML 파일 (*.html)|*.html|CSV 파일 (*.csv)|*.csv|JSON 파일 (*.json)|*.json</SystemInfo_Export_Filter>
+		<SystemInfo_SyncApps_Text>Intune 앱 동기화</SystemInfo_SyncApps_Text>
+		<SystemInfo_SyncCompliance_Text>규정 준수 확인</SystemInfo_SyncCompliance_Text>
+		<SystemInfo_CompanyPortal_Text>회사 포털</SystemInfo_CompanyPortal_Text>
+		<SystemInfo_QuickAssist_Text>빠른 지원</SystemInfo_QuickAssist_Text>
+		<SystemInfo_MdmDiagnostics_Text>MDM 로그 수집</SystemInfo_MdmDiagnostics_Text>
+		<SystemInfo_SendLogs_Text>지원팀에 로그 보내기</SystemInfo_SendLogs_Text>
+		<Report_Mail_Subject>{0} 장치 로그</Report_Mail_Subject>
+		<Report_Mail_Body>안녕하세요.
+
+SelfX가 {1}에 수집한 {0}의 장치 로그를 첨부합니다.
+
+문제 설명:</Report_Mail_Body>
+		<Report_Mail_Opened_Text>장치 로그가 첨부된 전자 메일이 열렸습니다. 문제를 설명하고 전자 메일을 보내세요.</Report_Mail_Opened_Text>
+		<Report_Mail_Recipient_Text>장치 로그가 첨부된 전자 메일이 열렸습니다. 받는 사람({0})을 입력하고 문제를 설명한 후 전자 메일을 보내세요.</Report_Mail_Recipient_Text>
+		<Report_Mail_Manual_Text>장치 로그가 {0}에 저장되었습니다. 이 파일을 전자 메일(받는 사람: {1})에 첨부하고 문제를 설명하세요.</Report_Mail_Manual_Text>
+		<Report_Not_Found_Text>장치 로그를 수집했지만 전자 메일을 준비할 수 없습니다: {0}</Report_Not_Found_Text>
+		<Report_Support_Fallback>지원팀</Report_Support_Fallback>
+		<Nav_Status_Text>장치 상태</Nav_Status_Text>
+		<Status_LastChecked_Text>마지막 확인: {0}</Status_LastChecked_Text>
+		<Status_NotChecked_Text>장치 상태를 아직 확인하지 않았습니다.</Status_NotChecked_Text>
+		<Status_Background_Text>{0}분마다 자동 확인</Status_Background_Text>
+		<Status_Background_Battery_Text>배터리 사용 중에는 자동 확인이 일시 중지됩니다</Status_Background_Battery_Text>
+		<Status_Checking_Text>장치 상태를 확인하는 중입니다. 최대 1분 정도 걸릴 수 있습니다 ...</Status_Checking_Text>
+		<Status_AllOk_Title>모두 정상입니다</Status_AllOk_Title>
+		<Status_AllOk_Text>장치에서 문제가 발견되지 않았습니다.</Status_AllOk_Text>
+		<Status_Issues_Title>{0}개 항목에 주의가 필요합니다</Status_Issues_Title>
+		<Status_Issues_Text>문제가 먼저 표시됩니다. 문제를 해결하려면 ‘해결’을, 다시 확인하려면 화살표를 클릭하세요.</Status_Issues_Text>
+		<Status_CheckAll_Tooltip>지금 모두 다시 확인합니다. 최대 1분 정도 걸릴 수 있습니다.</Status_CheckAll_Tooltip>
+		<Status_FixAll>모든 문제 해결</Status_FixAll>
+		<Status_FixAll_Tooltip>각 문제에 대해 구성된 복구를 차례로 실행합니다. 그런 다음 모든 항목을 다시 확인합니다.</Status_FixAll_Tooltip>
+		<Health_FixAll_Confirm>이 {0}개 문제에 대해 구성된 복구를 차례로 실행하시겠습니까?&#10;&#10;{1}&#10;&#10;애플리케이션이 닫히고 서비스 또는 네트워크 연결이 중단될 수 있습니다. 먼저 작업을 저장하세요. 그런 다음 모든 항목을 다시 확인합니다.</Health_FixAll_Confirm>
+		<Status_FixAll_Done>{1}개 중 {0}개 복구가 완료되었습니다. 상태를 다시 확인하는 중입니다.</Status_FixAll_Done>
+		<Status_FixAll_Failed>실패: {0}</Status_FixAll_Failed>
+		<Tooltip_Fix>이 문제를 자동으로 해결합니다. 먼저 확인을 요청합니다.</Tooltip_Fix>
+		<Tooltip_Run>이 해결 방법을 시작합니다. 작업 전에 확인을 요청합니다.</Tooltip_Run>
+		<Filter_All_Text>전체</Filter_All_Text>
+		<View_Help_Tooltip>간단히 보기와 자세히 보기의 차이점은 무엇인가요?</View_Help_Tooltip>
+		<SystemInfo_Cached_Text>{0}의 정보 – 업데이트 중 ...</SystemInfo_Cached_Text>
+		<Tooltip_Refresh>정보를 다시 수집합니다</Tooltip_Refresh>
+		<Tooltip_Copy>모든 정보를 복사합니다(예: 지원 요청에 붙여 넣기)</Tooltip_Copy>
+		<Tooltip_Export>모든 정보를 파일로 저장합니다</Tooltip_Export>
+		<Tools_Title_Text>도구</Tools_Title_Text>
+		<Tooltip_SyncApps>할당된 앱을 지금 설치하거나 업데이트하도록 Intune에 요청합니다.</Tooltip_SyncApps>
+		<Tooltip_SyncCompliance>장치가 회사 규칙을 충족하는지 지금 확인하도록 Intune에 요청합니다.</Tooltip_SyncCompliance>
+		<Tooltip_CompanyPortal>회사 앱을 설치할 수 있는 회사 포털을 엽니다.</Tooltip_CompanyPortal>
+		<Tooltip_QuickAssist>지원 담당자가 화면을 보고 도울 수 있도록 빠른 지원을 엽니다(동의한 경우에만).</Tooltip_QuickAssist>
+		<Tooltip_MdmDiagnostics>장치 관리 로그를 지원팀용 폴더에 수집합니다.</Tooltip_MdmDiagnostics>
+		<Tooltip_SendLogs>장치의 모든 로그를 수집하고 보고서가 첨부된 지원팀 앞 전자 메일을 엽니다.</Tooltip_SendLogs>
+		<Settings_Button_ToolTip>설정(언어, 모양 및 상태 아이콘)</Settings_Button_ToolTip>
+		<Settings_Title>설정</Settings_Title>
+		<Settings_Language_Text>언어</Settings_Language_Text>
+		<Settings_Language_Auto>자동({0})</Settings_Language_Auto>
+		<Settings_Language_Hint>SelfX가 선택한 언어로 다시 시작됩니다.</Settings_Language_Hint>
+		<Settings_Language_Later>복구가 아직 실행 중이므로 새 언어는 다음에 SelfX를 열 때 적용됩니다.</Settings_Language_Later>
+		<Settings_Theme_Text>모양</Settings_Theme_Text>
+		<Settings_Theme_Auto>자동</Settings_Theme_Auto>
+		<Settings_Theme_Auto_ToolTip>Windows와 동일: 설정 &gt; 개인 설정 &gt; 색에서 선택한 앱 모드를 사용합니다</Settings_Theme_Auto_ToolTip>
+		<Settings_Theme_Dark>어둡게</Settings_Theme_Dark>
+		<Settings_Theme_Light>밝게</Settings_Theme_Light>
+		<Settings_Tray_Text>알림 영역에 SelfX 아이콘 표시</Settings_Tray_Text>
+		<Settings_Tray_Hint>시계 옆의 아이콘은 장치 상태를 표시하고 문제가 발견되면 알려 줍니다.</Settings_Tray_Hint>
+		<Settings_Notify_Text>문제 알림 표시</Settings_Notify_Text>
+		<Settings_Notify_Hint>색상이 있는 SelfX 아이콘 외에도 새 문제(예: 디스크 공간 부족)가 발견되면 Windows에서 메시지를 표시합니다.</Settings_Notify_Hint>
+		<Support_Intro_Text>기꺼이 도와드리겠습니다. 다음 방법으로 연락하실 수 있습니다:</Support_Intro_Text>
+		<Support_Hours_Label>지원 시간</Support_Hours_Label>
+		<Support_Teams_Label>Teams 채팅</Support_Teams_Label>
+		<Support_Website_Label>웹 사이트 / 티켓 시스템</Support_Website_Label>
+		<Support_Teams_Button>채팅 시작</Support_Teams_Button>
+		<Support_Website_Button>열기</Support_Website_Button>
+		<Support_Mail_Button>전자 메일 쓰기</Support_Mail_Button>
+		<Support_None_Text>연락처 정보가 구성되지 않았습니다. IT 부서에 문의하세요.</Support_None_Text>
+		<Service_Short_Running>SelfX 서비스 실행 중</Service_Short_Running>
+		<Service_Short_Unavailable>SelfX 서비스를 사용할 수 없음</Service_Short_Unavailable>
+		<Version_Text>버전 {0}</Version_Text>
+		<Tray_Tooltip_OK>SelfX: 모두 정상</Tray_Tooltip_OK>
+		<Tray_Tooltip_Issues>SelfX: 문제 {0}개, 경고 {1}개</Tray_Tooltip_Issues>
+		<Tray_Tooltip_Unknown>SelfX: 아직 상태를 사용할 수 없음</Tray_Tooltip_Unknown>
+		<Tray_Menu_Open>SelfX 열기</Tray_Menu_Open>
+		<Tray_Menu_Status>장치 상태 표시</Tray_Menu_Status>
+		<Tray_Menu_Check>지금 상태 확인</Tray_Menu_Check>
+		<Tray_Menu_Notify>알림 표시</Tray_Menu_Notify>
+		<Tray_Menu_Hide>이 아이콘 숨기기</Tray_Menu_Hide>
+		<Tray_Notify_Click>자세한 내용을 보려면 여기를 클릭하세요.</Tray_Notify_Click>
+		<Tray_Hidden_Text>아이콘이 숨겨졌습니다. SelfX의 설정에서 다시 표시할 수 있습니다.</Tray_Hidden_Text>
+		<Tray_Checking_Text>장치 상태를 확인하는 중 ...</Tray_Checking_Text>
+	</UI>
+
+	<!-- Labels and values of the System information tab -->
+	<SystemInfo>
+		<Category_Device>장치</Category_Device>
+		<Category_Windows>Windows</Category_Windows>
+		<Category_User>사용자 및 관리</Category_User>
+		<Category_Network>네트워크</Category_Network>
+		<Category_Report>보고서</Category_Report>
+		<Computer_Name>컴퓨터 이름</Computer_Name>
+		<Manufacturer>제조업체</Manufacturer>
+		<Model>모델</Model>
+		<Serial_Number>일련 번호</Serial_Number>
+		<BIOS_Version>BIOS 버전</BIOS_Version>
+		<Processor>프로세서</Processor>
+		<Memory>메모리(RAM)</Memory>
+		<Free_Space>남은 공간 {0}</Free_Space>
+		<Free_Space_Value>{0}/{1}({2}%)</Free_Space_Value>
+		<Battery>배터리</Battery>
+		<Windows_Version>Windows 버전</Windows_Version>
+		<OS_Build>OS 빌드</OS_Build>
+		<Last_Boot>마지막 부팅</Last_Boot>
+		<Uptime>가동 시간</Uptime>
+		<Uptime_Value>{0}일 {1:D2}:{2:D2}시간</Uptime_Value>
+		<Last_Update>마지막으로 설치된 업데이트</Last_Update>
+		<Time_Zone>표준 시간대</Time_Zone>
+		<Current_User>현재 사용자</Current_User>
+		<User_Principal_Name>사용자 계정 이름</User_Principal_Name>
+		<Domain>도메인 / 작업 그룹</Domain>
+		<Entra_Joined>Entra ID 가입됨</Entra_Joined>
+		<Domain_Joined>도메인 가입됨</Domain_Joined>
+		<Tenant>테넌트</Tenant>
+		<Entra_Device_Id>Entra 장치 ID</Entra_Device_Id>
+		<Intune_User>Intune 등록 사용자</Intune_User>
+		<Intune_Last_Sync>마지막 Intune 동기화</Intune_Last_Sync>
+		<LAN_Connected>LAN 연결됨</LAN_Connected>
+		<WiFi_Connected>Wi-Fi 연결됨</WiFi_Connected>
+		<WWAN_Connected>모바일 광대역 연결됨</WWAN_Connected>
+		<WiFi_SSID>Wi-Fi 네트워크(SSID)</WiFi_SSID>
+		<VPN_Connected>VPN 연결됨</VPN_Connected>
+		<Internet_Reachable>인터넷 연결 가능</Internet_Reachable>
+		<IPv4>IPv4 주소</IPv4>
+		<IPv6>IPv6 주소</IPv6>
+		<Gateway>기본 게이트웨이</Gateway>
+		<DNS>DNS 서버</DNS>
+		<MAC>MAC 주소</MAC>
+		<Collected_At>수집 시간</Collected_At>
+		<Error>오류</Error>
+		<Yes>예</Yes>
+		<No>아니요</No>
+		<Not_Available>해당 없음</Not_Available>
+		<Not_Enrolled>등록되지 않음 / 알 수 없음</Not_Enrolled>
+		<No_WiFi>Wi-Fi 연결 없음</No_WiFi>
+		<Category_Health>시스템 상태</Category_Health>
+		<Health_IME>IME 서비스</Health_IME>
+		<Health_Defender>Microsoft Defender</Health_Defender>
+		<Health_Compliance>규정 준수</Health_Compliance>
+		<Health_Applications>회사 앱(Intune)</Health_Applications>
+		<Health_Disk>디스크 공간</Health_Disk>
+		<Health_BitLocker>BitLocker</Health_BitLocker>
+		<Health_PendingReboot>보류 중인 다시 시작</Health_PendingReboot>
+		<Health_Updates>설치할 업데이트</Health_Updates>
+		<Health_Service>서비스</Health_Service>
+		<Health_Custom>사용자 지정 검사</Health_Custom>
+		<Health_Collection>상태 수집</Health_Collection>
+		<Health_OK>정상</Health_OK>
+		<Health_Error>오류</Health_Error>
+		<Health_Unknown>알 수 없음</Health_Unknown>
+		<Health_Pending>보류 중</Health_Pending>
+		<Health_Unavailable>로컬 상태 보고서를 사용할 수 없음: {0}</Health_Unavailable>
+	</SystemInfo>
+
+	<!-- Action catalogue (Issues_List.xml). The English base texts are in Issues_List.xml, so en.xml only lists the categories. -->
+	<Catalog>
+		<Categories>
+			<Category Id="Browser">브라우저</Category>
+			<Category Id="Device">장치</Category>
+			<Category Id="Intune">Intune</Category>
+			<Category Id="Office">Office</Category>
+			<Category Id="OneDrive">OneDrive</Category>
+			<Category Id="Outlook">Outlook</Category>
+			<Category Id="Teams">Teams</Category>
+		</Categories>
+		<Messages>
+			<Message Id="Msg_Teams_Restart">Teams가 종료된 후 자동으로 다시 열립니다.
+
+문제가 계속되면 Teams에서 로그아웃한 다음 다시 로그인하세요. 그래도 문제가 지속되면 지원 팀에 문의하세요.
+
+계속하시겠습니까?</Message>
+			<Message Id="Msg_Teams_Restart_Short">Teams가 종료된 후 자동으로 다시 열립니다.
+
+계속하시겠습니까?</Message>
+			<Message Id="Msg_OneDrive_Restart">OneDrive가 종료된 후 자동으로 다시 열립니다.
+
+계속하시겠습니까?</Message>
+			<Message Id="Msg_OneDrive_Restart_Step1">첫 번째 단계로 OneDrive를 다시 시작합니다. OneDrive가 종료된 후 자동으로 다시 열립니다.
+
+문제가 계속되면 "OneDrive 클라이언트 초기화" 작업을 실행하세요.
+
+계속하시겠습니까?</Message>
+			<Message Id="Msg_OneDrive_Reset">OneDrive 클라이언트가 초기화됩니다. 초기화해도 데이터는 손실되지 않습니다.
+
+이후에도 문제가 계속되면 지원 팀에 문의하세요.
+
+계속하시겠습니까?</Message>
+			<Message Id="Msg_OneDrive_Teams_Sync">OneDrive의 폴더는 동기화되지만 Teams에서 공유한 파일은 동기화되지 않습니다.</Message>
+			<Message Id="Msg_Intune_Sync_Explanation">예를 들어 정책 또는 앱 배포를 앞당기기 위해 장치와 Intune 간 동기화를 강제로 실행하려고 합니다. 이 작업은 로컬 SelfX 서비스를 통해 관리자 권한으로 실행됩니다.</Message>
+			<Message Id="Msg_Intune_Restart">Intune Management Extension 서비스가 백그라운드에서 다시 시작됩니다. 몇 분 후 다시 시도하세요.
+
+계속하시겠습니까?</Message>
+			<Message Id="Msg_Chkdsk_Explanation">OneDrive에서 문제가 발생하고 "0x80071129: The tag present in the reparse point buffer is invalid" 오류가 표시됩니다. 이 작업은 로컬 SelfX 서비스를 통해 관리자 권한으로 실행됩니다.</Message>
+			<Message Id="Msg_Chkdsk">장치를 다음에 다시 시작할 때 디스크 검사가 실행되도록 예약됩니다. 이후 장치를 다시 시작하세요. 검사에는 몇 분 정도 걸릴 수 있습니다.
+
+계속하시겠습니까?</Message>
+			<Message Id="Msg_SendLogs_Explanation">지원팀에서 문제(예: 앱 설치 실패, 설정 실패 또는 오류 메시지)를 분석하려면 장치 로그가 필요합니다. 이 작업은 로컬 SelfX 서비스를 통해 관리자 권한으로 관련된 모든 로그와 시스템 정보를 수집하고 보고서가 첨부된 새 전자 메일을 지원팀 앞으로 엽니다. 자동으로 전송되는 것은 없습니다.</Message>
+			<Message Id="Msg_SendLogs">이제 SelfX가 장치 로그를 수집합니다. 몇 분 정도 걸릴 수 있습니다. 장치에서 변경되는 내용은 없습니다.
+
+보고서에는 장치 이름과 사용자 이름이 포함됩니다. 준비가 되면 보고서가 첨부된 새 전자 메일이 열립니다. 문제를 설명하고 전자 메일을 지원팀에 보내세요.
+
+계속하시겠습니까?</Message>
+		</Messages>
+		<Actions>
+			<Action Id="Q_Teams">
+				<Name>Teams 문제 해결</Name>
+				<Explanation>Teams 클라이언트가 느리거나 상태가 올바르지 않거나 전송 오류가 발생하는 등의 문제가 있습니다.</Explanation>
+				<Alerte_MSG>Teams가 종료되고 로컬 캐시 폴더가 지워집니다. 계속하기 전에 열려 있는 작업을 저장하세요. Teams가 실행 중이었다면 다시 열립니다.
+
+계속하시겠습니까?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Word">
+				<Name>Word 문제 해결</Name>
+				<Explanation>Word에서 작업 중인데 프로그램이 응답하지 않아 아무 작업도 할 수 없습니다.</Explanation>
+				<Alerte_MSG>Word가 종료된 후 자동으로 다시 열립니다. 저장하지 않은 작업이 손실될 수 있습니다.
+
+계속하시겠습니까?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Excel">
+				<Name>Excel 문제 해결</Name>
+				<Explanation>Excel에서 작업 중인데 프로그램이 응답하지 않아 아무 작업도 할 수 없습니다.</Explanation>
+				<Alerte_MSG>Excel이 종료된 후 자동으로 다시 열립니다. 저장하지 않은 작업이 손실될 수 있습니다.
+
+계속하시겠습니까?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Store">
+				<Name>Microsoft Store 문제 해결</Name>
+				<Explanation>Microsoft Store를 열거나 앱을 설치하는 등의 문제가 있습니다.</Explanation>
+				<Alerte_MSG>Microsoft Store 캐시가 초기화되고 Store가 열립니다.
+
+계속하시겠습니까?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_OneDrive_Restart">
+				<Name>OneDrive 문제 해결(방법 1)</Name>
+				<Explanation>OneDrive 클라이언트에서 파일 또는 폴더 동기화, 파일 열기 등의 문제가 발생합니다.</Explanation>
+				<Alerte_MSG>OneDrive가 종료된 후 자동으로 다시 열립니다.
+
+문제가 계속되면 방법 2를 사용하세요.
+
+계속하시겠습니까?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_OneDrive_Reset">
+				<Name>OneDrive 문제 해결(방법 2)</Name>
+				<Explanation>OneDrive 클라이언트에서 파일 또는 폴더 동기화, 파일 열기 등의 문제가 발생하며 방법 1을 이미 시도했습니다.</Explanation>
+			</Action>
+			<Action Id="Q_Outlook_TeamsAddIn">
+				<Name>Outlook에 Teams 모임 단추가 없음</Name>
+				<Explanation>새 Teams 모임 단추가 Outlook에 표시되지 않습니다.</Explanation>
+				<Alerte_MSG>Teams 모임 추가 기능이 다시 사용하도록 설정됩니다. Outlook이 종료된 후 자동으로 다시 열립니다. 저장하지 않은 작업이 손실될 수 있습니다.
+
+문제가 계속되면 지원 팀에 문의하세요.
+
+계속하시겠습니까?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Device_Connection">
+				<Name>장치 연결 문제</Name>
+				<Explanation>웹 사이트를 열려고 하지만 연결되지 않거나 사이트에 연결할 수 없거나 오류가 발생합니다.</Explanation>
+				<Alerte_MSG>장치의 DNS 캐시가 백그라운드에서 지워집니다. 확인을 클릭한 후 다시 시도하세요.
+
+계속하시겠습니까?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Device_Slow">
+				<Name>장치가 느리게 실행됨</Name>
+				<Explanation>장치가 느리게 실행됩니다.</Explanation>
+				<Alerte_MSG>임시 파일과 휴지통의 내용이 삭제됩니다.
+
+계속하시겠습니까?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Intune_Restart">
+				<Name>Intune 서비스 다시 시작</Name>
+			</Action>
+			<Action Id="Q_Network_Restart">
+				<Name>네트워크 어댑터 다시 시작</Name>
+				<Explanation>네트워크 문제가 있어 네트워크 어댑터를 다시 시작하려고 합니다. 이 작업은 로컬 SelfX 서비스를 통해 관리자 권한으로 실행됩니다.</Explanation>
+				<Alerte_MSG>모든 네트워크 어댑터가 다시 시작됩니다. 잠시 네트워크에 연결할 수 없습니다.
+
+계속하시겠습니까?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_OneDrive_Chkdsk">
+				<Name>잠긴 OneDrive 파일 복구</Name>
+			</Action>
+			<Action Id="D_Chrome_Cache">
+				<Name>Google Chrome 인터넷 사용 기록(캐시) 삭제</Name>
+				<Explanation>Google Chrome에서 웹 사이트가 로드되지 않거나 올바르게 표시되지 않습니다. 모든 Chrome 프로필의 브라우저 캐시가 지워집니다.</Explanation>
+				<Alerte_MSG>Google Chrome이 종료되고 캐시된 인터넷 사용 데이터가 삭제됩니다.
+
+계속하시겠습니까?</Alerte_MSG>
+			</Action>
+			<Action Id="D_Firefox_Cache">
+				<Name>Firefox 인터넷 사용 기록(캐시) 삭제</Name>
+				<Explanation>Firefox에서 웹 사이트가 로드되지 않거나 올바르게 표시되지 않습니다. 모든 Firefox 프로필의 브라우저 캐시가 지워집니다.</Explanation>
+				<Alerte_MSG>Firefox가 종료되고 캐시된 인터넷 사용 데이터가 삭제됩니다.
+
+계속하시겠습니까?</Alerte_MSG>
+			</Action>
+			<Action Id="D_Outlook_TeamsAddIn">
+				<Name>Outlook에 Teams 모임 단추가 없음</Name>
+				<Explanation>새 Teams 모임 단추가 Outlook에 표시되지 않습니다.</Explanation>
+				<Alerte_MSG>Outlook이 종료된 후 자동으로 다시 열립니다. 저장하지 않은 작업이 손실될 수 있습니다.
+
+계속하시겠습니까?</Alerte_MSG>
+			</Action>
+			<Action Id="D_OneDrive_Start">
+				<Name>OneDrive 클라이언트 시작</Name>
+				<Explanation>OneDrive가 실행되고 있지 않습니다.</Explanation>
+				<Alerte_MSG>OneDrive 클라이언트가 시작됩니다.
+
+계속하시겠습니까?</Alerte_MSG>
+			</Action>
+			<Action Id="D_OneDrive_Restart">
+				<Name>OneDrive 클라이언트 다시 시작</Name>
+				<Explanation>OneDrive를 다시 시작하면 동기화 문제와 같은 일부 문제가 해결될 수 있습니다.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_Sync_Step1">
+				<Name>OneDrive 동기화 문제 해결(1단계)</Name>
+				<Explanation>OneDrive의 파일 또는 폴더를 동기화하는 데 문제가 있습니다.
+
+첫 번째 단계로 OneDrive를 다시 시작합니다. OneDrive가 종료된 후 자동으로 다시 열립니다.
+
+문제가 계속되면 "OneDrive 클라이언트 초기화" 작업을 실행하세요.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_Error_8004def4">
+				<Name>OneDrive가 시작되지 않음: 오류 0x8004def4</Name>
+				<Explanation>OneDrive를 시작할 때 0x8004def4 오류가 표시됩니다.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_Memory">
+				<Name>장치가 느림: OneDrive가 메모리를 많이 사용함</Name>
+				<Explanation>장치가 느리게 실행되고 OneDrive가 메모리를 많이 사용하는 것 같습니다.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_RedCross">
+				<Name>OneDrive 아이콘에 빨간색 X 표시</Name>
+				<Explanation>OneDrive 아이콘에 빨간색 X가 표시됩니다.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_ClosesItself">
+				<Name>OneDrive가 저절로 종료됨</Name>
+				<Explanation>OneDrive가 열렸다가 저절로 다시 종료됩니다.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_WhiteCross">
+				<Name>OneDrive 파일에 흰색 X 표시</Name>
+				<Explanation>OneDrive 파일 또는 폴더에 흰색 X가 표시됩니다.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_PasswordChange">
+				<Name>Windows 암호 변경 후 OneDrive 문제</Name>
+				<Explanation>최근 암호를 변경한 후 OneDrive에서 동기화 문제 등의 문제가 발생합니다.
+
+이 단계에서는 OneDrive 클라이언트를 다시 시작합니다.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_CannotOpen">
+				<Name>OneDrive에서 파일을 열 수 없음</Name>
+				<Explanation>OneDrive에 저장된 파일이 열리지 않습니다.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_TeamsSync">
+				<Name>OneDrive에서는 폴더가 동기화되지만 Teams에서는 동기화되지 않음</Name>
+			</Action>
+			<Action Id="D_OneDrive_Reset">
+				<Name>OneDrive 클라이언트 초기화</Name>
+				<Explanation>OneDrive에서 동기화 문제 등의 문제가 발생합니다.
+
+이 단계에서는 OneDrive 클라이언트를 초기화합니다. 초기화해도 데이터는 손실되지 않습니다.</Explanation>
+			</Action>
+			<Action Id="D_Teams_Connection">
+				<Name>Teams 연결 문제 해결</Name>
+				<Explanation>Teams에 연결할 수 없습니다.</Explanation>
+			</Action>
+			<Action Id="D_Teams_ProfilePicture">
+				<Name>Teams 프로필 사진 동기화 문제 해결</Name>
+				<Explanation>Teams에 프로필 사진이 표시되지 않거나 업데이트되지 않습니다.</Explanation>
+			</Action>
+			<Action Id="D_Teams_OneDriveSync">
+				<Name>OneDrive에서는 폴더가 동기화되지만 Teams에서는 동기화되지 않음</Name>
+			</Action>
+			<Action Id="D_Teams_Loading">
+				<Name>Teams가 "Microsoft Teams 로드 중"에서 멈춤</Name>
+				<Explanation>Teams를 열면 창이 "Microsoft Teams 로드 중" 화면에서 멈춥니다.</Explanation>
+			</Action>
+			<Action Id="D_Teams_Sync">
+				<Name>Teams 동기화 문제 해결</Name>
+				<Explanation>Teams에서 동기화 문제가 발생합니다.</Explanation>
+			</Action>
+			<Action Id="D_Teams_DoesNotOpen">
+				<Name>Teams 클라이언트가 열리지 않음</Name>
+				<Explanation>Teams를 열려고 해도 클라이언트가 열리지 않습니다.</Explanation>
+			</Action>
+			<Action Id="D_Teams_AudioFreeze">
+				<Name>Teams 음성 통화 중 클라이언트가 멈춤</Name>
+				<Explanation>음성 통화 중 Teams가 응답하지 않습니다.</Explanation>
+			</Action>
+			<Action Id="D_Teams_Camera">
+				<Name>Teams 카메라가 멈추거나 표시되지 않음</Name>
+				<Explanation>모임 또는 통화 중 비디오가 멈추거나 표시되지 않습니다.</Explanation>
+			</Action>
+			<Action Id="D_Teams_SendFailed">
+				<Name>Teams 메시지를 보낼 수 없음</Name>
+				<Explanation>Teams에서 메시지가 전송되지 않고 "전송 실패"가 표시됩니다.</Explanation>
+			</Action>
+			<Action Id="D_Teams_MeetingDisplay">
+				<Name>Teams 모임 참가 시 표시 문제</Name>
+				<Explanation>모임에 참가할 때 Teams가 올바르게 표시되지 않습니다.</Explanation>
+			</Action>
+			<Action Id="D_Teams_NoConnect">
+				<Name>Teams 클라이언트가 열리지만 연결되지 않음</Name>
+				<Explanation>Teams가 열리지만 연결되지 않습니다.</Explanation>
+			</Action>
+			<Action Id="D_Teams_StatusOffline">
+				<Name>Teams 상태가 오프라인으로 유지됨</Name>
+				<Explanation>로그인되어 있는데도 Teams 상태가 "오프라인"으로 유지됩니다.</Explanation>
+			</Action>
+			<Action Id="D_Teams_CallWindow">
+				<Name>Teams 통화 창이 표시되지 않음</Name>
+				<Explanation>수신 Teams 통화 알림이 더 이상 표시되지 않습니다.</Explanation>
+			</Action>
+			<Action Id="D_Teams_MessageContent">
+				<Name>Teams 메시지 내용을 볼 수 없음</Name>
+				<Explanation>메시지 알림과 미리 보기는 표시되지만 메시지 내용은 보이지 않습니다.</Explanation>
+			</Action>
+			<Action Id="D_Teams_PasswordChange">
+				<Name>암호 변경 후 연결 문제</Name>
+				<Explanation>암호를 변경한 후 Teams에 연결할 수 없습니다.</Explanation>
+			</Action>
+			<Action Id="D_Teams_Tabs">
+				<Name>Teams 탭이 로드되지 않음</Name>
+				<Explanation>Teams에서 탭을 열면 올바르게 로드되지 않습니다.</Explanation>
+			</Action>
+			<Action Id="D_Teams_StatusWrong">
+				<Name>Teams 상태가 올바르지 않음</Name>
+				<Explanation>Teams 상태가 올바르지 않거나 업데이트되지 않습니다.</Explanation>
+			</Action>
+			<Action Id="D_Teams_MeetingOpen">
+				<Name>Teams 모임을 열 수 없음</Name>
+				<Explanation>참가 링크를 클릭해도 Teams 모임이 열리지 않습니다.</Explanation>
+			</Action>
+			<Action Id="D_Teams_SoundCuts">
+				<Name>Teams 모임 중 소리가 끊김</Name>
+				<Explanation>Teams 모임 중 소리가 끊깁니다.</Explanation>
+			</Action>
+			<Action Id="D_Teams_OutlookMeeting">
+				<Name>Outlook 일정에서 Teams 모임을 만들 수 없음</Name>
+				<Explanation>Outlook 일정에서 Teams 모임을 만들 수 없습니다.</Explanation>
+			</Action>
+			<Action Id="D_Intune_Sync">
+				<Name>Intune 동기화 강제 실행</Name>
+			</Action>
+			<Action Id="D_OneDrive_Chkdsk">
+				<Name>OneDrive 오류에 대해 디스크 검사(chkdsk)</Name>
+			</Action>
+			<Action Id="D_OneDrive_ReparsePoint">
+				<Name>재분석 지점 버퍼의 태그가 잘못되었습니다</Name>
+			</Action>
+			<Action Id="D_OneDrive_Error_80071129">
+				<Name>오류 0x80071129</Name>
+			</Action>
+			<Action Id="Q_Device_SendLogs">
+				<Name>장치 로그를 지원팀에 보내기</Name>
+			</Action>
+			<Action Id="D_Device_SendLogs">
+				<Name>장치 로그를 수집하여 전자 메일로 지원팀에 보내기</Name>
+			</Action>
+		</Actions>
+	</Catalog>
+</SelfX_Language>

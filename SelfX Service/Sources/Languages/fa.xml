@@ -1,0 +1,563 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+	SelfX Service - language file
+
+	Description:
+	  Texts of the SelfX user interface in one language. SelfX selects the file that matches the Windows
+	  display language of the user (for example de-CH -> de.xml, zh-TW -> zh-Hant.xml). If no file matches,
+	  en.xml is used. A text that is missing or empty in a language file is taken from en.xml.
+
+	Add a language:
+	  1. Copy en.xml to <culture>.xml. Use the neutral culture name (de, fr, pt) or a script/region name
+	     (zh-Hans, zh-Hant, pt-BR). Windows tries the exact culture first and then its parents.
+	  2. Set Culture, Name, NativeName and FlowDirection (RightToLeft for Arabic, Persian, Urdu, Hebrew ...).
+	  3. Translate the element texts. Do not change element names or Id attributes.
+	     Keep placeholders such as {0}, {1}, {1:D2} and the "|" separators of SystemInfo_Export_Filter.
+	  4. Catalogue texts: add an <Action Id="..."> entry per action and a <Message Id="..."> entry per shared
+	     message. The English base texts are in Issues_List.xml. Untranslated actions are shown in English.
+
+	History:
+	  Version  Date        Author               Change
+	  2.2.0    2026-10-28  Wolfgang Baeck       Initial version: multilingual user interface
+-->
+<SelfX_Language Culture="fa" Name="Persian" NativeName="فارسی" FlowDirection="RightToLeft" Version="2.2.0">
+	<UI>
+		<Health_Fix>رفع مشکل</Health_Fix>
+		<Health_Fix_Confirm>رفع مشکل پیکربندی‌شده برای {0} اجرا شود؟ کار خود را ذخیره کنید: ممکن است برنامه‌ها، سرویس‌ها یا اتصال‌ها قطع شوند. سپس وضعیت دوباره بررسی می‌شود.</Health_Fix_Confirm>
+		<Health_Restart_Button>راه‌اندازی مجدد</Health_Restart_Button>
+		<Health_Restart_Title>راه‌اندازی مجدد دستگاه</Health_Restart_Title>
+		<Health_Restart_Confirm>Windows برای تکمیل به‌روزرسانی‌ها و تغییرات در انتظار، دوباره راه‌اندازی می‌شود.&#10;&#10;ابتدا کار خود را ذخیره کنید و همه برنامه‌ها را ببندید. راه‌اندازی مجدد حدود ۳۰ ثانیه پس از تأیید شروع می‌شود.&#10;&#10;اکنون راه‌اندازی مجدد شود؟</Health_Restart_Confirm>
+		<Button_Restart_Now>اکنون راه‌اندازی مجدد</Button_Restart_Now>
+		<Health_Restart_Started>Windows حدود ۳۰ ثانیه دیگر دوباره راه‌اندازی می‌شود. اکنون کار خود را ذخیره کنید.</Health_Restart_Started>
+		<Health_Updates_Started>به‌روزرسانی‌های Windows در حال جستجو، دانلود و نصب هستند. این کار ممکن است چند دقیقه طول بکشد؛ می‌توانید به کار ادامه دهید.</Health_Updates_Started>
+		<Health_Updates_Done>Windows Update به پایان رسید. وضعیت دستگاه دوباره بررسی می‌شود و نشان می‌دهد آیا راه‌اندازی مجدد لازم است.</Health_Updates_Done>
+		<Health_Apps_Button>تلاش دوباره</Health_Apps_Button>
+		<Health_Apps_Started>نصب برنامه‌هایی که نصب نشده بودند دوباره آغاز می‌شود. این کار ممکن است چند دقیقه طول بکشد؛ می‌توانید آن را در پورتال شرکت دنبال کنید.</Health_Apps_Started>
+		<Health_Check_Button>تأیید</Health_Check_Button>
+		<Health_Error_Button>خطا</Health_Error_Button>
+		<Health_Pending_Button>در انتظار</Health_Pending_Button>
+		<Health_Check_Tooltip>بررسی دوباره این وضعیت</Health_Check_Tooltip>
+		<!-- Main window -->
+		<Main_Title_Text>مشکلی در دستگاه شما وجود دارد؟</Main_Title_Text>
+		<Subtitle_Text>ممکن است راهی برای حل آن در اینجا با لیستی از راه حل های قابل کلیک پیدا کنید</Subtitle_Text>
+		<Run_solution_Text>یک اکشن را اجرا می کند</Run_solution_Text>
+		<Run_explanation_Text>اطلاعات بیشتر را نشان می دهد</Run_explanation_Text>
+		<Issue_filter_Title_Text>فیلتر بر اساس جزء</Issue_filter_Title_Text>
+		<Issue_filter_KeyWord_Text>یک کلمه کلیدی تایپ کنید</Issue_filter_KeyWord_Text>
+		<Available_Actions_Count>تعداد اقدام‌های موجود: {0}</Available_Actions_Count>
+		<Troubleshooting_Tab_Text>عیب یابی</Troubleshooting_Tab_Text>
+		<Theme_Button_ToolTip>بین تم تیره و روشن جابه‌جا شوید</Theme_Button_ToolTip>
+		<Support_Button_ToolTip>با تیم پشتیبانی خود تماس بگیرید</Support_Button_ToolTip>
+		<About_Button_ToolTip>درباره SelfX</About_Button_ToolTip>
+		<Shield_ToolTip>با حقوق سرپرست از طریق سرویس محلی SelfX اجرا می شود</Shield_ToolTip>
+
+		<!-- Simplified or detailed view -->
+		<Solution_Mode_Simple>نمای ساده شده</Solution_Mode_Simple>
+		<Solution_Mode_Detailed>نمای تفصیلی</Solution_Mode_Detailed>
+		<Solution_Mode_Info_Title>نمای ساده شده یا دقیق؟</Solution_Mode_Info_Title>
+		<Solution_Mode_Info_Text>نمای ساده مشکلات را بر اساس محصول فهرست می کند.
+نمای تفصیلی چندین مشکل خاص را برای هر محصول فهرست می کند که می توان آنها را حل کرد.
+
+اگر نمای ساده شده مشکل شما را حل نکرد یا شامل نشد، نمای دقیق را توصیه می کنیم.</Solution_Mode_Info_Text>
+
+		<!-- Dialogs -->
+		<Warning_Click_Run_Solution_Text>حل یک مسئله</Warning_Click_Run_Solution_Text>
+		<Warning_Click_Run_Explanation_Text>اطلاعات بیشتر</Warning_Click_Run_Explanation_Text>
+		<Button_Ok>تأیید</Button_Ok>
+		<Button_Cancel>لغو</Button_Cancel>
+		<Button_Yes>بله</Button_Yes>
+		<Button_No>خیر</Button_No>
+		<Close_Button_Text>بستن</Close_Button_Text>
+		<Reboot_Alert>برای ثابت نگه داشتن دستگاه و عملکرد صحیح آن، حداقل هفته ای یک بار آن را راه اندازی مجدد کنید.</Reboot_Alert>
+
+		<!-- Support and About dialogs -->
+		<Support_Window_Title>اطلاعات تیم پشتیبانی</Support_Window_Title>
+		<Support_Phone_Label>شماره تلفن:</Support_Phone_Label>
+		<Support_Mail_Label>ایمیل:</Support_Mail_Label>
+		<About_Version_Text>{0}: نسخه {1} - کاتالوگ: {2}</About_Version_Text>
+
+		<!-- Local SelfX service (actions with Context System) -->
+		<Service_Running_Text>سرویس SelfX در حال اجرا است: اقدامات مشخص شده با یک سپر با حقوق سرپرست اجرا می شوند.</Service_Running_Text>
+		<Service_Unavailable_Text>سرویس SelfX در حال اجرا نیست: اقدامات علامت گذاری شده با سپر در دسترس نیستند.</Service_Unavailable_Text>
+		<Service_Busy_Text>اقدام دیگری همچنان در حال اجراست. لطفا صبر کنید تا تمام شود.</Service_Busy_Text>
+		<Action_Running_Text>اقدام در حال اجرا است: {0}</Action_Running_Text>
+		<Action_Running_Label>در حال اجرا…</Action_Running_Label>
+		<Action_Success_Text>اقدام انجام شد: {0}</Action_Success_Text>
+		<Action_Failed_Text>اقدام ناموفق بود: {0}</Action_Failed_Text>
+		<Action_Failed_ExitCode_Text>اقدام ناموفق بود: {0} (کد خروج {1})</Action_Failed_ExitCode_Text>
+		<Action_Timeout_Text>اقدام به‌دلیل طولانی شدن بیش از حد متوقف شد: {0}</Action_Timeout_Text>
+		<Script_Not_Found_Text>اسکریپت این اقدام پیدا نشد: {0}</Script_Not_Found_Text>
+
+		<!-- System information tab -->
+		<SystemInfo_Tab_Text>اطلاعات سیستم</SystemInfo_Tab_Text>
+		<SystemInfo_Title_Text>اطلاعات مربوط به دستگاه شما برای تیم پشتیبانی</SystemInfo_Title_Text>
+		<SystemInfo_Hint_Text>روی یک خط دوبار کلیک کنید تا مقدار آن کپی شود.</SystemInfo_Hint_Text>
+		<SystemInfo_Loading_Text>جمع آوری اطلاعات سیستم ...</SystemInfo_Loading_Text>
+		<SystemInfo_Copied_Text>کپی شده در کلیپ بورد: {0}</SystemInfo_Copied_Text>
+		<SystemInfo_Refresh_Text>به‌روزرسانی</SystemInfo_Refresh_Text>
+		<SystemInfo_Copy_Text>همه را کپی کنید</SystemInfo_Copy_Text>
+		<SystemInfo_Export_Text>خروجی گرفتن</SystemInfo_Export_Text>
+		<SystemInfo_Export_Filter>فایل متنی (*.txt)|*.txt|فایل HTML (*.html)|*.html|فایل CSV (*.csv)|*.csv|فایل JSON (*.json)|*.json</SystemInfo_Export_Filter>
+		<SystemInfo_SyncApps_Text>همگام سازی برنامه های Intune</SystemInfo_SyncApps_Text>
+		<SystemInfo_SyncCompliance_Text>انطباق را بررسی کنید</SystemInfo_SyncCompliance_Text>
+		<SystemInfo_CompanyPortal_Text>Company Portal</SystemInfo_CompanyPortal_Text>
+		<SystemInfo_QuickAssist_Text>Quick Assist</SystemInfo_QuickAssist_Text>
+		<SystemInfo_MdmDiagnostics_Text>سیاهههای مربوط به MDM را جمع آوری کنید</SystemInfo_MdmDiagnostics_Text>
+		<SystemInfo_SendLogs_Text>ارسال گزارش‌ها به پشتیبانی</SystemInfo_SendLogs_Text>
+		<Report_Mail_Subject>گزارش‌های دستگاه {0}</Report_Mail_Subject>
+		<Report_Mail_Body>سلام،
+
+گزارش‌های دستگاه {0} که توسط SelfX در {1} جمع‌آوری شده‌اند، پیوست شده است.
+
+شرح مشکل:</Report_Mail_Body>
+		<Report_Mail_Opened_Text>یک ایمیل با گزارش‌های دستگاه به‌صورت پیوست باز شد. مشکل خود را شرح دهید و ایمیل را ارسال کنید.</Report_Mail_Opened_Text>
+		<Report_Mail_Recipient_Text>یک ایمیل با گزارش‌های دستگاه به‌صورت پیوست باز شد. گیرنده ({0}) را وارد کنید، مشکل خود را شرح دهید و ایمیل را ارسال کنید.</Report_Mail_Recipient_Text>
+		<Report_Mail_Manual_Text>گزارش‌های دستگاه در {0} ذخیره شد. این فایل را به یک ایمیل (گیرنده: {1}) پیوست کنید و مشکل خود را شرح دهید.</Report_Mail_Manual_Text>
+		<Report_Not_Found_Text>گزارش‌های دستگاه جمع‌آوری شد، اما ایمیل آماده نشد: {0}</Report_Not_Found_Text>
+		<Report_Support_Fallback>پشتیبانی شما</Report_Support_Fallback>
+		<Nav_Status_Text>وضعیت دستگاه</Nav_Status_Text>
+		<Status_LastChecked_Text>آخرین بررسی: {0}</Status_LastChecked_Text>
+		<Status_NotChecked_Text>وضعیت دستگاه هنوز بررسی نشده است.</Status_NotChecked_Text>
+		<Status_Background_Text>بررسی خودکار هر {0} دقیقه</Status_Background_Text>
+		<Status_Background_Battery_Text>بررسی‌های خودکار هنگام کار با باتری متوقف می‌شوند</Status_Background_Battery_Text>
+		<Status_Checking_Text>در حال بررسی وضعیت دستگاه. این کار ممکن است تا یک دقیقه طول بکشد ...</Status_Checking_Text>
+		<Status_AllOk_Title>همه چیز درست است</Status_AllOk_Title>
+		<Status_AllOk_Text>هیچ مشکلی در دستگاه شما پیدا نشد.</Status_AllOk_Text>
+		<Status_Issues_Title>{0} مورد به توجه شما نیاز دارد</Status_Issues_Title>
+		<Status_Issues_Text>مشکلات ابتدا نمایش داده می‌شوند. برای رفع مشکل روی «رفع» و برای بررسی دوباره روی فلش‌ها کلیک کنید.</Status_Issues_Text>
+		<Status_CheckAll_Tooltip>اکنون همه چیز را دوباره بررسی کنید. این کار ممکن است تا یک دقیقه طول بکشد.</Status_CheckAll_Tooltip>
+		<Status_FixAll>رفع همه مشکلات</Status_FixAll>
+		<Status_FixAll_Tooltip>تعمیر پیکربندی‌شده را برای هر مشکل یکی پس از دیگری اجرا می‌کند. سپس همه چیز دوباره بررسی می‌شود.</Status_FixAll_Tooltip>
+		<Health_FixAll_Confirm>تعمیرهای پیکربندی‌شده برای این مشکلات ({0}) یکی پس از دیگری اجرا شوند؟&#10;&#10;{1}&#10;&#10;ممکن است برنامه‌ها بسته شوند و سرویس‌ها یا اتصالات شبکه قطع شوند. ابتدا کار خود را ذخیره کنید. سپس همه چیز دوباره بررسی می‌شود.</Health_FixAll_Confirm>
+		<Status_FixAll_Done>{0} از {1} تعمیر با موفقیت انجام شد. وضعیت دوباره بررسی می‌شود.</Status_FixAll_Done>
+		<Status_FixAll_Failed>ناموفق: {0}</Status_FixAll_Failed>
+		<Tooltip_Fix>این مشکل را به‌طور خودکار رفع می‌کند. ابتدا از شما تأیید خواسته می‌شود.</Tooltip_Fix>
+		<Tooltip_Run>این راه‌حل را شروع می‌کند. پیش از هر کاری از شما تأیید خواسته می‌شود.</Tooltip_Run>
+		<Filter_All_Text>همه</Filter_All_Text>
+		<View_Help_Tooltip>تفاوت نمای ساده و نمای جزئی چیست؟</View_Help_Tooltip>
+		<SystemInfo_Cached_Text>اطلاعات {0} – در حال به‌روزرسانی ...</SystemInfo_Cached_Text>
+		<Tooltip_Refresh>اطلاعات را دوباره جمع‌آوری می‌کند</Tooltip_Refresh>
+		<Tooltip_Copy>همه اطلاعات را کپی می‌کند، مثلاً برای چسباندن در درخواست پشتیبانی</Tooltip_Copy>
+		<Tooltip_Export>همه اطلاعات را در یک فایل ذخیره می‌کند</Tooltip_Export>
+		<Tools_Title_Text>ابزارها</Tools_Title_Text>
+		<Tooltip_SyncApps>از Intune می‌خواهد برنامه‌های اختصاص‌یافته به شما را اکنون نصب یا به‌روزرسانی کند.</Tooltip_SyncApps>
+		<Tooltip_SyncCompliance>از Intune می‌خواهد اکنون بررسی کند که آیا دستگاه شما قوانین شرکت را رعایت می‌کند.</Tooltip_SyncCompliance>
+		<Tooltip_CompanyPortal>پورتال شرکت را باز می‌کند که در آن می‌توانید برنامه‌های شرکت را نصب کنید.</Tooltip_CompanyPortal>
+		<Tooltip_QuickAssist>دستیار سریع را باز می‌کند تا کارشناس پشتیبانی صفحه شما را ببیند و کمک کند – فقط با رضایت شما.</Tooltip_QuickAssist>
+		<Tooltip_MdmDiagnostics>گزارش‌های مدیریت دستگاه را برای پشتیبانی در یک پوشه جمع‌آوری می‌کند.</Tooltip_MdmDiagnostics>
+		<Tooltip_SendLogs>همه گزارش‌های دستگاه را جمع‌آوری می‌کند و ایمیلی به پشتیبانی با گزارش پیوست‌شده باز می‌کند.</Tooltip_SendLogs>
+		<Settings_Button_ToolTip>تنظیمات (زبان، ظاهر و نماد وضعیت)</Settings_Button_ToolTip>
+		<Settings_Title>تنظیمات</Settings_Title>
+		<Settings_Language_Text>زبان</Settings_Language_Text>
+		<Settings_Language_Auto>خودکار ({0})</Settings_Language_Auto>
+		<Settings_Language_Hint>SelfX با زبان انتخاب‌شده دوباره راه‌اندازی می‌شود.</Settings_Language_Hint>
+		<Settings_Language_Later>زبان جدید دفعه بعد که SelfX را باز کنید استفاده می‌شود، زیرا یک تعمیر هنوز در حال اجرا است.</Settings_Language_Later>
+		<Settings_Theme_Text>ظاهر</Settings_Theme_Text>
+		<Settings_Theme_Auto>خودکار</Settings_Theme_Auto>
+		<Settings_Theme_Auto_ToolTip>مانند Windows: از حالت برنامه انتخاب‌شده در تنظیمات &gt; شخصی‌سازی &gt; رنگ‌ها استفاده می‌کند</Settings_Theme_Auto_ToolTip>
+		<Settings_Theme_Dark>تیره</Settings_Theme_Dark>
+		<Settings_Theme_Light>روشن</Settings_Theme_Light>
+		<Settings_Tray_Text>نمایش نماد SelfX در ناحیه اعلان</Settings_Tray_Text>
+		<Settings_Tray_Hint>نماد کنار ساعت وضعیت دستگاه را نشان می‌دهد و هنگام یافتن مشکل به شما اطلاع می‌دهد.</Settings_Tray_Hint>
+		<Settings_Notify_Text>نمایش اعلان‌ها هنگام بروز مشکل</Settings_Notify_Text>
+		<Settings_Notify_Hint>علاوه بر نماد رنگی SelfX، Windows هنگام یافتن مشکل جدید، مثلاً کمبود فضای دیسک، پیامی نمایش می‌دهد.</Settings_Notify_Hint>
+		<Support_Intro_Text>خوشحال می‌شویم کمک کنیم. از این راه‌ها با ما تماس بگیرید:</Support_Intro_Text>
+		<Support_Hours_Label>ساعات پشتیبانی</Support_Hours_Label>
+		<Support_Teams_Label>گفتگوی Teams</Support_Teams_Label>
+		<Support_Website_Label>وب‌سایت / سامانه تیکت</Support_Website_Label>
+		<Support_Teams_Button>شروع گفتگو</Support_Teams_Button>
+		<Support_Website_Button>باز کردن</Support_Website_Button>
+		<Support_Mail_Button>نوشتن ایمیل</Support_Mail_Button>
+		<Support_None_Text>اطلاعات تماسی پیکربندی نشده است. لطفاً با بخش فناوری اطلاعات تماس بگیرید.</Support_None_Text>
+		<Service_Short_Running>سرویس SelfX در حال اجرا</Service_Short_Running>
+		<Service_Short_Unavailable>سرویس SelfX در دسترس نیست</Service_Short_Unavailable>
+		<Version_Text>نسخه {0}</Version_Text>
+		<Tray_Tooltip_OK>SelfX: همه چیز درست است</Tray_Tooltip_OK>
+		<Tray_Tooltip_Issues>SelfX: {0} مشکل، {1} هشدار</Tray_Tooltip_Issues>
+		<Tray_Tooltip_Unknown>SelfX: وضعیت هنوز در دسترس نیست</Tray_Tooltip_Unknown>
+		<Tray_Menu_Open>باز کردن SelfX</Tray_Menu_Open>
+		<Tray_Menu_Status>نمایش وضعیت دستگاه</Tray_Menu_Status>
+		<Tray_Menu_Check>بررسی وضعیت اکنون</Tray_Menu_Check>
+		<Tray_Menu_Notify>نمایش اعلان‌ها</Tray_Menu_Notify>
+		<Tray_Menu_Hide>پنهان کردن این نماد</Tray_Menu_Hide>
+		<Tray_Notify_Click>برای دیدن جزئیات اینجا کلیک کنید.</Tray_Notify_Click>
+		<Tray_Hidden_Text>نماد پنهان شد. می‌توانید آن را در SelfX در بخش تنظیمات دوباره نمایش دهید.</Tray_Hidden_Text>
+		<Tray_Checking_Text>در حال بررسی وضعیت دستگاه ...</Tray_Checking_Text>
+	</UI>
+
+	<!-- Labels and values of the System information tab -->
+	<SystemInfo>
+		<Category_Device>دستگاه</Category_Device>
+		<Category_Windows>Windows</Category_Windows>
+		<Category_User>کاربر و مدیریت</Category_User>
+		<Category_Network>شبکه</Category_Network>
+		<Category_Report>گزارش دهید</Category_Report>
+		<Computer_Name>نام کامپیوتر</Computer_Name>
+		<Manufacturer>سازنده</Manufacturer>
+		<Model>مدل</Model>
+		<Serial_Number>شماره سریال</Serial_Number>
+		<BIOS_Version>نسخه BIOS</BIOS_Version>
+		<Processor>پردازنده</Processor>
+		<Memory>حافظه (RAM)</Memory>
+		<Free_Space>فضای آزاد {0}</Free_Space>
+		<Free_Space_Value>{0} از {1} ({2}%)</Free_Space_Value>
+		<Battery>باتری</Battery>
+		<Windows_Version>نسخه Windows</Windows_Version>
+		<OS_Build>ساخت سیستم عامل</OS_Build>
+		<Last_Boot>آخرین بوت</Last_Boot>
+		<Uptime>آپتایم</Uptime>
+		<Uptime_Value>{0} روز(های) {1:D2}:{2:D2} ساعت</Uptime_Value>
+		<Last_Update>آخرین به روز رسانی نصب شده است</Last_Update>
+		<Time_Zone>منطقه زمانی</Time_Zone>
+		<Current_User>کاربر فعلی</Current_User>
+		<User_Principal_Name>نام اصلی کاربر</User_Principal_Name>
+		<Domain>دامنه / گروه کاری</Domain>
+		<Entra_Joined>Entra ID ملحق شد</Entra_Joined>
+		<Domain_Joined>دامنه پیوست</Domain_Joined>
+		<Tenant>مستاجر</Tenant>
+		<Entra_Device_Id>شناسه دستگاه را وارد کنید</Entra_Device_Id>
+		<Intune_User>کاربر ثبت نام شده Intune</Intune_User>
+		<Intune_Last_Sync>آخرین همگام سازی Intune</Intune_Last_Sync>
+		<LAN_Connected>LAN متصل است</LAN_Connected>
+		<WiFi_Connected>Wi-Fi متصل است</WiFi_Connected>
+		<WWAN_Connected>پهنای باند موبایل متصل است</WWAN_Connected>
+		<WiFi_SSID>شبکه Wi-Fi (SSID)</WiFi_SSID>
+		<VPN_Connected>VPN متصل است</VPN_Connected>
+		<Internet_Reachable>دسترسی به اینترنت</Internet_Reachable>
+		<IPv4>آدرس(های) IPv4</IPv4>
+		<IPv6>آدرس(های) IPv6</IPv6>
+		<Gateway>دروازه پیش فرض</Gateway>
+		<DNS>سرور(های) DNS</DNS>
+		<MAC>آدرس(های) MAC</MAC>
+		<Collected_At>جمع آوری شده در</Collected_At>
+		<Error>خطا</Error>
+		<Yes>بله</Yes>
+		<No>خیر</No>
+		<Not_Available>n/a</Not_Available>
+		<Not_Enrolled>ثبت نام نشده / ناشناخته</Not_Enrolled>
+		<No_WiFi>اتصال Wi-Fi وجود ندارد</No_WiFi>
+		<Category_Health>وضعیت سیستم</Category_Health>
+		<Health_IME>سرویس IME</Health_IME>
+		<Health_Defender>Microsoft Defender</Health_Defender>
+		<Health_Compliance>انطباق</Health_Compliance>
+		<Health_Applications>برنامه‌های شرکت (Intune)</Health_Applications>
+		<Health_Disk>فضای دیسک</Health_Disk>
+		<Health_BitLocker>BitLocker</Health_BitLocker>
+		<Health_PendingReboot>راه‌اندازی مجدد در انتظار</Health_PendingReboot>
+		<Health_Updates>به‌روزرسانی‌های در انتظار نصب</Health_Updates>
+		<Health_Service>سرویس</Health_Service>
+		<Health_Custom>بررسی سفارشی</Health_Custom>
+		<Health_Collection>گردآوری وضعیت</Health_Collection>
+		<Health_OK>سالم</Health_OK>
+		<Health_Error>خطا</Health_Error>
+		<Health_Unknown>نامشخص</Health_Unknown>
+		<Health_Pending>در انتظار</Health_Pending>
+		<Health_Unavailable>گزارش وضعیت محلی در دسترس نیست: {0}</Health_Unavailable>
+	</SystemInfo>
+
+	<!-- Action catalogue (Issues_List.xml). The English base texts are in Issues_List.xml, so en.xml only lists the categories. -->
+	<Catalog>
+		<Categories>
+			<Category Id="Browser">مرورگر</Category>
+			<Category Id="Device">دستگاه</Category>
+			<Category Id="Intune">Intune</Category>
+			<Category Id="Office">Office</Category>
+			<Category Id="OneDrive">OneDrive</Category>
+			<Category Id="Outlook">Outlook</Category>
+			<Category Id="Teams">Teams</Category>
+		</Categories>
+		<Messages>
+			<Message Id="Msg_Teams_Restart">Teams بسته می شود و دوباره به طور خودکار باز می شود.
+
+اگر مشکل همچنان ادامه داشت، از Teams خارج شده و دوباره وارد شوید. اگر پس از آن همچنان ادامه داشت، لطفاً با پشتیبانی خود تماس بگیرید.
+
+آیا می خواهید ادامه دهید؟</Message>
+			<Message Id="Msg_Teams_Restart_Short">Teams بسته می شود و دوباره به طور خودکار باز می شود.
+
+آیا می خواهید ادامه دهید؟</Message>
+			<Message Id="Msg_OneDrive_Restart">OneDrive بسته می شود و دوباره به طور خودکار باز می شود.
+
+آیا می خواهید ادامه دهید؟</Message>
+			<Message Id="Msg_OneDrive_Restart_Step1">این مرحله اول OneDrive را مجدداً راه اندازی می کند. OneDrive بسته می شود و دوباره به طور خودکار باز می شود.
+
+اگر مشکل همچنان ادامه داشت، عمل "کلاینت OneDrive را بازنشانی کنید" را اجرا کنید.
+
+آیا می خواهید ادامه دهید؟</Message>
+			<Message Id="Msg_OneDrive_Reset">کلاینت OneDrive شما بازنشانی خواهد شد. بازنشانی کلاینت OneDrive باعث از دست رفتن داده نمی شود.
+
+اگر مشکل همچنان ادامه داشت، لطفاً با پشتیبانی خود تماس بگیرید.
+
+آیا می خواهید ادامه دهید؟</Message>
+			<Message Id="Msg_OneDrive_Teams_Sync">پوشه ها در OneDrive همگام می شوند، اما فایل های به اشتراک گذاشته شده در Teams همگام سازی نمی شوند.</Message>
+			<Message Id="Msg_Intune_Sync_Explanation">شما می‌خواهید بین دستگاه خود و Intune همگام‌سازی کنید، برای مثال برای تسریع در استقرار خط‌مشی‌ها یا برنامه‌ها. این اقدام با حقوق سرپرست از طریق سرویس محلی SelfX اجرا می شود.</Message>
+			<Message Id="Msg_Intune_Restart">سرویس Intune Management Extension در پس‌زمینه راه‌اندازی مجدد خواهد شد. چند دقیقه دیگر دوباره امتحان کنید.
+
+آیا می خواهید ادامه دهید؟</Message>
+			<Message Id="Msg_Chkdsk_Explanation">شما با OneDrive مشکل دارید و با خطای "0x80071129: تگ موجود در بافر نقطه reparse نامعتبر است" مواجه می شوید. این اقدام با حقوق سرپرست از طریق سرویس محلی SelfX اجرا می شود.</Message>
+			<Message Id="Msg_Chkdsk">یک بررسی دیسک برای راه اندازی مجدد بعدی دستگاه شما برنامه ریزی می شود. پس از آن دستگاه خود را مجددا راه اندازی کنید. بررسی می‌تواند چند دقیقه طول بکشد.
+
+آیا می‌خواهید ادامه دهید؟</Message>
+			<Message Id="Msg_SendLogs_Explanation">پشتیبانی برای تحلیل یک مشکل، مثلاً نصب ناموفق یک برنامه، راه‌اندازی ناموفق یا یک پیام خطا، به گزارش‌های دستگاه شما نیاز دارد. این اقدام همه گزارش‌ها و اطلاعات سیستمی مرتبط را با حقوق سرپرست از طریق سرویس محلی SelfX جمع‌آوری می‌کند و یک ایمیل جدید به پشتیبانی با گزارش پیوست‌شده باز می‌کند. هیچ چیز به‌طور خودکار ارسال نمی‌شود.</Message>
+			<Message Id="Msg_SendLogs">SelfX اکنون گزارش‌های دستگاه شما را جمع‌آوری می‌کند. این کار ممکن است چند دقیقه طول بکشد. هیچ چیز در دستگاه شما تغییر نمی‌کند.
+
+گزارش شامل نام دستگاه و نام کاربری شما است. وقتی آماده شد، یک ایمیل جدید با گزارش پیوست‌شده باز می‌شود. مشکل خود را شرح دهید و ایمیل را به پشتیبانی ارسال کنید.
+
+آیا می‌خواهید ادامه دهید؟</Message>
+		</Messages>
+		<Actions>
+			<Action Id="Q_Teams">
+				<Name>مشکل Teams را حل کنید</Name>
+				<Explanation>شما با مشکلی در مشتری Teams مواجه هستید (کندی، وضعیت نادرست، خطای انتقال و غیره).</Explanation>
+				<Alerte_MSG>Teams بسته می شود و پوشه های کش محلی آن پاک می شود. قبل از ادامه، هر کار باز را ذخیره کنید. اگر در حال اجرا بود Teams دوباره باز می شود.
+
+آیا می خواهید ادامه دهید؟</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Word">
+				<Name>مشکل Word را حل کنید</Name>
+				<Explanation>شما در Word کار می کنید، اما دیگر پاسخ نمی دهد و دیگر نمی توانید کاری انجام دهید.</Explanation>
+				<Alerte_MSG>Word به طور خودکار بسته و دوباره باز می شود. کار ذخیره نشده ممکن است از بین برود.
+
+آیا می خواهید ادامه دهید؟</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Excel">
+				<Name>مشکل Excel را حل کنید</Name>
+				<Explanation>شما در Excel کار می کنید، اما دیگر پاسخ نمی دهد و دیگر نمی توانید کاری انجام دهید.</Explanation>
+				<Alerte_MSG>Excel به طور خودکار بسته و دوباره باز می شود. کار ذخیره نشده ممکن است از بین برود.
+
+آیا می خواهید ادامه دهید؟</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Store">
+				<Name>مشکل Microsoft Store را حل کنید</Name>
+				<Explanation>شما با Microsoft Store مشکل دارید (باز کردن فروشگاه، نصب برنامه ها و غیره).</Explanation>
+				<Alerte_MSG>حافظه پنهان Microsoft Store بازنشانی می شود و فروشگاه باز می شود.
+
+آیا می خواهید ادامه دهید؟</Alerte_MSG>
+			</Action>
+			<Action Id="Q_OneDrive_Restart">
+				<Name>حل یک مشکل با OneDrive (روش 1)</Name>
+				<Explanation>شما با مشتری OneDrive مشکل دارید (همگام سازی فایل یا پوشه، باز کردن فایل ها و غیره).</Explanation>
+				<Alerte_MSG>OneDrive به طور خودکار بسته می شود و دوباره باز می شود.
+
+اگر مشکل ادامه داشت، از روش 2.
+
+استفاده کنید. آیا می خواهید ادامه دهید؟</Alerte_MSG>
+			</Action>
+			<Action Id="Q_OneDrive_Reset">
+				<Name>حل یک مشکل با OneDrive (روش 2)</Name>
+				<Explanation>شما با مشتری OneDrive مشکل دارید (همگام سازی فایل یا پوشه، باز کردن فایل ها و غیره) و قبلاً روش 1 را امتحان کرده اید.</Explanation>
+			</Action>
+			<Action Id="Q_Outlook_TeamsAddIn">
+				<Name>دکمه "Teams جلسه" در Outlook وجود ندارد</Name>
+				<Explanation>دکمه "جدول Teams جدید" در Outlook وجود ندارد.</Explanation>
+				<Alerte_MSG>افزونه جلسه Teams دوباره فعال خواهد شد. Outlook به طور خودکار بسته و دوباره باز می شود. کار ذخیره نشده ممکن است از بین برود.
+
+اگر مشکل همچنان ادامه داشت، لطفاً با پشتیبانی خود تماس بگیرید.
+
+آیا می خواهید ادامه دهید؟</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Device_Connection">
+				<Name>مشکل اتصال در دستگاه خود دارید</Name>
+				<Explanation>شما در حال تلاش برای باز کردن یک وب سایت هستید، اما اتصال کار نمی کند، دسترسی به سایت امکان پذیر نیست یا با خطا مواجه می شوید.</Explanation>
+				<Alerte_MSG>کش DNS دستگاه شما در پس زمینه پاک می شود. بعد از کلیک روی OK دوباره امتحان کنید.
+
+آیا می خواهید ادامه دهید؟</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Device_Slow">
+				<Name>دستگاه شما کند کار می کند</Name>
+				<Explanation>دستگاه شما کند کار می کند.</Explanation>
+				<Alerte_MSG>فایل های موقت و محتوای سطل بازیافت حذف خواهند شد.
+
+آیا می خواهید ادامه دهید؟</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Intune_Restart">
+				<Name>سرویس Intune را مجددا راه اندازی کنید</Name>
+			</Action>
+			<Action Id="Q_Network_Restart">
+				<Name>آداپتورهای شبکه را مجددا راه اندازی کنید</Name>
+				<Explanation>شما مشکلات شبکه دارید و می خواهید آداپتورهای شبکه را مجددا راه اندازی کنید. این اقدام با حقوق سرپرست از طریق سرویس محلی SelfX اجرا می شود.</Explanation>
+				<Alerte_MSG>همه آداپتورهای شبکه راه اندازی مجدد خواهند شد. دسترسی به شبکه برای مدت کوتاهی قطع خواهد شد.
+
+آیا می خواهید ادامه دهید؟</Alerte_MSG>
+			</Action>
+			<Action Id="Q_OneDrive_Chkdsk">
+				<Name>یک فایل قفل شده OneDrive را تعمیر کنید</Name>
+			</Action>
+			<Action Id="D_Chrome_Cache">
+				<Name>پاک کردن داده های مرور Google Chrome (کش)</Name>
+				<Explanation>وب سایت ها به درستی در Google Chrome بارگیری یا نمایش داده نمی شوند. کش مرورگر تمام نمایه های کروم پاک می شود.</Explanation>
+				<Alerte_MSG>Google Chrome بسته می‌شود و داده‌های مرور حافظه پنهان آن حذف می‌شود.
+
+آیا می‌خواهید ادامه دهید؟</Alerte_MSG>
+			</Action>
+			<Action Id="D_Firefox_Cache">
+				<Name>پاک کردن اطلاعات مرور فایرفاکس (کش)</Name>
+				<Explanation>وب سایت ها در فایرفاکس به درستی بارگیری یا نمایش داده نمی شوند. کش مرورگر تمام پروفایل های فایرفاکس پاک می شود.</Explanation>
+				<Alerte_MSG>فایرفاکس بسته می‌شود و داده‌های مرور پنهان آن حذف می‌شود.
+
+آیا می‌خواهید ادامه دهید؟</Alerte_MSG>
+			</Action>
+			<Action Id="D_Outlook_TeamsAddIn">
+				<Name>دکمه "Teams جلسه" در Outlook وجود ندارد</Name>
+				<Explanation>دکمه "جدول Teams جدید" در Outlook وجود ندارد.</Explanation>
+				<Alerte_MSG>Outlook بسته می شود و دوباره به طور خودکار باز می شود. کار ذخیره نشده ممکن است از بین برود.
+
+آیا می خواهید ادامه دهید؟</Alerte_MSG>
+			</Action>
+			<Action Id="D_OneDrive_Start">
+				<Name>کلاینت OneDrive را راه اندازی کنید</Name>
+				<Explanation>OneDrive اجرا نمی شود.</Explanation>
+				<Alerte_MSG>کلاینت OneDrive شما راه اندازی می شود.
+
+آیا می خواهید ادامه دهید؟</Alerte_MSG>
+			</Action>
+			<Action Id="D_OneDrive_Restart">
+				<Name>کلاینت OneDrive را مجددا راه اندازی کنید</Name>
+				<Explanation>راه اندازی مجدد OneDrive می تواند برخی از مشکلات را حل کند، برای مثال مشکلات همگام سازی.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_Sync_Step1">
+				<Name>حل مشکلات همگام سازی OneDrive (مرحله 1)</Name>
+				<Explanation>مشکلات همگام سازی با فایل ها یا پوشه های خود در OneDrive.
+
+این مرحله اول OneDrive را مجدداً راه اندازی می کند. OneDrive بسته می شود و دوباره به طور خودکار باز می شود.
+
+اگر مشکل همچنان ادامه داشت، عمل "کلاینت OneDrive را بازنشانی کنید" را اجرا کنید.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_Error_8004def4">
+				<Name>OneDrive شروع نمی شود: خطای 0x8004def4</Name>
+				<Explanation>هنگام شروع OneDrive خطای 0x8004def4 نمایش داده می شود.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_Memory">
+				<Name>دستگاه شما کند است: OneDrive از حافظه زیادی استفاده می کند</Name>
+				<Explanation>دستگاه شما کند کار می کند و به نظر می رسد OneDrive از حافظه زیادی استفاده می کند.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_RedCross">
+				<Name>صلیب سرخ روی نماد OneDrive</Name>
+				<Explanation>یک ضربدر قرمز روی نماد OneDrive نمایش داده می شود.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_ClosesItself">
+				<Name>OneDrive به خودی خود بسته می شود</Name>
+				<Explanation>OneDrive باز می شود و دوباره به خودی خود بسته می شود.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_WhiteCross">
+				<Name>ضربدر سفید روی فایل های OneDrive</Name>
+				<Explanation>یک ضربدر سفید روی فایل ها یا پوشه های OneDrive نمایش داده می شود.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_PasswordChange">
+				<Name>مشکلات مربوط به OneDrive پس از تغییر رمز عبور Windows</Name>
+				<Explanation>شما اخیراً رمز عبور خود را تغییر داده اید و اکنون مشکلاتی با OneDrive دارید، به عنوان مثال مشکلات همگام سازی.
+
+این مرحله کلاینت OneDrive را مجدداً راه اندازی می کند.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_CannotOpen">
+				<Name>شما نمی توانید فایل ها را در OneDrive باز کنید</Name>
+				<Explanation>فایل های ذخیره شده در OneDrive باز نمی شوند.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_TeamsSync">
+				<Name>پوشه ها در OneDrive همگام می شوند اما در Teams نه</Name>
+			</Action>
+			<Action Id="D_OneDrive_Reset">
+				<Name>کلاینت OneDrive را بازنشانی کنید</Name>
+				<Explanation>شما مشکلاتی با OneDrive دارید، برای مثال مشکلات همگام سازی.
+
+این مرحله کلاینت OneDrive شما را بازنشانی می کند. بازنشانی کلاینت OneDrive باعث از دست رفتن داده نمی شود.</Explanation>
+			</Action>
+			<Action Id="D_Teams_Connection">
+				<Name>مشکلات اتصال Teams را حل کنید</Name>
+				<Explanation>شما نمی توانید به Teams متصل شوید.</Explanation>
+			</Action>
+			<Action Id="D_Teams_ProfilePicture">
+				<Name>حل همگام سازی تصویر نمایه Teams</Name>
+				<Explanation>عکس نمایه شما در Teams نمایش داده نمی شود یا به روز نمی شود.</Explanation>
+			</Action>
+			<Action Id="D_Teams_OneDriveSync">
+				<Name>پوشه ها در OneDrive همگام می شوند اما در Teams نه</Name>
+			</Action>
+			<Action Id="D_Teams_Loading">
+				<Name>Teams در "بارگیری Microsoft Teams" گیر کرده است</Name>
+				<Explanation>وقتی Teams را باز می کنید، پنجره روی "بارگیری Microsoft Teams" گیر می کند.</Explanation>
+			</Action>
+			<Action Id="D_Teams_Sync">
+				<Name>مشکلات همگام سازی Teams را حل کنید</Name>
+				<Explanation>در Teams مشکلات همگام سازی دارید.</Explanation>
+			</Action>
+			<Action Id="D_Teams_DoesNotOpen">
+				<Name>کلاینت Teams من باز نمی شود</Name>
+				<Explanation>شما سعی می کنید Teams را باز کنید، اما کلاینت باز نمی شود.</Explanation>
+			</Action>
+			<Action Id="D_Teams_AudioFreeze">
+				<Name>کلاینت Teams من در طول تماس های صوتی مسدود می شود</Name>
+				<Explanation>Teams در طول تماس صوتی ثابت می شود.</Explanation>
+			</Action>
+			<Action Id="D_Teams_Camera">
+				<Name>دوربین Teams ثابت است یا قابل مشاهده نیست</Name>
+				<Explanation>ویدیوی شما ثابت است یا در طول جلسه یا تماس قابل مشاهده نیست.</Explanation>
+			</Action>
+			<Action Id="D_Teams_SendFailed">
+				<Name>پیام های Teams قابل ارسال نیستند</Name>
+				<Explanation>پیام‌های Teams ارسال نمی‌شوند و Teams «ارسال نشد» را نشان می‌دهد.</Explanation>
+			</Action>
+			<Action Id="D_Teams_MeetingDisplay">
+				<Name>نمایش مشکلات هنگام پیوستن به جلسه Teams</Name>
+				<Explanation>Teams هنگام پیوستن به جلسه به درستی نمایش داده نمی شود.</Explanation>
+			</Action>
+			<Action Id="D_Teams_NoConnect">
+				<Name>کلاینت Teams من باز می شود اما وصل نمی شود</Name>
+				<Explanation>Teams باز می شود، اما وصل نمی شود.</Explanation>
+			</Action>
+			<Action Id="D_Teams_StatusOffline">
+				<Name>وضعیت Teams من آفلاین می ماند</Name>
+				<Explanation>وضعیت شما در Teams "آفلاین" باقی می ماند، اگرچه وارد سیستم شده اید.</Explanation>
+			</Action>
+			<Action Id="D_Teams_CallWindow">
+				<Name>پنجره تماس Teams نمایش داده نمی شود</Name>
+				<Explanation>اعلان تماس های Teams ورودی دیگر نمایش داده نمی شود.</Explanation>
+			</Action>
+			<Action Id="D_Teams_MessageContent">
+				<Name>من نمی توانم محتوای یک پیام را در Teams ببینم</Name>
+				<Explanation>شما اعلان و پیش نمایش پیام را می بینید، اما محتوای پیام را نمی بینید.</Explanation>
+			</Action>
+			<Action Id="D_Teams_PasswordChange">
+				<Name>مشکلات اتصال پس از تغییر رمز عبور</Name>
+				<Explanation>پس از تغییر رمز عبور نمی توانید به Teams متصل شوید.</Explanation>
+			</Action>
+			<Action Id="D_Teams_Tabs">
+				<Name>برگه ها در Teams بارگیری نمی شوند</Name>
+				<Explanation>وقتی برگه ها را در Teams باز می کنید، به درستی بارگیری نمی شوند.</Explanation>
+			</Action>
+			<Action Id="D_Teams_StatusWrong">
+				<Name>وضعیت Teams من صحیح نیست</Name>
+				<Explanation>وضعیت شما در Teams صحیح نیست یا به روز نمی شود.</Explanation>
+			</Action>
+			<Action Id="D_Teams_MeetingOpen">
+				<Name>من نمی توانم جلسه Teams را باز کنم</Name>
+				<Explanation>جلسات Teams با کلیک روی پیوند برای پیوستن باز نمی شوند.</Explanation>
+			</Action>
+			<Action Id="D_Teams_SoundCuts">
+				<Name>صدا در طول جلسات Teams قطع می شود</Name>
+				<Explanation>صدا در طول جلسات Teams قطع می شود.</Explanation>
+			</Action>
+			<Action Id="D_Teams_OutlookMeeting">
+				<Name>من نمی توانم یک جلسه Teams در تقویم Outlook ایجاد کنم</Name>
+				<Explanation>شما نمی توانید یک جلسه Teams از تقویم Outlook ایجاد کنید.</Explanation>
+			</Action>
+			<Action Id="D_Intune_Sync">
+				<Name>همگام سازی Intune را اجباری کنید</Name>
+			</Action>
+			<Action Id="D_OneDrive_Chkdsk">
+				<Name>دیسک را برای خطاهای OneDrive بررسی کنید (chkdsk)</Name>
+			</Action>
+			<Action Id="D_OneDrive_ReparsePoint">
+				<Name>تگ موجود در بافر نقطه reparse نامعتبر است</Name>
+			</Action>
+			<Action Id="D_OneDrive_Error_80071129">
+				<Name>خطای 0x80071129</Name>
+			</Action>
+			<Action Id="Q_Device_SendLogs">
+				<Name>ارسال گزارش‌های دستگاه به پشتیبانی</Name>
+			</Action>
+			<Action Id="D_Device_SendLogs">
+				<Name>جمع‌آوری گزارش‌های دستگاه و ارسال آن‌ها از طریق ایمیل به پشتیبانی</Name>
+			</Action>
+		</Actions>
+	</Catalog>
+</SelfX_Language>

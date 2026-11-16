@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  SelfX Service health configuration. Only administrators may change this file or HealthChecks scripts.
+  Version 2.3.0 | 2026-10-28 | Wolfgang Baeck | Initial health checks.
+  Version 2.3.3 | 2026-10-29 | Wolfgang Baeck | Pending reboot and updates-to-install checks (always active).
+  Version 2.3.4 | 2026-10-29 | Wolfgang Baeck | Default Defender signature update remediation for Defender and Compliance.
+  Version 2.5.0 | 2026-11-04 | Wolfgang Baeck | Background checks of the service (Background element).
+  Version 2.5.4 | 2026-11-05 | Wolfgang Baeck | Defender and Compliance Fix button only while not OK (When="NotOK").
+  Version 2.5.5 | 2026-11-05 | Wolfgang Baeck | Compliance row uses the local criteria check HealthChecks\Check-Compliance.ps1.
+  Version 2.5.6 | 2026-11-05 | Wolfgang Baeck | Updates Fix button installs Windows updates and starts Store app updates (SYSTEM).
+  Version 2.6.0 | 2026-11-06 | Wolfgang Baeck | Fix buttons for "Restart pending" (restart after confirmation) and the apps (retry
+                                                failed installations); updates through the Windows Update orchestrator.
+  Version 2.6.3 | 2026-11-06 | Wolfgang Baeck | Updates are installed through the Windows Update Agent again (UsoClient fails on 24H2).
+  -->
+<HealthConfig>
+  <!-- Background checks: the service runs all checks regularly and keeps the result for SelfX and the tray icon.
+       IntervalMinutes   : 5-1440, default 15
+       PauseOnBattery    : true = no background check while the device runs on battery (default)
+       MaxCpuPercent     : 10-100, default 75. A check is postponed while the processor load is higher (100 = no limit)
+       StartDelaySeconds : 0-3600, default 120. First check after the start of the service
+       Enabled           : false = no background checks (SelfX then checks when it is opened) -->
+  <Background Enabled="true" IntervalMinutes="15" PauseOnBattery="true" MaxCpuPercent="75" StartDelaySeconds="120" />
+  <Disk UsedPercentError="90" MinimumFreeGB="20" />
+  <!-- Updates to install are read from the local Windows Update cache (no online scan). An empty
+       cache whose last successful scan is older than MaxSearchAgeDays (1-365, default 14) is Unknown.
+  <Updates MaxSearchAgeDays="14" />
+  -->
+  <Applications>
+    <!-- Wildcards match resolved application names, case-insensitively. IDs also work as exclusions. -->
+    <!-- <Exclude Name="Example excluded application*" /> -->
+    <!-- Optional names for Intune app IDs whose local cache contains no display name:
+    <Application Id="00000000-0000-0000-0000-000000000000" Name="Example application" />
+    -->
+    <!-- Optional health probe for an app not covered by the IME cache:
+    <Application Name="Business client" Script="Check-BusinessClient.ps1" TimeoutSeconds="15" />
+    -->
+  </Applications>
+  <Services>
+    <!-- Exact Windows service names, not display names. Expected: Running or Stopped.
+    <Service Name="Spooler" Expected="Running" />
+    -->
+  </Services>
+  <!-- Compliance check, installed under HealthChecks; no cloud credentials on clients. Intune evaluates
+       compliance in the cloud and Windows stores no local compliance state, so Check-Compliance.ps1 checks
+       the local criteria of the compliance policy (enrollment, BitLocker, Secure Boot, TPM, firewall,
+       Defender, signatures; adjust $Require in the script to the policy). The Company Portal stays authoritative.
+       Exit 0 = OK; any other exit code = Pending (shown as a warning, not as an error).
+       Without this element the row shows Unknown. -->
+  <Compliance Script="Check-Compliance.ps1" TimeoutSeconds="30" />
+  <CustomChecks>
+    <!-- Runs as SYSTEM. Read-only scripts only. Exit 0 = OK; exit 1 = Error.
+    <Check Name="Example check" Script="Check-Example.ps1" TimeoutSeconds="30" />
+    -->
+  </CustomChecks>
+  <Remediations>
+    <!-- Explicit user-triggered repairs, never executed during health collection.
+         Scripts are installed in Scripts_to_run. Id matches a health result type;
+         optional Name restricts it to the exact service, drive or custom-check name.
+         PendingReboot and Updates can be mapped as well. SelfX_Device_Restart.ps1 is recognised by
+         SelfX: it asks the user with a restart warning (save your work) and never runs it in
+         "Fix all problems".
+         Optional When="NotOK" offers the button only while the status is not OK (default: Always).
+    <Remediation Id="IME" Script="SelfX_Intune_RestartService.ps1" />
+    <Remediation Id="Service" Name="Spooler" Script="Repair-Spooler.ps1" />
+    -->
+    <!-- Defender signature update (Update-MpSignature): offered on the Defender and Compliance rows
+         only while they are not OK, because outdated signatures after a longer absence are a frequent
+         cause of non-compliance. -->
+    <Remediation Id="Defender" Script="SelfX_Defender_UpdateSignature.ps1" When="NotOK" />
+    <Remediation Id="Compliance" Script="SelfX_Defender_UpdateSignature.ps1" When="NotOK" />
+    <!-- Install the pending Windows updates now through the Windows Update Agent (policies of the device apply,
+         never restarts) and start the Microsoft Store app updates as SYSTEM. SelfX shows "Running..." until the
+         installation has finished and then checks the whole status again. Optional TimeoutSeconds (max. 7200). -->
+    <Remediation Id="Updates" Script="SelfX_Updates_Install.ps1" When="NotOK" TimeoutSeconds="3600" />
+    <!-- Restart Windows to complete a pending restart, only after the user confirmed the restart warning. -->
+    <Remediation Id="PendingReboot" Script="SelfX_Device_Restart.ps1" When="NotOK" />
+    <!-- Retry failed Intune app installations now (instead of after the IME retry schedule of 24 hours):
+         resets the cached error of the failed apps and restarts the Intune Management Extension. -->
+    <Remediation Id="Applications" Script="SelfX_Apps_RetryInstall.ps1" When="NotOK" TimeoutSeconds="300" />
+  </Remediations>
+</HealthConfig>
