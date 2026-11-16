@@ -1,0 +1,547 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+	SelfX Service - language file
+
+	Description:
+	  Texts of the SelfX user interface in one language. SelfX selects the file that matches the Windows
+	  display language of the user (for example de-CH -> de.xml, zh-TW -> zh-Hant.xml). If no file matches,
+	  en.xml is used. A text that is missing or empty in a language file is taken from en.xml.
+
+	Add a language:
+	  1. Copy en.xml to <culture>.xml. Use the neutral culture name (de, fr, pt) or a script/region name
+	     (zh-Hans, zh-Hant, pt-BR). Windows tries the exact culture first and then its parents.
+	  2. Set Culture, Name, NativeName and FlowDirection (RightToLeft for Arabic, Persian, Urdu, Hebrew ...).
+	  3. Translate the element texts. Do not change element names or Id attributes.
+	     Keep placeholders such as {0}, {1}, {1:D2} and the "|" separators of SystemInfo_Export_Filter.
+	  4. Catalogue texts: add an <Action Id="..."> entry per action and a <Message Id="..."> entry per shared
+	     message. The English base texts are in Issues_List.xml. Untranslated actions are shown in English.
+
+	History:
+	  Version  Date        Author               Change
+	  2.2.0    2026-10-28  Wolfgang Baeck       Initial version: multilingual user interface
+-->
+<SelfX_Language Culture="ur" Name="Urdu" NativeName="اردو" FlowDirection="RightToLeft" Version="2.2.0">
+	<UI>
+		<Health_Fix>درست کریں</Health_Fix>
+		<Health_Fix_Confirm>کیا {0} کے لیے ترتیب دی گئی مرمت چلائیں؟ اپنا کام محفوظ کریں: ایپلی کیشنز، سروسز یا رابطے منقطع ہو سکتے ہیں۔ اس کے بعد حالت دوبارہ جانچی جائے گی۔</Health_Fix_Confirm>
+		<Health_Restart_Button>دوبارہ شروع کریں</Health_Restart_Button>
+		<Health_Restart_Title>ڈیوائس دوبارہ شروع کریں</Health_Restart_Title>
+		<Health_Restart_Confirm>زیر التواء اپ ڈیٹس اور تبدیلیاں مکمل کرنے کے لیے Windows دوبارہ شروع ہوگا۔&#10;&#10;پہلے اپنا کام محفوظ کریں اور تمام پروگرام بند کریں۔ تصدیق کے تقریباً 30 سیکنڈ بعد دوبارہ شروع ہوگا۔&#10;&#10;ابھی دوبارہ شروع کریں؟</Health_Restart_Confirm>
+		<Button_Restart_Now>ابھی دوبارہ شروع کریں</Button_Restart_Now>
+		<Health_Restart_Started>Windows تقریباً 30 سیکنڈ میں دوبارہ شروع ہوگا۔ ابھی اپنا کام محفوظ کریں۔</Health_Restart_Started>
+		<Health_Updates_Started>Windows اپ ڈیٹس تلاش، ڈاؤن لوڈ اور انسٹال کی جا رہی ہیں۔ اس میں کئی منٹ لگ سکتے ہیں؛ آپ کام جاری رکھ سکتے ہیں۔</Health_Updates_Started>
+		<Health_Updates_Done>Windows Update مکمل ہو گیا۔ ڈیوائس کی حالت دوبارہ جانچی جا رہی ہے اور دکھاتی ہے کہ آیا دوبارہ شروع کرنا ضروری ہے۔</Health_Updates_Done>
+		<Health_Apps_Button>دوبارہ کوشش کریں</Health_Apps_Button>
+		<Health_Apps_Started>ناکام ایپس کی انسٹالیشن دوبارہ شروع ہو رہی ہے۔ اس میں چند منٹ لگ سکتے ہیں؛ آپ اسے کمپنی پورٹل میں دیکھ سکتے ہیں۔</Health_Apps_Started>
+		<Health_Check_Button>ٹھیک ہے</Health_Check_Button>
+		<Health_Error_Button>خرابی</Health_Error_Button>
+		<Health_Pending_Button>زیر التوا</Health_Pending_Button>
+		<Health_Check_Tooltip>اس حالت کو دوبارہ جانچیں</Health_Check_Tooltip>
+		<!-- Main window -->
+		<Main_Title_Text>آپ کے آلے کے ساتھ کوئی مسئلہ ہے؟</Main_Title_Text>
+		<Subtitle_Text>آپ یہاں کلک کے قابل حل کی فہرست کے ساتھ اسے حل کرنے کا طریقہ تلاش کر سکتے ہیں۔</Subtitle_Text>
+		<Run_solution_Text>ایک ایکشن چلاتا ہے۔</Run_solution_Text>
+		<Run_explanation_Text>مزید معلومات دکھاتا ہے۔</Run_explanation_Text>
+		<Issue_filter_Title_Text>جزو کے لحاظ سے فلٹر کریں۔</Issue_filter_Title_Text>
+		<Issue_filter_KeyWord_Text>ایک کلیدی لفظ ٹائپ کریں۔</Issue_filter_KeyWord_Text>
+		<Available_Actions_Count>دستیاب کارروائیاں: {0}</Available_Actions_Count>
+		<Troubleshooting_Tab_Text>خرابی کا سراغ لگانا</Troubleshooting_Tab_Text>
+		<Theme_Button_ToolTip>تاریک اور ہلکی تھیم کے درمیان سوئچ کریں۔</Theme_Button_ToolTip>
+		<Support_Button_ToolTip>اپنی سپورٹ ٹیم سے رابطہ کریں۔</Support_Button_ToolTip>
+		<About_Button_ToolTip>SelfX کے بارے میں</About_Button_ToolTip>
+		<Shield_ToolTip>مقامی SelfX سروس کے ذریعے منتظم کے حقوق کے ساتھ چلتا ہے۔</Shield_ToolTip>
+
+		<!-- Simplified or detailed view -->
+		<Solution_Mode_Simple>آسان منظر</Solution_Mode_Simple>
+		<Solution_Mode_Detailed>تفصیلی نظارہ</Solution_Mode_Detailed>
+		<Solution_Mode_Info_Title>آسان یا تفصیلی نظارہ؟</Solution_Mode_Info_Title>
+		<Solution_Mode_Info_Text>آسان منظر پروڈکٹ کے لحاظ سے مسائل کی فہرست دیتا ہے۔
+تفصیلی منظر میں فی پروڈکٹ کے کئی مخصوص مسائل کی فہرست دی گئی ہے جنہیں حل کیا جا سکتا ہے۔</Solution_Mode_Info_Text>
+
+		<!-- Dialogs -->
+		<Warning_Click_Run_Solution_Text>کسی مسئلے کو حل کرنا</Warning_Click_Run_Solution_Text>
+		<Warning_Click_Run_Explanation_Text>مزید معلومات</Warning_Click_Run_Explanation_Text>
+		<Button_Ok>ٹھیک ہے</Button_Ok>
+		<Button_Cancel>منسوخ کریں</Button_Cancel>
+		<Button_Yes>جی ہاں</Button_Yes>
+		<Button_No>نہیں</Button_No>
+		<Close_Button_Text>بند کریں</Close_Button_Text>
+		<Reboot_Alert>اپنے آلے کو مستحکم رکھنے اور صحیح طریقے سے کام کرنے کے لیے، اسے ہفتے میں کم از کم ایک بار دوبارہ شروع کریں۔</Reboot_Alert>
+
+		<!-- Support and About dialogs -->
+		<Support_Window_Title>سپورٹ ٹیم کی معلومات</Support_Window_Title>
+		<Support_Phone_Label>فون نمبر:</Support_Phone_Label>
+		<Support_Mail_Label>ای میل:</Support_Mail_Label>
+		<About_Version_Text>{0}: ورژن {1} - کیٹلوگ: {2}</About_Version_Text>
+
+		<!-- Local SelfX service (actions with Context System) -->
+		<Service_Running_Text>SelfX سروس چل رہی ہے: ایڈمنسٹریٹر کے حقوق کے ساتھ چلنے والی شیلڈ کے ساتھ نشان زد ایکشن۔</Service_Running_Text>
+		<Service_Unavailable_Text>SelfX سروس نہیں چل رہی ہے: شیلڈ سے نشان زد ایکشن دستیاب نہیں ہیں۔</Service_Unavailable_Text>
+		<Service_Busy_Text>ایک اور کارروائی ابھی جاری ہے۔ براہ کرم اس کے مکمل ہونے تک انتظار کریں۔</Service_Busy_Text>
+		<Action_Running_Text>کارروائی جاری ہے: {0}</Action_Running_Text>
+		<Action_Running_Label>جاری ہے…</Action_Running_Label>
+		<Action_Success_Text>کارروائی مکمل ہو گئی: {0}</Action_Success_Text>
+		<Action_Failed_Text>کارروائی ناکام ہوئی: {0}</Action_Failed_Text>
+		<Action_Failed_ExitCode_Text>کارروائی ناکام ہوئی: {0} (ایگزٹ کوڈ {1})</Action_Failed_ExitCode_Text>
+		<Action_Timeout_Text>زیادہ وقت لگنے کی وجہ سے کارروائی روک دی گئی: {0}</Action_Timeout_Text>
+		<Script_Not_Found_Text>اس کارروائی کی اسکرپٹ نہیں ملی: {0}</Script_Not_Found_Text>
+
+		<!-- System information tab -->
+		<SystemInfo_Tab_Text>سسٹم کی معلومات</SystemInfo_Tab_Text>
+		<SystemInfo_Title_Text>سپورٹ ٹیم کے لیے آپ کے آلے کے بارے میں معلومات</SystemInfo_Title_Text>
+		<SystemInfo_Hint_Text>کسی لائن کی قدر کو کاپی کرنے کے لیے اس پر ڈبل کلک کریں۔</SystemInfo_Hint_Text>
+		<SystemInfo_Loading_Text>سسٹم کی معلومات اکٹھی کی جا رہی ہیں...</SystemInfo_Loading_Text>
+		<SystemInfo_Copied_Text>کلپ بورڈ پر کاپی کیا گیا: {0}</SystemInfo_Copied_Text>
+		<SystemInfo_Refresh_Text>تازہ کریں</SystemInfo_Refresh_Text>
+		<SystemInfo_Copy_Text>سب کاپی کریں۔</SystemInfo_Copy_Text>
+		<SystemInfo_Export_Text>برآمد کریں</SystemInfo_Export_Text>
+		<SystemInfo_Export_Filter>متنی فائل (*.txt)|*.txt|HTML فائل (*.html)|*.html|CSV فائل (*.csv)|*.csv|JSON فائل (*.json)|*.json</SystemInfo_Export_Filter>
+		<SystemInfo_SyncApps_Text>Intune ایپس کو سنک کریں۔</SystemInfo_SyncApps_Text>
+		<SystemInfo_SyncCompliance_Text>تعمیل چیک کریں۔</SystemInfo_SyncCompliance_Text>
+		<SystemInfo_CompanyPortal_Text>Company Portal</SystemInfo_CompanyPortal_Text>
+		<SystemInfo_QuickAssist_Text>Quick Assist</SystemInfo_QuickAssist_Text>
+		<SystemInfo_MdmDiagnostics_Text>MDM لاگز جمع کریں۔</SystemInfo_MdmDiagnostics_Text>
+		<SystemInfo_SendLogs_Text>لاگز سپورٹ کو بھیجیں</SystemInfo_SendLogs_Text>
+		<Report_Mail_Subject>{0} کے ڈیوائس لاگز</Report_Mail_Subject>
+		<Report_Mail_Body>السلام علیکم،
+
+SelfX کے ذریعے {1} کو جمع کیے گئے {0} کے ڈیوائس لاگز منسلک ہیں۔
+
+مسئلے کی تفصیل:</Report_Mail_Body>
+		<Report_Mail_Opened_Text>ڈیوائس لاگز کے ساتھ ایک ای میل کھول دی گئی ہے۔ اپنا مسئلہ بیان کریں اور ای میل بھیجیں۔</Report_Mail_Opened_Text>
+		<Report_Mail_Recipient_Text>ڈیوائس لاگز کے ساتھ ایک ای میل کھول دی گئی ہے۔ وصول کنندہ ({0}) درج کریں، اپنا مسئلہ بیان کریں اور ای میل بھیجیں۔</Report_Mail_Recipient_Text>
+		<Report_Mail_Manual_Text>ڈیوائس لاگز {0} میں محفوظ کر دیے گئے ہیں۔ اس فائل کو ایک ای میل (وصول کنندہ: {1}) کے ساتھ منسلک کریں اور اپنا مسئلہ بیان کریں۔</Report_Mail_Manual_Text>
+		<Report_Not_Found_Text>ڈیوائس لاگز جمع کر لیے گئے، لیکن ای میل تیار نہیں کی جا سکی: {0}</Report_Not_Found_Text>
+		<Report_Support_Fallback>آپ کی سپورٹ ٹیم</Report_Support_Fallback>
+		<Nav_Status_Text>ڈیوائس کی حالت</Nav_Status_Text>
+		<Status_LastChecked_Text>آخری جانچ: {0}</Status_LastChecked_Text>
+		<Status_NotChecked_Text>ڈیوائس کی حالت ابھی تک نہیں جانچی گئی۔</Status_NotChecked_Text>
+		<Status_Background_Text>ہر {0} منٹ میں خودکار جانچ</Status_Background_Text>
+		<Status_Background_Battery_Text>بیٹری پر چلنے کے دوران خودکار جانچ رُکی رہتی ہے</Status_Background_Battery_Text>
+		<Status_Checking_Text>ڈیوائس کی حالت جانچی جا رہی ہے۔ اس میں ایک منٹ تک لگ سکتا ہے ...</Status_Checking_Text>
+		<Status_AllOk_Title>سب کچھ ٹھیک ہے</Status_AllOk_Title>
+		<Status_AllOk_Text>آپ کی ڈیوائس پر کوئی مسئلہ نہیں ملا۔</Status_AllOk_Text>
+		<Status_Issues_Title>{0} آئٹمز پر آپ کی توجہ درکار ہے</Status_Issues_Title>
+		<Status_Issues_Text>مسائل پہلے دکھائے جاتے ہیں۔ مسئلہ ٹھیک کرنے کے لیے «ٹھیک کریں» اور دوبارہ جانچنے کے لیے تیروں پر کلک کریں۔</Status_Issues_Text>
+		<Status_CheckAll_Tooltip>ابھی سب کچھ دوبارہ جانچیں۔ اس میں ایک منٹ تک لگ سکتا ہے۔</Status_CheckAll_Tooltip>
+		<Status_FixAll>تمام مسائل حل کریں</Status_FixAll>
+		<Status_FixAll_Tooltip>ہر مسئلے کے لیے ترتیب دی گئی مرمت ایک کے بعد ایک چلاتا ہے۔ اس کے بعد سب کچھ دوبارہ چیک کیا جاتا ہے۔</Status_FixAll_Tooltip>
+		<Health_FixAll_Confirm>کیا ان مسائل ({0}) کے لیے ترتیب دی گئی مرمتیں ایک کے بعد ایک چلائی جائیں؟&#10;&#10;{1}&#10;&#10;ایپلیکیشنز بند ہو سکتی ہیں اور سروسز یا نیٹ ورک کنکشن منقطع ہو سکتے ہیں۔ پہلے اپنا کام محفوظ کریں۔ اس کے بعد سب کچھ دوبارہ چیک کیا جاتا ہے۔</Health_FixAll_Confirm>
+		<Status_FixAll_Done>{1} میں سے {0} مرمتیں کامیابی سے مکمل ہوئیں۔ حالت دوبارہ چیک کی جا رہی ہے۔</Status_FixAll_Done>
+		<Status_FixAll_Failed>ناکام: {0}</Status_FixAll_Failed>
+		<Tooltip_Fix>یہ مسئلہ خودکار طور پر ٹھیک کرتا ہے۔ پہلے آپ سے تصدیق لی جاتی ہے۔</Tooltip_Fix>
+		<Tooltip_Run>یہ حل شروع کرتا ہے۔ کچھ ہونے سے پہلے آپ سے تصدیق لی جاتی ہے۔</Tooltip_Run>
+		<Filter_All_Text>تمام</Filter_All_Text>
+		<View_Help_Tooltip>سادہ اور تفصیلی منظر میں کیا فرق ہے؟</View_Help_Tooltip>
+		<SystemInfo_Cached_Text>{0} کی معلومات – اپ ڈیٹ ہو رہی ہیں ...</SystemInfo_Cached_Text>
+		<Tooltip_Refresh>معلومات دوبارہ جمع کرتا ہے</Tooltip_Refresh>
+		<Tooltip_Copy>تمام معلومات کاپی کرتا ہے، مثلاً سپورٹ درخواست میں چسپاں کرنے کے لیے</Tooltip_Copy>
+		<Tooltip_Export>تمام معلومات فائل میں محفوظ کرتا ہے</Tooltip_Export>
+		<Tools_Title_Text>ٹولز</Tools_Title_Text>
+		<Tooltip_SyncApps>Intune سے کہتا ہے کہ آپ کو تفویض کردہ ایپس ابھی انسٹال یا اپ ڈیٹ کرے۔</Tooltip_SyncApps>
+		<Tooltip_SyncCompliance>Intune سے کہتا ہے کہ ابھی جانچے کہ آپ کی ڈیوائس کمپنی کے اصولوں پر پوری اترتی ہے۔</Tooltip_SyncCompliance>
+		<Tooltip_CompanyPortal>کمپنی پورٹل کھولتا ہے جہاں آپ کمپنی کی ایپس انسٹال کر سکتے ہیں۔</Tooltip_CompanyPortal>
+		<Tooltip_QuickAssist>فوری مدد کھولتا ہے تاکہ سپورٹ کا فرد آپ کی اسکرین دیکھ کر مدد کر سکے – صرف آپ کی اجازت سے۔</Tooltip_QuickAssist>
+		<Tooltip_MdmDiagnostics>ڈیوائس مینجمنٹ کے لاگز سپورٹ ٹیم کے لیے ایک فولڈر میں جمع کرتا ہے۔</Tooltip_MdmDiagnostics>
+		<Tooltip_SendLogs>آپ کی ڈیوائس کے تمام لاگز جمع کرتا ہے اور رپورٹ منسلک کر کے سپورٹ ٹیم کے لیے ای میل کھولتا ہے۔</Tooltip_SendLogs>
+		<Settings_Button_ToolTip>ترتیبات (زبان، ظاہری شکل اور حالت کا آئیکن)</Settings_Button_ToolTip>
+		<Settings_Title>ترتیبات</Settings_Title>
+		<Settings_Language_Text>زبان</Settings_Language_Text>
+		<Settings_Language_Auto>خودکار ({0})</Settings_Language_Auto>
+		<Settings_Language_Hint>SelfX منتخب زبان میں دوبارہ شروع ہوتا ہے۔</Settings_Language_Hint>
+		<Settings_Language_Later>نئی زبان اگلی بار SelfX کھولنے پر استعمال ہوگی، کیونکہ ایک مرمت ابھی جاری ہے۔</Settings_Language_Later>
+		<Settings_Theme_Text>ظاہری شکل</Settings_Theme_Text>
+		<Settings_Theme_Auto>خودکار</Settings_Theme_Auto>
+		<Settings_Theme_Auto_ToolTip>Windows کی طرح: ترتیبات &gt; ذاتی بنانا &gt; رنگ میں منتخب ایپ موڈ استعمال کرتا ہے</Settings_Theme_Auto_ToolTip>
+		<Settings_Theme_Dark>گہرا</Settings_Theme_Dark>
+		<Settings_Theme_Light>ہلکا</Settings_Theme_Light>
+		<Settings_Tray_Text>اطلاعاتی علاقے میں SelfX آئیکن دکھائیں</Settings_Tray_Text>
+		<Settings_Tray_Hint>گھڑی کے ساتھ والا آئیکن ڈیوائس کی حالت دکھاتا ہے اور مسئلہ ملنے پر آپ کو مطلع کرتا ہے۔</Settings_Tray_Hint>
+		<Settings_Notify_Text>مسائل کی اطلاعات دکھائیں</Settings_Notify_Text>
+		<Settings_Notify_Hint>رنگین SelfX آئیکن کے علاوہ، کوئی نیا مسئلہ ملنے پر (مثلاً ڈسک کی کم جگہ) Windows ایک پیغام دکھاتا ہے۔</Settings_Notify_Hint>
+		<Support_Intro_Text>ہمیں آپ کی مدد کر کے خوشی ہوگی۔ آپ ہم سے یوں رابطہ کر سکتے ہیں:</Support_Intro_Text>
+		<Support_Hours_Label>سپورٹ کے اوقات</Support_Hours_Label>
+		<Support_Teams_Label>Teams چیٹ</Support_Teams_Label>
+		<Support_Website_Label>ویب سائٹ / ٹکٹ سسٹم</Support_Website_Label>
+		<Support_Teams_Button>چیٹ شروع کریں</Support_Teams_Button>
+		<Support_Website_Button>کھولیں</Support_Website_Button>
+		<Support_Mail_Button>ای میل لکھیں</Support_Mail_Button>
+		<Support_None_Text>رابطے کی کوئی تفصیلات ترتیب نہیں دی گئیں۔ براہ کرم اپنے IT شعبے سے رابطہ کریں۔</Support_None_Text>
+		<Service_Short_Running>SelfX سروس چل رہی ہے</Service_Short_Running>
+		<Service_Short_Unavailable>SelfX سروس دستیاب نہیں</Service_Short_Unavailable>
+		<Version_Text>ورژن {0}</Version_Text>
+		<Tray_Tooltip_OK>SelfX: سب کچھ ٹھیک ہے</Tray_Tooltip_OK>
+		<Tray_Tooltip_Issues>SelfX: {0} مسائل، {1} انتباہات</Tray_Tooltip_Issues>
+		<Tray_Tooltip_Unknown>SelfX: حالت ابھی دستیاب نہیں</Tray_Tooltip_Unknown>
+		<Tray_Menu_Open>SelfX کھولیں</Tray_Menu_Open>
+		<Tray_Menu_Status>ڈیوائس کی حالت دکھائیں</Tray_Menu_Status>
+		<Tray_Menu_Check>ابھی حالت جانچیں</Tray_Menu_Check>
+		<Tray_Menu_Notify>اطلاعات دکھائیں</Tray_Menu_Notify>
+		<Tray_Menu_Hide>یہ آئیکن چھپائیں</Tray_Menu_Hide>
+		<Tray_Notify_Click>تفصیلات دیکھنے کے لیے یہاں کلک کریں۔</Tray_Notify_Click>
+		<Tray_Hidden_Text>آئیکن چھپا دیا گیا۔ آپ اسے SelfX میں ترتیبات کے تحت دوبارہ دکھا سکتے ہیں۔</Tray_Hidden_Text>
+		<Tray_Checking_Text>ڈیوائس کی حالت جانچی جا رہی ہے ...</Tray_Checking_Text>
+	</UI>
+
+	<!-- Labels and values of the System information tab -->
+	<SystemInfo>
+		<Category_Device>ڈیوائس</Category_Device>
+		<Category_Windows>Windows</Category_Windows>
+		<Category_User>صارف اور انتظام</Category_User>
+		<Category_Network>نیٹ ورک</Category_Network>
+		<Category_Report>رپورٹ</Category_Report>
+		<Computer_Name>کمپیوٹر کا نام</Computer_Name>
+		<Manufacturer>کارخانہ دار</Manufacturer>
+		<Model>ماڈل</Model>
+		<Serial_Number>سیریل نمبر</Serial_Number>
+		<BIOS_Version>BIOS ورژن</BIOS_Version>
+		<Processor>پروسیسر</Processor>
+		<Memory>میموری (RAM)</Memory>
+		<Free_Space>مفت جگہ {0}</Free_Space>
+		<Free_Space_Value>{0} از {1} ({2}%)</Free_Space_Value>
+		<Battery>بیٹری</Battery>
+		<Windows_Version>Windows ورژن</Windows_Version>
+		<OS_Build>OS کی تعمیر</OS_Build>
+		<Last_Boot>آخری بوٹ</Last_Boot>
+		<Uptime>اپ ٹائم</Uptime>
+		<Uptime_Value>{0} دن {1:D2}:{2:D2} h</Uptime_Value>
+		<Last_Update>آخری اپ ڈیٹ انسٹال ہو گیا۔</Last_Update>
+		<Time_Zone>ٹائم زون</Time_Zone>
+		<Current_User>موجودہ صارف</Current_User>
+		<User_Principal_Name>صارف کا پرنسپل نام</User_Principal_Name>
+		<Domain>ڈومین / ورک گروپ</Domain>
+		<Entra_Joined>Entra ID شامل ہو گیا۔</Entra_Joined>
+		<Domain_Joined>ڈومین شامل ہو گیا۔</Domain_Joined>
+		<Tenant>کرایہ دار</Tenant>
+		<Entra_Device_Id>آلہ کی شناخت درج کریں۔</Entra_Device_Id>
+		<Intune_User>Intune اندراج شدہ صارف</Intune_User>
+		<Intune_Last_Sync>آخری Intune مطابقت پذیری۔</Intune_Last_Sync>
+		<LAN_Connected>LAN منسلک ہے۔</LAN_Connected>
+		<WiFi_Connected>Wi-Fi منسلک ہے۔</WiFi_Connected>
+		<WWAN_Connected>موبائل براڈ بینڈ منسلک ہے۔</WWAN_Connected>
+		<WiFi_SSID>Wi-Fi نیٹ ورک (SSID)</WiFi_SSID>
+		<VPN_Connected>VPN منسلک ہے۔</VPN_Connected>
+		<Internet_Reachable>انٹرنیٹ قابل رسائی</Internet_Reachable>
+		<IPv4>IPv4 ایڈریس</IPv4>
+		<IPv6>IPv6 ایڈریس</IPv6>
+		<Gateway>ڈیفالٹ گیٹ وے</Gateway>
+		<DNS>DNS سرورز</DNS>
+		<MAC>MAC ایڈریس</MAC>
+		<Collected_At>پر جمع کیا گیا۔</Collected_At>
+		<Error>خرابی</Error>
+		<Yes>جی ہاں</Yes>
+		<No>نہیں</No>
+		<Not_Available>n/a</Not_Available>
+		<Not_Enrolled>اندراج نہیں / نامعلوم</Not_Enrolled>
+		<No_WiFi>کوئی Wi-Fi کنکشن نہیں ہے۔</No_WiFi>
+		<Category_Health>سسٹم کی حالت</Category_Health>
+		<Health_IME>IME سروس</Health_IME>
+		<Health_Defender>Microsoft Defender</Health_Defender>
+		<Health_Compliance>تعمیل</Health_Compliance>
+		<Health_Applications>کمپنی ایپس (Intune)</Health_Applications>
+		<Health_Disk>ڈسک کی جگہ</Health_Disk>
+		<Health_BitLocker>BitLocker</Health_BitLocker>
+		<Health_PendingReboot>زیر التوا ری بوٹ</Health_PendingReboot>
+		<Health_Updates>انسٹال کرنے کے لیے اپ ڈیٹس</Health_Updates>
+		<Health_Service>سروس</Health_Service>
+		<Health_Custom>حسب ضرورت جانچ</Health_Custom>
+		<Health_Collection>حالت جمع کرنا</Health_Collection>
+		<Health_OK>درست</Health_OK>
+		<Health_Error>خرابی</Health_Error>
+		<Health_Unknown>نامعلوم</Health_Unknown>
+		<Health_Pending>زیر التوا</Health_Pending>
+		<Health_Unavailable>مقامی حالت کی رپورٹ دستیاب نہیں: {0}</Health_Unavailable>
+	</SystemInfo>
+
+	<!-- Action catalogue (Issues_List.xml). The English base texts are in Issues_List.xml, so en.xml only lists the categories. -->
+	<Catalog>
+		<Categories>
+			<Category Id="Browser">براؤزر</Category>
+			<Category Id="Device">ڈیوائس</Category>
+			<Category Id="Intune">Intune</Category>
+			<Category Id="Office">Office</Category>
+			<Category Id="OneDrive">OneDrive</Category>
+			<Category Id="Outlook">Outlook</Category>
+			<Category Id="Teams">Teams</Category>
+		</Categories>
+		<Messages>
+			<Message Id="Msg_Teams_Restart">Teams بند ہو جائے گا اور پھر خود بخود دوبارہ کھل جائے گا۔ اگر اس کے بعد بھی یہ برقرار رہتا ہے تو براہ کرم اپنے سپورٹ سے رابطہ کریں۔
+
+کیا آپ جاری رکھنا چاہتے ہیں؟</Message>
+			<Message Id="Msg_Teams_Restart_Short">Teams بند ہو جائے گا اور پھر خود بخود دوبارہ کھل جائے گا۔
+
+کیا آپ جاری رکھنا چاہتے ہیں؟</Message>
+			<Message Id="Msg_OneDrive_Restart">OneDrive بند ہو جائے گا اور پھر خود بخود دوبارہ کھل جائے گا۔
+
+کیا آپ جاری رکھنا چاہتے ہیں؟</Message>
+			<Message Id="Msg_OneDrive_Restart_Step1">یہ پہلا مرحلہ OneDrive کو دوبارہ شروع کرتا ہے۔ OneDrive بند ہو جائے گا اور پھر خود بخود دوبارہ کھل جائے گا۔</Message>
+			<Message Id="Msg_OneDrive_Reset">آپ کا OneDrive کلائنٹ دوبارہ ترتیب دیا جائے گا۔ OneDrive کلائنٹ کو دوبارہ ترتیب دینے سے ڈیٹا کا کوئی نقصان نہیں ہوتا ہے۔</Message>
+			<Message Id="Msg_OneDrive_Teams_Sync">فولڈرز OneDrive میں مطابقت پذیر ہوتے ہیں، لیکن Teams میں اشتراک کردہ فائلیں مطابقت پذیر نہیں ہوتی ہیں۔</Message>
+			<Message Id="Msg_Intune_Sync_Explanation">آپ اپنے آلے اور Intune کے درمیان مطابقت پذیری کو زبردستی کرنا چاہتے ہیں، مثال کے طور پر پالیسیوں یا ایپلیکیشنز کی تعیناتی کو تیز کرنا۔ یہ کارروائی مقامی SelfX سروس کے ذریعے منتظم کے حقوق کے ساتھ چلتی ہے۔</Message>
+			<Message Id="Msg_Intune_Restart">Intune Management Extension سروس پس منظر میں دوبارہ شروع ہو جائے گی۔ چند منٹوں میں دوبارہ کوشش کریں۔
+
+کیا آپ جاری رکھنا چاہتے ہیں؟</Message>
+			<Message Id="Msg_Chkdsk_Explanation">آپ کو OneDrive کے ساتھ مسائل ہیں اور آپ کو "0x80071129: ریپرس پوائنٹ بفر میں موجود ٹیگ غلط ہے" کا پتہ چلتا ہے۔ یہ کارروائی مقامی SelfX سروس کے ذریعے منتظم کے حقوق کے ساتھ چلتی ہے۔</Message>
+			<Message Id="Msg_Chkdsk">آپ کے آلے کے اگلے ری سٹارٹ کے لیے ایک ڈسک چیک شیڈول کیا جائے گا۔ اس کے بعد اپنا آلہ دوبارہ شروع کریں۔ چیک میں کئی منٹ لگ سکتے ہیں۔
+
+کیا آپ جاری رکھنا چاہتے ہیں؟</Message>
+			<Message Id="Msg_SendLogs_Explanation">کسی مسئلے کا تجزیہ کرنے کے لیے سپورٹ ٹیم کو آپ کے ڈیوائس کے لاگز درکار ہیں، مثلاً کسی ایپ کی ناکام انسٹالیشن، ناکام سیٹ اپ یا کوئی خرابی کا پیغام۔ یہ کارروائی مقامی SelfX سروس کے ذریعے منتظم کے حقوق کے ساتھ تمام متعلقہ لاگز اور سسٹم کی معلومات جمع کرتی ہے اور رپورٹ منسلک کر کے سپورٹ ٹیم کے لیے ایک نئی ای میل کھولتی ہے۔ کچھ بھی خودکار طور پر نہیں بھیجا جاتا۔</Message>
+			<Message Id="Msg_SendLogs">SelfX اب آپ کے ڈیوائس کے لاگز جمع کر رہا ہے۔ اس میں کئی منٹ لگ سکتے ہیں۔ آپ کے ڈیوائس پر کچھ بھی تبدیل نہیں کیا جاتا۔
+
+رپورٹ میں آپ کے ڈیوائس کا نام اور آپ کا صارف نام شامل ہے۔ تیار ہونے پر رپورٹ کے ساتھ ایک نئی ای میل کھل جائے گی۔ اپنا مسئلہ بیان کریں اور ای میل سپورٹ ٹیم کو بھیجیں۔
+
+کیا آپ جاری رکھنا چاہتے ہیں؟</Message>
+		</Messages>
+		<Actions>
+			<Action Id="Q_Teams">
+				<Name>Teams کے ساتھ ایک مسئلہ حل کریں۔</Name>
+				<Explanation>آپ Teams کلائنٹ کے ساتھ ایک مسئلہ کا سامنا کر رہے ہیں (سست پن، غلط حیثیت، منتقلی کی خرابی وغیرہ)۔</Explanation>
+				<Alerte_MSG>Teams بند ہو جائے گا اور اس کے مقامی کیش فولڈرز کو صاف کر دیا جائے گا۔ جاری رکھنے سے پہلے کسی بھی کھلے کام کو محفوظ کریں۔ اگر یہ چل رہا تھا تو Teams دوبارہ کھل جائے گا۔
+
+کیا آپ جاری رکھنا چاہتے ہیں؟</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Word">
+				<Name>Word کے ساتھ ایک مسئلہ حل کریں۔</Name>
+				<Explanation>آپ Word میں کام کر رہے ہیں، لیکن اس نے جواب دینا بند کر دیا ہے اور آپ مزید کچھ نہیں کر سکتے۔</Explanation>
+				<Alerte_MSG>Word خود بخود بند اور دوبارہ کھل جائے گا۔ غیر محفوظ شدہ کام ضائع ہو سکتا ہے۔
+
+کیا آپ جاری رکھنا چاہتے ہیں؟</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Excel">
+				<Name>Excel کے ساتھ ایک مسئلہ حل کریں۔</Name>
+				<Explanation>آپ Excel میں کام کر رہے ہیں، لیکن اس نے جواب دینا بند کر دیا ہے اور آپ مزید کچھ نہیں کر سکتے۔</Explanation>
+				<Alerte_MSG>Excel خود بخود بند اور دوبارہ کھل جائے گا۔ غیر محفوظ شدہ کام ضائع ہو سکتا ہے۔
+
+کیا آپ جاری رکھنا چاہتے ہیں؟</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Store">
+				<Name>Microsoft Store کے ساتھ ایک مسئلہ حل کریں۔</Name>
+				<Explanation>آپ کو Microsoft Store (اسٹور کھولنا، ایپس انسٹال کرنا وغیرہ) کے ساتھ مسائل ہیں۔</Explanation>
+				<Alerte_MSG>Microsoft Store کیشے کو دوبارہ ترتیب دیا جائے گا اور اسٹور کھل جائے گا۔
+
+کیا آپ جاری رکھنا چاہتے ہیں؟</Alerte_MSG>
+			</Action>
+			<Action Id="Q_OneDrive_Restart">
+				<Name>OneDrive کے ساتھ مسئلہ حل کریں (طریقہ 1)</Name>
+				<Explanation>آپ OneDrive کلائنٹ (فائل یا فولڈر کی مطابقت پذیری، فائلیں کھولنا وغیرہ) کے ساتھ مسائل کا سامنا کر رہے ہیں۔</Explanation>
+				<Alerte_MSG>OneDrive خود بخود بند اور دوبارہ کھل جائے گا۔
+
+اگر مسئلہ برقرار رہتا ہے تو طریقہ 2 استعمال کریں۔</Alerte_MSG>
+			</Action>
+			<Action Id="Q_OneDrive_Reset">
+				<Name>OneDrive کے ساتھ مسئلہ حل کریں (طریقہ 2)</Name>
+				<Explanation>آپ OneDrive کلائنٹ (فائل یا فولڈر کی مطابقت پذیری، فائلیں کھولنا وغیرہ) کے ساتھ مسائل کا سامنا کر رہے ہیں اور پہلے ہی طریقہ 1 آزما چکے ہیں۔</Explanation>
+			</Action>
+			<Action Id="Q_Outlook_TeamsAddIn">
+				<Name>Outlook میں "Teams میٹنگ" بٹن غائب ہے۔</Name>
+				<Explanation>Outlook میں "نیا Teams میٹنگ" بٹن غائب ہے۔</Explanation>
+				<Alerte_MSG>Teams میٹنگ ایڈ ان کو دوبارہ فعال کر دیا جائے گا۔ Outlook خود بخود بند اور دوبارہ کھل جائے گا۔ غیر محفوظ شدہ کام ضائع ہو سکتا ہے۔
+
+اگر مسئلہ برقرار رہتا ہے، تو براہ کرم اپنے سپورٹ سے رابطہ کریں۔
+
+کیا آپ جاری رکھنا چاہتے ہیں؟</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Device_Connection">
+				<Name>آپ کے آلے پر کنکشن کے مسائل ہیں۔</Name>
+				<Explanation>آپ ویب سائٹ کھولنے کی کوشش کر رہے ہیں، لیکن کنکشن کام نہیں کر رہا، سائٹ تک نہیں پہنچا جا سکتا یا آپ کو غلطیاں ملتی ہیں۔</Explanation>
+				<Alerte_MSG>آپ کے آلے کا DNS کیشے پس منظر میں صاف ہو جائے گا۔ OK پر کلک کرنے کے بعد دوبارہ کوشش کریں۔
+
+کیا آپ جاری رکھنا چاہتے ہیں؟</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Device_Slow">
+				<Name>آپ کا آلہ سست چل رہا ہے۔</Name>
+				<Explanation>آپ کا آلہ سست چل رہا ہے۔</Explanation>
+				<Alerte_MSG>عارضی فائلیں اور ری سائیکل بن کا مواد حذف کر دیا جائے گا۔
+
+کیا آپ جاری رکھنا چاہتے ہیں؟</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Intune_Restart">
+				<Name>Intune سروس دوبارہ شروع کریں۔</Name>
+			</Action>
+			<Action Id="Q_Network_Restart">
+				<Name>نیٹ ورک اڈاپٹر کو دوبارہ شروع کریں۔</Name>
+				<Explanation>آپ کو نیٹ ورک کے مسائل ہیں اور آپ نیٹ ورک اڈاپٹر کو دوبارہ شروع کرنا چاہتے ہیں۔ یہ کارروائی مقامی SelfX سروس کے ذریعے منتظم کے حقوق کے ساتھ چلتی ہے۔</Explanation>
+				<Alerte_MSG>تمام نیٹ ورک اڈاپٹر دوبارہ شروع ہو جائیں گے۔ نیٹ ورک تک رسائی میں تھوڑی دیر کے لیے خلل پڑ جائے گا۔
+
+کیا آپ جاری رکھنا چاہتے ہیں؟</Alerte_MSG>
+			</Action>
+			<Action Id="Q_OneDrive_Chkdsk">
+				<Name>مقفل OneDrive فائل کی مرمت کریں۔</Name>
+			</Action>
+			<Action Id="D_Chrome_Cache">
+				<Name>Google Chrome براؤزنگ ڈیٹا (کیشے) کو صاف کریں</Name>
+				<Explanation>ویب سائٹس Google Chrome میں درست طریقے سے لوڈ یا ڈسپلے نہیں ہوتی ہیں۔ تمام کروم پروفائلز کے براؤزر کیش کو صاف کر دیا جائے گا۔</Explanation>
+				<Alerte_MSG>Google Chrome بند ہو جائے گا اور اس کا کیشڈ براؤزنگ ڈیٹا حذف ہو جائے گا۔
+
+کیا آپ جاری رکھنا چاہتے ہیں؟</Alerte_MSG>
+			</Action>
+			<Action Id="D_Firefox_Cache">
+				<Name>فائر فاکس براؤزنگ ڈیٹا (کیشے) کو صاف کریں</Name>
+				<Explanation>ویب سائٹس فائر فاکس میں درست طریقے سے لوڈ یا ڈسپلے نہیں ہوتی ہیں۔ تمام فائر فاکس پروفائلز کے براؤزر کیش کو صاف کر دیا جائے گا۔</Explanation>
+				<Alerte_MSG>فائر فاکس بند ہو جائے گا اور اس کا کیشڈ براؤزنگ ڈیٹا حذف ہو جائے گا۔
+
+کیا آپ جاری رکھنا چاہتے ہیں؟</Alerte_MSG>
+			</Action>
+			<Action Id="D_Outlook_TeamsAddIn">
+				<Name>Outlook میں "Teams میٹنگ" بٹن غائب ہے۔</Name>
+				<Explanation>Outlook میں "نیا Teams میٹنگ" بٹن غائب ہے۔</Explanation>
+				<Alerte_MSG>Outlook بند ہو جائے گا اور پھر خود بخود دوبارہ کھل جائے گا۔ غیر محفوظ شدہ کام ضائع ہو سکتا ہے۔
+
+کیا آپ جاری رکھنا چاہتے ہیں؟</Alerte_MSG>
+			</Action>
+			<Action Id="D_OneDrive_Start">
+				<Name>OneDrive کلائنٹ شروع کریں۔</Name>
+				<Explanation>OneDrive نہیں چل رہا ہے۔</Explanation>
+				<Alerte_MSG>آپ کا OneDrive کلائنٹ شروع ہو جائے گا۔
+
+کیا آپ جاری رکھنا چاہتے ہیں؟</Alerte_MSG>
+			</Action>
+			<Action Id="D_OneDrive_Restart">
+				<Name>OneDrive کلائنٹ کو دوبارہ شروع کریں۔</Name>
+				<Explanation>OneDrive کو دوبارہ شروع کرنے سے کچھ مسائل حل ہو سکتے ہیں، مثال کے طور پر مطابقت پذیری کے مسائل۔</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_Sync_Step1">
+				<Name>OneDrive مطابقت پذیری کے مسائل حل کریں (مرحلہ 1)</Name>
+				<Explanation>آپ کو OneDrive.
+
+میں اپنی فائلوں یا فولڈرز کے ساتھ مطابقت پذیری کے مسائل ہیں یہ پہلا مرحلہ OneDrive کو دوبارہ شروع کرتا ہے۔ OneDrive بند ہو جائے گا اور پھر خود بخود دوبارہ کھل جائے گا۔</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_Error_8004def4">
+				<Name>OneDrive شروع نہیں ہوتا ہے: غلطی 0x8004def4</Name>
+				<Explanation>غلطی 0x8004def4 ظاہر ہوتی ہے جب OneDrive شروع ہوتا ہے۔</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_Memory">
+				<Name>آپ کا آلہ سست ہے: OneDrive بہت زیادہ میموری استعمال کرتا ہے۔</Name>
+				<Explanation>آپ کا آلہ سست چل رہا ہے اور ایسا لگتا ہے کہ OneDrive بہت زیادہ میموری استعمال کرتا ہے۔</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_RedCross">
+				<Name>OneDrive آئیکن پر ریڈ کراس</Name>
+				<Explanation>OneDrive آئیکن پر ایک سرخ کراس ظاہر ہوتا ہے۔</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_ClosesItself">
+				<Name>OneDrive خود بند ہو جاتا ہے۔</Name>
+				<Explanation>OneDrive کھلتا ہے اور پھر خود ہی دوبارہ بند ہوجاتا ہے۔</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_WhiteCross">
+				<Name>OneDrive فائلوں پر سفید کراس</Name>
+				<Explanation>ایک سفید کراس OneDrive فائلوں یا فولڈرز پر ظاہر ہوتا ہے۔</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_PasswordChange">
+				<Name>Windows پاس ورڈ تبدیل کرنے کے بعد OneDrive کے ساتھ مسائل</Name>
+				<Explanation>آپ نے حال ہی میں اپنا پاس ورڈ تبدیل کیا ہے اور اب آپ کو OneDrive کے ساتھ مسائل ہیں، مثال کے طور پر مطابقت پذیری کے مسائل۔
+
+یہ مرحلہ OneDrive کلائنٹ کو دوبارہ شروع کرتا ہے۔</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_CannotOpen">
+				<Name>آپ OneDrive میں فائلیں نہیں کھول سکتے</Name>
+				<Explanation>OneDrive میں محفوظ فائلیں نہیں کھلتی ہیں۔</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_TeamsSync">
+				<Name>فولڈرز OneDrive میں مطابقت پذیر ہوتے ہیں لیکن Teams میں نہیں۔</Name>
+			</Action>
+			<Action Id="D_OneDrive_Reset">
+				<Name>OneDrive کلائنٹ کو دوبارہ ترتیب دیں۔</Name>
+				<Explanation>آپ کو OneDrive کے ساتھ مسائل ہیں، مثال کے طور پر مطابقت پذیری کے مسائل۔
+
+یہ مرحلہ آپ کے OneDrive کلائنٹ کو دوبارہ ترتیب دیتا ہے۔ OneDrive کلائنٹ کو دوبارہ ترتیب دینے سے ڈیٹا کا کوئی نقصان نہیں ہوتا ہے۔</Explanation>
+			</Action>
+			<Action Id="D_Teams_Connection">
+				<Name>Teams کنکشن کے مسائل حل کریں۔</Name>
+				<Explanation>آپ Teams سے منسلک نہیں ہو سکتے۔</Explanation>
+			</Action>
+			<Action Id="D_Teams_ProfilePicture">
+				<Name>Teams پروفائل تصویر کی مطابقت پذیری کو حل کریں۔</Name>
+				<Explanation>آپ کی پروفائل تصویر Teams میں ظاہر نہیں ہوتی ہے یا اپ ڈیٹ نہیں ہوتی ہے۔</Explanation>
+			</Action>
+			<Action Id="D_Teams_OneDriveSync">
+				<Name>فولڈرز OneDrive میں مطابقت پذیر ہوتے ہیں لیکن Teams میں نہیں۔</Name>
+			</Action>
+			<Action Id="D_Teams_Loading">
+				<Name>Teams "Microsoft Teams لوڈ ہو رہا ہے" پر پھنس گیا ہے</Name>
+				<Explanation>جب آپ Teams کھولتے ہیں، تو ونڈو "Microsoft Teams لوڈ ہو رہی ہے" پر پھنس جاتی ہے۔</Explanation>
+			</Action>
+			<Action Id="D_Teams_Sync">
+				<Name>Teams مطابقت پذیری کے مسائل حل کریں۔</Name>
+				<Explanation>آپ کو Teams میں مطابقت پذیری کے مسائل ہیں۔</Explanation>
+			</Action>
+			<Action Id="D_Teams_DoesNotOpen">
+				<Name>میرا Teams کلائنٹ نہیں کھلتا ہے۔</Name>
+				<Explanation>آپ Teams کھولنے کی کوشش کرتے ہیں، لیکن کلائنٹ نہیں کھلتا۔</Explanation>
+			</Action>
+			<Action Id="D_Teams_AudioFreeze">
+				<Name>میرا Teams کلائنٹ آڈیو کالز کے دوران جم جاتا ہے۔</Name>
+				<Explanation>Teams آڈیو کال کے دوران جم جاتا ہے۔</Explanation>
+			</Action>
+			<Action Id="D_Teams_Camera">
+				<Name>Teams کیمرا منجمد ہے یا نظر نہیں آتا</Name>
+				<Explanation>آپ کا ویڈیو منجمد ہے یا میٹنگ یا کال کے دوران نظر نہیں آتا۔</Explanation>
+			</Action>
+			<Action Id="D_Teams_SendFailed">
+				<Name>Teams پیغامات نہیں بھیجے جا سکتے</Name>
+				<Explanation>Teams میں پیغامات نہیں بھیجے جاتے ہیں اور Teams "بھیجنے میں ناکام" دکھاتا ہے۔</Explanation>
+			</Action>
+			<Action Id="D_Teams_MeetingDisplay">
+				<Name>Teams میٹنگ میں شامل ہونے پر مسائل دکھائیں۔</Name>
+				<Explanation>جب آپ میٹنگ میں شامل ہوتے ہیں تو Teams درست طریقے سے ظاہر نہیں ہوتا ہے۔</Explanation>
+			</Action>
+			<Action Id="D_Teams_NoConnect">
+				<Name>میرا Teams کلائنٹ کھلتا ہے لیکن کنیکٹ نہیں ہوتا ہے۔</Name>
+				<Explanation>Teams کھلتا ہے، لیکن یہ مربوط نہیں ہوتا ہے۔</Explanation>
+			</Action>
+			<Action Id="D_Teams_StatusOffline">
+				<Name>میرا Teams اسٹیٹس آف لائن رہتا ہے۔</Name>
+				<Explanation>Teams میں آپ کی حیثیت "آف لائن" رہتی ہے حالانکہ آپ سائن ان ہیں۔</Explanation>
+			</Action>
+			<Action Id="D_Teams_CallWindow">
+				<Name>Teams کال ونڈو ظاہر نہیں ہے۔</Name>
+				<Explanation>آنے والی Teams کالوں کی اطلاعات اب ظاہر نہیں ہوتی ہیں۔</Explanation>
+			</Action>
+			<Action Id="D_Teams_MessageContent">
+				<Name>میں Teams میں کسی پیغام کا مواد نہیں دیکھ سکتا</Name>
+				<Explanation>آپ پیغام کی اطلاع اور پیش نظارہ دیکھتے ہیں، لیکن پیغام کا مواد نہیں۔</Explanation>
+			</Action>
+			<Action Id="D_Teams_PasswordChange">
+				<Name>پاس ورڈ تبدیل کرنے کے بعد کنکشن کے مسائل</Name>
+				<Explanation>آپ اپنا پاس ورڈ تبدیل کرنے کے بعد Teams سے رابطہ نہیں کر سکتے۔</Explanation>
+			</Action>
+			<Action Id="D_Teams_Tabs">
+				<Name>Teams میں ٹیبز لوڈ نہیں ہوتے ہیں۔</Name>
+				<Explanation>جب آپ Teams میں ٹیبز کھولتے ہیں، تو وہ صحیح طریقے سے لوڈ نہیں ہوتے ہیں۔</Explanation>
+			</Action>
+			<Action Id="D_Teams_StatusWrong">
+				<Name>میری Teams کی حیثیت درست نہیں ہے۔</Name>
+				<Explanation>Teams میں آپ کی حیثیت درست نہیں ہے یا اپ ڈیٹ نہیں کی گئی ہے۔</Explanation>
+			</Action>
+			<Action Id="D_Teams_MeetingOpen">
+				<Name>میں Teams میٹنگ نہیں کھول سکتا</Name>
+				<Explanation>جب آپ شامل ہونے کے لیے لنک پر کلک کرتے ہیں تو Teams میٹنگز نہیں کھلتی ہیں۔</Explanation>
+			</Action>
+			<Action Id="D_Teams_SoundCuts">
+				<Name>Teams میٹنگز کے دوران آواز کٹ جاتی ہے۔</Name>
+				<Explanation>Teams میٹنگز کے دوران آواز کٹ جاتی ہے۔</Explanation>
+			</Action>
+			<Action Id="D_Teams_OutlookMeeting">
+				<Name>میں Outlook کیلنڈر میں Teams میٹنگ نہیں بنا سکتا</Name>
+				<Explanation>آپ Outlook کیلنڈر سے Teams میٹنگ نہیں بنا سکتے۔</Explanation>
+			</Action>
+			<Action Id="D_Intune_Sync">
+				<Name>ایک Intune مطابقت پذیری کو مجبور کریں۔</Name>
+			</Action>
+			<Action Id="D_OneDrive_Chkdsk">
+				<Name>OneDrive کی خرابیوں کے لیے ڈسک چیک کریں (chkdsk)</Name>
+			</Action>
+			<Action Id="D_OneDrive_ReparsePoint">
+				<Name>ریپرس پوائنٹ بفر میں موجود ٹیگ غلط ہے۔</Name>
+			</Action>
+			<Action Id="D_OneDrive_Error_80071129">
+				<Name>خرابی 0x80071129</Name>
+			</Action>
+			<Action Id="Q_Device_SendLogs">
+				<Name>ڈیوائس لاگز سپورٹ ٹیم کو بھیجیں</Name>
+			</Action>
+			<Action Id="D_Device_SendLogs">
+				<Name>ڈیوائس لاگز جمع کریں اور ای میل کے ذریعے سپورٹ ٹیم کو بھیجیں</Name>
+			</Action>
+		</Actions>
+	</Catalog>
+</SelfX_Language>

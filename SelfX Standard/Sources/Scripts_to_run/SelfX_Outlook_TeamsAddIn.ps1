@@ -8,8 +8,3 @@ While (Get-Process outlook)
 }
 
 start-process outlook
-
-$Global:Current_Folder = split-path $MyInvocation.MyCommand.Path
-$Args = "$Current_Folder\AutoDepannage_Notification.ps1", "-Category 'Outlook'"
-Start-Process -WindowStyle hidden "powershell.exe" -ArgumentList $Args
-

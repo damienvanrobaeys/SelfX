@@ -317,7 +317,7 @@ $Close_Button_Text = $GUI_Config.Close_Button_Text
 If($Show_Computer_Name -eq $True)
 	{
 		# $Main_Title.Content = $GUI_Config.Main_Title_Text + " " + "($env:computername)"	+ " ?"
-		$Main_Title.Content = $GUI_Config.Main_Title_Text + " " + "Device1"	+ " ?"		
+		$Main_Title.Content = $GUI_Config.Main_Title_Text + " " + "($env:COMPUTERNAME)" + " ?"
 	}
 Else
 	{

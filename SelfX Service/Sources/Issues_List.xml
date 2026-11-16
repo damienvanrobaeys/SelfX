@@ -1,0 +1,658 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+	SelfX Service - action catalogue
+
+	Description:
+	  List of the actions shown in the Troubleshooting tab. Quick_Solution is the "Simplified view",
+	  Detailed_Solution the "Detailed view". The texts in this file are the English base texts.
+	  Translations are stored in Languages\<culture>.xml and are matched by the Id of an action or message.
+	  If a translation is missing, the English text from this file is shown.
+
+	Fields of an action:
+	  Id             Unique, stable key of the action. Used by the language files. Do not change it after release.
+	  Name           Title of the action in the list.
+	  Buttons        Buttons of the confirmation dialog: Ok_Cancel, Yes_No or OK. The labels come from the language file.
+	  Explanation    Text shown by the green "more info" button. Ref="<Message Id>" uses a shared text from <Messages>.
+	  Script         Script in Scripts_to_run that is started.
+	  Context        User   = started by the GUI as the signed-in user.
+	                 System = run as LOCAL SYSTEM by the local SelfX service. Only these entries are allowed by the service.
+	  TimeoutSeconds Only for Context System. The service stops the script after this time (default 900, maximum 7200).
+	  Post_Action    Optional. MailReport = after a successful System action the GUI attaches the newest report of the user
+	                 (ProgramData\SelfX\Reports\<user SID>) to a new e-mail to Support_Mail (Outlook, otherwise mail app + Explorer).
+	                 The first System action with MailReport is also offered as "Send logs to support" in System information.
+	  Category       Category Id (Teams, Office, OneDrive, Outlook, Device, Intune, Browser). The display name comes from the language file.
+	  Alerte_MSG     Confirmation text shown before the script runs. Ref="<Message Id>" uses a shared text from <Messages>.
+
+	History:
+	  Version  Date        Author               Change
+	  1.0.0    2022-10-04  Damien Van Robaeys   Initial version
+	  2.0.0    2026-10-28  Wolfgang Baeck       Merged SelfX Standard and SelfX Admin actions, added Context and TimeoutSeconds
+	  2.2.0    2026-10-28  Wolfgang Baeck       Added Id and shared messages for translations, all base texts in English
+	  2.4.0    2026-11-02  Wolfgang Baeck       Post_Action field; send device logs to the support (Collect-DeviceLogs.ps1)
+-->
+<Actions>
+	<XML_Version>2.4.0</XML_Version>
+
+	<!-- Shared texts. Actions reference them with Ref="<Id>" so that a text is written and translated only once. -->
+	<Messages>
+		<Message Id="Msg_Teams_Restart">Teams will close and then open again automatically.
+
+If the issue persists, sign out of Teams and sign in again. If it still persists after that, please contact your support.
+
+Do you want to continue?</Message>
+		<Message Id="Msg_Teams_Restart_Short">Teams will close and then open again automatically.
+
+Do you want to continue?</Message>
+		<Message Id="Msg_OneDrive_Restart">OneDrive will close and then open again automatically.
+
+Do you want to continue?</Message>
+		<Message Id="Msg_OneDrive_Restart_Step1">This first step restarts OneDrive. OneDrive will close and then open again automatically.
+
+If the issue persists, run the action "Reset the OneDrive client".
+
+Do you want to continue?</Message>
+		<Message Id="Msg_OneDrive_Reset">Your OneDrive client will be reset. Resetting the OneDrive client does not cause any data loss.
+
+If the issue persists afterwards, please contact your support.
+
+Do you want to continue?</Message>
+		<Message Id="Msg_OneDrive_Teams_Sync">Folders are synchronized in OneDrive, but files shared in Teams are not synchronized.</Message>
+		<Message Id="Msg_Intune_Sync_Explanation">You want to force a synchronization between your device and Intune, for example to speed up the deployment of policies or applications. This action runs with administrator rights through the local SelfX service.</Message>
+		<Message Id="Msg_Intune_Restart">The Intune Management Extension service will be restarted in the background. Try again in a few minutes.
+
+Do you want to continue?</Message>
+		<Message Id="Msg_Chkdsk_Explanation">You have issues with OneDrive and get the error "0x80071129: The tag present in the reparse point buffer is invalid". This action runs with administrator rights through the local SelfX service.</Message>
+		<Message Id="Msg_Chkdsk">A disk check will be scheduled for the next restart of your device. Restart your device afterwards. The check can take several minutes.
+
+Do you want to continue?</Message>
+		<Message Id="Msg_SendLogs_Explanation">The support needs the logs of your device to analyze an issue, for example a failed app installation, a failed setup or an error message. This action collects all relevant logs and system information with administrator rights through the local SelfX service and opens a new e-mail to the support with the report attached. Nothing is sent automatically.</Message>
+		<Message Id="Msg_SendLogs">SelfX now collects the logs of your device. This can take several minutes. Nothing on your device is changed.
+
+The report contains the name of your device and your user name. When it is ready, a new e-mail with the report attached opens. Describe your issue and send the e-mail to the support.
+
+Do you want to continue?</Message>
+	</Messages>
+
+	<Quick_Solution>
+		<Action Id="Q_Teams">
+			<Name>Solve an issue with Teams</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation>You are experiencing an issue with the Teams client (slowness, incorrect status, transfer error, etc.).</Explanation>
+			<Script>SelfX_Teams_ResetCache.ps1</Script>
+			<Context>User</Context>
+			<Category>Teams</Category>
+			<Alerte_MSG>Teams will close and its local cache folders will be cleared. Save any open work before continuing. Teams will reopen if it was running.
+
+Do you want to continue?</Alerte_MSG>
+		</Action>
+
+		<Action Id="Q_Word">
+			<Name>Solve an issue with Word</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation>You are working in Word, but it has stopped responding and you can no longer do anything.</Explanation>
+			<Script>SelfX_Word_Reboot.ps1</Script>
+			<Context>User</Context>
+			<Category>Office</Category>
+			<Alerte_MSG>Word will close and reopen automatically. Unsaved work may be lost.
+
+Do you want to continue?</Alerte_MSG>
+		</Action>
+
+		<Action Id="Q_Excel">
+			<Name>Solve an issue with Excel</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation>You are working in Excel, but it has stopped responding and you can no longer do anything.</Explanation>
+			<Script>SelfX_Excel_Reboot.ps1</Script>
+			<Context>User</Context>
+			<Category>Office</Category>
+			<Alerte_MSG>Excel will close and reopen automatically. Unsaved work may be lost.
+
+Do you want to continue?</Alerte_MSG>
+		</Action>
+
+		<Action Id="Q_Store">
+			<Name>Solve an issue with the Microsoft Store</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation>You have issues with the Microsoft Store (opening the Store, installing apps, etc.).</Explanation>
+			<Script>SelfX_Poste_WSReset.ps1</Script>
+			<Context>User</Context>
+			<Category>Device</Category>
+			<Alerte_MSG>The Microsoft Store cache will be reset and the Store will open.
+
+Do you want to continue?</Alerte_MSG>
+		</Action>
+
+		<Action Id="Q_OneDrive_Restart">
+			<Name>Solve an issue with OneDrive (method 1)</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation>You are experiencing issues with the OneDrive client (file or folder synchronization, opening files, etc.).</Explanation>
+			<Script>SelfX_OneDrive_Reboot.ps1</Script>
+			<Context>User</Context>
+			<Category>OneDrive</Category>
+			<Alerte_MSG>OneDrive will close and reopen automatically.
+
+If the issue persists, use method 2.
+
+Do you want to continue?</Alerte_MSG>
+		</Action>
+
+		<Action Id="Q_OneDrive_Reset">
+			<Name>Solve an issue with OneDrive (method 2)</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation>You are experiencing issues with the OneDrive client (file or folder synchronization, opening files, etc.) and have already tried method 1.</Explanation>
+			<Script>SelfX_OneDrive_Reset.ps1</Script>
+			<Context>User</Context>
+			<Category>OneDrive</Category>
+			<Alerte_MSG Ref="Msg_OneDrive_Reset"/>
+		</Action>
+
+		<Action Id="Q_Outlook_TeamsAddIn">
+			<Name>The "Teams meeting" button is missing in Outlook</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation>The "New Teams meeting" button is missing in Outlook.</Explanation>
+			<Script>SelfX_Outlook_TeamsAddIn.ps1</Script>
+			<Context>User</Context>
+			<Category>Outlook</Category>
+			<Alerte_MSG>The Teams meeting add-in will be enabled again. Outlook will close and reopen automatically. Unsaved work may be lost.
+
+If the issue persists, please contact your support.
+
+Do you want to continue?</Alerte_MSG>
+		</Action>
+
+		<Action Id="Q_Device_Connection">
+			<Name>You have connection issues on your device</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation>You are trying to open a website, but the connection does not work, the site cannot be reached or you get errors.</Explanation>
+			<Script>SelfX_Device_ClearCache.ps1</Script>
+			<Context>User</Context>
+			<Category>Device</Category>
+			<Alerte_MSG>The DNS cache of your device will be cleared in the background. Try again after clicking OK.
+
+Do you want to continue?</Alerte_MSG>
+		</Action>
+
+		<Action Id="Q_Device_Slow">
+			<Name>Your device is running slow</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation>Your device is running slow.</Explanation>
+			<Script>SelfX_Device_DeviceSlow.ps1</Script>
+			<Context>User</Context>
+			<Category>Device</Category>
+			<Alerte_MSG>Temporary files and the content of the recycle bin will be deleted.
+
+Do you want to continue?</Alerte_MSG>
+		</Action>
+
+		<Action Id="Q_Intune_Restart">
+			<Name>Restart the Intune service</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation Ref="Msg_Intune_Sync_Explanation"/>
+			<Script>SelfX_Intune_RestartService.ps1</Script>
+			<Context>System</Context>
+			<TimeoutSeconds>300</TimeoutSeconds>
+			<Category>Intune</Category>
+			<Alerte_MSG Ref="Msg_Intune_Restart"/>
+		</Action>
+
+		<Action Id="Q_Network_Restart">
+			<Name>Restart the network adapters</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation>You have network issues and want to restart the network adapters. This action runs with administrator rights through the local SelfX service.</Explanation>
+			<Script>SelfX_Device_AirePlaneMode.ps1</Script>
+			<Context>System</Context>
+			<TimeoutSeconds>300</TimeoutSeconds>
+			<Category>Device</Category>
+			<Alerte_MSG>All network adapters will be restarted. Network access will be interrupted for a short time.
+
+Do you want to continue?</Alerte_MSG>
+		</Action>
+
+		<Action Id="Q_OneDrive_Chkdsk">
+			<Name>Repair a locked OneDrive file</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation Ref="Msg_Chkdsk_Explanation"/>
+			<Script>SelfX_OneDrive_CHKDSK.ps1</Script>
+			<Context>System</Context>
+			<TimeoutSeconds>600</TimeoutSeconds>
+			<Category>OneDrive</Category>
+			<Alerte_MSG Ref="Msg_Chkdsk"/>
+		</Action>
+
+		<Action Id="Q_Device_SendLogs">
+			<Name>Send the device logs to the support</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation Ref="Msg_SendLogs_Explanation"/>
+			<Script>SelfX_Device_CollectLogs.ps1</Script>
+			<Context>System</Context>
+			<TimeoutSeconds>1800</TimeoutSeconds>
+			<Post_Action>MailReport</Post_Action>
+			<Category>Device</Category>
+			<Alerte_MSG Ref="Msg_SendLogs"/>
+		</Action>
+	</Quick_Solution>
+
+	<Detailed_Solution>
+		<Action Id="D_Chrome_Cache">
+			<Name>Clear Google Chrome browsing data (cache)</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation>Websites do not load or display correctly in Google Chrome. The browser cache of all Chrome profiles will be cleared.</Explanation>
+			<Script>SelfX_Browser_ClearChromeCache.ps1</Script>
+			<Context>User</Context>
+			<Category>Browser</Category>
+			<Alerte_MSG>Google Chrome will close and its cached browsing data will be deleted.
+
+Do you want to continue?</Alerte_MSG>
+		</Action>
+
+		<Action Id="D_Firefox_Cache">
+			<Name>Clear Firefox browsing data (cache)</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation>Websites do not load or display correctly in Firefox. The browser cache of all Firefox profiles will be cleared.</Explanation>
+			<Script>SelfX_Browser_ClearFirefoxCache.ps1</Script>
+			<Context>User</Context>
+			<Category>Browser</Category>
+			<Alerte_MSG>Firefox will close and its cached browsing data will be deleted.
+
+Do you want to continue?</Alerte_MSG>
+		</Action>
+
+		<Action Id="D_Outlook_TeamsAddIn">
+			<Name>The "Teams meeting" button is missing in Outlook</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation>The "New Teams meeting" button is missing in Outlook.</Explanation>
+			<Script>SelfX_Outlook_TeamsAddIn.ps1</Script>
+			<Context>User</Context>
+			<Category>Outlook</Category>
+			<Alerte_MSG>Outlook will close and then open again automatically. Unsaved work may be lost.
+
+Do you want to continue?</Alerte_MSG>
+		</Action>
+
+		<Action Id="D_OneDrive_Start">
+			<Name>Start the OneDrive client</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation>OneDrive is not running.</Explanation>
+			<Script>SelfX_OneDrive_Run.ps1</Script>
+			<Context>User</Context>
+			<Category>OneDrive</Category>
+			<Alerte_MSG>Your OneDrive client will be started.
+
+Do you want to continue?</Alerte_MSG>
+		</Action>
+
+		<Action Id="D_OneDrive_Restart">
+			<Name>Restart the OneDrive client</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation>Restarting OneDrive can solve some issues, for example synchronization issues.</Explanation>
+			<Script>SelfX_OneDrive_Reboot.ps1</Script>
+			<Context>User</Context>
+			<Category>OneDrive</Category>
+			<Alerte_MSG Ref="Msg_OneDrive_Restart"/>
+		</Action>
+
+		<Action Id="D_OneDrive_Sync_Step1">
+			<Name>Solve OneDrive synchronization issues (step 1)</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation>You have synchronization issues with your files or folders in OneDrive.
+
+This first step restarts OneDrive. OneDrive will close and then open again automatically.
+
+If the issue persists, run the action "Reset the OneDrive client".</Explanation>
+			<Script>SelfX_OneDrive_Reboot.ps1</Script>
+			<Context>User</Context>
+			<Category>OneDrive</Category>
+			<Alerte_MSG Ref="Msg_OneDrive_Restart_Step1"/>
+		</Action>
+
+		<Action Id="D_OneDrive_Error_8004def4">
+			<Name>OneDrive does not start: error 0x8004def4</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation>The error 0x8004def4 is displayed when OneDrive starts.</Explanation>
+			<Script>SelfX_OneDrive_Reset.ps1</Script>
+			<Context>User</Context>
+			<Category>OneDrive</Category>
+			<Alerte_MSG Ref="Msg_OneDrive_Reset"/>
+		</Action>
+
+		<Action Id="D_OneDrive_Memory">
+			<Name>Your device is slow: OneDrive uses a lot of memory</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation>Your device is running slow and OneDrive seems to use a lot of memory.</Explanation>
+			<Script>SelfX_OneDrive_Reset.ps1</Script>
+			<Context>User</Context>
+			<Category>OneDrive</Category>
+			<Alerte_MSG Ref="Msg_OneDrive_Reset"/>
+		</Action>
+
+		<Action Id="D_OneDrive_RedCross">
+			<Name>Red cross on the OneDrive icon</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation>A red cross is displayed on the OneDrive icon.</Explanation>
+			<Script>SelfX_OneDrive_Reboot.ps1</Script>
+			<Context>User</Context>
+			<Category>OneDrive</Category>
+			<Alerte_MSG Ref="Msg_OneDrive_Restart_Step1"/>
+		</Action>
+
+		<Action Id="D_OneDrive_ClosesItself">
+			<Name>OneDrive closes by itself</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation>OneDrive opens and then closes again by itself.</Explanation>
+			<Script>SelfX_OneDrive_Reboot.ps1</Script>
+			<Context>User</Context>
+			<Category>OneDrive</Category>
+			<Alerte_MSG Ref="Msg_OneDrive_Restart_Step1"/>
+		</Action>
+
+		<Action Id="D_OneDrive_WhiteCross">
+			<Name>White cross on OneDrive files</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation>A white cross is displayed on OneDrive files or folders.</Explanation>
+			<Script>SelfX_OneDrive_Reboot.ps1</Script>
+			<Context>User</Context>
+			<Category>OneDrive</Category>
+			<Alerte_MSG Ref="Msg_OneDrive_Restart_Step1"/>
+		</Action>
+
+		<Action Id="D_OneDrive_PasswordChange">
+			<Name>Issues with OneDrive after changing the Windows password</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation>You changed your password recently and now you have issues with OneDrive, for example synchronization issues.
+
+This step restarts the OneDrive client.</Explanation>
+			<Script>SelfX_OneDrive_Reboot.ps1</Script>
+			<Context>User</Context>
+			<Category>OneDrive</Category>
+			<Alerte_MSG Ref="Msg_OneDrive_Restart_Step1"/>
+		</Action>
+
+		<Action Id="D_OneDrive_CannotOpen">
+			<Name>You cannot open files in OneDrive</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation>Files stored in OneDrive do not open.</Explanation>
+			<Script>SelfX_OneDrive_Reboot.ps1</Script>
+			<Context>User</Context>
+			<Category>OneDrive</Category>
+			<Alerte_MSG Ref="Msg_OneDrive_Restart_Step1"/>
+		</Action>
+
+		<Action Id="D_OneDrive_TeamsSync">
+			<Name>Folders synchronize in OneDrive but not in Teams</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation Ref="Msg_OneDrive_Teams_Sync"/>
+			<Script>SelfX_OneDrive_Reset.ps1</Script>
+			<Context>User</Context>
+			<Category>OneDrive</Category>
+			<Alerte_MSG Ref="Msg_OneDrive_Reset"/>
+		</Action>
+
+		<Action Id="D_OneDrive_Reset">
+			<Name>Reset the OneDrive client</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation>You have issues with OneDrive, for example synchronization issues.
+
+This step resets your OneDrive client. Resetting the OneDrive client does not cause any data loss.</Explanation>
+			<Script>SelfX_OneDrive_Reset.ps1</Script>
+			<Context>User</Context>
+			<Category>OneDrive</Category>
+			<Alerte_MSG Ref="Msg_OneDrive_Reset"/>
+		</Action>
+
+		<Action Id="D_Teams_Connection">
+			<Name>Solve Teams connection issues</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation>You cannot connect to Teams.</Explanation>
+			<Script>SelfX_Teams_ResetCache.ps1</Script>
+			<Context>User</Context>
+			<Category>Teams</Category>
+			<Alerte_MSG Ref="Msg_Teams_Restart"/>
+		</Action>
+
+		<Action Id="D_Teams_ProfilePicture">
+			<Name>Solve Teams profile picture synchronization</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation>Your profile picture is not displayed in Teams or is not updated.</Explanation>
+			<Script>SelfX_Teams_ResetCache.ps1</Script>
+			<Context>User</Context>
+			<Category>Teams</Category>
+			<Alerte_MSG Ref="Msg_Teams_Restart"/>
+		</Action>
+
+		<Action Id="D_Teams_OneDriveSync">
+			<Name>Folders synchronize in OneDrive but not in Teams</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation Ref="Msg_OneDrive_Teams_Sync"/>
+			<Script>SelfX_OneDrive_Reset.ps1</Script>
+			<Context>User</Context>
+			<Category>Teams</Category>
+			<Alerte_MSG Ref="Msg_OneDrive_Reset"/>
+		</Action>
+
+		<Action Id="D_Teams_Loading">
+			<Name>Teams is stuck on "Loading Microsoft Teams"</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation>When you open Teams, the window is stuck on "Loading Microsoft Teams".</Explanation>
+			<Script>SelfX_Teams_ResetCache.ps1</Script>
+			<Context>User</Context>
+			<Category>Teams</Category>
+			<Alerte_MSG Ref="Msg_Teams_Restart"/>
+		</Action>
+
+		<Action Id="D_Teams_Sync">
+			<Name>Solve Teams synchronization issues</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation>You have synchronization issues in Teams.</Explanation>
+			<Script>SelfX_Teams_ResetCache.ps1</Script>
+			<Context>User</Context>
+			<Category>Teams</Category>
+			<Alerte_MSG Ref="Msg_Teams_Restart"/>
+		</Action>
+
+		<Action Id="D_Teams_DoesNotOpen">
+			<Name>My Teams client does not open</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation>You try to open Teams, but the client does not open.</Explanation>
+			<Script>SelfX_Teams_ResetCache.ps1</Script>
+			<Context>User</Context>
+			<Category>Teams</Category>
+			<Alerte_MSG Ref="Msg_Teams_Restart"/>
+		</Action>
+
+		<Action Id="D_Teams_AudioFreeze">
+			<Name>My Teams client freezes during audio calls</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation>Teams freezes during an audio call.</Explanation>
+			<Script>SelfX_Teams_ResetCache.ps1</Script>
+			<Context>User</Context>
+			<Category>Teams</Category>
+			<Alerte_MSG Ref="Msg_Teams_Restart"/>
+		</Action>
+
+		<Action Id="D_Teams_Camera">
+			<Name>The Teams camera is frozen or not visible</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation>Your video is frozen or not visible during a meeting or call.</Explanation>
+			<Script>SelfX_Teams_ResetCache.ps1</Script>
+			<Context>User</Context>
+			<Category>Teams</Category>
+			<Alerte_MSG Ref="Msg_Teams_Restart_Short"/>
+		</Action>
+
+		<Action Id="D_Teams_SendFailed">
+			<Name>Teams messages cannot be sent</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation>Messages in Teams are not sent and Teams shows "Failed to send".</Explanation>
+			<Script>SelfX_Teams_ResetCache.ps1</Script>
+			<Context>User</Context>
+			<Category>Teams</Category>
+			<Alerte_MSG Ref="Msg_Teams_Restart"/>
+		</Action>
+
+		<Action Id="D_Teams_MeetingDisplay">
+			<Name>Display issues when joining a Teams meeting</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation>Teams does not display correctly when you join a meeting.</Explanation>
+			<Script>SelfX_Teams_ResetCache.ps1</Script>
+			<Context>User</Context>
+			<Category>Teams</Category>
+			<Alerte_MSG Ref="Msg_Teams_Restart"/>
+		</Action>
+
+		<Action Id="D_Teams_NoConnect">
+			<Name>My Teams client opens but does not connect</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation>Teams opens, but it does not connect.</Explanation>
+			<Script>SelfX_Teams_ResetCache.ps1</Script>
+			<Context>User</Context>
+			<Category>Teams</Category>
+			<Alerte_MSG Ref="Msg_Teams_Restart"/>
+		</Action>
+
+		<Action Id="D_Teams_StatusOffline">
+			<Name>My Teams status stays offline</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation>Your status in Teams stays "Offline" although you are signed in.</Explanation>
+			<Script>SelfX_Teams_ResetCache.ps1</Script>
+			<Context>User</Context>
+			<Category>Teams</Category>
+			<Alerte_MSG Ref="Msg_Teams_Restart"/>
+		</Action>
+
+		<Action Id="D_Teams_CallWindow">
+			<Name>The Teams call window is not displayed</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation>Notifications of incoming Teams calls are no longer displayed.</Explanation>
+			<Script>SelfX_Teams_ResetCache.ps1</Script>
+			<Context>User</Context>
+			<Category>Teams</Category>
+			<Alerte_MSG Ref="Msg_Teams_Restart"/>
+		</Action>
+
+		<Action Id="D_Teams_MessageContent">
+			<Name>I cannot see the content of a message in Teams</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation>You see the message notification and preview, but not the content of the message.</Explanation>
+			<Script>SelfX_Teams_ResetCache.ps1</Script>
+			<Context>User</Context>
+			<Category>Teams</Category>
+			<Alerte_MSG Ref="Msg_Teams_Restart"/>
+		</Action>
+
+		<Action Id="D_Teams_PasswordChange">
+			<Name>Connection issues after changing the password</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation>You cannot connect to Teams after changing your password.</Explanation>
+			<Script>SelfX_Teams_ResetCache.ps1</Script>
+			<Context>User</Context>
+			<Category>Teams</Category>
+			<Alerte_MSG Ref="Msg_Teams_Restart"/>
+		</Action>
+
+		<Action Id="D_Teams_Tabs">
+			<Name>Tabs in Teams do not load</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation>When you open tabs in Teams, they do not load correctly.</Explanation>
+			<Script>SelfX_Teams_ResetCache.ps1</Script>
+			<Context>User</Context>
+			<Category>Teams</Category>
+			<Alerte_MSG Ref="Msg_Teams_Restart"/>
+		</Action>
+
+		<Action Id="D_Teams_StatusWrong">
+			<Name>My Teams status is not correct</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation>Your status in Teams is not correct or is not updated.</Explanation>
+			<Script>SelfX_Teams_ResetCache.ps1</Script>
+			<Context>User</Context>
+			<Category>Teams</Category>
+			<Alerte_MSG Ref="Msg_Teams_Restart"/>
+		</Action>
+
+		<Action Id="D_Teams_MeetingOpen">
+			<Name>I cannot open a Teams meeting</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation>Teams meetings do not open when you click the link to join.</Explanation>
+			<Script>SelfX_Teams_ResetCache.ps1</Script>
+			<Context>User</Context>
+			<Category>Teams</Category>
+			<Alerte_MSG Ref="Msg_Teams_Restart"/>
+		</Action>
+
+		<Action Id="D_Teams_SoundCuts">
+			<Name>Sound cuts out during Teams meetings</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation>The sound cuts out during Teams meetings.</Explanation>
+			<Script>SelfX_Teams_ResetCache.ps1</Script>
+			<Context>User</Context>
+			<Category>Teams</Category>
+			<Alerte_MSG Ref="Msg_Teams_Restart"/>
+		</Action>
+
+		<Action Id="D_Teams_OutlookMeeting">
+			<Name>I cannot create a Teams meeting in the Outlook calendar</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation>You cannot create a Teams meeting from the Outlook calendar.</Explanation>
+			<Script>SelfX_Teams_ResetCache.ps1</Script>
+			<Context>User</Context>
+			<Category>Teams</Category>
+			<Alerte_MSG Ref="Msg_Teams_Restart"/>
+		</Action>
+
+		<Action Id="D_Intune_Sync">
+			<Name>Force an Intune synchronization</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation Ref="Msg_Intune_Sync_Explanation"/>
+			<Script>SelfX_Intune_RestartService.ps1</Script>
+			<Context>System</Context>
+			<TimeoutSeconds>300</TimeoutSeconds>
+			<Category>Intune</Category>
+			<Alerte_MSG Ref="Msg_Intune_Restart"/>
+		</Action>
+
+		<Action Id="D_OneDrive_Chkdsk">
+			<Name>Check the disk for OneDrive errors (chkdsk)</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation Ref="Msg_Chkdsk_Explanation"/>
+			<Script>SelfX_OneDrive_CHKDSK.ps1</Script>
+			<Context>System</Context>
+			<TimeoutSeconds>600</TimeoutSeconds>
+			<Category>OneDrive</Category>
+			<Alerte_MSG Ref="Msg_Chkdsk"/>
+		</Action>
+
+		<Action Id="D_OneDrive_ReparsePoint">
+			<Name>The tag present in the reparse point buffer is invalid</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation Ref="Msg_Chkdsk_Explanation"/>
+			<Script>SelfX_OneDrive_CHKDSK.ps1</Script>
+			<Context>System</Context>
+			<TimeoutSeconds>600</TimeoutSeconds>
+			<Category>OneDrive</Category>
+			<Alerte_MSG Ref="Msg_Chkdsk"/>
+		</Action>
+
+		<Action Id="D_OneDrive_Error_80071129">
+			<Name>Error 0x80071129</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation Ref="Msg_Chkdsk_Explanation"/>
+			<Script>SelfX_OneDrive_CHKDSK.ps1</Script>
+			<Context>System</Context>
+			<TimeoutSeconds>600</TimeoutSeconds>
+			<Category>OneDrive</Category>
+			<Alerte_MSG Ref="Msg_Chkdsk"/>
+		</Action>
+
+		<Action Id="D_Device_SendLogs">
+			<Name>Collect the device logs and send them to the support by e-mail</Name>
+			<Buttons>Ok_Cancel</Buttons>
+			<Explanation Ref="Msg_SendLogs_Explanation"/>
+			<Script>SelfX_Device_CollectLogs.ps1</Script>
+			<Context>System</Context>
+			<TimeoutSeconds>1800</TimeoutSeconds>
+			<Post_Action>MailReport</Post_Action>
+			<Category>Device</Category>
+			<Alerte_MSG Ref="Msg_SendLogs"/>
+		</Action>
+	</Detailed_Solution>
+</Actions>

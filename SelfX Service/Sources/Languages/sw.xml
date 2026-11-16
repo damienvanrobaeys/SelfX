@@ -1,0 +1,563 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+	SelfX Service - language file
+
+	Description:
+	  Texts of the SelfX user interface in one language. SelfX selects the file that matches the Windows
+	  display language of the user (for example de-CH -> de.xml, zh-TW -> zh-Hant.xml). If no file matches,
+	  en.xml is used. A text that is missing or empty in a language file is taken from en.xml.
+
+	Add a language:
+	  1. Copy en.xml to <culture>.xml. Use the neutral culture name (de, fr, pt) or a script/region name
+	     (zh-Hans, zh-Hant, pt-BR). Windows tries the exact culture first and then its parents.
+	  2. Set Culture, Name, NativeName and FlowDirection (RightToLeft for Arabic, Persian, Urdu, Hebrew ...).
+	  3. Translate the element texts. Do not change element names or Id attributes.
+	     Keep placeholders such as {0}, {1}, {1:D2} and the "|" separators of SystemInfo_Export_Filter.
+	  4. Catalogue texts: add an <Action Id="..."> entry per action and a <Message Id="..."> entry per shared
+	     message. The English base texts are in Issues_List.xml. Untranslated actions are shown in English.
+
+	History:
+	  Version  Date        Author               Change
+	  2.2.0    2026-10-28  Wolfgang Baeck       Initial version: multilingual user interface
+-->
+<SelfX_Language Culture="sw" Name="Swahili" NativeName="Kiswahili" FlowDirection="LeftToRight" Version="2.2.0">
+	<UI>
+		<Health_Fix>Rekebisha</Health_Fix>
+		<Health_Fix_Confirm>Endesha urekebishaji uliosanidiwa kwa {0}? Hifadhi kazi yako: programu, huduma au miunganisho inaweza kukatizwa. Hali itakaguliwa tena baadaye.</Health_Fix_Confirm>
+		<Health_Restart_Button>Anzisha upya</Health_Restart_Button>
+		<Health_Restart_Title>Anzisha upya kifaa</Health_Restart_Title>
+		<Health_Restart_Confirm>Windows itaanzishwa upya ili kukamilisha masasisho na mabadiliko yanayosubiri.&#10;&#10;Hifadhi kazi yako kwanza na ufunge programu zote. Kuanzisha upya kunaanza takriban sekunde 30 baada ya kuthibitisha.&#10;&#10;Anzisha upya sasa?</Health_Restart_Confirm>
+		<Button_Restart_Now>Anzisha upya sasa</Button_Restart_Now>
+		<Health_Restart_Started>Windows itaanzishwa upya baada ya takriban sekunde 30. Hifadhi kazi yako sasa.</Health_Restart_Started>
+		<Health_Updates_Started>Masasisho ya Windows yanatafutwa, kupakuliwa na kusakinishwa. Hii inaweza kuchukua dakika kadhaa; unaweza kuendelea kufanya kazi.</Health_Updates_Started>
+		<Health_Updates_Done>Windows Update imemaliza. Hali ya kifaa inakaguliwa tena na inaonyesha kama kuanzisha upya kunahitajika.</Health_Updates_Done>
+		<Health_Apps_Button>Jaribu tena</Health_Apps_Button>
+		<Health_Apps_Started>Usakinishaji wa programu zilizoshindwa unaanza tena. Hii inaweza kuchukua dakika chache; unaweza kuufuatilia katika Lango la Kampuni.</Health_Apps_Started>
+		<Health_Check_Button>Sawa</Health_Check_Button>
+		<Health_Error_Button>Hitilafu</Health_Error_Button>
+		<Health_Pending_Button>Inasubiri</Health_Pending_Button>
+		<Health_Check_Tooltip>Kagua hali hii tena</Health_Check_Tooltip>
+		<!-- Main window -->
+		<Main_Title_Text>Kuna tatizo kwenye kifaa chako?</Main_Title_Text>
+		<Subtitle_Text>Chagua suluhisho kwenye orodha ili kutatua tatizo</Subtitle_Text>
+		<Run_solution_Text>Huendesha kitendo</Run_solution_Text>
+		<Run_explanation_Text>Huonyesha maelezo zaidi</Run_explanation_Text>
+		<Issue_filter_Title_Text>Chuja kulingana na sehemu</Issue_filter_Title_Text>
+		<Issue_filter_KeyWord_Text>Andika neno kuu</Issue_filter_KeyWord_Text>
+		<Available_Actions_Count>Vitendo vinavyopatikana: {0}</Available_Actions_Count>
+		<Troubleshooting_Tab_Text>Utatuzi wa matatizo</Troubleshooting_Tab_Text>
+		<Theme_Button_ToolTip>Badilisha mandhari ya giza au mwanga</Theme_Button_ToolTip>
+		<Support_Button_ToolTip>Wasiliana na timu yako ya usaidizi</Support_Button_ToolTip>
+		<About_Button_ToolTip>Kuhusu SelfX</About_Button_ToolTip>
+		<Shield_ToolTip>Huendeshwa kwa haki za msimamizi kupitia huduma ya ndani ya SelfX</Shield_ToolTip>
+
+		<!-- Simplified or detailed view -->
+		<Solution_Mode_Simple>Mwonekano rahisi</Solution_Mode_Simple>
+		<Solution_Mode_Detailed>Mwonekano wa kina</Solution_Mode_Detailed>
+		<Solution_Mode_Info_Title>Mwonekano rahisi au wa kina?</Solution_Mode_Info_Title>
+		<Solution_Mode_Info_Text>Mwonekano rahisi huorodhesha matatizo kwa bidhaa.
+Mwonekano wa kina huorodhesha matatizo mahususi ya kila bidhaa yanayoweza kutatuliwa.
+
+Tunapendekeza mwonekano wa kina ikiwa mwonekano rahisi hautatui au hauna tatizo lako.</Solution_Mode_Info_Text>
+
+		<!-- Dialogs -->
+		<Warning_Click_Run_Solution_Text>Kutatua tatizo</Warning_Click_Run_Solution_Text>
+		<Warning_Click_Run_Explanation_Text>Maelezo zaidi</Warning_Click_Run_Explanation_Text>
+		<Button_Ok>Sawa</Button_Ok>
+		<Button_Cancel>Ghairi</Button_Cancel>
+		<Button_Yes>Ndiyo</Button_Yes>
+		<Button_No>Hapana</Button_No>
+		<Close_Button_Text>Funga</Close_Button_Text>
+		<Reboot_Alert>Ili kifaa chako kiendelee kufanya kazi vizuri, kianzisha upya angalau mara moja kwa wiki.</Reboot_Alert>
+
+		<!-- Support and About dialogs -->
+		<Support_Window_Title>Maelezo ya timu ya usaidizi</Support_Window_Title>
+		<Support_Phone_Label>Nambari ya simu:</Support_Phone_Label>
+		<Support_Mail_Label>Barua pepe:</Support_Mail_Label>
+		<About_Version_Text>{0}: toleo {1} - katalogi: {2}</About_Version_Text>
+
+		<!-- Local SelfX service (actions with Context System) -->
+		<Service_Running_Text>Huduma ya SelfX inafanya kazi: vitendo vilivyo na alama ya ngao huendeshwa kwa haki za msimamizi.</Service_Running_Text>
+		<Service_Unavailable_Text>Huduma ya SelfX haifanyi kazi: vitendo vilivyo na alama ya ngao havipatikani.</Service_Unavailable_Text>
+		<Service_Busy_Text>Kitendo kingine bado kinaendelea. Subiri hadi kikamilike.</Service_Busy_Text>
+		<Action_Running_Text>Kitendo kinaendelea: {0}</Action_Running_Text>
+		<Action_Running_Label>Inaendelea…</Action_Running_Label>
+		<Action_Success_Text>Kitendo kimekamilika: {0}</Action_Success_Text>
+		<Action_Failed_Text>Kitendo kimeshindwa: {0}</Action_Failed_Text>
+		<Action_Failed_ExitCode_Text>Kitendo kimeshindwa: {0} (msimbo wa kutoka {1})</Action_Failed_ExitCode_Text>
+		<Action_Timeout_Text>Kitendo kimesimamishwa kwa sababu kimechukua muda mrefu: {0}</Action_Timeout_Text>
+		<Script_Not_Found_Text>Hati ya kitendo hiki haikupatikana: {0}</Script_Not_Found_Text>
+
+		<!-- System information tab -->
+		<SystemInfo_Tab_Text>Maelezo ya mfumo</SystemInfo_Tab_Text>
+		<SystemInfo_Title_Text>Maelezo ya kifaa chako kwa timu ya usaidizi</SystemInfo_Title_Text>
+		<SystemInfo_Hint_Text>Bofya mstari mara mbili ili kunakili thamani yake.</SystemInfo_Hint_Text>
+		<SystemInfo_Loading_Text>Inakusanya maelezo ya mfumo...</SystemInfo_Loading_Text>
+		<SystemInfo_Copied_Text>Imenakiliwa kwenye ubao-klipu: {0}</SystemInfo_Copied_Text>
+		<SystemInfo_Refresh_Text>Onyesha upya</SystemInfo_Refresh_Text>
+		<SystemInfo_Copy_Text>Nakili yote</SystemInfo_Copy_Text>
+		<SystemInfo_Export_Text>Hamisha</SystemInfo_Export_Text>
+		<SystemInfo_Export_Filter>Faili ya maandishi (*.txt)|*.txt|Faili ya HTML (*.html)|*.html|Faili ya CSV (*.csv)|*.csv|Faili ya JSON (*.json)|*.json</SystemInfo_Export_Filter>
+		<SystemInfo_SyncApps_Text>Sawazisha programu za Intune</SystemInfo_SyncApps_Text>
+		<SystemInfo_SyncCompliance_Text>Angalia utiifu</SystemInfo_SyncCompliance_Text>
+		<SystemInfo_CompanyPortal_Text>Company Portal</SystemInfo_CompanyPortal_Text>
+		<SystemInfo_QuickAssist_Text>Quick Assist</SystemInfo_QuickAssist_Text>
+		<SystemInfo_MdmDiagnostics_Text>Kusanya kumbukumbu za MDM</SystemInfo_MdmDiagnostics_Text>
+		<SystemInfo_SendLogs_Text>Tuma kumbukumbu kwa usaidizi</SystemInfo_SendLogs_Text>
+		<Report_Mail_Subject>Kumbukumbu za kifaa {0}</Report_Mail_Subject>
+		<Report_Mail_Body>Habari,
+
+Tafadhali pata kumbukumbu za kifaa {0} zilizoambatishwa, zilizokusanywa na SelfX tarehe {1}.
+
+Maelezo ya tatizo:</Report_Mail_Body>
+		<Report_Mail_Opened_Text>Barua pepe yenye kumbukumbu za kifaa zilizoambatishwa imefunguliwa. Eleza tatizo lako na utume barua pepe.</Report_Mail_Opened_Text>
+		<Report_Mail_Recipient_Text>Barua pepe yenye kumbukumbu za kifaa zilizoambatishwa imefunguliwa. Weka mpokeaji ({0}), eleza tatizo lako na utume barua pepe.</Report_Mail_Recipient_Text>
+		<Report_Mail_Manual_Text>Kumbukumbu za kifaa zimehifadhiwa kwenye {0}. Ambatisha faili hii kwenye barua pepe (mpokeaji: {1}) na ueleze tatizo lako.</Report_Mail_Manual_Text>
+		<Report_Not_Found_Text>Kumbukumbu za kifaa zimekusanywa, lakini barua pepe haikuweza kutayarishwa: {0}</Report_Not_Found_Text>
+		<Report_Support_Fallback>timu yako ya usaidizi</Report_Support_Fallback>
+		<Nav_Status_Text>Hali ya kifaa</Nav_Status_Text>
+		<Status_LastChecked_Text>Ilikaguliwa mwisho: {0}</Status_LastChecked_Text>
+		<Status_NotChecked_Text>Hali ya kifaa bado haijakaguliwa.</Status_NotChecked_Text>
+		<Status_Background_Text>Hukaguliwa kiotomatiki kila dakika {0}</Status_Background_Text>
+		<Status_Background_Battery_Text>Ukaguzi wa kiotomatiki husitishwa kifaa kikitumia betri</Status_Background_Battery_Text>
+		<Status_Checking_Text>Inakagua hali ya kifaa. Hii inaweza kuchukua hadi dakika moja ...</Status_Checking_Text>
+		<Status_AllOk_Title>Kila kitu kiko sawa</Status_AllOk_Title>
+		<Status_AllOk_Text>Hakuna matatizo yaliyopatikana kwenye kifaa chako.</Status_AllOk_Text>
+		<Status_Issues_Title>Vipengee {0} vinahitaji umakini wako</Status_Issues_Title>
+		<Status_Issues_Text>Matatizo huonyeshwa kwanza. Bofya “Rekebisha” ili kurekebisha tatizo, au mishale ili kulikagua tena.</Status_Issues_Text>
+		<Status_CheckAll_Tooltip>Kagua kila kitu tena sasa. Hii inaweza kuchukua hadi dakika moja.</Status_CheckAll_Tooltip>
+		<Status_FixAll>Rekebisha matatizo yote</Status_FixAll>
+		<Status_FixAll_Tooltip>Huendesha urekebishaji uliosanidiwa kwa kila tatizo moja baada ya jingine. Kisha kila kitu hukaguliwa tena.</Status_FixAll_Tooltip>
+		<Health_FixAll_Confirm>Uendeshe urekebishaji uliosanidiwa kwa matatizo haya {0} moja baada ya jingine?&#10;&#10;{1}&#10;&#10;Programu zinaweza kufungwa na huduma au miunganisho ya mtandao kukatizwa. Hifadhi kazi yako kwanza. Kisha kila kitu hukaguliwa tena.</Health_FixAll_Confirm>
+		<Status_FixAll_Done>Urekebishaji {0} kati ya {1} umekamilika kwa mafanikio. Hali inakaguliwa tena.</Status_FixAll_Done>
+		<Status_FixAll_Failed>Haikufaulu: {0}</Status_FixAll_Failed>
+		<Tooltip_Fix>Hurekebisha tatizo hili kiotomatiki. Utaombwa kuthibitisha kwanza.</Tooltip_Fix>
+		<Tooltip_Run>Huanzisha suluhisho hili. Utaombwa kuthibitisha kabla ya jambo lolote kufanyika.</Tooltip_Run>
+		<Filter_All_Text>Zote</Filter_All_Text>
+		<View_Help_Tooltip>Kuna tofauti gani kati ya mwonekano rahisi na mwonekano wa kina?</View_Help_Tooltip>
+		<SystemInfo_Cached_Text>Taarifa za {0} – zinasasishwa ...</SystemInfo_Cached_Text>
+		<Tooltip_Refresh>hukusanya taarifa tena</Tooltip_Refresh>
+		<Tooltip_Copy>hunakili taarifa zote, kwa mfano ili kuzibandika katika ombi la usaidizi</Tooltip_Copy>
+		<Tooltip_Export>huhifadhi taarifa zote kama faili</Tooltip_Export>
+		<Tools_Title_Text>Zana</Tools_Title_Text>
+		<Tooltip_SyncApps>Huomba Intune isakinishe au isasishe sasa programu ulizopewa.</Tooltip_SyncApps>
+		<Tooltip_SyncCompliance>Huomba Intune ikague sasa kama kifaa chako kinatimiza sheria za kampuni.</Tooltip_SyncCompliance>
+		<Tooltip_CompanyPortal>Hufungua Tovuti ya Kampuni, ambapo unaweza kusakinisha programu za kampuni.</Tooltip_CompanyPortal>
+		<Tooltip_QuickAssist>Hufungua Usaidizi wa Haraka ili mtu wa usaidizi aone skrini yako na akusaidie – kwa idhini yako tu.</Tooltip_QuickAssist>
+		<Tooltip_MdmDiagnostics>Hukusanya kumbukumbu za usimamizi wa kifaa kwenye folda kwa ajili ya timu ya usaidizi.</Tooltip_MdmDiagnostics>
+		<Tooltip_SendLogs>Hukusanya kumbukumbu zote za kifaa chako na kufungua barua pepe kwa timu ya usaidizi ikiwa na ripoti iliyoambatishwa.</Tooltip_SendLogs>
+		<Settings_Button_ToolTip>Mipangilio (lugha, mwonekano na ikoni ya hali)</Settings_Button_ToolTip>
+		<Settings_Title>Mipangilio</Settings_Title>
+		<Settings_Language_Text>Lugha</Settings_Language_Text>
+		<Settings_Language_Auto>Otomatiki ({0})</Settings_Language_Auto>
+		<Settings_Language_Hint>SelfX inaanza upya kwa lugha uliyochagua.</Settings_Language_Hint>
+		<Settings_Language_Later>Lugha mpya itatumika utakapofungua SelfX wakati ujao, kwa sababu urekebishaji bado unaendelea.</Settings_Language_Later>
+		<Settings_Theme_Text>Mwonekano</Settings_Theme_Text>
+		<Settings_Theme_Auto>Kiotomatiki</Settings_Theme_Auto>
+		<Settings_Theme_Auto_ToolTip>Kama Windows: hutumia hali ya programu iliyochaguliwa katika Mipangilio &gt; Ubinafsishaji &gt; Rangi</Settings_Theme_Auto_ToolTip>
+		<Settings_Theme_Dark>Giza</Settings_Theme_Dark>
+		<Settings_Theme_Light>Mwanga</Settings_Theme_Light>
+		<Settings_Tray_Text>Onyesha ikoni ya SelfX katika eneo la arifa</Settings_Tray_Text>
+		<Settings_Tray_Hint>Ikoni iliyo karibu na saa huonyesha hali ya kifaa na hukujulisha tatizo linapopatikana.</Settings_Tray_Hint>
+		<Settings_Notify_Text>Onyesha arifa kuhusu matatizo</Settings_Notify_Text>
+		<Settings_Notify_Hint>Mbali na ikoni ya rangi ya SelfX, Windows huonyesha ujumbe tatizo jipya linapopatikana, kwa mfano nafasi ndogo ya diski.</Settings_Notify_Hint>
+		<Support_Intro_Text>Tunafurahi kukusaidia. Unaweza kuwasiliana nasi hivi:</Support_Intro_Text>
+		<Support_Hours_Label>Saa za usaidizi</Support_Hours_Label>
+		<Support_Teams_Label>Gumzo la Teams</Support_Teams_Label>
+		<Support_Website_Label>Tovuti / mfumo wa tiketi</Support_Website_Label>
+		<Support_Teams_Button>Anzisha gumzo</Support_Teams_Button>
+		<Support_Website_Button>Fungua</Support_Website_Button>
+		<Support_Mail_Button>Andika barua pepe</Support_Mail_Button>
+		<Support_None_Text>Hakuna maelezo ya mawasiliano yaliyowekwa. Tafadhali wasiliana na idara yako ya TEHAMA.</Support_None_Text>
+		<Service_Short_Running>Huduma ya SelfX inaendeshwa</Service_Short_Running>
+		<Service_Short_Unavailable>Huduma ya SelfX haipatikani</Service_Short_Unavailable>
+		<Version_Text>Toleo {0}</Version_Text>
+		<Tray_Tooltip_OK>SelfX: kila kitu kiko sawa</Tray_Tooltip_OK>
+		<Tray_Tooltip_Issues>SelfX: matatizo {0}, maonyo {1}</Tray_Tooltip_Issues>
+		<Tray_Tooltip_Unknown>SelfX: hali bado haipatikani</Tray_Tooltip_Unknown>
+		<Tray_Menu_Open>Fungua SelfX</Tray_Menu_Open>
+		<Tray_Menu_Status>Onyesha hali ya kifaa</Tray_Menu_Status>
+		<Tray_Menu_Check>Kagua hali sasa</Tray_Menu_Check>
+		<Tray_Menu_Notify>Onyesha arifa</Tray_Menu_Notify>
+		<Tray_Menu_Hide>Ficha ikoni hii</Tray_Menu_Hide>
+		<Tray_Notify_Click>Bofya hapa ili kuona maelezo.</Tray_Notify_Click>
+		<Tray_Hidden_Text>Ikoni imefichwa. Unaweza kuionyesha tena katika SelfX chini ya Mipangilio.</Tray_Hidden_Text>
+		<Tray_Checking_Text>Inakagua hali ya kifaa ...</Tray_Checking_Text>
+	</UI>
+
+	<!-- Labels and values of the System information tab -->
+	<SystemInfo>
+		<Category_Device>Kifaa</Category_Device>
+		<Category_Windows>Windows</Category_Windows>
+		<Category_User>Mtumiaji na usimamizi</Category_User>
+		<Category_Network>Mtandao</Category_Network>
+		<Category_Report>Ripoti</Category_Report>
+		<Computer_Name>Jina la kompyuta</Computer_Name>
+		<Manufacturer>Mtengenezaji</Manufacturer>
+		<Model>Muundo</Model>
+		<Serial_Number>Nambari tambulishi</Serial_Number>
+		<BIOS_Version>Toleo la BIOS</BIOS_Version>
+		<Processor>Kichakataji</Processor>
+		<Memory>Kumbukumbu (RAM)</Memory>
+		<Free_Space>Nafasi huru {0}</Free_Space>
+		<Free_Space_Value>{0} kati ya {1} ({2}%)</Free_Space_Value>
+		<Battery>Betri</Battery>
+		<Windows_Version>Toleo la Windows</Windows_Version>
+		<OS_Build>Muundo wa OS</OS_Build>
+		<Last_Boot>Mwanzo wa mwisho</Last_Boot>
+		<Uptime>Muda wa kufanya kazi</Uptime>
+		<Uptime_Value>Siku {0}, saa {1:D2}:{2:D2}</Uptime_Value>
+		<Last_Update>Sasisho la mwisho lililosakinishwa</Last_Update>
+		<Time_Zone>Saa za eneo</Time_Zone>
+		<Current_User>Mtumiaji wa sasa</Current_User>
+		<User_Principal_Name>Jina kuu la mtumiaji</User_Principal_Name>
+		<Domain>Kikoa / kikundi cha kazi</Domain>
+		<Entra_Joined>Imeunganishwa na Entra ID</Entra_Joined>
+		<Domain_Joined>Imeunganishwa na kikoa</Domain_Joined>
+		<Tenant>Mpangaji</Tenant>
+		<Entra_Device_Id>Kitambulisho cha kifaa cha Entra</Entra_Device_Id>
+		<Intune_User>Mtumiaji aliyesajiliwa kwenye Intune</Intune_User>
+		<Intune_Last_Sync>Usawazishaji wa mwisho wa Intune</Intune_Last_Sync>
+		<LAN_Connected>Imeunganishwa na LAN</LAN_Connected>
+		<WiFi_Connected>Imeunganishwa na Wi-Fi</WiFi_Connected>
+		<WWAN_Connected>Imeunganishwa na mtandao mpana wa simu</WWAN_Connected>
+		<WiFi_SSID>Mtandao wa Wi-Fi (SSID)</WiFi_SSID>
+		<VPN_Connected>Imeunganishwa na VPN</VPN_Connected>
+		<Internet_Reachable>Mtandao wa Intaneti unafikika</Internet_Reachable>
+		<IPv4>Anwani za IPv4</IPv4>
+		<IPv6>Anwani za IPv6</IPv6>
+		<Gateway>Lango-msingi</Gateway>
+		<DNS>Seva za DNS</DNS>
+		<MAC>Anwani za MAC</MAC>
+		<Collected_At>Imekusanywa saa</Collected_At>
+		<Error>Hitilafu</Error>
+		<Yes>Ndiyo</Yes>
+		<No>Hapana</No>
+		<Not_Available>haipatikani</Not_Available>
+		<Not_Enrolled>Haijasajiliwa / haijulikani</Not_Enrolled>
+		<No_WiFi>Hakuna muunganisho wa Wi-Fi</No_WiFi>
+		<Category_Health>Hali ya mfumo</Category_Health>
+		<Health_IME>Huduma ya IME</Health_IME>
+		<Health_Defender>Microsoft Defender</Health_Defender>
+		<Health_Compliance>Utiifu</Health_Compliance>
+		<Health_Applications>Programu za kampuni (Intune)</Health_Applications>
+		<Health_Disk>Nafasi ya diski</Health_Disk>
+		<Health_BitLocker>BitLocker</Health_BitLocker>
+		<Health_PendingReboot>Kuwasha upya kunasubiri</Health_PendingReboot>
+		<Health_Updates>Masasisho ya kusakinisha</Health_Updates>
+		<Health_Service>Huduma</Health_Service>
+		<Health_Custom>Ukaguzi maalum</Health_Custom>
+		<Health_Collection>Ukusanyaji wa hali</Health_Collection>
+		<Health_OK>OK</Health_OK>
+		<Health_Error>Hitilafu</Health_Error>
+		<Health_Unknown>Haijulikani</Health_Unknown>
+		<Health_Pending>Inasubiri</Health_Pending>
+		<Health_Unavailable>Ripoti ya hali ya ndani haipatikani: {0}</Health_Unavailable>
+	</SystemInfo>
+
+	<!-- Action catalogue (Issues_List.xml). The English base texts are in Issues_List.xml, so en.xml only lists the categories. -->
+	<Catalog>
+		<Categories>
+			<Category Id="Browser">Kivinjari</Category>
+			<Category Id="Device">Kifaa</Category>
+			<Category Id="Intune">Intune</Category>
+			<Category Id="Office">Office</Category>
+			<Category Id="OneDrive">OneDrive</Category>
+			<Category Id="Outlook">Outlook</Category>
+			<Category Id="Teams">Teams</Category>
+		</Categories>
+		<Messages>
+			<Message Id="Msg_Teams_Restart">Teams itafungwa kisha itafunguliwa tena kiotomatiki.
+
+Tatizo likiendelea, ondoka kwenye Teams kisha uingie tena. Tatizo likiendelea baada ya hapo, wasiliana na usaidizi.
+
+Ungependa kuendelea?</Message>
+			<Message Id="Msg_Teams_Restart_Short">Teams itafungwa kisha itafunguliwa tena kiotomatiki.
+
+Ungependa kuendelea?</Message>
+			<Message Id="Msg_OneDrive_Restart">OneDrive itafungwa kisha itafunguliwa tena kiotomatiki.
+
+Ungependa kuendelea?</Message>
+			<Message Id="Msg_OneDrive_Restart_Step1">Hatua hii ya kwanza itawasha upya OneDrive. OneDrive itafungwa kisha itafunguliwa tena kiotomatiki.
+
+Tatizo likiendelea, endesha kitendo cha “Weka upya kiteja cha OneDrive”.
+
+Ungependa kuendelea?</Message>
+			<Message Id="Msg_OneDrive_Reset">Kiteja chako cha OneDrive kitawekwa upya. Kuweka upya kiteja cha OneDrive hakutasababisha upotevu wa data.
+
+Tatizo likiendelea, wasiliana na usaidizi.
+
+Ungependa kuendelea?</Message>
+			<Message Id="Msg_OneDrive_Teams_Sync">Folda zinasawazishwa katika OneDrive, lakini faili zilizoshirikiwa katika Teams hazisawazishwi.</Message>
+			<Message Id="Msg_Intune_Sync_Explanation">Unataka kulazimisha usawazishaji kati ya kifaa chako na Intune, kwa mfano ili kuharakisha utumaji wa sera au programu. Kitendo hiki huendeshwa kwa haki za msimamizi kupitia huduma ya ndani ya SelfX.</Message>
+			<Message Id="Msg_Intune_Restart">Huduma ya Intune Management Extension itawashwa upya chinichini. Jaribu tena baada ya dakika chache.
+
+Ungependa kuendelea?</Message>
+			<Message Id="Msg_Chkdsk_Explanation">Una matatizo na OneDrive na unapata hitilafu “0x80071129: Lebo katika bafa ya sehemu ya kuchanganua upya si sahihi”. Kitendo hiki huendeshwa kwa haki za msimamizi kupitia huduma ya ndani ya SelfX.</Message>
+			<Message Id="Msg_Chkdsk">Ukaguzi wa diski utaratibiwa kifaa chako kitakapowashwa upya tena. Baada ya hapo, washa upya kifaa. Ukaguzi unaweza kuchukua dakika kadhaa.
+
+Ungependa kuendelea?</Message>
+			<Message Id="Msg_SendLogs_Explanation">Timu ya usaidizi inahitaji kumbukumbu za kifaa chako ili kuchanganua tatizo, kwa mfano usakinishaji wa programu ulioshindikana, usanidi ulioshindikana au ujumbe wa hitilafu. Kitendo hiki hukusanya kumbukumbu zote muhimu na taarifa za mfumo kwa haki za msimamizi kupitia huduma ya ndani ya SelfX na kufungua barua pepe mpya kwa timu ya usaidizi ikiwa na ripoti iliyoambatishwa. Hakuna kinachotumwa kiotomatiki.</Message>
+			<Message Id="Msg_SendLogs">SelfX sasa inakusanya kumbukumbu za kifaa chako. Hii inaweza kuchukua dakika kadhaa. Hakuna kinachobadilishwa kwenye kifaa chako.
+
+Ripoti ina jina la kifaa chako na jina lako la mtumiaji. Ikiwa tayari, barua pepe mpya yenye ripoti iliyoambatishwa itafunguka. Eleza tatizo lako na utume barua pepe kwa timu ya usaidizi.
+
+Ungependa kuendelea?</Message>
+		</Messages>
+		<Actions>
+			<Action Id="Q_Teams">
+				<Name>Tatua tatizo la Teams</Name>
+				<Explanation>Unakumbwa na tatizo kwenye programu ya Teams (inakwenda polepole, hali isiyo sahihi, hitilafu ya kuhamisha, n.k.).</Explanation>
+				<Alerte_MSG>Teams itafungwa na folda zake za akiba za ndani zitafutwa. Hifadhi kazi zilizo wazi kabla ya kuendelea. Teams itafunguliwa tena ikiwa ilikuwa inaendeshwa.
+
+Je, ungependa kuendelea?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Word">
+				<Name>Tatua tatizo la Word</Name>
+				<Explanation>Unafanya kazi kwenye Word, lakini imeacha kujibu na huwezi kufanya chochote tena.</Explanation>
+				<Alerte_MSG>Word itafungwa na kufunguliwa tena kiotomatiki. Kazi ambayo haijahifadhiwa inaweza kupotea.
+
+Je, ungependa kuendelea?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Excel">
+				<Name>Tatua tatizo la Excel</Name>
+				<Explanation>Unafanya kazi kwenye Excel, lakini imeacha kujibu na huwezi kufanya chochote tena.</Explanation>
+				<Alerte_MSG>Excel itafungwa na kufunguliwa tena kiotomatiki. Kazi ambayo haijahifadhiwa inaweza kupotea.
+
+Je, ungependa kuendelea?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Store">
+				<Name>Tatua tatizo la Microsoft Store</Name>
+				<Explanation>Una matatizo na Microsoft Store (kufungua Store, kusakinisha programu, n.k.).</Explanation>
+				<Alerte_MSG>Akiba ya Microsoft Store itawekwa upya na Store itafunguliwa.
+
+Je, ungependa kuendelea?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_OneDrive_Restart">
+				<Name>Tatua tatizo la OneDrive (njia ya 1)</Name>
+				<Explanation>Una matatizo na programu ya OneDrive (kusawazisha faili au folda, kufungua faili, n.k.).</Explanation>
+				<Alerte_MSG>OneDrive itafungwa na kufunguliwa tena kiotomatiki.
+
+Tatizo likiendelea, tumia njia ya 2.
+
+Je, ungependa kuendelea?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_OneDrive_Reset">
+				<Name>Tatua tatizo la OneDrive (njia ya 2)</Name>
+				<Explanation>Una matatizo na programu ya OneDrive (kusawazisha faili au folda, kufungua faili, n.k.) na tayari umejaribu njia ya 1.</Explanation>
+			</Action>
+			<Action Id="Q_Outlook_TeamsAddIn">
+				<Name>Kitufe cha "Mkutano wa Teams" hakipo kwenye Outlook</Name>
+				<Explanation>Kitufe cha "Mkutano mpya wa Teams" hakipo kwenye Outlook.</Explanation>
+				<Alerte_MSG>Programu jalizi ya mikutano ya Teams itawashwa tena. Outlook itafungwa na kufunguliwa tena kiotomatiki. Kazi ambayo haijahifadhiwa inaweza kupotea.
+
+Tatizo likiendelea, wasiliana na timu ya usaidizi.
+
+Je, ungependa kuendelea?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Device_Connection">
+				<Name>Kifaa chako kina matatizo ya muunganisho</Name>
+				<Explanation>Unajaribu kufungua tovuti, lakini muunganisho haufanyi kazi, tovuti haipatikani au unapata hitilafu.</Explanation>
+				<Alerte_MSG>Akiba ya DNS ya kifaa chako itafutwa chinichini. Jaribu tena baada ya kubofya Sawa.
+
+Je, ungependa kuendelea?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Device_Slow">
+				<Name>Kifaa chako kinakwenda polepole</Name>
+				<Explanation>Kifaa chako kinakwenda polepole.</Explanation>
+				<Alerte_MSG>Faili za muda na yaliyomo kwenye Pipa la Taka yatafutwa.
+
+Je, ungependa kuendelea?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Intune_Restart">
+				<Name>Anzisha upya huduma ya Intune</Name>
+			</Action>
+			<Action Id="Q_Network_Restart">
+				<Name>Anzisha upya adapta za mtandao</Name>
+				<Explanation>Una matatizo ya mtandao na unataka kuanzisha upya adapta za mtandao. Kitendo hiki kinaendeshwa kwa haki za msimamizi kupitia huduma ya SelfX ya ndani.</Explanation>
+				<Alerte_MSG>Adapta zote za mtandao zitaanzishwa upya. Ufikiaji wa mtandao utakatika kwa muda mfupi.
+
+Je, ungependa kuendelea?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_OneDrive_Chkdsk">
+				<Name>Rekebisha faili ya OneDrive iliyofungwa</Name>
+			</Action>
+			<Action Id="D_Chrome_Cache">
+				<Name>Futa data ya kuvinjari ya Google Chrome (akiba)</Name>
+				<Explanation>Tovuti hazipakii au hazionyeshwi ipasavyo kwenye Google Chrome. Akiba ya kivinjari ya wasifu wote wa Chrome itafutwa.</Explanation>
+				<Alerte_MSG>Google Chrome itafungwa na data yake ya kuvinjari iliyo kwenye akiba itafutwa.
+
+Je, ungependa kuendelea?</Alerte_MSG>
+			</Action>
+			<Action Id="D_Firefox_Cache">
+				<Name>Futa data ya kuvinjari ya Firefox (akiba)</Name>
+				<Explanation>Tovuti hazipakii au hazionyeshwi ipasavyo kwenye Firefox. Akiba ya kivinjari ya wasifu wote wa Firefox itafutwa.</Explanation>
+				<Alerte_MSG>Firefox itafungwa na data yake ya kuvinjari iliyo kwenye akiba itafutwa.
+
+Je, ungependa kuendelea?</Alerte_MSG>
+			</Action>
+			<Action Id="D_Outlook_TeamsAddIn">
+				<Name>Kitufe cha "Mkutano wa Teams" hakipo kwenye Outlook</Name>
+				<Explanation>Kitufe cha "Mkutano mpya wa Teams" hakipo kwenye Outlook.</Explanation>
+				<Alerte_MSG>Outlook itafungwa na kufunguliwa tena kiotomatiki. Kazi ambayo haijahifadhiwa inaweza kupotea.
+
+Je, ungependa kuendelea?</Alerte_MSG>
+			</Action>
+			<Action Id="D_OneDrive_Start">
+				<Name>Anzisha programu ya OneDrive</Name>
+				<Explanation>OneDrive haiendeshwi.</Explanation>
+				<Alerte_MSG>Programu yako ya OneDrive itaanzishwa.
+
+Je, ungependa kuendelea?</Alerte_MSG>
+			</Action>
+			<Action Id="D_OneDrive_Restart">
+				<Name>Anzisha upya programu ya OneDrive</Name>
+				<Explanation>Kuanzisha upya OneDrive kunaweza kutatua baadhi ya matatizo, kwa mfano matatizo ya kusawazisha.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_Sync_Step1">
+				<Name>Tatua matatizo ya kusawazisha OneDrive (hatua ya 1)</Name>
+				<Explanation>Una matatizo ya kusawazisha faili au folda zako kwenye OneDrive.
+
+Hatua hii ya kwanza inaanzisha upya OneDrive. OneDrive itafungwa na kufunguliwa tena kiotomatiki.
+
+Tatizo likiendelea, endesha kitendo "Weka upya programu ya OneDrive".</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_Error_8004def4">
+				<Name>OneDrive haianzi: hitilafu 0x8004def4</Name>
+				<Explanation>Hitilafu 0x8004def4 inaonyeshwa OneDrive inapoanza.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_Memory">
+				<Name>Kifaa chako kinakwenda polepole: OneDrive inatumia kumbukumbu nyingi</Name>
+				<Explanation>Kifaa chako kinakwenda polepole na inaonekana OneDrive inatumia kumbukumbu nyingi.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_RedCross">
+				<Name>Alama nyekundu ya X kwenye ikoni ya OneDrive</Name>
+				<Explanation>Alama nyekundu ya X inaonyeshwa kwenye ikoni ya OneDrive.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_ClosesItself">
+				<Name>OneDrive inajifunga yenyewe</Name>
+				<Explanation>OneDrive inafunguka kisha inajifunga yenyewe.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_WhiteCross">
+				<Name>Alama nyeupe ya X kwenye faili za OneDrive</Name>
+				<Explanation>Alama nyeupe ya X inaonyeshwa kwenye faili au folda za OneDrive.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_PasswordChange">
+				<Name>Matatizo ya OneDrive baada ya kubadilisha nenosiri la Windows</Name>
+				<Explanation>Ulibadilisha nenosiri lako hivi karibuni na sasa una matatizo na OneDrive, kwa mfano matatizo ya kusawazisha.
+
+Hatua hii inaanzisha upya programu ya OneDrive.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_CannotOpen">
+				<Name>Huwezi kufungua faili kwenye OneDrive</Name>
+				<Explanation>Faili zilizohifadhiwa kwenye OneDrive hazifunguki.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_TeamsSync">
+				<Name>Folda zinasawazishwa kwenye OneDrive lakini si kwenye Teams</Name>
+			</Action>
+			<Action Id="D_OneDrive_Reset">
+				<Name>Weka upya programu ya OneDrive</Name>
+				<Explanation>Una matatizo na OneDrive, kwa mfano matatizo ya kusawazisha.
+
+Hatua hii inaweka upya programu yako ya OneDrive. Kuweka upya programu ya OneDrive hakusababishi upotevu wa data.</Explanation>
+			</Action>
+			<Action Id="D_Teams_Connection">
+				<Name>Tatua matatizo ya muunganisho wa Teams</Name>
+				<Explanation>Huwezi kuunganisha kwenye Teams.</Explanation>
+			</Action>
+			<Action Id="D_Teams_ProfilePicture">
+				<Name>Tatua usawazishaji wa picha ya wasifu ya Teams</Name>
+				<Explanation>Picha yako ya wasifu haionyeshwi kwenye Teams au haisasishwi.</Explanation>
+			</Action>
+			<Action Id="D_Teams_OneDriveSync">
+				<Name>Folda zinasawazishwa kwenye OneDrive lakini si kwenye Teams</Name>
+			</Action>
+			<Action Id="D_Teams_Loading">
+				<Name>Teams imekwama kwenye "Inapakia Microsoft Teams"</Name>
+				<Explanation>Unapofungua Teams, dirisha linakwama kwenye "Inapakia Microsoft Teams".</Explanation>
+			</Action>
+			<Action Id="D_Teams_Sync">
+				<Name>Tatua matatizo ya kusawazisha Teams</Name>
+				<Explanation>Una matatizo ya kusawazisha kwenye Teams.</Explanation>
+			</Action>
+			<Action Id="D_Teams_DoesNotOpen">
+				<Name>Programu yangu ya Teams haifunguki</Name>
+				<Explanation>Unajaribu kufungua Teams, lakini programu haifunguki.</Explanation>
+			</Action>
+			<Action Id="D_Teams_AudioFreeze">
+				<Name>Programu yangu ya Teams inakwama wakati wa simu za sauti</Name>
+				<Explanation>Teams inakwama wakati wa simu ya sauti.</Explanation>
+			</Action>
+			<Action Id="D_Teams_Camera">
+				<Name>Kamera ya Teams imeganda au haionekani</Name>
+				<Explanation>Video yako imeganda au haionekani wakati wa mkutano au simu.</Explanation>
+			</Action>
+			<Action Id="D_Teams_SendFailed">
+				<Name>Ujumbe wa Teams hauwezi kutumwa</Name>
+				<Explanation>Ujumbe kwenye Teams hautumwi na Teams inaonyesha "Imeshindwa kutuma".</Explanation>
+			</Action>
+			<Action Id="D_Teams_MeetingDisplay">
+				<Name>Matatizo ya kuonyesha unapojiunga na mkutano wa Teams</Name>
+				<Explanation>Teams haionyeshwi ipasavyo unapojiunga na mkutano.</Explanation>
+			</Action>
+			<Action Id="D_Teams_NoConnect">
+				<Name>Programu yangu ya Teams inafunguka lakini haiunganishi</Name>
+				<Explanation>Teams inafunguka, lakini haiunganishi.</Explanation>
+			</Action>
+			<Action Id="D_Teams_StatusOffline">
+				<Name>Hali yangu ya Teams inabaki nje ya mtandao</Name>
+				<Explanation>Hali yako kwenye Teams inabaki "Nje ya mtandao" ingawa umeingia.</Explanation>
+			</Action>
+			<Action Id="D_Teams_CallWindow">
+				<Name>Dirisha la simu la Teams halionyeshwi</Name>
+				<Explanation>Arifa za simu zinazoingia za Teams hazionyeshwi tena.</Explanation>
+			</Action>
+			<Action Id="D_Teams_MessageContent">
+				<Name>Siwezi kuona maudhui ya ujumbe kwenye Teams</Name>
+				<Explanation>Unaona arifa na onyesho la kukagua la ujumbe, lakini si maudhui ya ujumbe.</Explanation>
+			</Action>
+			<Action Id="D_Teams_PasswordChange">
+				<Name>Matatizo ya muunganisho baada ya kubadilisha nenosiri</Name>
+				<Explanation>Huwezi kuunganisha kwenye Teams baada ya kubadilisha nenosiri lako.</Explanation>
+			</Action>
+			<Action Id="D_Teams_Tabs">
+				<Name>Vichupo kwenye Teams havipakii</Name>
+				<Explanation>Unapofungua vichupo kwenye Teams, havipakii ipasavyo.</Explanation>
+			</Action>
+			<Action Id="D_Teams_StatusWrong">
+				<Name>Hali yangu ya Teams si sahihi</Name>
+				<Explanation>Hali yako kwenye Teams si sahihi au haisasishwi.</Explanation>
+			</Action>
+			<Action Id="D_Teams_MeetingOpen">
+				<Name>Siwezi kufungua mkutano wa Teams</Name>
+				<Explanation>Mikutano ya Teams haifunguki unapobofya kiungo cha kujiunga.</Explanation>
+			</Action>
+			<Action Id="D_Teams_SoundCuts">
+				<Name>Sauti inakatika wakati wa mikutano ya Teams</Name>
+				<Explanation>Sauti inakatika wakati wa mikutano ya Teams.</Explanation>
+			</Action>
+			<Action Id="D_Teams_OutlookMeeting">
+				<Name>Siwezi kuunda mkutano wa Teams kwenye kalenda ya Outlook</Name>
+				<Explanation>Huwezi kuunda mkutano wa Teams kutoka kwenye kalenda ya Outlook.</Explanation>
+			</Action>
+			<Action Id="D_Intune_Sync">
+				<Name>Lazimisha usawazishaji wa Intune</Name>
+			</Action>
+			<Action Id="D_OneDrive_Chkdsk">
+				<Name>Kagua diski kwa hitilafu za OneDrive (chkdsk)</Name>
+			</Action>
+			<Action Id="D_OneDrive_ReparsePoint">
+				<Name>Lebo iliyopo kwenye bafa ya reparse point si sahihi</Name>
+			</Action>
+			<Action Id="D_OneDrive_Error_80071129">
+				<Name>Hitilafu 0x80071129</Name>
+			</Action>
+			<Action Id="Q_Device_SendLogs">
+				<Name>Tuma kumbukumbu za kifaa kwa timu ya usaidizi</Name>
+			</Action>
+			<Action Id="D_Device_SendLogs">
+				<Name>Kusanya kumbukumbu za kifaa na uzitume kwa timu ya usaidizi kwa barua pepe</Name>
+			</Action>
+		</Actions>
+	</Catalog>
+</SelfX_Language>

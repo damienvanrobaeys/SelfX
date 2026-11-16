@@ -1,0 +1,563 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+	SelfX Service - language file
+
+	Description:
+	  Texts of the SelfX user interface in one language. SelfX selects the file that matches the Windows
+	  display language of the user (for example de-CH -> de.xml, zh-TW -> zh-Hant.xml). If no file matches,
+	  en.xml is used. A text that is missing or empty in a language file is taken from en.xml.
+
+	Add a language:
+	  1. Copy en.xml to <culture>.xml. Use the neutral culture name (de, fr, pt) or a script/region name
+	     (zh-Hans, zh-Hant, pt-BR). Windows tries the exact culture first and then its parents.
+	  2. Set Culture, Name, NativeName and FlowDirection (RightToLeft for Arabic, Persian, Urdu, Hebrew ...).
+	  3. Translate the element texts. Do not change element names or Id attributes.
+	     Keep placeholders such as {0}, {1}, {1:D2} and the "|" separators of SystemInfo_Export_Filter.
+	  4. Catalogue texts: add an <Action Id="..."> entry per action and a <Message Id="..."> entry per shared
+	     message. The English base texts are in Issues_List.xml. Untranslated actions are shown in English.
+
+	History:
+	  Version  Date        Author               Change
+	  2.2.0    2026-10-28  Wolfgang Baeck       Initial version: multilingual user interface
+-->
+<SelfX_Language Culture="ja" Name="Japanese" NativeName="日本語" FlowDirection="LeftToRight" Version="2.2.0">
+	<UI>
+		<Health_Fix>修復</Health_Fix>
+		<Health_Fix_Confirm>{0} に設定された修復を実行しますか? 作業を保存してください。アプリケーション、サービス、接続が中断される場合があります。その後、状態を再確認します。</Health_Fix_Confirm>
+		<Health_Restart_Button>再起動</Health_Restart_Button>
+		<Health_Restart_Title>デバイスの再起動</Health_Restart_Title>
+		<Health_Restart_Confirm>保留中の更新と変更を完了するため、Windows を再起動します。&#10;&#10;先に作業内容を保存し、すべてのプログラムを閉じてください。確認から約 30 秒後に再起動が始まります。&#10;&#10;今すぐ再起動しますか？</Health_Restart_Confirm>
+		<Button_Restart_Now>今すぐ再起動</Button_Restart_Now>
+		<Health_Restart_Started>約 30 秒後に Windows が再起動します。今すぐ作業内容を保存してください。</Health_Restart_Started>
+		<Health_Updates_Started>Windows の更新プログラムを検索、ダウンロード、インストールしています。数分かかることがありますが、作業を続けられます。</Health_Updates_Started>
+		<Health_Updates_Done>Windows Update が完了しました。デバイスの状態を再確認し、再起動が必要かどうかを表示します。</Health_Updates_Done>
+		<Health_Apps_Button>再試行</Health_Apps_Button>
+		<Health_Apps_Started>失敗したアプリのインストールを再度開始します。数分かかることがあります。進行状況はポータル サイトで確認できます。</Health_Apps_Started>
+		<Health_Check_Button>OK</Health_Check_Button>
+		<Health_Error_Button>エラー</Health_Error_Button>
+		<Health_Pending_Button>保留中</Health_Pending_Button>
+		<Health_Check_Tooltip>この状態を再確認</Health_Check_Tooltip>
+		<!-- Main window -->
+		<Main_Title_Text>デバイスに問題がありますか?</Main_Title_Text>
+		<Subtitle_Text>以下の解決策の一覧から、問題を解決する方法が見つかるかもしれません</Subtitle_Text>
+		<Run_solution_Text>アクションを実行します</Run_solution_Text>
+		<Run_explanation_Text>詳細情報を表示します</Run_explanation_Text>
+		<Issue_filter_Title_Text>コンポーネントで絞り込む</Issue_filter_Title_Text>
+		<Issue_filter_KeyWord_Text>キーワードを入力</Issue_filter_KeyWord_Text>
+		<Available_Actions_Count>利用可能なアクション: {0} 件</Available_Actions_Count>
+		<Troubleshooting_Tab_Text>トラブルシューティング</Troubleshooting_Tab_Text>
+		<Theme_Button_ToolTip>ダーク テーマとライト テーマを切り替える</Theme_Button_ToolTip>
+		<Support_Button_ToolTip>サポート チームに問い合わせる</Support_Button_ToolTip>
+		<About_Button_ToolTip>SelfX について</About_Button_ToolTip>
+		<Shield_ToolTip>ローカルの SelfX サービスを通じて管理者権限で実行されます</Shield_ToolTip>
+
+		<!-- Simplified or detailed view -->
+		<Solution_Mode_Simple>簡易表示</Solution_Mode_Simple>
+		<Solution_Mode_Detailed>詳細表示</Solution_Mode_Detailed>
+		<Solution_Mode_Info_Title>簡易表示と詳細表示のどちらにしますか?</Solution_Mode_Info_Title>
+		<Solution_Mode_Info_Text>簡易表示では、問題が製品ごとに一覧表示されます。
+詳細表示では、製品ごとに解決できる具体的な問題が複数表示されます。
+
+簡易表示で問題が解決しない場合や、問題が一覧にない場合は、詳細表示をお勧めします。</Solution_Mode_Info_Text>
+
+		<!-- Dialogs -->
+		<Warning_Click_Run_Solution_Text>問題の解決</Warning_Click_Run_Solution_Text>
+		<Warning_Click_Run_Explanation_Text>詳細情報</Warning_Click_Run_Explanation_Text>
+		<Button_Ok>OK</Button_Ok>
+		<Button_Cancel>キャンセル</Button_Cancel>
+		<Button_Yes>はい</Button_Yes>
+		<Button_No>いいえ</Button_No>
+		<Close_Button_Text>閉じる</Close_Button_Text>
+		<Reboot_Alert>デバイスを安定して正常に動作させるため、少なくとも週に 1 回は再起動してください。</Reboot_Alert>
+
+		<!-- Support and About dialogs -->
+		<Support_Window_Title>サポート チームの連絡先</Support_Window_Title>
+		<Support_Phone_Label>電話番号:</Support_Phone_Label>
+		<Support_Mail_Label>メール:</Support_Mail_Label>
+		<About_Version_Text>{0}: バージョン {1} - カタログ: {2}</About_Version_Text>
+
+		<!-- Local SelfX service (actions with Context System) -->
+		<Service_Running_Text>SelfX サービスは実行中です: 盾のアイコンが付いたアクションは管理者権限で実行されます。</Service_Running_Text>
+		<Service_Unavailable_Text>SelfX サービスが実行されていません: 盾のアイコンが付いたアクションは利用できません。</Service_Unavailable_Text>
+		<Service_Busy_Text>別のアクションがまだ実行中です。完了するまでお待ちください。</Service_Busy_Text>
+		<Action_Running_Text>アクションを実行中: {0}</Action_Running_Text>
+		<Action_Running_Label>実行中…</Action_Running_Label>
+		<Action_Success_Text>アクションが完了しました: {0}</Action_Success_Text>
+		<Action_Failed_Text>アクションが失敗しました: {0}</Action_Failed_Text>
+		<Action_Failed_ExitCode_Text>アクションが失敗しました: {0} (終了コード {1})</Action_Failed_ExitCode_Text>
+		<Action_Timeout_Text>時間がかかりすぎたため、アクションを停止しました: {0}</Action_Timeout_Text>
+		<Script_Not_Found_Text>このアクションのスクリプトが見つかりませんでした: {0}</Script_Not_Found_Text>
+
+		<!-- System information tab -->
+		<SystemInfo_Tab_Text>システム情報</SystemInfo_Tab_Text>
+		<SystemInfo_Title_Text>サポート チーム向けのデバイス情報</SystemInfo_Title_Text>
+		<SystemInfo_Hint_Text>行をダブルクリックすると、値をコピーできます。</SystemInfo_Hint_Text>
+		<SystemInfo_Loading_Text>システム情報を収集しています...</SystemInfo_Loading_Text>
+		<SystemInfo_Copied_Text>クリップボードにコピーしました: {0}</SystemInfo_Copied_Text>
+		<SystemInfo_Refresh_Text>更新</SystemInfo_Refresh_Text>
+		<SystemInfo_Copy_Text>すべてコピー</SystemInfo_Copy_Text>
+		<SystemInfo_Export_Text>エクスポート</SystemInfo_Export_Text>
+		<SystemInfo_Export_Filter>テキスト ファイル (*.txt)|*.txt|HTML ファイル (*.html)|*.html|CSV ファイル (*.csv)|*.csv|JSON ファイル (*.json)|*.json</SystemInfo_Export_Filter>
+		<SystemInfo_SyncApps_Text>Intune アプリを同期</SystemInfo_SyncApps_Text>
+		<SystemInfo_SyncCompliance_Text>コンプライアンスを確認</SystemInfo_SyncCompliance_Text>
+		<SystemInfo_CompanyPortal_Text>ポータル サイト</SystemInfo_CompanyPortal_Text>
+		<SystemInfo_QuickAssist_Text>クイック アシスト</SystemInfo_QuickAssist_Text>
+		<SystemInfo_MdmDiagnostics_Text>MDM ログを収集</SystemInfo_MdmDiagnostics_Text>
+		<SystemInfo_SendLogs_Text>ログをサポートに送信</SystemInfo_SendLogs_Text>
+		<Report_Mail_Subject>{0} のデバイス ログ</Report_Mail_Subject>
+		<Report_Mail_Body>お世話になっております。
+
+SelfX が {1} に収集した {0} のデバイス ログを添付します。
+
+問題の説明:</Report_Mail_Body>
+		<Report_Mail_Opened_Text>デバイス ログを添付したメールを開きました。問題を説明してメールを送信してください。</Report_Mail_Opened_Text>
+		<Report_Mail_Recipient_Text>デバイス ログを添付したメールを開きました。宛先 ({0}) を入力し、問題を説明してメールを送信してください。</Report_Mail_Recipient_Text>
+		<Report_Mail_Manual_Text>デバイス ログを {0} に保存しました。このファイルをメール (宛先: {1}) に添付し、問題を説明してください。</Report_Mail_Manual_Text>
+		<Report_Not_Found_Text>デバイス ログは収集されましたが、メールを準備できませんでした: {0}</Report_Not_Found_Text>
+		<Report_Support_Fallback>サポート担当者</Report_Support_Fallback>
+		<Nav_Status_Text>デバイスの状態</Nav_Status_Text>
+		<Status_LastChecked_Text>最終確認: {0}</Status_LastChecked_Text>
+		<Status_NotChecked_Text>デバイスの状態はまだ確認されていません。</Status_NotChecked_Text>
+		<Status_Background_Text>{0} 分ごとに自動確認</Status_Background_Text>
+		<Status_Background_Battery_Text>バッテリー駆動中は自動確認を一時停止します</Status_Background_Battery_Text>
+		<Status_Checking_Text>デバイスの状態を確認しています。最大 1 分かかる場合があります ...</Status_Checking_Text>
+		<Status_AllOk_Title>問題ありません</Status_AllOk_Title>
+		<Status_AllOk_Text>デバイスに問題は見つかりませんでした。</Status_AllOk_Text>
+		<Status_Issues_Title>{0} 件の項目に注意が必要です</Status_Issues_Title>
+		<Status_Issues_Text>問題は先頭に表示されます。「修正」をクリックすると問題を修復し、矢印をクリックすると再確認します。</Status_Issues_Text>
+		<Status_CheckAll_Tooltip>今すぐすべてを再確認します。最大 1 分かかる場合があります。</Status_CheckAll_Tooltip>
+		<Status_FixAll>すべての問題を修正</Status_FixAll>
+		<Status_FixAll_Tooltip>問題ごとに構成済みの修復を順番に実行します。その後、すべてを再確認します。</Status_FixAll_Tooltip>
+		<Health_FixAll_Confirm>これら {0} 件の問題に対して構成済みの修復を順番に実行しますか?&#10;&#10;{1}&#10;&#10;アプリケーションが終了したり、サービスやネットワーク接続が中断されたりする場合があります。先に作業内容を保存してください。その後、すべてを再確認します。</Health_FixAll_Confirm>
+		<Status_FixAll_Done>{1} 件中 {0} 件の修復が正常に完了しました。状態を再確認しています。</Status_FixAll_Done>
+		<Status_FixAll_Failed>失敗: {0}</Status_FixAll_Failed>
+		<Tooltip_Fix>この問題を自動的に修復します。最初に確認を求められます。</Tooltip_Fix>
+		<Tooltip_Run>この解決策を開始します。何かが行われる前に確認を求められます。</Tooltip_Run>
+		<Filter_All_Text>すべて</Filter_All_Text>
+		<View_Help_Tooltip>簡易表示と詳細表示の違いは何ですか?</View_Help_Tooltip>
+		<SystemInfo_Cached_Text>{0} の情報 – 更新中 ...</SystemInfo_Cached_Text>
+		<Tooltip_Refresh>情報を再収集します</Tooltip_Refresh>
+		<Tooltip_Copy>すべての情報をコピーします (サポート依頼に貼り付ける場合など)</Tooltip_Copy>
+		<Tooltip_Export>すべての情報をファイルに保存します</Tooltip_Export>
+		<Tools_Title_Text>ツール</Tools_Title_Text>
+		<Tooltip_SyncApps>割り当てられたアプリを今すぐインストールまたは更新するよう Intune に要求します。</Tooltip_SyncApps>
+		<Tooltip_SyncCompliance>デバイスが会社の規則を満たしているか今すぐ確認するよう Intune に要求します。</Tooltip_SyncCompliance>
+		<Tooltip_CompanyPortal>会社のアプリをインストールできるポータル サイトを開きます。</Tooltip_CompanyPortal>
+		<Tooltip_QuickAssist>クイック アシストを開き、サポート担当者が画面を見て支援できるようにします (同意した場合のみ)。</Tooltip_QuickAssist>
+		<Tooltip_MdmDiagnostics>デバイス管理のログをサポート用のフォルダーに収集します。</Tooltip_MdmDiagnostics>
+		<Tooltip_SendLogs>デバイスのすべてのログを収集し、レポートを添付したサポート宛てのメールを開きます。</Tooltip_SendLogs>
+		<Settings_Button_ToolTip>設定 (言語、外観、状態アイコン)</Settings_Button_ToolTip>
+		<Settings_Title>設定</Settings_Title>
+		<Settings_Language_Text>言語</Settings_Language_Text>
+		<Settings_Language_Auto>自動 ({0})</Settings_Language_Auto>
+		<Settings_Language_Hint>SelfX は選択した言語で再起動します。</Settings_Language_Hint>
+		<Settings_Language_Later>修復を実行中のため、新しい言語は次回 SelfX を開いたときに使用されます。</Settings_Language_Later>
+		<Settings_Theme_Text>外観</Settings_Theme_Text>
+		<Settings_Theme_Auto>自動</Settings_Theme_Auto>
+		<Settings_Theme_Auto_ToolTip>Windows と同じ：［設定］&gt;［個人用設定］&gt;［色］で選択したアプリ モードを使用します</Settings_Theme_Auto_ToolTip>
+		<Settings_Theme_Dark>ダーク</Settings_Theme_Dark>
+		<Settings_Theme_Light>ライト</Settings_Theme_Light>
+		<Settings_Tray_Text>通知領域に SelfX アイコンを表示する</Settings_Tray_Text>
+		<Settings_Tray_Hint>時計の横のアイコンはデバイスの状態を示し、問題が見つかると通知します。</Settings_Tray_Hint>
+		<Settings_Notify_Text>問題の通知を表示する</Settings_Notify_Text>
+		<Settings_Notify_Hint>色付きの SelfX アイコンに加えて、新しい問題 (ディスク容量不足など) が見つかると Windows がメッセージを表示します。</Settings_Notify_Hint>
+		<Support_Intro_Text>喜んでお手伝いします。連絡先は次のとおりです:</Support_Intro_Text>
+		<Support_Hours_Label>サポート時間</Support_Hours_Label>
+		<Support_Teams_Label>Teams チャット</Support_Teams_Label>
+		<Support_Website_Label>Web サイト / チケット システム</Support_Website_Label>
+		<Support_Teams_Button>チャットを開始</Support_Teams_Button>
+		<Support_Website_Button>開く</Support_Website_Button>
+		<Support_Mail_Button>メールを書く</Support_Mail_Button>
+		<Support_None_Text>連絡先が設定されていません。IT 部門にお問い合わせください。</Support_None_Text>
+		<Service_Short_Running>SelfX サービス実行中</Service_Short_Running>
+		<Service_Short_Unavailable>SelfX サービス利用不可</Service_Short_Unavailable>
+		<Version_Text>バージョン {0}</Version_Text>
+		<Tray_Tooltip_OK>SelfX: 問題ありません</Tray_Tooltip_OK>
+		<Tray_Tooltip_Issues>SelfX: 問題 {0} 件、警告 {1} 件</Tray_Tooltip_Issues>
+		<Tray_Tooltip_Unknown>SelfX: 状態はまだ利用できません</Tray_Tooltip_Unknown>
+		<Tray_Menu_Open>SelfX を開く</Tray_Menu_Open>
+		<Tray_Menu_Status>デバイスの状態を表示</Tray_Menu_Status>
+		<Tray_Menu_Check>今すぐ状態を確認</Tray_Menu_Check>
+		<Tray_Menu_Notify>通知を表示する</Tray_Menu_Notify>
+		<Tray_Menu_Hide>このアイコンを非表示にする</Tray_Menu_Hide>
+		<Tray_Notify_Click>詳細を表示するにはここをクリックしてください。</Tray_Notify_Click>
+		<Tray_Hidden_Text>アイコンは非表示になりました。SelfX の [設定] で再表示できます。</Tray_Hidden_Text>
+		<Tray_Checking_Text>デバイスの状態を確認しています ...</Tray_Checking_Text>
+	</UI>
+
+	<!-- Labels and values of the System information tab -->
+	<SystemInfo>
+		<Category_Device>デバイス</Category_Device>
+		<Category_Windows>Windows</Category_Windows>
+		<Category_User>ユーザーと管理</Category_User>
+		<Category_Network>ネットワーク</Category_Network>
+		<Category_Report>レポート</Category_Report>
+		<Computer_Name>コンピューター名</Computer_Name>
+		<Manufacturer>製造元</Manufacturer>
+		<Model>モデル</Model>
+		<Serial_Number>シリアル番号</Serial_Number>
+		<BIOS_Version>BIOS バージョン</BIOS_Version>
+		<Processor>プロセッサ</Processor>
+		<Memory>メモリ (RAM)</Memory>
+		<Free_Space>空き容量 {0}</Free_Space>
+		<Free_Space_Value>{0} / {1} ({2}%)</Free_Space_Value>
+		<Battery>バッテリー</Battery>
+		<Windows_Version>Windows のバージョン</Windows_Version>
+		<OS_Build>OS ビルド</OS_Build>
+		<Last_Boot>最終起動</Last_Boot>
+		<Uptime>稼働時間</Uptime>
+		<Uptime_Value>{0} 日 {1:D2}:{2:D2} 時間</Uptime_Value>
+		<Last_Update>最後にインストールされた更新プログラム</Last_Update>
+		<Time_Zone>タイム ゾーン</Time_Zone>
+		<Current_User>現在のユーザー</Current_User>
+		<User_Principal_Name>ユーザー プリンシパル名</User_Principal_Name>
+		<Domain>ドメイン / ワークグループ</Domain>
+		<Entra_Joined>Entra ID 参加済み</Entra_Joined>
+		<Domain_Joined>ドメイン参加済み</Domain_Joined>
+		<Tenant>テナント</Tenant>
+		<Entra_Device_Id>Entra デバイス ID</Entra_Device_Id>
+		<Intune_User>Intune 登録ユーザー</Intune_User>
+		<Intune_Last_Sync>最終 Intune 同期</Intune_Last_Sync>
+		<LAN_Connected>LAN 接続</LAN_Connected>
+		<WiFi_Connected>Wi-Fi 接続</WiFi_Connected>
+		<WWAN_Connected>モバイル ブロードバンド接続</WWAN_Connected>
+		<WiFi_SSID>Wi-Fi ネットワーク (SSID)</WiFi_SSID>
+		<VPN_Connected>VPN 接続</VPN_Connected>
+		<Internet_Reachable>インターネット接続可能</Internet_Reachable>
+		<IPv4>IPv4 アドレス</IPv4>
+		<IPv6>IPv6 アドレス</IPv6>
+		<Gateway>デフォルト ゲートウェイ</Gateway>
+		<DNS>DNS サーバー</DNS>
+		<MAC>MAC アドレス</MAC>
+		<Collected_At>収集日時</Collected_At>
+		<Error>エラー</Error>
+		<Yes>はい</Yes>
+		<No>いいえ</No>
+		<Not_Available>該当なし</Not_Available>
+		<Not_Enrolled>未登録 / 不明</Not_Enrolled>
+		<No_WiFi>Wi-Fi 接続なし</No_WiFi>
+		<Category_Health>システムの状態</Category_Health>
+		<Health_IME>IME サービス</Health_IME>
+		<Health_Defender>Microsoft Defender</Health_Defender>
+		<Health_Compliance>コンプライアンス</Health_Compliance>
+		<Health_Applications>会社のアプリ (Intune)</Health_Applications>
+		<Health_Disk>ディスク容量</Health_Disk>
+		<Health_BitLocker>BitLocker</Health_BitLocker>
+		<Health_PendingReboot>保留中の再起動</Health_PendingReboot>
+		<Health_Updates>インストール待ちの更新プログラム</Health_Updates>
+		<Health_Service>サービス</Health_Service>
+		<Health_Custom>カスタム チェック</Health_Custom>
+		<Health_Collection>状態の収集</Health_Collection>
+		<Health_OK>正常</Health_OK>
+		<Health_Error>エラー</Health_Error>
+		<Health_Unknown>不明</Health_Unknown>
+		<Health_Pending>保留中</Health_Pending>
+		<Health_Unavailable>ローカル状態レポートを利用できません: {0}</Health_Unavailable>
+	</SystemInfo>
+
+	<!-- Action catalogue (Issues_List.xml). The English base texts are in Issues_List.xml, so en.xml only lists the categories. -->
+	<Catalog>
+		<Categories>
+			<Category Id="Browser">ブラウザー</Category>
+			<Category Id="Device">デバイス</Category>
+			<Category Id="Intune">Intune</Category>
+			<Category Id="Office">Office</Category>
+			<Category Id="OneDrive">OneDrive</Category>
+			<Category Id="Outlook">Outlook</Category>
+			<Category Id="Teams">Teams</Category>
+		</Categories>
+		<Messages>
+			<Message Id="Msg_Teams_Restart">Teams が終了し、自動的に再起動します。
+
+問題が解決しない場合は、Teams からサインアウトして、もう一度サインインしてください。それでも解決しない場合は、サポートにお問い合わせください。
+
+続行しますか?</Message>
+			<Message Id="Msg_Teams_Restart_Short">Teams が終了し、自動的に再起動します。
+
+続行しますか?</Message>
+			<Message Id="Msg_OneDrive_Restart">OneDrive が終了し、自動的に再起動します。
+
+続行しますか?</Message>
+			<Message Id="Msg_OneDrive_Restart_Step1">この最初の手順では OneDrive を再起動します。OneDrive が終了し、自動的に再起動します。
+
+問題が解決しない場合は、アクション「OneDrive クライアントをリセットする」を実行してください。
+
+続行しますか?</Message>
+			<Message Id="Msg_OneDrive_Reset">OneDrive クライアントをリセットします。OneDrive クライアントをリセットしても、データが失われることはありません。
+
+その後も問題が解決しない場合は、サポートにお問い合わせください。
+
+続行しますか?</Message>
+			<Message Id="Msg_OneDrive_Teams_Sync">フォルダーは OneDrive で同期されていますが、Teams で共有されたファイルが同期されていません。</Message>
+			<Message Id="Msg_Intune_Sync_Explanation">ポリシーやアプリの展開を早めるなどの目的で、デバイスと Intune の同期を強制的に実行します。このアクションは、ローカルの SelfX サービスを通じて管理者権限で実行されます。</Message>
+			<Message Id="Msg_Intune_Restart">Intune Management Extension サービスをバックグラウンドで再起動します。数分後にもう一度お試しください。
+
+続行しますか?</Message>
+			<Message Id="Msg_Chkdsk_Explanation">OneDrive で問題が発生し、エラー "0x80071129: The tag present in the reparse point buffer is invalid" が表示されます。このアクションは、ローカルの SelfX サービスを通じて管理者権限で実行されます。</Message>
+			<Message Id="Msg_Chkdsk">デバイスの次回の再起動時にディスク チェックを実行するよう設定します。設定後にデバイスを再起動してください。チェックには数分かかる場合があります。
+
+続行しますか?</Message>
+			<Message Id="Msg_SendLogs_Explanation">サポートが問題 (アプリのインストールの失敗、セットアップの失敗、エラー メッセージなど) を分析するには、デバイスのログが必要です。このアクションは、ローカルの SelfX サービスを通じて管理者権限で関連するすべてのログとシステム情報を収集し、レポートを添付したサポート宛ての新しいメールを開きます。自動的に送信されるものはありません。</Message>
+			<Message Id="Msg_SendLogs">SelfX がデバイスのログを収集します。数分かかる場合があります。デバイスの設定は変更されません。
+
+レポートにはデバイス名とユーザー名が含まれます。準備ができると、レポートを添付した新しいメールが開きます。問題を説明して、メールをサポートに送信してください。
+
+続行しますか?</Message>
+		</Messages>
+		<Actions>
+			<Action Id="Q_Teams">
+				<Name>Teams の問題を解決する</Name>
+				<Explanation>Teams クライアントで問題が発生しています (動作が遅い、状態が正しくない、転送エラーなど)。</Explanation>
+				<Alerte_MSG>Teams が終了し、ローカルのキャッシュ フォルダーが消去されます。続行する前に、開いている作業を保存してください。Teams が実行中だった場合は再び開きます。
+
+続行しますか?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Word">
+				<Name>Word の問題を解決する</Name>
+				<Explanation>Word で作業中に応答しなくなり、何も操作できなくなりました。</Explanation>
+				<Alerte_MSG>Word が終了し、自動的に再起動します。保存されていない作業は失われる可能性があります。
+
+続行しますか?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Excel">
+				<Name>Excel の問題を解決する</Name>
+				<Explanation>Excel で作業中に応答しなくなり、何も操作できなくなりました。</Explanation>
+				<Alerte_MSG>Excel が終了し、自動的に再起動します。保存されていない作業は失われる可能性があります。
+
+続行しますか?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Store">
+				<Name>Microsoft Store の問題を解決する</Name>
+				<Explanation>Microsoft Store で問題が発生しています (Store を開けない、アプリをインストールできないなど)。</Explanation>
+				<Alerte_MSG>Microsoft Store のキャッシュがリセットされ、Store が開きます。
+
+続行しますか?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_OneDrive_Restart">
+				<Name>OneDrive の問題を解決する (方法 1)</Name>
+				<Explanation>OneDrive クライアントで問題が発生しています (ファイルやフォルダーの同期、ファイルを開くなど)。</Explanation>
+				<Alerte_MSG>OneDrive が終了し、自動的に再起動します。
+
+問題が解決しない場合は、方法 2 を使用してください。
+
+続行しますか?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_OneDrive_Reset">
+				<Name>OneDrive の問題を解決する (方法 2)</Name>
+				<Explanation>OneDrive クライアントで問題が発生しており (ファイルやフォルダーの同期、ファイルを開くなど)、方法 1 をすでに試しました。</Explanation>
+			</Action>
+			<Action Id="Q_Outlook_TeamsAddIn">
+				<Name>Outlook に「Teams 会議」ボタンがない</Name>
+				<Explanation>Outlook に「新しい Teams 会議」ボタンが表示されません。</Explanation>
+				<Alerte_MSG>Teams 会議アドインを再び有効にします。Outlook が終了し、自動的に再起動します。保存されていない作業は失われる可能性があります。
+
+問題が解決しない場合は、サポートにお問い合わせください。
+
+続行しますか?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Device_Connection">
+				<Name>デバイスで接続の問題が発生している</Name>
+				<Explanation>Web サイトを開こうとしても、接続できない、サイトにアクセスできない、またはエラーが表示されます。</Explanation>
+				<Alerte_MSG>デバイスの DNS キャッシュをバックグラウンドで消去します。[OK] をクリックした後、もう一度お試しください。
+
+続行しますか?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Device_Slow">
+				<Name>デバイスの動作が遅い</Name>
+				<Explanation>デバイスの動作が遅くなっています。</Explanation>
+				<Alerte_MSG>一時ファイルとごみ箱の内容が削除されます。
+
+続行しますか?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Intune_Restart">
+				<Name>Intune サービスを再起動する</Name>
+			</Action>
+			<Action Id="Q_Network_Restart">
+				<Name>ネットワーク アダプターを再起動する</Name>
+				<Explanation>ネットワークの問題が発生しているため、ネットワーク アダプターを再起動します。このアクションは、ローカルの SelfX サービスを通じて管理者権限で実行されます。</Explanation>
+				<Alerte_MSG>すべてのネットワーク アダプターが再起動されます。ネットワーク接続が一時的に中断されます。
+
+続行しますか?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_OneDrive_Chkdsk">
+				<Name>ロックされた OneDrive ファイルを修復する</Name>
+			</Action>
+			<Action Id="D_Chrome_Cache">
+				<Name>Google Chrome の閲覧データ (キャッシュ) を消去する</Name>
+				<Explanation>Google Chrome で Web サイトが読み込まれないか、正しく表示されません。すべての Chrome プロファイルのブラウザー キャッシュが消去されます。</Explanation>
+				<Alerte_MSG>Google Chrome が終了し、キャッシュされた閲覧データが削除されます。
+
+続行しますか?</Alerte_MSG>
+			</Action>
+			<Action Id="D_Firefox_Cache">
+				<Name>Firefox の閲覧データ (キャッシュ) を消去する</Name>
+				<Explanation>Firefox で Web サイトが読み込まれないか、正しく表示されません。すべての Firefox プロファイルのブラウザー キャッシュが消去されます。</Explanation>
+				<Alerte_MSG>Firefox が終了し、キャッシュされた閲覧データが削除されます。
+
+続行しますか?</Alerte_MSG>
+			</Action>
+			<Action Id="D_Outlook_TeamsAddIn">
+				<Name>Outlook に「Teams 会議」ボタンがない</Name>
+				<Explanation>Outlook に「新しい Teams 会議」ボタンが表示されません。</Explanation>
+				<Alerte_MSG>Outlook が終了し、自動的に再起動します。保存されていない作業は失われる可能性があります。
+
+続行しますか?</Alerte_MSG>
+			</Action>
+			<Action Id="D_OneDrive_Start">
+				<Name>OneDrive クライアントを起動する</Name>
+				<Explanation>OneDrive が実行されていません。</Explanation>
+				<Alerte_MSG>OneDrive クライアントを起動します。
+
+続行しますか?</Alerte_MSG>
+			</Action>
+			<Action Id="D_OneDrive_Restart">
+				<Name>OneDrive クライアントを再起動する</Name>
+				<Explanation>OneDrive を再起動すると、同期の問題など、一部の問題が解決する場合があります。</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_Sync_Step1">
+				<Name>OneDrive の同期の問題を解決する (手順 1)</Name>
+				<Explanation>OneDrive でファイルやフォルダーの同期に問題があります。
+
+この最初の手順では OneDrive を再起動します。OneDrive が終了し、自動的に再起動します。
+
+問題が解決しない場合は、アクション「OneDrive クライアントをリセットする」を実行してください。</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_Error_8004def4">
+				<Name>OneDrive が起動しない: エラー 0x8004def4</Name>
+				<Explanation>OneDrive の起動時にエラー 0x8004def4 が表示されます。</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_Memory">
+				<Name>デバイスが遅い: OneDrive がメモリを大量に使用している</Name>
+				<Explanation>デバイスの動作が遅く、OneDrive がメモリを大量に使用しているようです。</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_RedCross">
+				<Name>OneDrive アイコンに赤い × 印が表示される</Name>
+				<Explanation>OneDrive アイコンに赤い × 印が表示されています。</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_ClosesItself">
+				<Name>OneDrive が勝手に終了する</Name>
+				<Explanation>OneDrive が起動した後、勝手に終了してしまいます。</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_WhiteCross">
+				<Name>OneDrive のファイルに白い × 印が表示される</Name>
+				<Explanation>OneDrive のファイルまたはフォルダーに白い × 印が表示されています。</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_PasswordChange">
+				<Name>Windows のパスワード変更後に OneDrive で問題が発生する</Name>
+				<Explanation>最近パスワードを変更した後、同期の問題など、OneDrive で問題が発生しています。
+
+この手順では OneDrive クライアントを再起動します。</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_CannotOpen">
+				<Name>OneDrive のファイルを開けない</Name>
+				<Explanation>OneDrive に保存されたファイルが開きません。</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_TeamsSync">
+				<Name>フォルダーが OneDrive では同期されるが Teams では同期されない</Name>
+			</Action>
+			<Action Id="D_OneDrive_Reset">
+				<Name>OneDrive クライアントをリセットする</Name>
+				<Explanation>同期の問題など、OneDrive で問題が発生しています。
+
+この手順では OneDrive クライアントをリセットします。OneDrive クライアントをリセットしても、データが失われることはありません。</Explanation>
+			</Action>
+			<Action Id="D_Teams_Connection">
+				<Name>Teams の接続の問題を解決する</Name>
+				<Explanation>Teams に接続できません。</Explanation>
+			</Action>
+			<Action Id="D_Teams_ProfilePicture">
+				<Name>Teams のプロフィール画像の同期を修正する</Name>
+				<Explanation>Teams にプロフィール画像が表示されないか、更新されません。</Explanation>
+			</Action>
+			<Action Id="D_Teams_OneDriveSync">
+				<Name>フォルダーが OneDrive では同期されるが Teams では同期されない</Name>
+			</Action>
+			<Action Id="D_Teams_Loading">
+				<Name>Teams が「Microsoft Teams を読み込んでいます」のまま止まる</Name>
+				<Explanation>Teams を開くと、ウィンドウが「Microsoft Teams を読み込んでいます」のまま止まります。</Explanation>
+			</Action>
+			<Action Id="D_Teams_Sync">
+				<Name>Teams の同期の問題を解決する</Name>
+				<Explanation>Teams で同期の問題が発生しています。</Explanation>
+			</Action>
+			<Action Id="D_Teams_DoesNotOpen">
+				<Name>Teams クライアントが開かない</Name>
+				<Explanation>Teams を開こうとしても、クライアントが開きません。</Explanation>
+			</Action>
+			<Action Id="D_Teams_AudioFreeze">
+				<Name>音声通話中に Teams クライアントがフリーズする</Name>
+				<Explanation>音声通話中に Teams がフリーズします。</Explanation>
+			</Action>
+			<Action Id="D_Teams_Camera">
+				<Name>Teams のカメラ映像が止まる、または表示されない</Name>
+				<Explanation>会議や通話中に、ビデオが止まるか表示されません。</Explanation>
+			</Action>
+			<Action Id="D_Teams_SendFailed">
+				<Name>Teams のメッセージを送信できない</Name>
+				<Explanation>Teams のメッセージが送信されず、「送信できませんでした」と表示されます。</Explanation>
+			</Action>
+			<Action Id="D_Teams_MeetingDisplay">
+				<Name>Teams 会議への参加時に表示の問題が発生する</Name>
+				<Explanation>会議に参加すると、Teams が正しく表示されません。</Explanation>
+			</Action>
+			<Action Id="D_Teams_NoConnect">
+				<Name>Teams クライアントは開くが接続されない</Name>
+				<Explanation>Teams は開きますが、接続されません。</Explanation>
+			</Action>
+			<Action Id="D_Teams_StatusOffline">
+				<Name>Teams の状態がオフラインのままになる</Name>
+				<Explanation>サインインしているのに、Teams の状態が「オフライン」のままです。</Explanation>
+			</Action>
+			<Action Id="D_Teams_CallWindow">
+				<Name>Teams の通話ウィンドウが表示されない</Name>
+				<Explanation>Teams の着信通知が表示されなくなりました。</Explanation>
+			</Action>
+			<Action Id="D_Teams_MessageContent">
+				<Name>Teams のメッセージの内容が表示されない</Name>
+				<Explanation>メッセージの通知とプレビューは表示されますが、メッセージの内容は表示されません。</Explanation>
+			</Action>
+			<Action Id="D_Teams_PasswordChange">
+				<Name>パスワード変更後に接続の問題が発生する</Name>
+				<Explanation>パスワードを変更した後、Teams に接続できません。</Explanation>
+			</Action>
+			<Action Id="D_Teams_Tabs">
+				<Name>Teams のタブが読み込まれない</Name>
+				<Explanation>Teams でタブを開いても、正しく読み込まれません。</Explanation>
+			</Action>
+			<Action Id="D_Teams_StatusWrong">
+				<Name>Teams の状態が正しくない</Name>
+				<Explanation>Teams の状態が正しくないか、更新されません。</Explanation>
+			</Action>
+			<Action Id="D_Teams_MeetingOpen">
+				<Name>Teams 会議を開けない</Name>
+				<Explanation>参加リンクをクリックしても、Teams 会議が開きません。</Explanation>
+			</Action>
+			<Action Id="D_Teams_SoundCuts">
+				<Name>Teams 会議中に音声が途切れる</Name>
+				<Explanation>Teams 会議中に音声が途切れます。</Explanation>
+			</Action>
+			<Action Id="D_Teams_OutlookMeeting">
+				<Name>Outlook の予定表で Teams 会議を作成できない</Name>
+				<Explanation>Outlook の予定表から Teams 会議を作成できません。</Explanation>
+			</Action>
+			<Action Id="D_Intune_Sync">
+				<Name>Intune の同期を強制する</Name>
+			</Action>
+			<Action Id="D_OneDrive_Chkdsk">
+				<Name>OneDrive のエラーについてディスクをチェックする (chkdsk)</Name>
+			</Action>
+			<Action Id="D_OneDrive_ReparsePoint">
+				<Name>The tag present in the reparse point buffer is invalid (再解析ポイント バッファーのタグが無効です)</Name>
+			</Action>
+			<Action Id="D_OneDrive_Error_80071129">
+				<Name>エラー 0x80071129</Name>
+			</Action>
+			<Action Id="Q_Device_SendLogs">
+				<Name>デバイス ログをサポートに送信</Name>
+			</Action>
+			<Action Id="D_Device_SendLogs">
+				<Name>デバイス ログを収集してメールでサポートに送信</Name>
+			</Action>
+		</Actions>
+	</Catalog>
+</SelfX_Language>

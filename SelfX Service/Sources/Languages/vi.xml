@@ -1,0 +1,563 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+	SelfX Service - language file
+
+	Description:
+	  Texts of the SelfX user interface in one language. SelfX selects the file that matches the Windows
+	  display language of the user (for example de-CH -> de.xml, zh-TW -> zh-Hant.xml). If no file matches,
+	  en.xml is used. A text that is missing or empty in a language file is taken from en.xml.
+
+	Add a language:
+	  1. Copy en.xml to <culture>.xml. Use the neutral culture name (de, fr, pt) or a script/region name
+	     (zh-Hans, zh-Hant, pt-BR). Windows tries the exact culture first and then its parents.
+	  2. Set Culture, Name, NativeName and FlowDirection (RightToLeft for Arabic, Persian, Urdu, Hebrew ...).
+	  3. Translate the element texts. Do not change element names or Id attributes.
+	     Keep placeholders such as {0}, {1}, {1:D2} and the "|" separators of SystemInfo_Export_Filter.
+	  4. Catalogue texts: add an <Action Id="..."> entry per action and a <Message Id="..."> entry per shared
+	     message. The English base texts are in Issues_List.xml. Untranslated actions are shown in English.
+
+	History:
+	  Version  Date        Author               Change
+	  2.2.0    2026-10-28  Wolfgang Baeck       Initial version: multilingual user interface
+-->
+<SelfX_Language Culture="vi" Name="Vietnamese" NativeName="Tiếng Việt" FlowDirection="LeftToRight" Version="2.2.0">
+	<UI>
+		<Health_Fix>Khắc phục</Health_Fix>
+		<Health_Fix_Confirm>Chạy sửa chữa đã cấu hình cho {0}? Hãy lưu công việc: ứng dụng, dịch vụ hoặc kết nối có thể bị gián đoạn. Sau đó trạng thái sẽ được kiểm tra lại.</Health_Fix_Confirm>
+		<Health_Restart_Button>Khởi động lại</Health_Restart_Button>
+		<Health_Restart_Title>Khởi động lại thiết bị</Health_Restart_Title>
+		<Health_Restart_Confirm>Windows sẽ khởi động lại để hoàn tất các bản cập nhật và thay đổi đang chờ.&#10;&#10;Hãy lưu công việc và đóng tất cả chương trình trước. Quá trình khởi động lại bắt đầu khoảng 30 giây sau khi bạn xác nhận.&#10;&#10;Khởi động lại ngay?</Health_Restart_Confirm>
+		<Button_Restart_Now>Khởi động lại ngay</Button_Restart_Now>
+		<Health_Restart_Started>Windows sẽ khởi động lại sau khoảng 30 giây. Hãy lưu công việc ngay bây giờ.</Health_Restart_Started>
+		<Health_Updates_Started>Đang tìm, tải xuống và cài đặt các bản cập nhật Windows. Việc này có thể mất vài phút; bạn có thể tiếp tục làm việc.</Health_Updates_Started>
+		<Health_Updates_Done>Windows Update đã hoàn tất. Trạng thái thiết bị được kiểm tra lại và cho biết có cần khởi động lại hay không.</Health_Updates_Done>
+		<Health_Apps_Button>Thử lại</Health_Apps_Button>
+		<Health_Apps_Started>Việc cài đặt các ứng dụng bị lỗi đang được bắt đầu lại. Việc này có thể mất vài phút; bạn có thể theo dõi trong Cổng thông tin công ty.</Health_Apps_Started>
+		<Health_Check_Button>OK</Health_Check_Button>
+		<Health_Error_Button>Lỗi</Health_Error_Button>
+		<Health_Pending_Button>Đang chờ</Health_Pending_Button>
+		<Health_Check_Tooltip>Kiểm tra lại trạng thái này</Health_Check_Tooltip>
+		<!-- Main window -->
+		<Main_Title_Text>Thiết bị của bạn đang gặp sự cố?</Main_Title_Text>
+		<Subtitle_Text>Bạn có thể tìm cách khắc phục tại đây bằng cách chọn một trong các thao tác bên dưới.</Subtitle_Text>
+		<Run_solution_Text>Chạy thao tác</Run_solution_Text>
+		<Run_explanation_Text>Hiển thị thêm thông tin</Run_explanation_Text>
+		<Issue_filter_Title_Text>Lọc theo thành phần</Issue_filter_Title_Text>
+		<Issue_filter_KeyWord_Text>Nhập từ khóa</Issue_filter_KeyWord_Text>
+		<Available_Actions_Count>Có {0} thao tác</Available_Actions_Count>
+		<Troubleshooting_Tab_Text>Khắc phục sự cố</Troubleshooting_Tab_Text>
+		<Theme_Button_ToolTip>Chuyển đổi giữa giao diện tối và sáng</Theme_Button_ToolTip>
+		<Support_Button_ToolTip>Liên hệ với nhóm hỗ trợ</Support_Button_ToolTip>
+		<About_Button_ToolTip>Giới thiệu về SelfX</About_Button_ToolTip>
+		<Shield_ToolTip>Chạy với quyền quản trị viên thông qua dịch vụ SelfX cục bộ</Shield_ToolTip>
+
+		<!-- Simplified or detailed view -->
+		<Solution_Mode_Simple>Giao diện đơn giản</Solution_Mode_Simple>
+		<Solution_Mode_Detailed>Giao diện chi tiết</Solution_Mode_Detailed>
+		<Solution_Mode_Info_Title>Giao diện đơn giản hay chi tiết?</Solution_Mode_Info_Title>
+		<Solution_Mode_Info_Text>Giao diện đơn giản liệt kê sự cố theo sản phẩm.
+Giao diện chi tiết liệt kê một số sự cố cụ thể cho từng sản phẩm mà bạn có thể khắc phục.
+
+Chúng tôi khuyên bạn nên dùng giao diện chi tiết nếu giao diện đơn giản không khắc phục được sự cố hoặc không có sự cố bạn đang gặp.</Solution_Mode_Info_Text>
+
+		<!-- Dialogs -->
+		<Warning_Click_Run_Solution_Text>Khắc phục sự cố</Warning_Click_Run_Solution_Text>
+		<Warning_Click_Run_Explanation_Text>Thông tin thêm</Warning_Click_Run_Explanation_Text>
+		<Button_Ok>OK</Button_Ok>
+		<Button_Cancel>Hủy</Button_Cancel>
+		<Button_Yes>Có</Button_Yes>
+		<Button_No>Không</Button_No>
+		<Close_Button_Text>Đóng</Close_Button_Text>
+		<Reboot_Alert>Để thiết bị hoạt động ổn định và đúng cách, hãy khởi động lại thiết bị ít nhất mỗi tuần một lần.</Reboot_Alert>
+
+		<!-- Support and About dialogs -->
+		<Support_Window_Title>Thông tin nhóm hỗ trợ</Support_Window_Title>
+		<Support_Phone_Label>Số điện thoại:</Support_Phone_Label>
+		<Support_Mail_Label>Email:</Support_Mail_Label>
+		<About_Version_Text>{0}: phiên bản {1} - danh mục: {2}</About_Version_Text>
+
+		<!-- Local SelfX service (actions with Context System) -->
+		<Service_Running_Text>Dịch vụ SelfX đang chạy: các thao tác có biểu tượng chiếc khiên sẽ chạy với quyền quản trị viên.</Service_Running_Text>
+		<Service_Unavailable_Text>Dịch vụ SelfX không chạy: các thao tác có biểu tượng chiếc khiên hiện không khả dụng.</Service_Unavailable_Text>
+		<Service_Busy_Text>Một thao tác khác vẫn đang chạy. Vui lòng đợi thao tác đó hoàn tất.</Service_Busy_Text>
+		<Action_Running_Text>Đang chạy thao tác: {0}</Action_Running_Text>
+		<Action_Running_Label>Đang chạy…</Action_Running_Label>
+		<Action_Success_Text>Đã hoàn tất thao tác: {0}</Action_Success_Text>
+		<Action_Failed_Text>Không chạy được thao tác: {0}</Action_Failed_Text>
+		<Action_Failed_ExitCode_Text>Không chạy được thao tác: {0} (mã thoát {1})</Action_Failed_ExitCode_Text>
+		<Action_Timeout_Text>Đã dừng thao tác vì mất quá nhiều thời gian: {0}</Action_Timeout_Text>
+		<Script_Not_Found_Text>Không tìm thấy tập lệnh của thao tác này: {0}</Script_Not_Found_Text>
+
+		<!-- System information tab -->
+		<SystemInfo_Tab_Text>Thông tin hệ thống</SystemInfo_Tab_Text>
+		<SystemInfo_Title_Text>Thông tin thiết bị dành cho nhóm hỗ trợ</SystemInfo_Title_Text>
+		<SystemInfo_Hint_Text>Bấm đúp vào một dòng để sao chép giá trị.</SystemInfo_Hint_Text>
+		<SystemInfo_Loading_Text>Đang thu thập thông tin hệ thống...</SystemInfo_Loading_Text>
+		<SystemInfo_Copied_Text>Đã sao chép vào bảng tạm: {0}</SystemInfo_Copied_Text>
+		<SystemInfo_Refresh_Text>Làm mới</SystemInfo_Refresh_Text>
+		<SystemInfo_Copy_Text>Sao chép tất cả</SystemInfo_Copy_Text>
+		<SystemInfo_Export_Text>Xuất</SystemInfo_Export_Text>
+		<SystemInfo_Export_Filter>Tệp văn bản (*.txt)|*.txt|Tệp HTML (*.html)|*.html|Tệp CSV (*.csv)|*.csv|Tệp JSON (*.json)|*.json</SystemInfo_Export_Filter>
+		<SystemInfo_SyncApps_Text>Đồng bộ ứng dụng Intune</SystemInfo_SyncApps_Text>
+		<SystemInfo_SyncCompliance_Text>Kiểm tra tuân thủ</SystemInfo_SyncCompliance_Text>
+		<SystemInfo_CompanyPortal_Text>Cổng thông tin công ty</SystemInfo_CompanyPortal_Text>
+		<SystemInfo_QuickAssist_Text>Hỗ trợ nhanh</SystemInfo_QuickAssist_Text>
+		<SystemInfo_MdmDiagnostics_Text>Thu thập nhật ký MDM</SystemInfo_MdmDiagnostics_Text>
+		<SystemInfo_SendLogs_Text>Gửi nhật ký cho bộ phận hỗ trợ</SystemInfo_SendLogs_Text>
+		<Report_Mail_Subject>Nhật ký thiết bị {0}</Report_Mail_Subject>
+		<Report_Mail_Body>Xin chào,
+
+Đính kèm là nhật ký thiết bị của {0}, được SelfX thu thập vào {1}.
+
+Mô tả sự cố:</Report_Mail_Body>
+		<Report_Mail_Opened_Text>Một email có đính kèm nhật ký thiết bị đã được mở. Hãy mô tả sự cố của bạn và gửi email.</Report_Mail_Opened_Text>
+		<Report_Mail_Recipient_Text>Một email có đính kèm nhật ký thiết bị đã được mở. Hãy nhập người nhận ({0}), mô tả sự cố của bạn và gửi email.</Report_Mail_Recipient_Text>
+		<Report_Mail_Manual_Text>Nhật ký thiết bị đã được lưu vào {0}. Hãy đính kèm tệp này vào email (người nhận: {1}) và mô tả sự cố của bạn.</Report_Mail_Manual_Text>
+		<Report_Not_Found_Text>Đã thu thập nhật ký thiết bị nhưng không thể chuẩn bị email: {0}</Report_Not_Found_Text>
+		<Report_Support_Fallback>bộ phận hỗ trợ của bạn</Report_Support_Fallback>
+		<Nav_Status_Text>Trạng thái thiết bị</Nav_Status_Text>
+		<Status_LastChecked_Text>Kiểm tra lần cuối: {0}</Status_LastChecked_Text>
+		<Status_NotChecked_Text>Trạng thái thiết bị chưa được kiểm tra.</Status_NotChecked_Text>
+		<Status_Background_Text>Tự động kiểm tra mỗi {0} phút</Status_Background_Text>
+		<Status_Background_Battery_Text>Kiểm tra tự động tạm dừng khi thiết bị dùng pin</Status_Background_Battery_Text>
+		<Status_Checking_Text>Đang kiểm tra trạng thái thiết bị. Quá trình này có thể mất đến một phút ...</Status_Checking_Text>
+		<Status_AllOk_Title>Mọi thứ đều ổn</Status_AllOk_Title>
+		<Status_AllOk_Text>Không tìm thấy sự cố nào trên thiết bị của bạn.</Status_AllOk_Text>
+		<Status_Issues_Title>{0} mục cần bạn chú ý</Status_Issues_Title>
+		<Status_Issues_Text>Sự cố được hiển thị trước. Bấm “Khắc phục” để sửa sự cố, hoặc mũi tên để kiểm tra lại.</Status_Issues_Text>
+		<Status_CheckAll_Tooltip>Kiểm tra lại mọi thứ ngay. Quá trình này có thể mất đến một phút.</Status_CheckAll_Tooltip>
+		<Status_FixAll>Khắc phục tất cả sự cố</Status_FixAll>
+		<Status_FixAll_Tooltip>Lần lượt chạy bản sửa lỗi đã cấu hình cho từng sự cố. Sau đó mọi thứ sẽ được kiểm tra lại.</Status_FixAll_Tooltip>
+		<Health_FixAll_Confirm>Lần lượt chạy các bản sửa lỗi đã cấu hình cho {0} sự cố này?&#10;&#10;{1}&#10;&#10;Ứng dụng có thể bị đóng và dịch vụ hoặc kết nối mạng có thể bị gián đoạn. Hãy lưu công việc của bạn trước. Sau đó mọi thứ sẽ được kiểm tra lại.</Health_FixAll_Confirm>
+		<Status_FixAll_Done>Đã hoàn tất thành công {0} trên {1} bản sửa lỗi. Trạng thái đang được kiểm tra lại.</Status_FixAll_Done>
+		<Status_FixAll_Failed>Không thành công: {0}</Status_FixAll_Failed>
+		<Tooltip_Fix>Tự động sửa sự cố này. Bạn sẽ được yêu cầu xác nhận trước.</Tooltip_Fix>
+		<Tooltip_Run>Bắt đầu giải pháp này. Bạn sẽ được yêu cầu xác nhận trước khi có bất kỳ thay đổi nào.</Tooltip_Run>
+		<Filter_All_Text>Tất cả</Filter_All_Text>
+		<View_Help_Tooltip>Chế độ xem đơn giản và chi tiết khác nhau như thế nào?</View_Help_Tooltip>
+		<SystemInfo_Cached_Text>Thông tin từ {0} – đang cập nhật ...</SystemInfo_Cached_Text>
+		<Tooltip_Refresh>thu thập lại thông tin</Tooltip_Refresh>
+		<Tooltip_Copy>sao chép toàn bộ thông tin, ví dụ để dán vào yêu cầu hỗ trợ</Tooltip_Copy>
+		<Tooltip_Export>lưu toàn bộ thông tin thành tệp</Tooltip_Export>
+		<Tools_Title_Text>Công cụ</Tools_Title_Text>
+		<Tooltip_SyncApps>Yêu cầu Intune cài đặt hoặc cập nhật ngay các ứng dụng được gán cho bạn.</Tooltip_SyncApps>
+		<Tooltip_SyncCompliance>Yêu cầu Intune kiểm tra ngay xem thiết bị của bạn có đáp ứng quy định của công ty không.</Tooltip_SyncCompliance>
+		<Tooltip_CompanyPortal>Mở Cổng thông tin công ty, nơi bạn có thể cài đặt ứng dụng của công ty.</Tooltip_CompanyPortal>
+		<Tooltip_QuickAssist>Mở Hỗ trợ nhanh để nhân viên hỗ trợ có thể xem màn hình và giúp bạn – chỉ khi bạn đồng ý.</Tooltip_QuickAssist>
+		<Tooltip_MdmDiagnostics>Thu thập nhật ký quản lý thiết bị vào một thư mục cho bộ phận hỗ trợ.</Tooltip_MdmDiagnostics>
+		<Tooltip_SendLogs>Thu thập toàn bộ nhật ký của thiết bị và mở email gửi bộ phận hỗ trợ có đính kèm báo cáo.</Tooltip_SendLogs>
+		<Settings_Button_ToolTip>Cài đặt (ngôn ngữ, giao diện và biểu tượng trạng thái)</Settings_Button_ToolTip>
+		<Settings_Title>Cài đặt</Settings_Title>
+		<Settings_Language_Text>Ngôn ngữ</Settings_Language_Text>
+		<Settings_Language_Auto>Tự động ({0})</Settings_Language_Auto>
+		<Settings_Language_Hint>SelfX khởi động lại bằng ngôn ngữ đã chọn.</Settings_Language_Hint>
+		<Settings_Language_Later>Ngôn ngữ mới sẽ được dùng vào lần mở SelfX tiếp theo vì một thao tác sửa lỗi vẫn đang chạy.</Settings_Language_Later>
+		<Settings_Theme_Text>Giao diện</Settings_Theme_Text>
+		<Settings_Theme_Auto>Tự động</Settings_Theme_Auto>
+		<Settings_Theme_Auto_ToolTip>Giống Windows: dùng chế độ ứng dụng đã chọn trong Cài đặt &gt; Cá nhân hóa &gt; Màu sắc</Settings_Theme_Auto_ToolTip>
+		<Settings_Theme_Dark>Tối</Settings_Theme_Dark>
+		<Settings_Theme_Light>Sáng</Settings_Theme_Light>
+		<Settings_Tray_Text>Hiển thị biểu tượng SelfX trong vùng thông báo</Settings_Tray_Text>
+		<Settings_Tray_Hint>Biểu tượng cạnh đồng hồ cho biết trạng thái thiết bị và thông báo khi phát hiện sự cố.</Settings_Tray_Hint>
+		<Settings_Notify_Text>Hiển thị thông báo khi có sự cố</Settings_Notify_Text>
+		<Settings_Notify_Hint>Ngoài biểu tượng SelfX có màu, Windows hiển thị thông báo khi phát hiện sự cố mới, ví dụ dung lượng đĩa thấp.</Settings_Notify_Hint>
+		<Support_Intro_Text>Chúng tôi sẵn sàng hỗ trợ bạn. Bạn có thể liên hệ với chúng tôi qua:</Support_Intro_Text>
+		<Support_Hours_Label>Giờ hỗ trợ</Support_Hours_Label>
+		<Support_Teams_Label>Trò chuyện Teams</Support_Teams_Label>
+		<Support_Website_Label>Trang web / hệ thống phiếu hỗ trợ</Support_Website_Label>
+		<Support_Teams_Button>Bắt đầu trò chuyện</Support_Teams_Button>
+		<Support_Website_Button>Mở</Support_Website_Button>
+		<Support_Mail_Button>Viết email</Support_Mail_Button>
+		<Support_None_Text>Chưa cấu hình thông tin liên hệ. Vui lòng liên hệ bộ phận CNTT.</Support_None_Text>
+		<Service_Short_Running>Dịch vụ SelfX đang chạy</Service_Short_Running>
+		<Service_Short_Unavailable>Dịch vụ SelfX không khả dụng</Service_Short_Unavailable>
+		<Version_Text>Phiên bản {0}</Version_Text>
+		<Tray_Tooltip_OK>SelfX: mọi thứ đều ổn</Tray_Tooltip_OK>
+		<Tray_Tooltip_Issues>SelfX: {0} sự cố, {1} cảnh báo</Tray_Tooltip_Issues>
+		<Tray_Tooltip_Unknown>SelfX: chưa có trạng thái thiết bị</Tray_Tooltip_Unknown>
+		<Tray_Menu_Open>Mở SelfX</Tray_Menu_Open>
+		<Tray_Menu_Status>Hiển thị trạng thái thiết bị</Tray_Menu_Status>
+		<Tray_Menu_Check>Kiểm tra trạng thái ngay</Tray_Menu_Check>
+		<Tray_Menu_Notify>Hiển thị thông báo</Tray_Menu_Notify>
+		<Tray_Menu_Hide>Ẩn biểu tượng này</Tray_Menu_Hide>
+		<Tray_Notify_Click>Bấm vào đây để xem chi tiết.</Tray_Notify_Click>
+		<Tray_Hidden_Text>Biểu tượng đã bị ẩn. Bạn có thể hiển thị lại trong SelfX tại mục Cài đặt.</Tray_Hidden_Text>
+		<Tray_Checking_Text>Đang kiểm tra trạng thái thiết bị ...</Tray_Checking_Text>
+	</UI>
+
+	<!-- Labels and values of the System information tab -->
+	<SystemInfo>
+		<Category_Device>Thiết bị</Category_Device>
+		<Category_Windows>Windows</Category_Windows>
+		<Category_User>Người dùng và quản lý</Category_User>
+		<Category_Network>Mạng</Category_Network>
+		<Category_Report>Báo cáo</Category_Report>
+		<Computer_Name>Tên máy tính</Computer_Name>
+		<Manufacturer>Nhà sản xuất</Manufacturer>
+		<Model>Kiểu máy</Model>
+		<Serial_Number>Số sê-ri</Serial_Number>
+		<BIOS_Version>Phiên bản BIOS</BIOS_Version>
+		<Processor>Bộ xử lý</Processor>
+		<Memory>Bộ nhớ (RAM)</Memory>
+		<Free_Space>Dung lượng trống {0}</Free_Space>
+		<Free_Space_Value>{0}/{1} ({2}%)</Free_Space_Value>
+		<Battery>Pin</Battery>
+		<Windows_Version>Phiên bản Windows</Windows_Version>
+		<OS_Build>Bản dựng hệ điều hành</OS_Build>
+		<Last_Boot>Lần khởi động gần nhất</Last_Boot>
+		<Uptime>Thời gian hoạt động</Uptime>
+		<Uptime_Value>{0} ngày {1:D2}:{2:D2} giờ</Uptime_Value>
+		<Last_Update>Bản cập nhật được cài đặt gần nhất</Last_Update>
+		<Time_Zone>Múi giờ</Time_Zone>
+		<Current_User>Người dùng hiện tại</Current_User>
+		<User_Principal_Name>Tên người dùng chính</User_Principal_Name>
+		<Domain>Miền / nhóm làm việc</Domain>
+		<Entra_Joined>Đã tham gia Entra ID</Entra_Joined>
+		<Domain_Joined>Đã tham gia miền</Domain_Joined>
+		<Tenant>Đối tượng thuê</Tenant>
+		<Entra_Device_Id>ID thiết bị Entra</Entra_Device_Id>
+		<Intune_User>Người dùng đã đăng ký Intune</Intune_User>
+		<Intune_Last_Sync>Lần đồng bộ Intune gần nhất</Intune_Last_Sync>
+		<LAN_Connected>Đã kết nối LAN</LAN_Connected>
+		<WiFi_Connected>Đã kết nối Wi-Fi</WiFi_Connected>
+		<WWAN_Connected>Đã kết nối băng thông rộng di động</WWAN_Connected>
+		<WiFi_SSID>Mạng Wi-Fi (SSID)</WiFi_SSID>
+		<VPN_Connected>Đã kết nối VPN</VPN_Connected>
+		<Internet_Reachable>Có thể truy cập Internet</Internet_Reachable>
+		<IPv4>Địa chỉ IPv4</IPv4>
+		<IPv6>Địa chỉ IPv6</IPv6>
+		<Gateway>Cổng mặc định</Gateway>
+		<DNS>Máy chủ DNS</DNS>
+		<MAC>Địa chỉ MAC</MAC>
+		<Collected_At>Thời điểm thu thập</Collected_At>
+		<Error>Lỗi</Error>
+		<Yes>Có</Yes>
+		<No>Không</No>
+		<Not_Available>không khả dụng</Not_Available>
+		<Not_Enrolled>Chưa đăng ký / không xác định</Not_Enrolled>
+		<No_WiFi>Không có kết nối Wi-Fi</No_WiFi>
+		<Category_Health>Trạng thái hệ thống</Category_Health>
+		<Health_IME>Dịch vụ IME</Health_IME>
+		<Health_Defender>Microsoft Defender</Health_Defender>
+		<Health_Compliance>Tuân thủ</Health_Compliance>
+		<Health_Applications>Ứng dụng của công ty (Intune)</Health_Applications>
+		<Health_Disk>Dung lượng đĩa</Health_Disk>
+		<Health_BitLocker>BitLocker</Health_BitLocker>
+		<Health_PendingReboot>Đang chờ khởi động lại</Health_PendingReboot>
+		<Health_Updates>Bản cập nhật cần cài đặt</Health_Updates>
+		<Health_Service>Dịch vụ</Health_Service>
+		<Health_Custom>Kiểm tra tùy chỉnh</Health_Custom>
+		<Health_Collection>Thu thập trạng thái</Health_Collection>
+		<Health_OK>Bình thường</Health_OK>
+		<Health_Error>Lỗi</Health_Error>
+		<Health_Unknown>Không rõ</Health_Unknown>
+		<Health_Pending>Đang chờ</Health_Pending>
+		<Health_Unavailable>Không có báo cáo trạng thái cục bộ: {0}</Health_Unavailable>
+	</SystemInfo>
+
+	<!-- Action catalogue (Issues_List.xml). The English base texts are in Issues_List.xml, so en.xml only lists the categories. -->
+	<Catalog>
+		<Categories>
+			<Category Id="Browser">Trình duyệt</Category>
+			<Category Id="Device">Thiết bị</Category>
+			<Category Id="Intune">Intune</Category>
+			<Category Id="Office">Office</Category>
+			<Category Id="OneDrive">OneDrive</Category>
+			<Category Id="Outlook">Outlook</Category>
+			<Category Id="Teams">Teams</Category>
+		</Categories>
+		<Messages>
+			<Message Id="Msg_Teams_Restart">Teams sẽ đóng rồi tự động mở lại.
+
+Nếu sự cố vẫn tiếp diễn, hãy đăng xuất khỏi Teams rồi đăng nhập lại. Nếu vẫn không khắc phục được, vui lòng liên hệ với bộ phận hỗ trợ.
+
+Bạn có muốn tiếp tục không?</Message>
+			<Message Id="Msg_Teams_Restart_Short">Teams sẽ đóng rồi tự động mở lại.
+
+Bạn có muốn tiếp tục không?</Message>
+			<Message Id="Msg_OneDrive_Restart">OneDrive sẽ đóng rồi tự động mở lại.
+
+Bạn có muốn tiếp tục không?</Message>
+			<Message Id="Msg_OneDrive_Restart_Step1">Bước đầu tiên này sẽ khởi động lại OneDrive. OneDrive sẽ đóng rồi tự động mở lại.
+
+Nếu sự cố vẫn tiếp diễn, hãy chạy thao tác "Đặt lại ứng dụng OneDrive".
+
+Bạn có muốn tiếp tục không?</Message>
+			<Message Id="Msg_OneDrive_Reset">Ứng dụng OneDrive sẽ được đặt lại. Việc đặt lại không làm mất dữ liệu.
+
+Nếu sự cố vẫn tiếp diễn sau đó, vui lòng liên hệ với bộ phận hỗ trợ.
+
+Bạn có muốn tiếp tục không?</Message>
+			<Message Id="Msg_OneDrive_Teams_Sync">Các thư mục được đồng bộ trong OneDrive nhưng các tệp được chia sẻ trong Teams thì không.</Message>
+			<Message Id="Msg_Intune_Sync_Explanation">Bạn muốn buộc thiết bị đồng bộ với Intune, chẳng hạn để đẩy nhanh việc triển khai chính sách hoặc ứng dụng. Thao tác này chạy với quyền quản trị viên thông qua dịch vụ SelfX cục bộ.</Message>
+			<Message Id="Msg_Intune_Restart">Dịch vụ Intune Management Extension sẽ được khởi động lại trong nền. Hãy thử lại sau vài phút.
+
+Bạn có muốn tiếp tục không?</Message>
+			<Message Id="Msg_Chkdsk_Explanation">Bạn đang gặp sự cố với OneDrive và nhận được lỗi "0x80071129: The tag present in the reparse point buffer is invalid". Thao tác này chạy với quyền quản trị viên thông qua dịch vụ SelfX cục bộ.</Message>
+			<Message Id="Msg_Chkdsk">Lệnh kiểm tra đĩa sẽ được lên lịch chạy vào lần khởi động lại thiết bị tiếp theo. Sau đó, hãy khởi động lại thiết bị. Quá trình kiểm tra có thể mất vài phút.
+
+Bạn có muốn tiếp tục không?</Message>
+			<Message Id="Msg_SendLogs_Explanation">Bộ phận hỗ trợ cần nhật ký của thiết bị để phân tích sự cố, ví dụ cài đặt ứng dụng không thành công, thiết lập không thành công hoặc thông báo lỗi. Thao tác này thu thập tất cả nhật ký và thông tin hệ thống liên quan với quyền quản trị viên thông qua dịch vụ SelfX cục bộ và mở một email mới gửi bộ phận hỗ trợ với báo cáo được đính kèm. Không có gì được gửi tự động.</Message>
+			<Message Id="Msg_SendLogs">SelfX đang thu thập nhật ký của thiết bị. Quá trình này có thể mất vài phút. Không có gì trên thiết bị của bạn bị thay đổi.
+
+Báo cáo chứa tên thiết bị và tên người dùng của bạn. Khi báo cáo sẵn sàng, một email mới có đính kèm báo cáo sẽ mở ra. Hãy mô tả sự cố của bạn và gửi email cho bộ phận hỗ trợ.
+
+Bạn có muốn tiếp tục không?</Message>
+		</Messages>
+		<Actions>
+			<Action Id="Q_Teams">
+				<Name>Khắc phục sự cố Teams</Name>
+				<Explanation>Bạn đang gặp sự cố với ứng dụng Teams (chạy chậm, trạng thái không chính xác, lỗi truyền dữ liệu, v.v.).</Explanation>
+				<Alerte_MSG>Teams sẽ đóng và các thư mục bộ nhớ đệm cục bộ sẽ được xóa. Hãy lưu công việc đang mở trước khi tiếp tục. Teams sẽ mở lại nếu ứng dụng đang chạy.
+
+Bạn có muốn tiếp tục không?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Word">
+				<Name>Khắc phục sự cố Word</Name>
+				<Explanation>Bạn đang làm việc trong Word nhưng chương trình không phản hồi và bạn không thể tiếp tục thao tác.</Explanation>
+				<Alerte_MSG>Word sẽ đóng rồi tự động mở lại. Công việc chưa lưu có thể bị mất.
+
+Bạn có muốn tiếp tục không?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Excel">
+				<Name>Khắc phục sự cố Excel</Name>
+				<Explanation>Bạn đang làm việc trong Excel nhưng chương trình không phản hồi và bạn không thể tiếp tục thao tác.</Explanation>
+				<Alerte_MSG>Excel sẽ đóng rồi tự động mở lại. Công việc chưa lưu có thể bị mất.
+
+Bạn có muốn tiếp tục không?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Store">
+				<Name>Khắc phục sự cố Microsoft Store</Name>
+				<Explanation>Bạn đang gặp sự cố với Microsoft Store (mở Store, cài đặt ứng dụng, v.v.).</Explanation>
+				<Alerte_MSG>Bộ nhớ đệm của Microsoft Store sẽ được đặt lại và Store sẽ mở.
+
+Bạn có muốn tiếp tục không?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_OneDrive_Restart">
+				<Name>Khắc phục sự cố OneDrive (phương pháp 1)</Name>
+				<Explanation>Bạn đang gặp sự cố với ứng dụng OneDrive (đồng bộ tệp hoặc thư mục, mở tệp, v.v.).</Explanation>
+				<Alerte_MSG>OneDrive sẽ đóng rồi tự động mở lại.
+
+Nếu sự cố vẫn tiếp diễn, hãy dùng phương pháp 2.
+
+Bạn có muốn tiếp tục không?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_OneDrive_Reset">
+				<Name>Khắc phục sự cố OneDrive (phương pháp 2)</Name>
+				<Explanation>Bạn đang gặp sự cố với ứng dụng OneDrive (đồng bộ tệp hoặc thư mục, mở tệp, v.v.) và đã thử phương pháp 1.</Explanation>
+			</Action>
+			<Action Id="Q_Outlook_TeamsAddIn">
+				<Name>Thiếu nút "Cuộc họp Teams" trong Outlook</Name>
+				<Explanation>Thiếu nút "Cuộc họp Teams mới" trong Outlook.</Explanation>
+				<Alerte_MSG>Phần bổ trợ cuộc họp Teams sẽ được bật lại. Outlook sẽ đóng rồi tự động mở lại. Công việc chưa lưu có thể bị mất.
+
+Nếu sự cố vẫn tiếp diễn, vui lòng liên hệ với bộ phận hỗ trợ.
+
+Bạn có muốn tiếp tục không?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Device_Connection">
+				<Name>Sự cố kết nối trên thiết bị</Name>
+				<Explanation>Bạn đang mở một trang web nhưng kết nối không hoạt động, không thể truy cập trang web hoặc xuất hiện lỗi.</Explanation>
+				<Alerte_MSG>Bộ nhớ đệm DNS trên thiết bị sẽ được xóa trong nền. Hãy thử lại sau khi bấm OK.
+
+Bạn có muốn tiếp tục không?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Device_Slow">
+				<Name>Thiết bị chạy chậm</Name>
+				<Explanation>Thiết bị của bạn đang chạy chậm.</Explanation>
+				<Alerte_MSG>Các tệp tạm thời và nội dung trong Thùng rác sẽ bị xóa.
+
+Bạn có muốn tiếp tục không?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Intune_Restart">
+				<Name>Khởi động lại dịch vụ Intune</Name>
+			</Action>
+			<Action Id="Q_Network_Restart">
+				<Name>Khởi động lại bộ điều hợp mạng</Name>
+				<Explanation>Bạn đang gặp sự cố mạng và muốn khởi động lại các bộ điều hợp mạng. Thao tác này chạy với quyền quản trị viên thông qua dịch vụ SelfX cục bộ.</Explanation>
+				<Alerte_MSG>Tất cả bộ điều hợp mạng sẽ được khởi động lại. Kết nối mạng sẽ bị gián đoạn trong thời gian ngắn.
+
+Bạn có muốn tiếp tục không?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_OneDrive_Chkdsk">
+				<Name>Sửa tệp OneDrive bị khóa</Name>
+			</Action>
+			<Action Id="D_Chrome_Cache">
+				<Name>Xóa dữ liệu duyệt web Google Chrome (bộ nhớ đệm)</Name>
+				<Explanation>Trang web không tải hoặc hiển thị đúng trong Google Chrome. Bộ nhớ đệm của trình duyệt trong tất cả hồ sơ Chrome sẽ được xóa.</Explanation>
+				<Alerte_MSG>Google Chrome sẽ đóng và dữ liệu duyệt web đã lưu trong bộ nhớ đệm sẽ bị xóa.
+
+Bạn có muốn tiếp tục không?</Alerte_MSG>
+			</Action>
+			<Action Id="D_Firefox_Cache">
+				<Name>Xóa dữ liệu duyệt web Firefox (bộ nhớ đệm)</Name>
+				<Explanation>Trang web không tải hoặc hiển thị đúng trong Firefox. Bộ nhớ đệm của trình duyệt trong tất cả hồ sơ Firefox sẽ được xóa.</Explanation>
+				<Alerte_MSG>Firefox sẽ đóng và dữ liệu duyệt web đã lưu trong bộ nhớ đệm sẽ bị xóa.
+
+Bạn có muốn tiếp tục không?</Alerte_MSG>
+			</Action>
+			<Action Id="D_Outlook_TeamsAddIn">
+				<Name>Thiếu nút "Cuộc họp Teams" trong Outlook</Name>
+				<Explanation>Thiếu nút "Cuộc họp Teams mới" trong Outlook.</Explanation>
+				<Alerte_MSG>Outlook sẽ đóng rồi tự động mở lại. Công việc chưa lưu có thể bị mất.
+
+Bạn có muốn tiếp tục không?</Alerte_MSG>
+			</Action>
+			<Action Id="D_OneDrive_Start">
+				<Name>Khởi động ứng dụng OneDrive</Name>
+				<Explanation>OneDrive hiện không chạy.</Explanation>
+				<Alerte_MSG>Ứng dụng OneDrive sẽ được khởi động.
+
+Bạn có muốn tiếp tục không?</Alerte_MSG>
+			</Action>
+			<Action Id="D_OneDrive_Restart">
+				<Name>Khởi động lại ứng dụng OneDrive</Name>
+				<Explanation>Khởi động lại OneDrive có thể khắc phục một số sự cố, chẳng hạn như sự cố đồng bộ.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_Sync_Step1">
+				<Name>Khắc phục sự cố đồng bộ OneDrive (bước 1)</Name>
+				<Explanation>Bạn đang gặp sự cố đồng bộ tệp hoặc thư mục trong OneDrive.
+
+Bước đầu tiên này sẽ khởi động lại OneDrive. OneDrive sẽ đóng rồi tự động mở lại.
+
+Nếu sự cố vẫn tiếp diễn, hãy chạy thao tác "Đặt lại ứng dụng OneDrive".</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_Error_8004def4">
+				<Name>OneDrive không khởi động: lỗi 0x8004def4</Name>
+				<Explanation>Lỗi 0x8004def4 xuất hiện khi OneDrive khởi động.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_Memory">
+				<Name>Thiết bị chạy chậm: OneDrive sử dụng nhiều bộ nhớ</Name>
+				<Explanation>Thiết bị của bạn chạy chậm và có vẻ OneDrive đang sử dụng nhiều bộ nhớ.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_RedCross">
+				<Name>Dấu chữ thập đỏ trên biểu tượng OneDrive</Name>
+				<Explanation>Biểu tượng OneDrive hiển thị dấu chữ thập đỏ.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_ClosesItself">
+				<Name>OneDrive tự đóng</Name>
+				<Explanation>OneDrive mở rồi tự đóng lại.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_WhiteCross">
+				<Name>Dấu chữ thập trắng trên tệp OneDrive</Name>
+				<Explanation>Tệp hoặc thư mục OneDrive hiển thị dấu chữ thập trắng.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_PasswordChange">
+				<Name>Sự cố OneDrive sau khi đổi mật khẩu Windows</Name>
+				<Explanation>Gần đây bạn đã đổi mật khẩu và hiện gặp sự cố với OneDrive, chẳng hạn như sự cố đồng bộ.
+
+Bước này sẽ khởi động lại ứng dụng OneDrive.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_CannotOpen">
+				<Name>Không thể mở tệp trong OneDrive</Name>
+				<Explanation>Không thể mở các tệp được lưu trong OneDrive.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_TeamsSync">
+				<Name>Thư mục đồng bộ trong OneDrive nhưng không đồng bộ trong Teams</Name>
+			</Action>
+			<Action Id="D_OneDrive_Reset">
+				<Name>Đặt lại ứng dụng OneDrive</Name>
+				<Explanation>Bạn đang gặp sự cố với OneDrive, chẳng hạn như sự cố đồng bộ.
+
+Bước này sẽ đặt lại ứng dụng OneDrive. Việc đặt lại không làm mất dữ liệu.</Explanation>
+			</Action>
+			<Action Id="D_Teams_Connection">
+				<Name>Khắc phục sự cố kết nối Teams</Name>
+				<Explanation>Bạn không thể kết nối với Teams.</Explanation>
+			</Action>
+			<Action Id="D_Teams_ProfilePicture">
+				<Name>Khắc phục sự cố đồng bộ ảnh hồ sơ Teams</Name>
+				<Explanation>Ảnh hồ sơ của bạn không hiển thị trong Teams hoặc không được cập nhật.</Explanation>
+			</Action>
+			<Action Id="D_Teams_OneDriveSync">
+				<Name>Thư mục đồng bộ trong OneDrive nhưng không đồng bộ trong Teams</Name>
+			</Action>
+			<Action Id="D_Teams_Loading">
+				<Name>Teams bị kẹt ở màn hình "Đang tải Microsoft Teams"</Name>
+				<Explanation>Khi mở Teams, cửa sổ bị kẹt ở màn hình "Đang tải Microsoft Teams".</Explanation>
+			</Action>
+			<Action Id="D_Teams_Sync">
+				<Name>Khắc phục sự cố đồng bộ Teams</Name>
+				<Explanation>Bạn đang gặp sự cố đồng bộ trong Teams.</Explanation>
+			</Action>
+			<Action Id="D_Teams_DoesNotOpen">
+				<Name>Ứng dụng Teams của tôi không mở được</Name>
+				<Explanation>Bạn thử mở Teams nhưng ứng dụng không mở.</Explanation>
+			</Action>
+			<Action Id="D_Teams_AudioFreeze">
+				<Name>Ứng dụng Teams bị treo khi gọi thoại</Name>
+				<Explanation>Teams bị treo trong cuộc gọi thoại.</Explanation>
+			</Action>
+			<Action Id="D_Teams_Camera">
+				<Name>Camera Teams bị treo hoặc không hiển thị</Name>
+				<Explanation>Video bị treo hoặc không hiển thị trong cuộc họp hoặc cuộc gọi.</Explanation>
+			</Action>
+			<Action Id="D_Teams_SendFailed">
+				<Name>Không gửi được tin nhắn Teams</Name>
+				<Explanation>Tin nhắn trong Teams không được gửi và Teams hiển thị "Gửi thất bại".</Explanation>
+			</Action>
+			<Action Id="D_Teams_MeetingDisplay">
+				<Name>Sự cố hiển thị khi tham gia cuộc họp Teams</Name>
+				<Explanation>Teams không hiển thị đúng khi bạn tham gia cuộc họp.</Explanation>
+			</Action>
+			<Action Id="D_Teams_NoConnect">
+				<Name>Ứng dụng Teams mở nhưng không kết nối</Name>
+				<Explanation>Teams mở nhưng không kết nối được.</Explanation>
+			</Action>
+			<Action Id="D_Teams_StatusOffline">
+				<Name>Trạng thái Teams luôn ngoại tuyến</Name>
+				<Explanation>Trạng thái Teams của bạn luôn là "Ngoại tuyến" dù bạn đã đăng nhập.</Explanation>
+			</Action>
+			<Action Id="D_Teams_CallWindow">
+				<Name>Cửa sổ cuộc gọi Teams không hiển thị</Name>
+				<Explanation>Thông báo về cuộc gọi Teams đến không còn hiển thị.</Explanation>
+			</Action>
+			<Action Id="D_Teams_MessageContent">
+				<Name>Không xem được nội dung tin nhắn Teams</Name>
+				<Explanation>Bạn thấy thông báo và bản xem trước của tin nhắn nhưng không thấy nội dung tin nhắn.</Explanation>
+			</Action>
+			<Action Id="D_Teams_PasswordChange">
+				<Name>Sự cố kết nối sau khi đổi mật khẩu</Name>
+				<Explanation>Bạn không thể kết nối với Teams sau khi đổi mật khẩu.</Explanation>
+			</Action>
+			<Action Id="D_Teams_Tabs">
+				<Name>Các tab trong Teams không tải</Name>
+				<Explanation>Khi mở tab trong Teams, tab không tải đúng cách.</Explanation>
+			</Action>
+			<Action Id="D_Teams_StatusWrong">
+				<Name>Trạng thái Teams không chính xác</Name>
+				<Explanation>Trạng thái Teams của bạn không chính xác hoặc không được cập nhật.</Explanation>
+			</Action>
+			<Action Id="D_Teams_MeetingOpen">
+				<Name>Không thể mở cuộc họp Teams</Name>
+				<Explanation>Cuộc họp Teams không mở khi bạn bấm vào liên kết tham gia.</Explanation>
+			</Action>
+			<Action Id="D_Teams_SoundCuts">
+				<Name>Âm thanh bị ngắt trong cuộc họp Teams</Name>
+				<Explanation>Âm thanh bị ngắt trong cuộc họp Teams.</Explanation>
+			</Action>
+			<Action Id="D_Teams_OutlookMeeting">
+				<Name>Không thể tạo cuộc họp Teams trong lịch Outlook</Name>
+				<Explanation>Bạn không thể tạo cuộc họp Teams từ lịch Outlook.</Explanation>
+			</Action>
+			<Action Id="D_Intune_Sync">
+				<Name>Buộc đồng bộ Intune</Name>
+			</Action>
+			<Action Id="D_OneDrive_Chkdsk">
+				<Name>Kiểm tra đĩa để tìm lỗi OneDrive (chkdsk)</Name>
+			</Action>
+			<Action Id="D_OneDrive_ReparsePoint">
+				<Name>Thẻ trong bộ đệm điểm phân tích lại không hợp lệ</Name>
+			</Action>
+			<Action Id="D_OneDrive_Error_80071129">
+				<Name>Lỗi 0x80071129</Name>
+			</Action>
+			<Action Id="Q_Device_SendLogs">
+				<Name>Gửi nhật ký thiết bị cho bộ phận hỗ trợ</Name>
+			</Action>
+			<Action Id="D_Device_SendLogs">
+				<Name>Thu thập nhật ký thiết bị và gửi cho bộ phận hỗ trợ qua email</Name>
+			</Action>
+		</Actions>
+	</Catalog>
+</SelfX_Language>

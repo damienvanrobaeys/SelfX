@@ -1,0 +1,563 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+	SelfX Service - language file
+
+	Description:
+	  Texts of the SelfX user interface in one language. SelfX selects the file that matches the Windows
+	  display language of the user (for example de-CH -> de.xml, zh-TW -> zh-Hant.xml). If no file matches,
+	  en.xml is used. A text that is missing or empty in a language file is taken from en.xml.
+
+	Add a language:
+	  1. Copy en.xml to <culture>.xml. Use the neutral culture name (de, fr, pt) or a script/region name
+	     (zh-Hans, zh-Hant, pt-BR). Windows tries the exact culture first and then its parents.
+	  2. Set Culture, Name, NativeName and FlowDirection (RightToLeft for Arabic, Persian, Urdu, Hebrew ...).
+	  3. Translate the element texts. Do not change element names or Id attributes.
+	     Keep placeholders such as {0}, {1}, {1:D2} and the "|" separators of SystemInfo_Export_Filter.
+	  4. Catalogue texts: add an <Action Id="..."> entry per action and a <Message Id="..."> entry per shared
+	     message. The English base texts are in Issues_List.xml. Untranslated actions are shown in English.
+
+	History:
+	  Version  Date        Author               Change
+	  2.2.0    2026-10-28  Wolfgang Baeck       Initial version: multilingual user interface
+-->
+<SelfX_Language Culture="pl" Name="Polish" NativeName="Polski" FlowDirection="LeftToRight" Version="2.2.0">
+	<UI>
+		<Health_Fix>Napraw</Health_Fix>
+		<Health_Fix_Confirm>Uruchomić skonfigurowaną naprawę dla {0}? Zapisz pracę: aplikacje, usługi lub połączenia mogą zostać przerwane. Następnie stan zostanie sprawdzony ponownie.</Health_Fix_Confirm>
+		<Health_Restart_Button>Uruchom ponownie</Health_Restart_Button>
+		<Health_Restart_Title>Uruchom ponownie urządzenie</Health_Restart_Title>
+		<Health_Restart_Confirm>System Windows zostanie uruchomiony ponownie, aby dokończyć oczekujące aktualizacje i zmiany.&#10;&#10;Najpierw zapisz swoją pracę i zamknij wszystkie programy. Ponowne uruchomienie rozpocznie się około 30 sekund po potwierdzeniu.&#10;&#10;Uruchomić ponownie teraz?</Health_Restart_Confirm>
+		<Button_Restart_Now>Uruchom ponownie teraz</Button_Restart_Now>
+		<Health_Restart_Started>System Windows zostanie uruchomiony ponownie za około 30 sekund. Zapisz teraz swoją pracę.</Health_Restart_Started>
+		<Health_Updates_Started>Aktualizacje systemu Windows są wyszukiwane, pobierane i instalowane. Może to potrwać kilka minut; możesz dalej pracować.</Health_Updates_Started>
+		<Health_Updates_Done>Windows Update zakończył działanie. Stan urządzenia jest sprawdzany ponownie i pokazuje, czy potrzebne jest ponowne uruchomienie.</Health_Updates_Done>
+		<Health_Apps_Button>Spróbuj ponownie</Health_Apps_Button>
+		<Health_Apps_Started>Instalacja aplikacji, których nie udało się zainstalować, rozpoczyna się ponownie. Może to potrwać kilka minut; postęp widać w Portalu firmy.</Health_Apps_Started>
+		<Health_Check_Button>OK</Health_Check_Button>
+		<Health_Error_Button>Błąd</Health_Error_Button>
+		<Health_Pending_Button>Oczekujące</Health_Pending_Button>
+		<Health_Check_Tooltip>Sprawdź ten stan ponownie</Health_Check_Tooltip>
+		<!-- Main window -->
+		<Main_Title_Text>Problem z urządzeniem?</Main_Title_Text>
+		<Subtitle_Text>Znajdź rozwiązanie problemu na liście dostępnych opcji</Subtitle_Text>
+		<Run_solution_Text>Uruchamia działanie</Run_solution_Text>
+		<Run_explanation_Text>Pokaż więcej informacji</Run_explanation_Text>
+		<Issue_filter_Title_Text>Filtruj według składnika</Issue_filter_Title_Text>
+		<Issue_filter_KeyWord_Text>Wpisz słowo kluczowe</Issue_filter_KeyWord_Text>
+		<Available_Actions_Count>Dostępne działania: {0}</Available_Actions_Count>
+		<Troubleshooting_Tab_Text>Rozwiązywanie problemów</Troubleshooting_Tab_Text>
+		<Theme_Button_ToolTip>Przełącz motyw jasny/ciemny</Theme_Button_ToolTip>
+		<Support_Button_ToolTip>Skontaktuj się z pomocą techniczną</Support_Button_ToolTip>
+		<About_Button_ToolTip>Informacje o SelfX</About_Button_ToolTip>
+		<Shield_ToolTip>Uruchamiane jako administrator przez lokalną usługę SelfX</Shield_ToolTip>
+
+		<!-- Simplified or detailed view -->
+		<Solution_Mode_Simple>Widok uproszczony</Solution_Mode_Simple>
+		<Solution_Mode_Detailed>Widok szczegółowy</Solution_Mode_Detailed>
+		<Solution_Mode_Info_Title>Widok uproszczony czy szczegółowy?</Solution_Mode_Info_Title>
+		<Solution_Mode_Info_Text>Widok uproszczony grupuje problemy według produktu.
+Widok szczegółowy zawiera konkretne problemy, które można rozwiązać.
+
+Jeśli widok uproszczony nie rozwiązuje problemu, wybierz widok szczegółowy.</Solution_Mode_Info_Text>
+
+		<!-- Dialogs -->
+		<Warning_Click_Run_Solution_Text>Rozwiązywanie problemu</Warning_Click_Run_Solution_Text>
+		<Warning_Click_Run_Explanation_Text>Więcej informacji</Warning_Click_Run_Explanation_Text>
+		<Button_Ok>OK</Button_Ok>
+		<Button_Cancel>Anuluj</Button_Cancel>
+		<Button_Yes>Tak</Button_Yes>
+		<Button_No>Nie</Button_No>
+		<Close_Button_Text>Zamknij</Close_Button_Text>
+		<Reboot_Alert>Aby urządzenie działało stabilnie i prawidłowo, uruchamiaj je ponownie co najmniej raz w tygodniu.</Reboot_Alert>
+
+		<!-- Support and About dialogs -->
+		<Support_Window_Title>Informacje o pomocy technicznej</Support_Window_Title>
+		<Support_Phone_Label>Numer telefonu:</Support_Phone_Label>
+		<Support_Mail_Label>E-mail:</Support_Mail_Label>
+		<About_Version_Text>{0}: wersja {1} – katalog: {2}</About_Version_Text>
+
+		<!-- Local SelfX service (actions with Context System) -->
+		<Service_Running_Text>Usługa SelfX działa: działania oznaczone tarczą są uruchamiane jako administrator.</Service_Running_Text>
+		<Service_Unavailable_Text>Usługa SelfX nie działa: działania oznaczone tarczą są niedostępne.</Service_Unavailable_Text>
+		<Service_Busy_Text>Trwa inne działanie. Poczekaj na jego zakończenie.</Service_Busy_Text>
+		<Action_Running_Text>Uruchamianie działania: {0}</Action_Running_Text>
+		<Action_Running_Label>Trwa…</Action_Running_Label>
+		<Action_Success_Text>Działanie zakończone: {0}</Action_Success_Text>
+		<Action_Failed_Text>Działanie nie powiodło się: {0}</Action_Failed_Text>
+		<Action_Failed_ExitCode_Text>Działanie nie powiodło się: {0} (kod wyjścia {1})</Action_Failed_ExitCode_Text>
+		<Action_Timeout_Text>Działanie zatrzymano z powodu przekroczenia czasu: {0}</Action_Timeout_Text>
+		<Script_Not_Found_Text>Nie znaleziono skryptu tego działania: {0}</Script_Not_Found_Text>
+
+		<!-- System information tab -->
+		<SystemInfo_Tab_Text>Informacje o systemie</SystemInfo_Tab_Text>
+		<SystemInfo_Title_Text>Informacje o urządzeniu dla pomocy technicznej</SystemInfo_Title_Text>
+		<SystemInfo_Hint_Text>Kliknij dwukrotnie wiersz, aby skopiować jego wartość.</SystemInfo_Hint_Text>
+		<SystemInfo_Loading_Text>Zbieranie informacji o systemie...</SystemInfo_Loading_Text>
+		<SystemInfo_Copied_Text>Skopiowano do schowka: {0}</SystemInfo_Copied_Text>
+		<SystemInfo_Refresh_Text>Odśwież</SystemInfo_Refresh_Text>
+		<SystemInfo_Copy_Text>Kopiuj wszystko</SystemInfo_Copy_Text>
+		<SystemInfo_Export_Text>Eksportuj</SystemInfo_Export_Text>
+		<SystemInfo_Export_Filter>Plik tekstowy (*.txt)|*.txt|Plik HTML (*.html)|*.html|Plik CSV (*.csv)|*.csv|Plik JSON (*.json)|*.json</SystemInfo_Export_Filter>
+		<SystemInfo_SyncApps_Text>Synchronizuj aplikacje Intune</SystemInfo_SyncApps_Text>
+		<SystemInfo_SyncCompliance_Text>Sprawdź zgodność</SystemInfo_SyncCompliance_Text>
+		<SystemInfo_CompanyPortal_Text>Portal firmy</SystemInfo_CompanyPortal_Text>
+		<SystemInfo_QuickAssist_Text>Szybka pomoc</SystemInfo_QuickAssist_Text>
+		<SystemInfo_MdmDiagnostics_Text>Zbierz dzienniki MDM</SystemInfo_MdmDiagnostics_Text>
+		<SystemInfo_SendLogs_Text>Wyślij dzienniki do pomocy technicznej</SystemInfo_SendLogs_Text>
+		<Report_Mail_Subject>Dzienniki urządzenia {0}</Report_Mail_Subject>
+		<Report_Mail_Body>Dzień dobry,
+
+w załączniku przesyłam dzienniki urządzenia {0} zebrane przez SelfX w dniu {1}.
+
+Opis problemu:</Report_Mail_Body>
+		<Report_Mail_Opened_Text>Otwarto wiadomość e-mail z dziennikami urządzenia w załączniku. Opisz problem i wyślij wiadomość.</Report_Mail_Opened_Text>
+		<Report_Mail_Recipient_Text>Otwarto wiadomość e-mail z dziennikami urządzenia w załączniku. Wpisz adresata ({0}), opisz problem i wyślij wiadomość.</Report_Mail_Recipient_Text>
+		<Report_Mail_Manual_Text>Dzienniki urządzenia zapisano w {0}. Dołącz ten plik do wiadomości e-mail (adresat: {1}) i opisz problem.</Report_Mail_Manual_Text>
+		<Report_Not_Found_Text>Dzienniki urządzenia zostały zebrane, ale nie można przygotować wiadomości e-mail: {0}</Report_Not_Found_Text>
+		<Report_Support_Fallback>pomoc techniczna</Report_Support_Fallback>
+		<Nav_Status_Text>Stan urządzenia</Nav_Status_Text>
+		<Status_LastChecked_Text>Ostatnie sprawdzenie: {0}</Status_LastChecked_Text>
+		<Status_NotChecked_Text>Stan urządzenia nie został jeszcze sprawdzony.</Status_NotChecked_Text>
+		<Status_Background_Text>Automatyczne sprawdzanie co {0} min</Status_Background_Text>
+		<Status_Background_Battery_Text>Automatyczne sprawdzanie jest wstrzymane przy zasilaniu z baterii</Status_Background_Battery_Text>
+		<Status_Checking_Text>Sprawdzanie stanu urządzenia. Może to potrwać do minuty ...</Status_Checking_Text>
+		<Status_AllOk_Title>Wszystko w porządku</Status_AllOk_Title>
+		<Status_AllOk_Text>Na urządzeniu nie znaleziono problemów.</Status_AllOk_Text>
+		<Status_Issues_Title>Elementy wymagające uwagi: {0}</Status_Issues_Title>
+		<Status_Issues_Text>Problemy są wyświetlane jako pierwsze. Kliknij „Napraw”, aby naprawić problem, lub strzałki, aby sprawdzić go ponownie.</Status_Issues_Text>
+		<Status_CheckAll_Tooltip>Sprawdź teraz wszystko ponownie. Może to potrwać do minuty.</Status_CheckAll_Tooltip>
+		<Status_FixAll>Napraw wszystkie problemy</Status_FixAll>
+		<Status_FixAll_Tooltip>Uruchamia po kolei skonfigurowaną naprawę dla każdego problemu. Następnie wszystko jest sprawdzane ponownie.</Status_FixAll_Tooltip>
+		<Health_FixAll_Confirm>Uruchomić po kolei skonfigurowane naprawy dla tych problemów ({0})?&#10;&#10;{1}&#10;&#10;Aplikacje mogą zostać zamknięte, a usługi lub połączenia sieciowe przerwane. Najpierw zapisz swoją pracę. Następnie wszystko jest sprawdzane ponownie.</Health_FixAll_Confirm>
+		<Status_FixAll_Done>Pomyślnie zakończono {0} z {1} napraw. Stan jest sprawdzany ponownie.</Status_FixAll_Done>
+		<Status_FixAll_Failed>Nie powiodło się: {0}</Status_FixAll_Failed>
+		<Tooltip_Fix>Naprawia ten problem automatycznie. Najpierw zostaniesz poproszony o potwierdzenie.</Tooltip_Fix>
+		<Tooltip_Run>Uruchamia to rozwiązanie. Przed wykonaniem czegokolwiek zostaniesz poproszony o potwierdzenie.</Tooltip_Run>
+		<Filter_All_Text>Wszystkie</Filter_All_Text>
+		<View_Help_Tooltip>Jaka jest różnica między widokiem uproszczonym a szczegółowym?</View_Help_Tooltip>
+		<SystemInfo_Cached_Text>Informacje z {0} – trwa aktualizacja ...</SystemInfo_Cached_Text>
+		<Tooltip_Refresh>zbiera informacje ponownie</Tooltip_Refresh>
+		<Tooltip_Copy>kopiuje wszystkie informacje, np. aby wkleić je do zgłoszenia do pomocy technicznej</Tooltip_Copy>
+		<Tooltip_Export>zapisuje wszystkie informacje w pliku</Tooltip_Export>
+		<Tools_Title_Text>Narzędzia</Tools_Title_Text>
+		<Tooltip_SyncApps>Prosi usługę Intune o natychmiastowe zainstalowanie lub zaktualizowanie przypisanych aplikacji.</Tooltip_SyncApps>
+		<Tooltip_SyncCompliance>Prosi usługę Intune o sprawdzenie teraz, czy urządzenie spełnia zasady firmy.</Tooltip_SyncCompliance>
+		<Tooltip_CompanyPortal>Otwiera Portal firmy, w którym można instalować aplikacje firmowe.</Tooltip_CompanyPortal>
+		<Tooltip_QuickAssist>Otwiera Szybką pomoc, aby pracownik pomocy technicznej mógł zobaczyć Twój ekran i pomóc – tylko za Twoją zgodą.</Tooltip_QuickAssist>
+		<Tooltip_MdmDiagnostics>Zbiera dzienniki zarządzania urządzeniem w folderze dla pomocy technicznej.</Tooltip_MdmDiagnostics>
+		<Tooltip_SendLogs>Zbiera wszystkie dzienniki urządzenia i otwiera wiadomość e-mail do pomocy technicznej z raportem w załączniku.</Tooltip_SendLogs>
+		<Settings_Button_ToolTip>Ustawienia (język, wygląd i ikona stanu)</Settings_Button_ToolTip>
+		<Settings_Title>Ustawienia</Settings_Title>
+		<Settings_Language_Text>Język</Settings_Language_Text>
+		<Settings_Language_Auto>Automatycznie ({0})</Settings_Language_Auto>
+		<Settings_Language_Hint>SelfX uruchomi się ponownie w wybranym języku.</Settings_Language_Hint>
+		<Settings_Language_Later>Nowy język zostanie użyty przy następnym otwarciu SelfX, ponieważ trwa naprawa.</Settings_Language_Later>
+		<Settings_Theme_Text>Wygląd</Settings_Theme_Text>
+		<Settings_Theme_Auto>Automatyczny</Settings_Theme_Auto>
+		<Settings_Theme_Auto_ToolTip>Jak Windows: używa trybu aplikacji wybranego w Ustawienia &gt; Personalizacja &gt; Kolory</Settings_Theme_Auto_ToolTip>
+		<Settings_Theme_Dark>Ciemny</Settings_Theme_Dark>
+		<Settings_Theme_Light>Jasny</Settings_Theme_Light>
+		<Settings_Tray_Text>Pokaż ikonę SelfX w obszarze powiadomień</Settings_Tray_Text>
+		<Settings_Tray_Hint>Ikona obok zegara pokazuje stan urządzenia i informuje o znalezionym problemie.</Settings_Tray_Hint>
+		<Settings_Notify_Text>Pokazuj powiadomienia o problemach</Settings_Notify_Text>
+		<Settings_Notify_Hint>Oprócz kolorowej ikony SelfX system Windows wyświetla komunikat, gdy zostanie wykryty nowy problem, na przykład mało miejsca na dysku.</Settings_Notify_Hint>
+		<Support_Intro_Text>Chętnie pomożemy. Możesz skontaktować się z nami tak:</Support_Intro_Text>
+		<Support_Hours_Label>Godziny pomocy technicznej</Support_Hours_Label>
+		<Support_Teams_Label>Czat w Teams</Support_Teams_Label>
+		<Support_Website_Label>Strona / system zgłoszeń</Support_Website_Label>
+		<Support_Teams_Button>Rozpocznij czat</Support_Teams_Button>
+		<Support_Website_Button>Otwórz</Support_Website_Button>
+		<Support_Mail_Button>Napisz e-mail</Support_Mail_Button>
+		<Support_None_Text>Nie skonfigurowano danych kontaktowych. Skontaktuj się z działem IT.</Support_None_Text>
+		<Service_Short_Running>Usługa SelfX działa</Service_Short_Running>
+		<Service_Short_Unavailable>Usługa SelfX niedostępna</Service_Short_Unavailable>
+		<Version_Text>Wersja {0}</Version_Text>
+		<Tray_Tooltip_OK>SelfX: wszystko w porządku</Tray_Tooltip_OK>
+		<Tray_Tooltip_Issues>SelfX: problemy: {0}, ostrzeżenia: {1}</Tray_Tooltip_Issues>
+		<Tray_Tooltip_Unknown>SelfX: stan jeszcze niedostępny</Tray_Tooltip_Unknown>
+		<Tray_Menu_Open>Otwórz SelfX</Tray_Menu_Open>
+		<Tray_Menu_Status>Pokaż stan urządzenia</Tray_Menu_Status>
+		<Tray_Menu_Check>Sprawdź stan teraz</Tray_Menu_Check>
+		<Tray_Menu_Notify>Pokazuj powiadomienia</Tray_Menu_Notify>
+		<Tray_Menu_Hide>Ukryj tę ikonę</Tray_Menu_Hide>
+		<Tray_Notify_Click>Kliknij tutaj, aby zobaczyć szczegóły.</Tray_Notify_Click>
+		<Tray_Hidden_Text>Ikona jest ukryta. Możesz ją ponownie pokazać w SelfX w Ustawieniach.</Tray_Hidden_Text>
+		<Tray_Checking_Text>Sprawdzanie stanu urządzenia ...</Tray_Checking_Text>
+	</UI>
+
+	<!-- Labels and values of the System information tab -->
+	<SystemInfo>
+		<Category_Device>Urządzenie</Category_Device>
+		<Category_Windows>Windows</Category_Windows>
+		<Category_User>Użytkownik i zarządzanie</Category_User>
+		<Category_Network>Sieć</Category_Network>
+		<Category_Report>Raport</Category_Report>
+		<Computer_Name>Nazwa komputera</Computer_Name>
+		<Manufacturer>Producent</Manufacturer>
+		<Model>Model</Model>
+		<Serial_Number>Numer seryjny</Serial_Number>
+		<BIOS_Version>Wersja systemu BIOS</BIOS_Version>
+		<Processor>Procesor</Processor>
+		<Memory>Pamięć (RAM)</Memory>
+		<Free_Space>Wolne miejsce {0}</Free_Space>
+		<Free_Space_Value>{0} z {1} ({2}%)</Free_Space_Value>
+		<Battery>Bateria</Battery>
+		<Windows_Version>Wersja systemu Windows</Windows_Version>
+		<OS_Build>Kompilacja systemu</OS_Build>
+		<Last_Boot>Ostatnie uruchomienie</Last_Boot>
+		<Uptime>Czas pracy</Uptime>
+		<Uptime_Value>{0} dni {1:D2}:{2:D2} godz.</Uptime_Value>
+		<Last_Update>Ostatnia zainstalowana aktualizacja</Last_Update>
+		<Time_Zone>Strefa czasowa</Time_Zone>
+		<Current_User>Bieżący użytkownik</Current_User>
+		<User_Principal_Name>Nazwa główna użytkownika</User_Principal_Name>
+		<Domain>Domena / grupa robocza</Domain>
+		<Entra_Joined>Dołączono do Entra ID</Entra_Joined>
+		<Domain_Joined>Dołączono do domeny</Domain_Joined>
+		<Tenant>Dzierżawa</Tenant>
+		<Entra_Device_Id>Identyfikator urządzenia Entra</Entra_Device_Id>
+		<Intune_User>Użytkownik zarejestrowany w Intune</Intune_User>
+		<Intune_Last_Sync>Ostatnia synchronizacja Intune</Intune_Last_Sync>
+		<LAN_Connected>Połączenie LAN</LAN_Connected>
+		<WiFi_Connected>Połączenie Wi-Fi</WiFi_Connected>
+		<WWAN_Connected>Połączenie komórkowe</WWAN_Connected>
+		<WiFi_SSID>Sieć Wi-Fi (SSID)</WiFi_SSID>
+		<VPN_Connected>Połączenie VPN</VPN_Connected>
+		<Internet_Reachable>Dostęp do Internetu</Internet_Reachable>
+		<IPv4>Adresy IPv4</IPv4>
+		<IPv6>Adresy IPv6</IPv6>
+		<Gateway>Brama domyślna</Gateway>
+		<DNS>Serwery DNS</DNS>
+		<MAC>Adresy MAC</MAC>
+		<Collected_At>Zebrano</Collected_At>
+		<Error>Błąd</Error>
+		<Yes>Tak</Yes>
+		<No>Nie</No>
+		<Not_Available>n/d</Not_Available>
+		<Not_Enrolled>Niezarejestrowano / nieznany stan</Not_Enrolled>
+		<No_WiFi>Brak połączenia Wi-Fi</No_WiFi>
+		<Category_Health>Stan systemu</Category_Health>
+		<Health_IME>Usługa IME</Health_IME>
+		<Health_Defender>Microsoft Defender</Health_Defender>
+		<Health_Compliance>Zgodność</Health_Compliance>
+		<Health_Applications>Aplikacje firmowe (Intune)</Health_Applications>
+		<Health_Disk>Miejsce na dysku</Health_Disk>
+		<Health_BitLocker>BitLocker</Health_BitLocker>
+		<Health_PendingReboot>Oczekujące ponowne uruchomienie</Health_PendingReboot>
+		<Health_Updates>Aktualizacje do zainstalowania</Health_Updates>
+		<Health_Service>Usługa</Health_Service>
+		<Health_Custom>Kontrola niestandardowa</Health_Custom>
+		<Health_Collection>Zbieranie stanu</Health_Collection>
+		<Health_OK>OK</Health_OK>
+		<Health_Error>Błąd</Health_Error>
+		<Health_Unknown>Nieznany</Health_Unknown>
+		<Health_Pending>Oczekujące</Health_Pending>
+		<Health_Unavailable>Lokalny raport stanu jest niedostępny: {0}</Health_Unavailable>
+	</SystemInfo>
+
+	<!-- Action catalogue (Issues_List.xml). The English base texts are in Issues_List.xml, so en.xml only lists the categories. -->
+	<Catalog>
+		<Categories>
+			<Category Id="Browser">Przeglądarka</Category>
+			<Category Id="Device">Urządzenie</Category>
+			<Category Id="Intune">Intune</Category>
+			<Category Id="Office">Office</Category>
+			<Category Id="OneDrive">OneDrive</Category>
+			<Category Id="Outlook">Outlook</Category>
+			<Category Id="Teams">Teams</Category>
+		</Categories>
+		<Messages>
+			<Message Id="Msg_Teams_Restart">Teams zostanie zamknięty i automatycznie otwarty ponownie.
+
+Jeśli problem będzie nadal występować, wyloguj się z Teams i zaloguj ponownie. Jeśli to nie pomoże, skontaktuj się z pomocą techniczną.
+
+Czy chcesz kontynuować?</Message>
+			<Message Id="Msg_Teams_Restart_Short">Teams zostanie zamknięty i automatycznie otwarty ponownie.
+
+Czy chcesz kontynuować?</Message>
+			<Message Id="Msg_OneDrive_Restart">OneDrive zostanie zamknięty i automatycznie otwarty ponownie.
+
+Czy chcesz kontynuować?</Message>
+			<Message Id="Msg_OneDrive_Restart_Step1">Ten pierwszy krok powoduje ponowne uruchomienie OneDrive. Aplikacja zostanie zamknięta i automatycznie otwarta ponownie.
+
+Jeśli problem będzie nadal występować, uruchom działanie „Resetuj klienta OneDrive”.
+
+Czy chcesz kontynuować?</Message>
+			<Message Id="Msg_OneDrive_Reset">Klient OneDrive zostanie zresetowany. Resetowanie klienta OneDrive nie powoduje utraty danych.
+
+Jeśli problem będzie nadal występować, skontaktuj się z pomocą techniczną.
+
+Czy chcesz kontynuować?</Message>
+			<Message Id="Msg_OneDrive_Teams_Sync">Foldery są synchronizowane w OneDrive, ale pliki udostępnione w Teams nie są synchronizowane.</Message>
+			<Message Id="Msg_Intune_Sync_Explanation">Chcesz wymusić synchronizację urządzenia z Intune, na przykład aby przyspieszyć wdrażanie zasad lub aplikacji. To działanie jest uruchamiane jako administrator przez lokalną usługę SelfX.</Message>
+			<Message Id="Msg_Intune_Restart">Usługa Intune Management Extension zostanie ponownie uruchomiona w tle. Spróbuj ponownie za kilka minut.
+
+Czy chcesz kontynuować?</Message>
+			<Message Id="Msg_Chkdsk_Explanation">Masz problemy z OneDrive i widzisz błąd „0x80071129: tag w buforze punktu ponownej analizy jest nieprawidłowy”. To działanie jest uruchamiane jako administrator przez lokalną usługę SelfX.</Message>
+			<Message Id="Msg_Chkdsk">Sprawdzenie dysku zostanie zaplanowane na następne ponowne uruchomienie urządzenia. Następnie uruchom urządzenie ponownie. Sprawdzanie może potrwać kilka minut.
+
+Czy chcesz kontynuować?</Message>
+			<Message Id="Msg_SendLogs_Explanation">Pomoc techniczna potrzebuje dzienników urządzenia, aby przeanalizować problem, na przykład nieudaną instalację aplikacji, nieudaną konfigurację lub komunikat o błędzie. To działanie zbiera wszystkie istotne dzienniki i informacje o systemie z uprawnieniami administratora przez lokalną usługę SelfX i otwiera nową wiadomość e-mail do pomocy technicznej z raportem w załączniku. Nic nie jest wysyłane automatycznie.</Message>
+			<Message Id="Msg_SendLogs">SelfX zbiera teraz dzienniki urządzenia. Może to potrwać kilka minut. Na urządzeniu nic nie jest zmieniane.
+
+Raport zawiera nazwę urządzenia i Twoją nazwę użytkownika. Gdy będzie gotowy, otworzy się nowa wiadomość e-mail z raportem w załączniku. Opisz problem i wyślij wiadomość do pomocy technicznej.
+
+Czy chcesz kontynuować?</Message>
+		</Messages>
+		<Actions>
+			<Action Id="Q_Teams">
+				<Name>Rozwiąż problem z aplikacją Teams</Name>
+				<Explanation>Występuje problem z klientem Teams (spowolnienie, nieprawidłowy stan, błąd przesyłania itp.).</Explanation>
+				<Alerte_MSG>Aplikacja Teams zostanie zamknięta, a jej lokalne foldery pamięci podręcznej zostaną wyczyszczone. Przed kontynuowaniem zapisz otwartą pracę. Aplikacja Teams zostanie ponownie otwarta, jeśli była uruchomiona.
+
+Czy chcesz kontynuować?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Word">
+				<Name>Rozwiąż problem z programem Word</Name>
+				<Explanation>Pracujesz w programie Word, ale przestał on odpowiadać i nie możesz już nic zrobić.</Explanation>
+				<Alerte_MSG>Program Word zostanie zamknięty i automatycznie otwarty ponownie. Niezapisana praca może zostać utracona.
+
+Czy chcesz kontynuować?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Excel">
+				<Name>Rozwiąż problem z programem Excel</Name>
+				<Explanation>Pracujesz w programie Excel, ale przestał on odpowiadać i nie możesz już nic zrobić.</Explanation>
+				<Alerte_MSG>Program Excel zostanie zamknięty i automatycznie otwarty ponownie. Niezapisana praca może zostać utracona.
+
+Czy chcesz kontynuować?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Store">
+				<Name>Rozwiąż problem ze sklepem Microsoft Store</Name>
+				<Explanation>Występują problemy ze sklepem Microsoft Store (otwieranie sklepu, instalowanie aplikacji itp.).</Explanation>
+				<Alerte_MSG>Pamięć podręczna sklepu Microsoft Store zostanie zresetowana, a sklep zostanie otwarty.
+
+Czy chcesz kontynuować?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_OneDrive_Restart">
+				<Name>Rozwiąż problem z usługą OneDrive (metoda 1)</Name>
+				<Explanation>Występują problemy z klientem OneDrive (synchronizacja plików lub folderów, otwieranie plików itp.).</Explanation>
+				<Alerte_MSG>Usługa OneDrive zostanie zamknięta i automatycznie uruchomiona ponownie.
+
+Jeśli problem nie zniknie, użyj metody 2.
+
+Czy chcesz kontynuować?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_OneDrive_Reset">
+				<Name>Rozwiąż problem z usługą OneDrive (metoda 2)</Name>
+				<Explanation>Występują problemy z klientem OneDrive (synchronizacja plików lub folderów, otwieranie plików itp.), a metoda 1 została już wypróbowana.</Explanation>
+			</Action>
+			<Action Id="Q_Outlook_TeamsAddIn">
+				<Name>Brak przycisku „Spotkanie w aplikacji Teams” w programie Outlook</Name>
+				<Explanation>W programie Outlook brakuje przycisku „Nowe spotkanie w aplikacji Teams”.</Explanation>
+				<Alerte_MSG>Dodatek do spotkań w aplikacji Teams zostanie ponownie włączony. Program Outlook zostanie zamknięty i automatycznie otwarty ponownie. Niezapisana praca może zostać utracona.
+
+Jeśli problem nie zniknie, skontaktuj się z pomocą techniczną.
+
+Czy chcesz kontynuować?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Device_Connection">
+				<Name>Na urządzeniu występują problemy z połączeniem</Name>
+				<Explanation>Próbujesz otworzyć witrynę internetową, ale połączenie nie działa, witryna jest nieosiągalna lub pojawiają się błędy.</Explanation>
+				<Alerte_MSG>Pamięć podręczna DNS urządzenia zostanie wyczyszczona w tle. Spróbuj ponownie po kliknięciu przycisku OK.
+
+Czy chcesz kontynuować?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Device_Slow">
+				<Name>Urządzenie działa wolno</Name>
+				<Explanation>Twoje urządzenie działa wolno.</Explanation>
+				<Alerte_MSG>Pliki tymczasowe i zawartość Kosza zostaną usunięte.
+
+Czy chcesz kontynuować?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Intune_Restart">
+				<Name>Uruchom ponownie usługę Intune</Name>
+			</Action>
+			<Action Id="Q_Network_Restart">
+				<Name>Uruchom ponownie karty sieciowe</Name>
+				<Explanation>Występują problemy z siecią i chcesz ponownie uruchomić karty sieciowe. Ta akcja jest wykonywana z uprawnieniami administratora przez lokalną usługę SelfX.</Explanation>
+				<Alerte_MSG>Wszystkie karty sieciowe zostaną ponownie uruchomione. Dostęp do sieci zostanie na krótko przerwany.
+
+Czy chcesz kontynuować?</Alerte_MSG>
+			</Action>
+			<Action Id="Q_OneDrive_Chkdsk">
+				<Name>Napraw zablokowany plik OneDrive</Name>
+			</Action>
+			<Action Id="D_Chrome_Cache">
+				<Name>Wyczyść dane przeglądania Google Chrome (pamięć podręczną)</Name>
+				<Explanation>Witryny internetowe nie ładują się lub nie są poprawnie wyświetlane w Google Chrome. Pamięć podręczna wszystkich profili Chrome zostanie wyczyszczona.</Explanation>
+				<Alerte_MSG>Google Chrome zostanie zamknięty, a zapisane w pamięci podręcznej dane przeglądania zostaną usunięte.
+
+Czy chcesz kontynuować?</Alerte_MSG>
+			</Action>
+			<Action Id="D_Firefox_Cache">
+				<Name>Wyczyść dane przeglądania Firefox (pamięć podręczną)</Name>
+				<Explanation>Witryny internetowe nie ładują się lub nie są poprawnie wyświetlane w przeglądarce Firefox. Pamięć podręczna wszystkich profili Firefox zostanie wyczyszczona.</Explanation>
+				<Alerte_MSG>Firefox zostanie zamknięty, a zapisane w pamięci podręcznej dane przeglądania zostaną usunięte.
+
+Czy chcesz kontynuować?</Alerte_MSG>
+			</Action>
+			<Action Id="D_Outlook_TeamsAddIn">
+				<Name>Brak przycisku „Spotkanie w aplikacji Teams” w programie Outlook</Name>
+				<Explanation>W programie Outlook brakuje przycisku „Nowe spotkanie w aplikacji Teams”.</Explanation>
+				<Alerte_MSG>Program Outlook zostanie zamknięty i automatycznie otwarty ponownie. Niezapisana praca może zostać utracona.
+
+Czy chcesz kontynuować?</Alerte_MSG>
+			</Action>
+			<Action Id="D_OneDrive_Start">
+				<Name>Uruchom klienta OneDrive</Name>
+				<Explanation>Usługa OneDrive nie jest uruchomiona.</Explanation>
+				<Alerte_MSG>Klient OneDrive zostanie uruchomiony.
+
+Czy chcesz kontynuować?</Alerte_MSG>
+			</Action>
+			<Action Id="D_OneDrive_Restart">
+				<Name>Uruchom ponownie klienta OneDrive</Name>
+				<Explanation>Ponowne uruchomienie usługi OneDrive może rozwiązać niektóre problemy, na przykład problemy z synchronizacją.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_Sync_Step1">
+				<Name>Rozwiąż problemy z synchronizacją OneDrive (krok 1)</Name>
+				<Explanation>Występują problemy z synchronizacją plików lub folderów w usłudze OneDrive.
+
+Ten pierwszy krok uruchamia ponownie usługę OneDrive. Usługa OneDrive zostanie zamknięta i automatycznie uruchomiona ponownie.
+
+Jeśli problem nie zniknie, uruchom akcję „Zresetuj klienta OneDrive”.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_Error_8004def4">
+				<Name>OneDrive nie uruchamia się: błąd 0x8004def4</Name>
+				<Explanation>Podczas uruchamiania usługi OneDrive wyświetlany jest błąd 0x8004def4.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_Memory">
+				<Name>Urządzenie działa wolno: OneDrive zużywa dużo pamięci</Name>
+				<Explanation>Urządzenie działa wolno, a usługa OneDrive wydaje się zużywać dużo pamięci.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_RedCross">
+				<Name>Czerwony krzyżyk na ikonie OneDrive</Name>
+				<Explanation>Na ikonie OneDrive wyświetlany jest czerwony krzyżyk.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_ClosesItself">
+				<Name>OneDrive zamyka się samoczynnie</Name>
+				<Explanation>OneDrive otwiera się, a następnie samoczynnie zamyka.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_WhiteCross">
+				<Name>Biały krzyżyk na plikach OneDrive</Name>
+				<Explanation>Na plikach lub folderach OneDrive wyświetlany jest biały krzyżyk.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_PasswordChange">
+				<Name>Problemy z OneDrive po zmianie hasła systemu Windows</Name>
+				<Explanation>Niedawno zmieniono hasło i teraz występują problemy z usługą OneDrive, na przykład problemy z synchronizacją.
+
+Ten krok uruchamia ponownie klienta OneDrive.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_CannotOpen">
+				<Name>Nie można otworzyć plików w usłudze OneDrive</Name>
+				<Explanation>Pliki przechowywane w usłudze OneDrive nie otwierają się.</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_TeamsSync">
+				<Name>Foldery synchronizują się w OneDrive, ale nie w aplikacji Teams</Name>
+			</Action>
+			<Action Id="D_OneDrive_Reset">
+				<Name>Zresetuj klienta OneDrive</Name>
+				<Explanation>Występują problemy z usługą OneDrive, na przykład problemy z synchronizacją.
+
+Ten krok resetuje klienta OneDrive. Zresetowanie klienta OneDrive nie powoduje utraty danych.</Explanation>
+			</Action>
+			<Action Id="D_Teams_Connection">
+				<Name>Rozwiąż problemy z połączeniem w aplikacji Teams</Name>
+				<Explanation>Nie można połączyć się z aplikacją Teams.</Explanation>
+			</Action>
+			<Action Id="D_Teams_ProfilePicture">
+				<Name>Rozwiąż problem z synchronizacją zdjęcia profilowego w aplikacji Teams</Name>
+				<Explanation>Zdjęcie profilowe nie jest wyświetlane w aplikacji Teams lub nie jest aktualizowane.</Explanation>
+			</Action>
+			<Action Id="D_Teams_OneDriveSync">
+				<Name>Foldery synchronizują się w OneDrive, ale nie w aplikacji Teams</Name>
+			</Action>
+			<Action Id="D_Teams_Loading">
+				<Name>Aplikacja Teams zawiesza się na ekranie „Ładowanie aplikacji Microsoft Teams”</Name>
+				<Explanation>Po otwarciu aplikacji Teams okno zatrzymuje się na ekranie „Ładowanie aplikacji Microsoft Teams”.</Explanation>
+			</Action>
+			<Action Id="D_Teams_Sync">
+				<Name>Rozwiąż problemy z synchronizacją w aplikacji Teams</Name>
+				<Explanation>W aplikacji Teams występują problemy z synchronizacją.</Explanation>
+			</Action>
+			<Action Id="D_Teams_DoesNotOpen">
+				<Name>Klient Teams nie otwiera się</Name>
+				<Explanation>Próbujesz otworzyć aplikację Teams, ale klient się nie otwiera.</Explanation>
+			</Action>
+			<Action Id="D_Teams_AudioFreeze">
+				<Name>Klient Teams zawiesza się podczas rozmów audio</Name>
+				<Explanation>Aplikacja Teams zawiesza się podczas rozmowy audio.</Explanation>
+			</Action>
+			<Action Id="D_Teams_Camera">
+				<Name>Obraz z kamery w aplikacji Teams jest zamrożony lub niewidoczny</Name>
+				<Explanation>Podczas spotkania lub rozmowy obraz wideo jest zamrożony lub niewidoczny.</Explanation>
+			</Action>
+			<Action Id="D_Teams_SendFailed">
+				<Name>Nie można wysyłać wiadomości w aplikacji Teams</Name>
+				<Explanation>Wiadomości w aplikacji Teams nie są wysyłane, a aplikacja wyświetla komunikat „Nie można wysłać”.</Explanation>
+			</Action>
+			<Action Id="D_Teams_MeetingDisplay">
+				<Name>Problemy z wyświetlaniem podczas dołączania do spotkania w aplikacji Teams</Name>
+				<Explanation>Po dołączeniu do spotkania aplikacja Teams nie wyświetla się poprawnie.</Explanation>
+			</Action>
+			<Action Id="D_Teams_NoConnect">
+				<Name>Klient Teams otwiera się, ale nie łączy</Name>
+				<Explanation>Aplikacja Teams otwiera się, ale nie nawiązuje połączenia.</Explanation>
+			</Action>
+			<Action Id="D_Teams_StatusOffline">
+				<Name>Mój stan w aplikacji Teams pozostaje „Offline”</Name>
+				<Explanation>Twój stan w aplikacji Teams pozostaje „Offline”, chociaż jesteś zalogowany.</Explanation>
+			</Action>
+			<Action Id="D_Teams_CallWindow">
+				<Name>Okno połączenia w aplikacji Teams nie jest wyświetlane</Name>
+				<Explanation>Powiadomienia o połączeniach przychodzących w aplikacji Teams nie są już wyświetlane.</Explanation>
+			</Action>
+			<Action Id="D_Teams_MessageContent">
+				<Name>Nie widzę treści wiadomości w aplikacji Teams</Name>
+				<Explanation>Widzisz powiadomienie i podgląd wiadomości, ale nie jej treść.</Explanation>
+			</Action>
+			<Action Id="D_Teams_PasswordChange">
+				<Name>Problemy z połączeniem po zmianie hasła</Name>
+				<Explanation>Po zmianie hasła nie można połączyć się z aplikacją Teams.</Explanation>
+			</Action>
+			<Action Id="D_Teams_Tabs">
+				<Name>Karty w aplikacji Teams nie ładują się</Name>
+				<Explanation>Po otwarciu kart w aplikacji Teams nie ładują się one poprawnie.</Explanation>
+			</Action>
+			<Action Id="D_Teams_StatusWrong">
+				<Name>Mój stan w aplikacji Teams jest nieprawidłowy</Name>
+				<Explanation>Twój stan w aplikacji Teams jest nieprawidłowy lub nie jest aktualizowany.</Explanation>
+			</Action>
+			<Action Id="D_Teams_MeetingOpen">
+				<Name>Nie mogę otworzyć spotkania w aplikacji Teams</Name>
+				<Explanation>Spotkania w aplikacji Teams nie otwierają się po kliknięciu linku dołączania.</Explanation>
+			</Action>
+			<Action Id="D_Teams_SoundCuts">
+				<Name>Dźwięk przerywa podczas spotkań w aplikacji Teams</Name>
+				<Explanation>Podczas spotkań w aplikacji Teams dźwięk jest przerywany.</Explanation>
+			</Action>
+			<Action Id="D_Teams_OutlookMeeting">
+				<Name>Nie mogę utworzyć spotkania w aplikacji Teams w kalendarzu programu Outlook</Name>
+				<Explanation>Nie można utworzyć spotkania w aplikacji Teams z kalendarza programu Outlook.</Explanation>
+			</Action>
+			<Action Id="D_Intune_Sync">
+				<Name>Wymuś synchronizację z usługą Intune</Name>
+			</Action>
+			<Action Id="D_OneDrive_Chkdsk">
+				<Name>Sprawdź dysk pod kątem błędów OneDrive (chkdsk)</Name>
+			</Action>
+			<Action Id="D_OneDrive_ReparsePoint">
+				<Name>Tag obecny w buforze punktu ponownej analizy jest nieprawidłowy</Name>
+			</Action>
+			<Action Id="D_OneDrive_Error_80071129">
+				<Name>Błąd 0x80071129</Name>
+			</Action>
+			<Action Id="Q_Device_SendLogs">
+				<Name>Wyślij dzienniki urządzenia do pomocy technicznej</Name>
+			</Action>
+			<Action Id="D_Device_SendLogs">
+				<Name>Zbierz dzienniki urządzenia i wyślij je e-mailem do pomocy technicznej</Name>
+			</Action>
+		</Actions>
+	</Catalog>
+</SelfX_Language>

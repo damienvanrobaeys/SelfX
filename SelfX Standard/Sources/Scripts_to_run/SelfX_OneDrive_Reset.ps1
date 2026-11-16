@@ -37,7 +37,3 @@ else
 
 sleep 30
 Start-Process -FilePath $OD_EXE_Path /background
-
-$Global:Current_Folder = split-path $MyInvocation.MyCommand.Path
-$Args = "$Current_Folder\AutoDepannage_Notification.ps1", "-Category 'OneDrive'"
-Start-Process -WindowStyle hidden "powershell.exe" -ArgumentList $Args

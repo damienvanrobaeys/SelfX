@@ -1,0 +1,563 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+	SelfX Service - language file
+
+	Description:
+	  Texts of the SelfX user interface in one language. SelfX selects the file that matches the Windows
+	  display language of the user (for example de-CH -> de.xml, zh-TW -> zh-Hant.xml). If no file matches,
+	  en.xml is used. A text that is missing or empty in a language file is taken from en.xml.
+
+	Add a language:
+	  1. Copy en.xml to <culture>.xml. Use the neutral culture name (de, fr, pt) or a script/region name
+	     (zh-Hans, zh-Hant, pt-BR). Windows tries the exact culture first and then its parents.
+	  2. Set Culture, Name, NativeName and FlowDirection (RightToLeft for Arabic, Persian, Urdu, Hebrew ...).
+	  3. Translate the element texts. Do not change element names or Id attributes.
+	     Keep placeholders such as {0}, {1}, {1:D2} and the "|" separators of SystemInfo_Export_Filter.
+	  4. Catalogue texts: add an <Action Id="..."> entry per action and a <Message Id="..."> entry per shared
+	     message. The English base texts are in Issues_List.xml. Untranslated actions are shown in English.
+
+	History:
+	  Version  Date        Author               Change
+	  2.2.0    2026-10-28  Wolfgang Baeck       Initial version: multilingual user interface
+-->
+<SelfX_Language Culture="zh-Hant" Name="Chinese (Traditional)" NativeName="繁體中文" FlowDirection="LeftToRight" Version="2.2.0">
+	<UI>
+		<Health_Fix>修復</Health_Fix>
+		<Health_Fix_Confirm>執行針對 {0} 設定的修復？請先儲存工作：應用程式、服務或連線可能會中斷。之後將重新檢查狀態。</Health_Fix_Confirm>
+		<Health_Restart_Button>重新啟動</Health_Restart_Button>
+		<Health_Restart_Title>重新啟動裝置</Health_Restart_Title>
+		<Health_Restart_Confirm>Windows 將重新啟動以完成擱置的更新和變更。&#10;&#10;請先儲存您的工作並關閉所有程式。確認後約 30 秒開始重新啟動。&#10;&#10;要立即重新啟動嗎？</Health_Restart_Confirm>
+		<Button_Restart_Now>立即重新啟動</Button_Restart_Now>
+		<Health_Restart_Started>Windows 將在約 30 秒後重新啟動。請立即儲存您的工作。</Health_Restart_Started>
+		<Health_Updates_Started>正在搜尋、下載並安裝 Windows 更新。這可能需要幾分鐘；您可以繼續工作。</Health_Updates_Started>
+		<Health_Updates_Done>Windows Update 已完成。將重新檢查裝置狀態，並顯示是否需要重新啟動。</Health_Updates_Done>
+		<Health_Apps_Button>重試</Health_Apps_Button>
+		<Health_Apps_Started>正在重新開始安裝失敗的應用程式。這可能需要幾分鐘；您可以在公司入口網站中查看進度。</Health_Apps_Started>
+		<Health_Check_Button>確定</Health_Check_Button>
+		<Health_Error_Button>錯誤</Health_Error_Button>
+		<Health_Pending_Button>待處理</Health_Pending_Button>
+		<Health_Check_Tooltip>重新檢查此狀態</Health_Check_Tooltip>
+		<!-- Main window -->
+		<Main_Title_Text>裝置遇到問題了嗎？</Main_Title_Text>
+		<Subtitle_Text>您可以在這裡找到解決方法，請從以下操作中選擇一項。</Subtitle_Text>
+		<Run_solution_Text>執行操作</Run_solution_Text>
+		<Run_explanation_Text>顯示更多資訊</Run_explanation_Text>
+		<Issue_filter_Title_Text>按元件篩選</Issue_filter_Title_Text>
+		<Issue_filter_KeyWord_Text>輸入關鍵字</Issue_filter_KeyWord_Text>
+		<Available_Actions_Count>有 {0} 個可用操作</Available_Actions_Count>
+		<Troubleshooting_Tab_Text>故障排除</Troubleshooting_Tab_Text>
+		<Theme_Button_ToolTip>切換深色和淺色主題</Theme_Button_ToolTip>
+		<Support_Button_ToolTip>聯絡支援團隊</Support_Button_ToolTip>
+		<About_Button_ToolTip>關於 SelfX</About_Button_ToolTip>
+		<Shield_ToolTip>透過本地 SelfX 服務以管理員許可權執行</Shield_ToolTip>
+
+		<!-- Simplified or detailed view -->
+		<Solution_Mode_Simple>簡潔檢視</Solution_Mode_Simple>
+		<Solution_Mode_Detailed>詳細檢視</Solution_Mode_Detailed>
+		<Solution_Mode_Info_Title>簡潔檢視還是詳細檢視？</Solution_Mode_Info_Title>
+		<Solution_Mode_Info_Text>簡潔檢視按產品列出問題。
+詳細檢視會列出每種產品可解決的多個具體問題。
+
+如果簡潔檢視未能解決或未列出您的問題，我們建議使用詳細檢視。</Solution_Mode_Info_Text>
+
+		<!-- Dialogs -->
+		<Warning_Click_Run_Solution_Text>解決問題</Warning_Click_Run_Solution_Text>
+		<Warning_Click_Run_Explanation_Text>更多資訊</Warning_Click_Run_Explanation_Text>
+		<Button_Ok>確定</Button_Ok>
+		<Button_Cancel>取消</Button_Cancel>
+		<Button_Yes>是</Button_Yes>
+		<Button_No>否</Button_No>
+		<Close_Button_Text>關閉</Close_Button_Text>
+		<Reboot_Alert>為確保裝置穩定並正常執行，請至少每週重新啟動一次。</Reboot_Alert>
+
+		<!-- Support and About dialogs -->
+		<Support_Window_Title>支援團隊資訊</Support_Window_Title>
+		<Support_Phone_Label>電話號碼：</Support_Phone_Label>
+		<Support_Mail_Label>電子郵件：</Support_Mail_Label>
+		<About_Version_Text>{0}：版本 {1} - 目錄：{2}</About_Version_Text>
+
+		<!-- Local SelfX service (actions with Context System) -->
+		<Service_Running_Text>SelfX 服務正在執行：帶盾牌圖示的操作將以管理員許可權執行。</Service_Running_Text>
+		<Service_Unavailable_Text>SelfX 服務未執行：帶盾牌圖示的操作不可用。</Service_Unavailable_Text>
+		<Service_Busy_Text>另一項操作仍在執行。請等待其完成。</Service_Busy_Text>
+		<Action_Running_Text>正在執行操作：{0}</Action_Running_Text>
+		<Action_Running_Label>正在執行…</Action_Running_Label>
+		<Action_Success_Text>操作已完成：{0}</Action_Success_Text>
+		<Action_Failed_Text>操作失敗：{0}</Action_Failed_Text>
+		<Action_Failed_ExitCode_Text>操作失敗：{0}（退出程式碼 {1}）</Action_Failed_ExitCode_Text>
+		<Action_Timeout_Text>操作因耗時過長而停止：{0}</Action_Timeout_Text>
+		<Script_Not_Found_Text>未找到此操作的指令碼：{0}</Script_Not_Found_Text>
+
+		<!-- System information tab -->
+		<SystemInfo_Tab_Text>系統資訊</SystemInfo_Tab_Text>
+		<SystemInfo_Title_Text>提供給支援團隊的裝置資訊</SystemInfo_Title_Text>
+		<SystemInfo_Hint_Text>雙擊某一行可複製其值。</SystemInfo_Hint_Text>
+		<SystemInfo_Loading_Text>正在收集系統資訊...</SystemInfo_Loading_Text>
+		<SystemInfo_Copied_Text>已複製到剪貼簿：{0}</SystemInfo_Copied_Text>
+		<SystemInfo_Refresh_Text>重新整理</SystemInfo_Refresh_Text>
+		<SystemInfo_Copy_Text>全部複製</SystemInfo_Copy_Text>
+		<SystemInfo_Export_Text>匯出</SystemInfo_Export_Text>
+		<SystemInfo_Export_Filter>文字檔案 (*.txt)|*.txt|HTML 檔案 (*.html)|*.html|CSV 檔案 (*.csv)|*.csv|JSON 檔案 (*.json)|*.json</SystemInfo_Export_Filter>
+		<SystemInfo_SyncApps_Text>同步 Intune 應用</SystemInfo_SyncApps_Text>
+		<SystemInfo_SyncCompliance_Text>檢查合規性</SystemInfo_SyncCompliance_Text>
+		<SystemInfo_CompanyPortal_Text>公司門戶</SystemInfo_CompanyPortal_Text>
+		<SystemInfo_QuickAssist_Text>快速助手</SystemInfo_QuickAssist_Text>
+		<SystemInfo_MdmDiagnostics_Text>收集 MDM 日誌</SystemInfo_MdmDiagnostics_Text>
+		<SystemInfo_SendLogs_Text>將記錄傳送給支援人員</SystemInfo_SendLogs_Text>
+		<Report_Mail_Subject>{0} 的裝置記錄</Report_Mail_Subject>
+		<Report_Mail_Body>您好：
+
+附件是 SelfX 於 {1} 收集的 {0} 的裝置記錄。
+
+問題描述：</Report_Mail_Body>
+		<Report_Mail_Opened_Text>已開啟一封附有裝置記錄的電子郵件。請描述您的問題並傳送電子郵件。</Report_Mail_Opened_Text>
+		<Report_Mail_Recipient_Text>已開啟一封附有裝置記錄的電子郵件。請輸入收件者 ({0})，描述您的問題並傳送電子郵件。</Report_Mail_Recipient_Text>
+		<Report_Mail_Manual_Text>裝置記錄已儲存至 {0}。請將此檔案附加至電子郵件 (收件者: {1})，並描述您的問題。</Report_Mail_Manual_Text>
+		<Report_Not_Found_Text>已收集裝置記錄，但無法準備電子郵件: {0}</Report_Not_Found_Text>
+		<Report_Support_Fallback>您的支援人員</Report_Support_Fallback>
+		<Nav_Status_Text>裝置狀態</Nav_Status_Text>
+		<Status_LastChecked_Text>上次檢查: {0}</Status_LastChecked_Text>
+		<Status_NotChecked_Text>尚未檢查裝置狀態。</Status_NotChecked_Text>
+		<Status_Background_Text>每 {0} 分鐘自動檢查</Status_Background_Text>
+		<Status_Background_Battery_Text>裝置使用電池時暫停自動檢查</Status_Background_Battery_Text>
+		<Status_Checking_Text>正在檢查裝置狀態。這可能需要一分鐘 ...</Status_Checking_Text>
+		<Status_AllOk_Title>一切正常</Status_AllOk_Title>
+		<Status_AllOk_Text>您的裝置上未發現問題。</Status_AllOk_Text>
+		<Status_Issues_Title>{0} 個項目需要您注意</Status_Issues_Title>
+		<Status_Issues_Text>問題會顯示在最前面。按一下「修正」可修復問題，按一下箭頭可重新檢查。</Status_Issues_Text>
+		<Status_CheckAll_Tooltip>立即重新檢查所有項目。這可能需要一分鐘。</Status_CheckAll_Tooltip>
+		<Status_FixAll>修復所有問題</Status_FixAll>
+		<Status_FixAll_Tooltip>依序為每個問題執行已設定的修復。之後將重新檢查所有項目。</Status_FixAll_Tooltip>
+		<Health_FixAll_Confirm>是否依序執行針對這 {0} 個問題的已設定修復?&#10;&#10;{1}&#10;&#10;應用程式可能會被關閉,服務或網路連線可能會中斷。請先儲存您的工作。之後將重新檢查所有項目。</Health_FixAll_Confirm>
+		<Status_FixAll_Done>{1} 項修復中有 {0} 項已成功完成。正在重新檢查狀態。</Status_FixAll_Done>
+		<Status_FixAll_Failed>未成功: {0}</Status_FixAll_Failed>
+		<Tooltip_Fix>自動修復此問題。會先請您確認。</Tooltip_Fix>
+		<Tooltip_Run>啟動此解決方案。在執行任何動作前會請您確認。</Tooltip_Run>
+		<Filter_All_Text>全部</Filter_All_Text>
+		<View_Help_Tooltip>簡化檢視與詳細檢視有何不同?</View_Help_Tooltip>
+		<SystemInfo_Cached_Text>{0} 的資訊 – 正在更新 ...</SystemInfo_Cached_Text>
+		<Tooltip_Refresh>重新收集資訊</Tooltip_Refresh>
+		<Tooltip_Copy>複製所有資訊，例如貼到支援要求中</Tooltip_Copy>
+		<Tooltip_Export>將所有資訊儲存為檔案</Tooltip_Export>
+		<Tools_Title_Text>工具</Tools_Title_Text>
+		<Tooltip_SyncApps>要求 Intune 立即安裝或更新指派給您的應用程式。</Tooltip_SyncApps>
+		<Tooltip_SyncCompliance>要求 Intune 立即檢查您的裝置是否符合公司規則。</Tooltip_SyncCompliance>
+		<Tooltip_CompanyPortal>開啟公司入口網站，您可以在其中安裝公司應用程式。</Tooltip_CompanyPortal>
+		<Tooltip_QuickAssist>開啟快速協助，讓支援人員查看您的畫面並提供協助 – 僅在您同意時。</Tooltip_QuickAssist>
+		<Tooltip_MdmDiagnostics>將裝置管理記錄收集到資料夾中，供支援人員使用。</Tooltip_MdmDiagnostics>
+		<Tooltip_SendLogs>收集裝置的所有記錄，並開啟一封附有報告的寄給支援人員的電子郵件。</Tooltip_SendLogs>
+		<Settings_Button_ToolTip>設定(語言、外觀與狀態圖示)</Settings_Button_ToolTip>
+		<Settings_Title>設定</Settings_Title>
+		<Settings_Language_Text>語言</Settings_Language_Text>
+		<Settings_Language_Auto>自動({0})</Settings_Language_Auto>
+		<Settings_Language_Hint>SelfX 會以選取的語言重新啟動。</Settings_Language_Hint>
+		<Settings_Language_Later>由於修復仍在執行，新語言將在下次開啟 SelfX 時使用。</Settings_Language_Later>
+		<Settings_Theme_Text>外觀</Settings_Theme_Text>
+		<Settings_Theme_Auto>自動</Settings_Theme_Auto>
+		<Settings_Theme_Auto_ToolTip>與 Windows 相同：使用「設定」&gt;「個人化」&gt;「色彩」中選擇的應用程式模式</Settings_Theme_Auto_ToolTip>
+		<Settings_Theme_Dark>深色</Settings_Theme_Dark>
+		<Settings_Theme_Light>淺色</Settings_Theme_Light>
+		<Settings_Tray_Text>在通知區域顯示 SelfX 圖示</Settings_Tray_Text>
+		<Settings_Tray_Hint>時鐘旁的圖示會顯示裝置狀態，並在發現問題時通知您。</Settings_Tray_Hint>
+		<Settings_Notify_Text>發生問題時顯示通知</Settings_Notify_Text>
+		<Settings_Notify_Hint>除了彩色 SelfX 圖示外，發現新問題(例如磁碟空間不足)時，Windows 會顯示一則訊息。</Settings_Notify_Hint>
+		<Support_Intro_Text>我們很樂意協助您。您可以透過下列方式聯絡我們:</Support_Intro_Text>
+		<Support_Hours_Label>支援時間</Support_Hours_Label>
+		<Support_Teams_Label>Teams 聊天</Support_Teams_Label>
+		<Support_Website_Label>網站 / 工單系統</Support_Website_Label>
+		<Support_Teams_Button>開始聊天</Support_Teams_Button>
+		<Support_Website_Button>開啟</Support_Website_Button>
+		<Support_Mail_Button>撰寫電子郵件</Support_Mail_Button>
+		<Support_None_Text>未設定聯絡資訊。請聯絡您的 IT 部門。</Support_None_Text>
+		<Service_Short_Running>SelfX 服務正在執行</Service_Short_Running>
+		<Service_Short_Unavailable>SelfX 服務無法使用</Service_Short_Unavailable>
+		<Version_Text>版本 {0}</Version_Text>
+		<Tray_Tooltip_OK>SelfX: 一切正常</Tray_Tooltip_OK>
+		<Tray_Tooltip_Issues>SelfX: {0} 個問題，{1} 個警告</Tray_Tooltip_Issues>
+		<Tray_Tooltip_Unknown>SelfX: 裝置狀態尚無法使用</Tray_Tooltip_Unknown>
+		<Tray_Menu_Open>開啟 SelfX</Tray_Menu_Open>
+		<Tray_Menu_Status>顯示裝置狀態</Tray_Menu_Status>
+		<Tray_Menu_Check>立即檢查狀態</Tray_Menu_Check>
+		<Tray_Menu_Notify>顯示通知</Tray_Menu_Notify>
+		<Tray_Menu_Hide>隱藏此圖示</Tray_Menu_Hide>
+		<Tray_Notify_Click>按一下這裡查看詳細資料。</Tray_Notify_Click>
+		<Tray_Hidden_Text>圖示已隱藏。您可以在 SelfX 的「設定」中重新顯示。</Tray_Hidden_Text>
+		<Tray_Checking_Text>正在檢查裝置狀態 ...</Tray_Checking_Text>
+	</UI>
+
+	<!-- Labels and values of the System information tab -->
+	<SystemInfo>
+		<Category_Device>裝置</Category_Device>
+		<Category_Windows>Windows</Category_Windows>
+		<Category_User>使用者和管理</Category_User>
+		<Category_Network>網路</Category_Network>
+		<Category_Report>報告</Category_Report>
+		<Computer_Name>電腦名稱</Computer_Name>
+		<Manufacturer>製造商</Manufacturer>
+		<Model>型號</Model>
+		<Serial_Number>序列號</Serial_Number>
+		<BIOS_Version>BIOS 版本</BIOS_Version>
+		<Processor>處理器</Processor>
+		<Memory>記憶體 (RAM)</Memory>
+		<Free_Space>可用空間 {0}</Free_Space>
+		<Free_Space_Value>{0}（共 {1}，佔 {2}%）</Free_Space_Value>
+		<Battery>電池</Battery>
+		<Windows_Version>Windows 版本</Windows_Version>
+		<OS_Build>作業系統版本</OS_Build>
+		<Last_Boot>上次啟動時間</Last_Boot>
+		<Uptime>執行時間</Uptime>
+		<Uptime_Value>{0} 天 {1:D2}:{2:D2} 小時</Uptime_Value>
+		<Last_Update>最近安裝的更新</Last_Update>
+		<Time_Zone>時區</Time_Zone>
+		<Current_User>當前使用者</Current_User>
+		<User_Principal_Name>使用者主體名稱</User_Principal_Name>
+		<Domain>域 / 工作組</Domain>
+		<Entra_Joined>已加入 Entra ID</Entra_Joined>
+		<Domain_Joined>已加入域</Domain_Joined>
+		<Tenant>租戶</Tenant>
+		<Entra_Device_Id>Entra 裝置 ID</Entra_Device_Id>
+		<Intune_User>Intune 註冊使用者</Intune_User>
+		<Intune_Last_Sync>上次 Intune 同步時間</Intune_Last_Sync>
+		<LAN_Connected>LAN 已連線</LAN_Connected>
+		<WiFi_Connected>Wi-Fi 已連線</WiFi_Connected>
+		<WWAN_Connected>移動寬頻已連線</WWAN_Connected>
+		<WiFi_SSID>Wi-Fi 網路 (SSID)</WiFi_SSID>
+		<VPN_Connected>VPN 已連線</VPN_Connected>
+		<Internet_Reachable>可訪問 Internet</Internet_Reachable>
+		<IPv4>IPv4 地址</IPv4>
+		<IPv6>IPv6 地址</IPv6>
+		<Gateway>預設閘道器</Gateway>
+		<DNS>DNS 伺服器</DNS>
+		<MAC>MAC 地址</MAC>
+		<Collected_At>收集時間</Collected_At>
+		<Error>錯誤</Error>
+		<Yes>是</Yes>
+		<No>否</No>
+		<Not_Available>不適用</Not_Available>
+		<Not_Enrolled>未註冊 / 未知</Not_Enrolled>
+		<No_WiFi>未連線 Wi-Fi</No_WiFi>
+		<Category_Health>系統狀態</Category_Health>
+		<Health_IME>IME 服務</Health_IME>
+		<Health_Defender>Microsoft Defender</Health_Defender>
+		<Health_Compliance>合規性</Health_Compliance>
+		<Health_Applications>公司應用程式 (Intune)</Health_Applications>
+		<Health_Disk>磁碟空間</Health_Disk>
+		<Health_BitLocker>BitLocker</Health_BitLocker>
+		<Health_PendingReboot>等待重新啟動</Health_PendingReboot>
+		<Health_Updates>待安裝的更新</Health_Updates>
+		<Health_Service>服務</Health_Service>
+		<Health_Custom>自訂檢查</Health_Custom>
+		<Health_Collection>狀態收集</Health_Collection>
+		<Health_OK>正常</Health_OK>
+		<Health_Error>錯誤</Health_Error>
+		<Health_Unknown>未知</Health_Unknown>
+		<Health_Pending>待處理</Health_Pending>
+		<Health_Unavailable>本機狀態報告無法使用：{0}</Health_Unavailable>
+	</SystemInfo>
+
+	<!-- Action catalogue (Issues_List.xml). The English base texts are in Issues_List.xml, so en.xml only lists the categories. -->
+	<Catalog>
+		<Categories>
+			<Category Id="Browser">瀏覽器</Category>
+			<Category Id="Device">裝置</Category>
+			<Category Id="Intune">Intune</Category>
+			<Category Id="Office">Office</Category>
+			<Category Id="OneDrive">OneDrive</Category>
+			<Category Id="Outlook">Outlook</Category>
+			<Category Id="Teams">Teams</Category>
+		</Categories>
+		<Messages>
+			<Message Id="Msg_Teams_Restart">Teams 將關閉，然後自動重新開啟。
+
+如果問題仍未解決，請先退出 Teams，然後重新登入。如果問題仍然存在，請聯絡支援團隊。
+
+是否要繼續？</Message>
+			<Message Id="Msg_Teams_Restart_Short">Teams 將關閉，然後自動重新開啟。
+
+是否要繼續？</Message>
+			<Message Id="Msg_OneDrive_Restart">OneDrive 將關閉，然後自動重新開啟。
+
+是否要繼續？</Message>
+			<Message Id="Msg_OneDrive_Restart_Step1">第一步是重新啟動 OneDrive。OneDrive 將關閉，然後自動重新開啟。
+
+如果問題仍未解決，請執行“重置 OneDrive 客戶端”操作。
+
+是否要繼續？</Message>
+			<Message Id="Msg_OneDrive_Reset">將重置 OneDrive 客戶端。重置不會導致任何資料丟失。
+
+如果問題仍然存在，請聯絡支援團隊。
+
+是否要繼續？</Message>
+			<Message Id="Msg_OneDrive_Teams_Sync">資料夾已在 OneDrive 中同步，但在 Teams 中共享的檔案未同步。</Message>
+			<Message Id="Msg_Intune_Sync_Explanation">您希望強制同步裝置與 Intune，例如加快策略或應用的部署。此操作透過本地 SelfX 服務以管理員許可權執行。</Message>
+			<Message Id="Msg_Intune_Restart">Intune Management Extension 服務將在後臺重新啟動。請在幾分鐘後重試。
+
+是否要繼續？</Message>
+			<Message Id="Msg_Chkdsk_Explanation">OneDrive 遇到問題，並顯示錯誤“0x80071129: The tag present in the reparse point buffer is invalid”。此操作透過本地 SelfX 服務以管理員許可權執行。</Message>
+			<Message Id="Msg_Chkdsk">將在下次重新啟動裝置時安排磁碟檢查。之後請重新啟動裝置。檢查可能需要幾分鐘。
+
+是否要繼續？</Message>
+			<Message Id="Msg_SendLogs_Explanation">支援人員需要您的裝置記錄來分析問題，例如應用程式安裝失敗、設定失敗或錯誤訊息。此操作透過本地 SelfX 服務以管理員權限收集所有相關記錄和系統資訊，並開啟一封寄給支援人員的新電子郵件，其中附有報告。不會自動傳送任何內容。</Message>
+			<Message Id="Msg_SendLogs">SelfX 現在將收集您的裝置記錄。這可能需要幾分鐘。不會變更裝置上的任何內容。
+
+報告包含您的裝置名稱和使用者名稱。準備就緒後，將開啟一封附有報告的新電子郵件。請描述您的問題並將電子郵件傳送給支援人員。
+
+是否要繼續？</Message>
+		</Messages>
+		<Actions>
+			<Action Id="Q_Teams">
+				<Name>解決 Teams 問題</Name>
+				<Explanation>Teams 客戶端出現問題（執行緩慢、狀態不正確、傳輸錯誤等）。</Explanation>
+				<Alerte_MSG>Teams 將關閉，並清除其本地快取資料夾。繼續前請儲存所有開啟的工作。如果 Teams 當前正在執行，它將重新開啟。
+
+是否要繼續？</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Word">
+				<Name>解決 Word 問題</Name>
+				<Explanation>您正在使用 Word，但程式已停止響應，無法繼續操作。</Explanation>
+				<Alerte_MSG>Word 將關閉並自動重新開啟。未儲存的工作可能會丟失。
+
+是否要繼續？</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Excel">
+				<Name>解決 Excel 問題</Name>
+				<Explanation>您正在使用 Excel，但程式已停止響應，無法繼續操作。</Explanation>
+				<Alerte_MSG>Excel 將關閉並自動重新開啟。未儲存的工作可能會丟失。
+
+是否要繼續？</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Store">
+				<Name>解決 Microsoft Store 問題</Name>
+				<Explanation>Microsoft Store 出現問題（例如無法開啟 Store 或安裝應用）。</Explanation>
+				<Alerte_MSG>將重置 Microsoft Store 快取並開啟 Store。
+
+是否要繼續？</Alerte_MSG>
+			</Action>
+			<Action Id="Q_OneDrive_Restart">
+				<Name>解決 OneDrive 問題（方法 1）</Name>
+				<Explanation>OneDrive 客戶端出現問題（檔案或資料夾同步、開啟檔案等）。</Explanation>
+				<Alerte_MSG>OneDrive 將關閉並自動重新開啟。
+
+如果問題仍未解決，請使用方法 2。
+
+是否要繼續？</Alerte_MSG>
+			</Action>
+			<Action Id="Q_OneDrive_Reset">
+				<Name>解決 OneDrive 問題（方法 2）</Name>
+				<Explanation>OneDrive 客戶端出現問題（檔案或資料夾同步、開啟檔案等），並且您已嘗試方法 1。</Explanation>
+			</Action>
+			<Action Id="Q_Outlook_TeamsAddIn">
+				<Name>Outlook 中缺少“Teams 會議”按鈕</Name>
+				<Explanation>Outlook 中缺少“新建 Teams 會議”按鈕。</Explanation>
+				<Alerte_MSG>將重新啟用 Teams 會議載入項。Outlook 將關閉並自動重新開啟。未儲存的工作可能會丟失。
+
+如果問題仍未解決，請聯絡支援團隊。
+
+是否要繼續？</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Device_Connection">
+				<Name>裝置存在連線問題</Name>
+				<Explanation>您嘗試開啟網站，但連線不可用、無法訪問該網站或出現錯誤。</Explanation>
+				<Alerte_MSG>將在後臺清除裝置的 DNS 快取。單擊“確定”後請重試。
+
+是否要繼續？</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Device_Slow">
+				<Name>裝置執行緩慢</Name>
+				<Explanation>您的裝置執行緩慢。</Explanation>
+				<Alerte_MSG>將刪除臨時檔案和回收站中的內容。
+
+是否要繼續？</Alerte_MSG>
+			</Action>
+			<Action Id="Q_Intune_Restart">
+				<Name>重新啟動 Intune 服務</Name>
+			</Action>
+			<Action Id="Q_Network_Restart">
+				<Name>重新啟動網路介面卡</Name>
+				<Explanation>您遇到網路問題，希望重新啟動網路介面卡。此操作透過本地 SelfX 服務以管理員許可權執行。</Explanation>
+				<Alerte_MSG>將重新啟動所有網路介面卡。網路訪問將短暫中斷。
+
+是否要繼續？</Alerte_MSG>
+			</Action>
+			<Action Id="Q_OneDrive_Chkdsk">
+				<Name>修復被鎖定的 OneDrive 檔案</Name>
+			</Action>
+			<Action Id="D_Chrome_Cache">
+				<Name>清除 Google Chrome 瀏覽資料（快取）</Name>
+				<Explanation>網站在 Google Chrome 中無法載入或顯示不正確。將清除所有 Chrome 配置檔案的瀏覽器快取。</Explanation>
+				<Alerte_MSG>Google Chrome 將關閉，並刪除快取的瀏覽資料。
+
+是否要繼續？</Alerte_MSG>
+			</Action>
+			<Action Id="D_Firefox_Cache">
+				<Name>清除 Firefox 瀏覽資料（快取）</Name>
+				<Explanation>網站在 Firefox 中無法載入或顯示不正確。將清除所有 Firefox 配置檔案的瀏覽器快取。</Explanation>
+				<Alerte_MSG>Firefox 將關閉，並刪除快取的瀏覽資料。
+
+是否要繼續？</Alerte_MSG>
+			</Action>
+			<Action Id="D_Outlook_TeamsAddIn">
+				<Name>Outlook 中缺少“Teams 會議”按鈕</Name>
+				<Explanation>Outlook 中缺少“新建 Teams 會議”按鈕。</Explanation>
+				<Alerte_MSG>Outlook 將關閉，然後自動重新開啟。未儲存的工作可能會丟失。
+
+是否要繼續？</Alerte_MSG>
+			</Action>
+			<Action Id="D_OneDrive_Start">
+				<Name>啟動 OneDrive 客戶端</Name>
+				<Explanation>OneDrive 當前未執行。</Explanation>
+				<Alerte_MSG>將啟動 OneDrive 客戶端。
+
+是否要繼續？</Alerte_MSG>
+			</Action>
+			<Action Id="D_OneDrive_Restart">
+				<Name>重新啟動 OneDrive 客戶端</Name>
+				<Explanation>重新啟動 OneDrive 可能會解決一些問題，例如同步問題。</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_Sync_Step1">
+				<Name>解決 OneDrive 同步問題（步驟 1）</Name>
+				<Explanation>OneDrive 中的檔案或資料夾存在同步問題。
+
+第一步是重新啟動 OneDrive。OneDrive 將關閉，然後自動重新開啟。
+
+如果問題仍未解決，請執行“重置 OneDrive 客戶端”操作。</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_Error_8004def4">
+				<Name>OneDrive 無法啟動：錯誤 0x8004def4</Name>
+				<Explanation>啟動 OneDrive 時顯示錯誤 0x8004def4。</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_Memory">
+				<Name>裝置執行緩慢：OneDrive 佔用大量記憶體</Name>
+				<Explanation>您的裝置執行緩慢，而且 OneDrive 似乎佔用了大量記憶體。</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_RedCross">
+				<Name>OneDrive 圖示上顯示紅色叉號</Name>
+				<Explanation>OneDrive 圖示上顯示紅色叉號。</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_ClosesItself">
+				<Name>OneDrive 自動關閉</Name>
+				<Explanation>OneDrive 開啟後又自動關閉。</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_WhiteCross">
+				<Name>OneDrive 檔案上顯示白色叉號</Name>
+				<Explanation>OneDrive 檔案或資料夾上顯示白色叉號。</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_PasswordChange">
+				<Name>更改 Windows 密碼後 OneDrive 出現問題</Name>
+				<Explanation>您最近更改了密碼，現在 OneDrive 出現問題，例如同步問題。
+
+此步驟將重新啟動 OneDrive 客戶端。</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_CannotOpen">
+				<Name>無法開啟 OneDrive 中的檔案</Name>
+				<Explanation>OneDrive 中儲存的檔案無法開啟。</Explanation>
+			</Action>
+			<Action Id="D_OneDrive_TeamsSync">
+				<Name>資料夾在 OneDrive 中同步，但在 Teams 中不同步</Name>
+			</Action>
+			<Action Id="D_OneDrive_Reset">
+				<Name>重置 OneDrive 客戶端</Name>
+				<Explanation>OneDrive 出現問題，例如同步問題。
+
+此步驟將重置 OneDrive 客戶端。重置不會導致任何資料丟失。</Explanation>
+			</Action>
+			<Action Id="D_Teams_Connection">
+				<Name>解決 Teams 連線問題</Name>
+				<Explanation>您無法連線到 Teams。</Explanation>
+			</Action>
+			<Action Id="D_Teams_ProfilePicture">
+				<Name>解決 Teams 個人資料圖片同步問題</Name>
+				<Explanation>Teams 中未顯示或未更新您的個人資料圖片。</Explanation>
+			</Action>
+			<Action Id="D_Teams_OneDriveSync">
+				<Name>資料夾在 OneDrive 中同步，但在 Teams 中不同步</Name>
+			</Action>
+			<Action Id="D_Teams_Loading">
+				<Name>Teams 停留在“正在載入 Microsoft Teams”</Name>
+				<Explanation>開啟 Teams 時，視窗停留在“正在載入 Microsoft Teams”。</Explanation>
+			</Action>
+			<Action Id="D_Teams_Sync">
+				<Name>解決 Teams 同步問題</Name>
+				<Explanation>Teams 中存在同步問題。</Explanation>
+			</Action>
+			<Action Id="D_Teams_DoesNotOpen">
+				<Name>Teams 客戶端無法開啟</Name>
+				<Explanation>您嘗試開啟 Teams，但客戶端無法開啟。</Explanation>
+			</Action>
+			<Action Id="D_Teams_AudioFreeze">
+				<Name>Teams 客戶端在音訊通話期間卡住</Name>
+				<Explanation>Teams 在音訊通話期間卡住。</Explanation>
+			</Action>
+			<Action Id="D_Teams_Camera">
+				<Name>Teams 攝像頭畫面卡住或不可見</Name>
+				<Explanation>在會議或通話期間，您的影片畫面卡住或不可見。</Explanation>
+			</Action>
+			<Action Id="D_Teams_SendFailed">
+				<Name>無法傳送 Teams 訊息</Name>
+				<Explanation>Teams 訊息無法傳送，並顯示“傳送失敗”。</Explanation>
+			</Action>
+			<Action Id="D_Teams_MeetingDisplay">
+				<Name>加入 Teams 會議時顯示異常</Name>
+				<Explanation>加入會議時，Teams 顯示不正確。</Explanation>
+			</Action>
+			<Action Id="D_Teams_NoConnect">
+				<Name>Teams 客戶端可以開啟，但無法連線</Name>
+				<Explanation>Teams 已開啟，但無法連線。</Explanation>
+			</Action>
+			<Action Id="D_Teams_StatusOffline">
+				<Name>Teams 狀態一直顯示為離線</Name>
+				<Explanation>您已登入，但 Teams 狀態仍顯示為“離線”。</Explanation>
+			</Action>
+			<Action Id="D_Teams_CallWindow">
+				<Name>未顯示 Teams 通話視窗</Name>
+				<Explanation>不再顯示 Teams 來電通知。</Explanation>
+			</Action>
+			<Action Id="D_Teams_MessageContent">
+				<Name>無法檢視 Teams 訊息內容</Name>
+				<Explanation>您可以看到訊息通知和預覽，但看不到訊息內容。</Explanation>
+			</Action>
+			<Action Id="D_Teams_PasswordChange">
+				<Name>更改密碼後出現連線問題</Name>
+				<Explanation>更改密碼後，您無法連線到 Teams。</Explanation>
+			</Action>
+			<Action Id="D_Teams_Tabs">
+				<Name>Teams 中的選項卡無法載入</Name>
+				<Explanation>開啟 Teams 中的選項卡時，它們無法正常載入。</Explanation>
+			</Action>
+			<Action Id="D_Teams_StatusWrong">
+				<Name>Teams 狀態不正確</Name>
+				<Explanation>Teams 中的狀態不正確或未更新。</Explanation>
+			</Action>
+			<Action Id="D_Teams_MeetingOpen">
+				<Name>無法開啟 Teams 會議</Name>
+				<Explanation>單擊加入會議的連結後，Teams 會議無法開啟。</Explanation>
+			</Action>
+			<Action Id="D_Teams_SoundCuts">
+				<Name>Teams 會議期間聲音中斷</Name>
+				<Explanation>Teams 會議期間聲音會中斷。</Explanation>
+			</Action>
+			<Action Id="D_Teams_OutlookMeeting">
+				<Name>無法在 Outlook 日曆中建立 Teams 會議</Name>
+				<Explanation>您無法從 Outlook 日曆建立 Teams 會議。</Explanation>
+			</Action>
+			<Action Id="D_Intune_Sync">
+				<Name>強制同步 Intune</Name>
+			</Action>
+			<Action Id="D_OneDrive_Chkdsk">
+				<Name>檢查磁碟是否存在 OneDrive 錯誤 (chkdsk)</Name>
+			</Action>
+			<Action Id="D_OneDrive_ReparsePoint">
+				<Name>重分析點緩衝區中的標記無效</Name>
+			</Action>
+			<Action Id="D_OneDrive_Error_80071129">
+				<Name>錯誤 0x80071129</Name>
+			</Action>
+			<Action Id="Q_Device_SendLogs">
+				<Name>將裝置記錄傳送給支援人員</Name>
+			</Action>
+			<Action Id="D_Device_SendLogs">
+				<Name>收集裝置記錄並透過電子郵件傳送給支援人員</Name>
+			</Action>
+		</Actions>
+	</Catalog>
+</SelfX_Language>

@@ -1,5 +1,5 @@
 ﻿<GUI_Config>	
-	<Tool_Version>1.0.3</Tool_Version> <!-- Tool version -->
+	<Tool_Version>1.1.2</Tool_Version> <!-- Tool version (1.1.2: last Intune sync shown in local time; LAN connected also in virtual machines) -->
 	<Tool_Name>SelfX (Self fix)</Tool_Name> <!-- Text displayed in the title bar --> 
 	
 	<!-- Path where to get the issues list XML file from the web -->	
@@ -12,7 +12,7 @@
 
 	<!-- Toast notification displayed to the user after install --> 
 	<Show_Install_Toast>False</Show_Install_Toast> <!-- Display a toast to user after installing the tool: True or False -->
-	<Toast_Header_Picture>Toast_Header.gif</Toast_Header_Picture> <!-- Picture displayed in the tost -->		
+	<Toast_Header_Picture>Toast_Header.jpg</Toast_Header_Picture> <!-- Picture displayed in the toast (hero image, shown about 364x180 px; static JPG/PNG, a few KB) -->		
 	<Toast_Company_Name>Syst and Deploy informs you</Toast_Company_Name> <!-- Text displayed in the toast at the top -->
 	<Toast_Title>A new tool is available on your device</Toast_Title> <!-- Toast title -->
 	<Toast_Text>A new tool allowing you to solve issues yourself is available on your device.
@@ -72,4 +72,26 @@ We recommend using the detailed view if the simplified view does not resolve or 
 	<!-- About part -->
 	<Show_About_Button>True</Show_About_Button> <!-- Display button in the title bar to view about information. True or False  -->	
 	<About_Logo>logo.png</About_Logo> <!-- Logo displayed in the About part. By default logo.png -->	
+
+	<!-- Tabs -->
+	<Troubleshooting_Tab_Text>Troubleshooting</Troubleshooting_Tab_Text> <!-- Header of the tab with the list of actions -->
+
+	<!-- System information tab (read-only device details for the user and the support team) -->
+	<Show_SystemInfo_Tab>True</Show_SystemInfo_Tab> <!-- Display the System information tab: True or False -->
+	<SystemInfo_Tab_Text>System information</SystemInfo_Tab_Text> <!-- Header of the tab -->
+	<SystemInfo_Title_Text>Information about your device for the support team</SystemInfo_Title_Text> <!-- Title displayed in the tab -->
+	<SystemInfo_Hint_Text>Double-click a line to copy its value.</SystemInfo_Hint_Text> <!-- Hint displayed below the list -->
+	<SystemInfo_Loading_Text>Collecting system information...</SystemInfo_Loading_Text> <!-- Text displayed while collecting -->
+	<SystemInfo_Copied_Text>Copied to clipboard:</SystemInfo_Copied_Text> <!-- Text displayed after copying -->
+	<SystemInfo_Refresh_Text>Refresh</SystemInfo_Refresh_Text> <!-- Refresh button -->
+	<SystemInfo_Copy_Text>Copy all</SystemInfo_Copy_Text> <!-- Copy all button -->
+	<SystemInfo_Export_Text>Export</SystemInfo_Export_Text> <!-- Export button (txt, html, csv or json) -->
+	<SystemInfo_Internet_Test_Host>www.msftconnecttest.com</SystemInfo_Internet_Test_Host> <!-- Host used for the "Internet reachable" check -->
+	<SystemInfo_Internet_Test_Port>80</SystemInfo_Internet_Test_Port> <!-- TCP port used for the "Internet reachable" check -->
+	<Show_SystemInfo_Intune_Actions>True</Show_SystemInfo_Intune_Actions> <!-- Display the Intune and support buttons in the tab: True or False -->
+	<SystemInfo_SyncApps_Text>Sync Intune apps</SystemInfo_SyncApps_Text>
+	<SystemInfo_SyncCompliance_Text>Check compliance</SystemInfo_SyncCompliance_Text>
+	<SystemInfo_CompanyPortal_Text>Company Portal</SystemInfo_CompanyPortal_Text>
+	<SystemInfo_QuickAssist_Text>Quick Assist</SystemInfo_QuickAssist_Text>
+	<SystemInfo_MdmDiagnostics_Text>Collect MDM logs</SystemInfo_MdmDiagnostics_Text>
 </GUI_Config>
